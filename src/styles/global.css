@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #f6efe0;
+  --color-gold-100: #eee0c1;
+  --color-gold: #B7852B;
+  --color-black: #0B0B0B;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@utility bg-metallic-gradient {
+  background: linear-gradient(135deg, #B7852B 0%, #F5E0A3 50%, #B7852B 100%);
+}
+
+@utility text-metallic-shimmer {
+  background: linear-gradient(to right, #B7852B 20%, #F5E0A3 50%, #B7852B 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+:root {
+  --color-gold: #B7852B;
+  --color-black: #0B0B0B;
+  background-color: var(--color-black);
+  color: white;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

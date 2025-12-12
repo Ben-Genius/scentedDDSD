@@ -1,0 +1,13 @@
+import React from 'react';
+export const Home = () => <div className="pt-20">Home Page</div>;
+export const Shop = () => <div className="pt-20">Shop Page</div>;
+export const ProductPage = () => <div className="pt-20">Product Page</div>;
+export const Collections = () => <div className="pt-20">Collections Page</div>;
+export const Bundles = () => <div className="pt-20">Bundles Page</div>;
+export const About = () => <div className="pt-20">About Page</div>;
+export const HowToOrder = () => <div className="pt-20">How To Order</div>;
+export const Contact = () => <div className="pt-20">Contact Page</div>;
+export const BlogList = () => <div className="pt-20">Blog</div>;
+export const BlogPost = () => <div className="pt-20">Blog Post</div>;
+export const AdminInventory = () => <div className="pt-20">Admin</div>;
+export const Checkout = () => <div className="pt-20">Checkout</div>;
