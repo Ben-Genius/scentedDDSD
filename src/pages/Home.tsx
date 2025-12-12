@@ -7,6 +7,7 @@ import { Product } from '../types';
 import { IMAGES } from '@/assets';
 import FeatureSection from '@/components/Featured';
 import { NewArrivals } from '../components/NewArrivals';
+import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
 import { Testimonials } from '../components/Testimonials';
 
 export const Home = () => {
@@ -26,8 +27,9 @@ export const Home = () => {
 
                 <MarketingMarquee />
 
+                <SimpleNewArrivals />
 
-                <div className='flex flex-col items-center justify-center text-center'>
+                <div className='flex flex-col items-center justify-center text-center mt-12'>
                     <span className="block text-gold text-xs uppercase tracking-[0.4em]  font-inter">
                         Holiday Exclusive
                     </span>
