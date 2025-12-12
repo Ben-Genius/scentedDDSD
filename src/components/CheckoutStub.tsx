@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { usePayment, PaymentMethod } from '../hooks/usePayment';
 import { useLocalCart } from '../hooks/useLocalCart';
-import { Order, UserContact } from '../types';
+import { Order } from '../types';
 import { saveOrder } from '../lib/orders';
 import { formatMoney } from '../utils/formatMoney';
 import { useNavigate } from 'react-router-dom';
@@ -44,6 +44,7 @@ export const CheckoutStub = () => {
 
             if (result.success) {
                 const newOrder: Order = {
+                    // eslint-disable-next-line react-hooks/purity
                     id: result.transactionId || Date.now().toString(),
                     items: items,
                     subtotal: total,

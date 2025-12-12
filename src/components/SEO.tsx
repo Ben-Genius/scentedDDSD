@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 interface SEOProps {
     title: string;
@@ -14,7 +14,7 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
 
         // Helper to update meta
         const updateMeta = (name: string, content: string) => {
-            let element = document.querySelector(`meta[name="${name}"]`);
+            let element = document.querySelector(`meta[name = "${name}"]`);
             if (!element) {
                 element = document.createElement('meta');
                 element.setAttribute('name', name);
@@ -24,7 +24,7 @@ export const SEO = ({ title, description, image, url }: SEOProps) => {
         };
 
         const updateOg = (property: string, content: string) => {
-            let element = document.querySelector(`meta[property="${property}"]`);
+            let element = document.querySelector(`meta[property = "${property}"]`);
             if (!element) {
                 element = document.createElement('meta');
                 element.setAttribute('property', property);

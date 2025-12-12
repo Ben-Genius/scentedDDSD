@@ -277,7 +277,7 @@ export const Testimonials = () => {
 
                     {/* Bottom Stats */}
                     <div className="text-center mt-16">
-                        <div className="inline-flex items-center gap-3 text-sm text-gray-400 bg-white/5 border border-white/10 px-6 py-3 rounded-full">
+                        <div className="inline-flex flex-wrap justify-center items-center gap-3 text-sm text-gray-400 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl md:rounded-full">
                             <div className="flex items-center gap-1">
                                 <Star className="w-4 h-4 fill-gold text-gold" />
                                 <span className="font-semibold text-white">4.9</span>

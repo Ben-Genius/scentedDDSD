@@ -3,7 +3,7 @@ import { BundleBuilder } from '../components/BundleBuilder';
 import { getProducts } from '../lib/api';
 import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
-import { Gift, Sparkles, Heart, Star, ShoppingBag, ArrowRight, Check, Layers, PenLine, Truck, Workflow, Group } from 'lucide-react';
+import { Gift, Heart, Star, Layers, PenLine, Truck, Workflow, Group, ShoppingBag, Check } from 'lucide-react';
 import { IMAGES } from '../assets';
 
 interface PrebuiltBundle {
@@ -20,9 +20,15 @@ interface PrebuiltBundle {
     category: 'relaxation' | 'romantic' | 'energizing' | 'luxury';
 }
 
+// BundleOption removed as unused
+
+
 export const Bundles = () => {
+    // const { addItem } = useLocalCart();
+
+
+
     const [products, setProducts] = useState<Product[]>([]);
-    const [selectedBundle, setSelectedBundle] = useState<string | null>(null);
     const [activeCategory, setActiveCategory] = useState<'all' | 'relaxation' | 'romantic' | 'energizing' | 'luxury'>('all');
 
     useEffect(() => {
@@ -227,7 +233,7 @@ export const Bundles = () => {
                                 { discount: '20%', items: '7+ Items', color: 'text-gold' }
                             ].map((tier, i) => (
                                 <div key={i} className="text-center p-6 bg-black/50 rounded-xl border border-white/5 hover:border-gold/30 transition-colors">
-                                    <div className={`text-4xl font-bold ${tier.color} mb-3 font-playfair`}>{tier.discount} OFF</div>
+                                    <div className={`text - 4xl font - bold ${tier.color} mb - 3 font - playfair`}>{tier.discount} OFF</div>
                                     <p className="text-gray-400 text-sm uppercase tracking-wider">{tier.items}</p>
                                 </div>
                             ))}
@@ -259,11 +265,13 @@ export const Bundles = () => {
                             ].map((category) => (
                                 <button
                                     key={category.id}
-                                    onClick={() => setActiveCategory(category.id as any)}
-                                    className={`px-6 py-3 text-xs uppercase tracking-widest font-medium rounded transition-all duration-300 ${activeCategory === category.id
+                                    onClick={() => setActiveCategory(category.id as 'relaxation' | 'romantic' | 'energizing' | 'luxury')}
+
+
+                                    className={`px - 6 py - 3 text - xs uppercase tracking - widest font - medium rounded transition - all duration - 300 ${activeCategory === category.id
                                         ? 'bg-gold text-black shadow-[0_0_15px_rgba(183,133,43,0.4)]'
                                         : 'bg-transparent border border-white/20 text-gray-400 hover:border-gold hover:text-gold'
-                                        }`}
+                                        } `}
                                 >
                                     {category.label}
                                 </button>
@@ -300,7 +308,7 @@ export const Bundles = () => {
                                     {/* Quick action button overlay */}
                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
                                         <button
-                                            onClick={() => setSelectedBundle(bundle.id)}
+                                            onClick={() => { }}
                                             className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 bg-gold text-black px-6 py-3 rounded font-bold uppercase tracking-wider text-xs hover:bg-white"
                                         >
                                             Quick View
@@ -359,7 +367,7 @@ export const Bundles = () => {
                                         </div>
 
                                         <button
-                                            onClick={() => setSelectedBundle(bundle.id)}
+                                            onClick={() => { }}
                                             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-black transition-colors"
                                             aria-label="Add to cart"
                                         >

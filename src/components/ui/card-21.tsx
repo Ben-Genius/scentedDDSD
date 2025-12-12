@@ -19,7 +19,7 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
       <div
         ref={ref}
         style={{
-          // @ts-ignore - CSS custom properties are valid
+          
           "--theme-color": themeColor,
         } as React.CSSProperties}
         className={cn("group w-full h-full", className)}
@@ -32,7 +32,7 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
                      group-hover:scale-105 group-hover:shadow-[0_0_60px_-15px_hsl(var(--theme-color)/0.6)]"
           aria-label={`Explore details for ${location}`}
           style={{
-             boxShadow: `0 0 40px -15px hsl(var(--theme-color) / 0.5)`
+            boxShadow: `0 0 40px -15px hsl(var(--theme-color) / 0.5)`
           }}
         >
           {/* Background Image with Parallax Zoom */}
@@ -49,7 +49,7 @@ const DestinationCard = React.forwardRef<HTMLDivElement, DestinationCardProps>(
               background: `linear-gradient(to top, hsl(var(--theme-color) / 0.9), hsl(var(--theme-color) / 0.6) 30%, transparent 60%)`,
             }}
           />
-          
+
           {/* Content */}
           <div className="relative flex flex-col justify-end h-full p-6 text-white">
             <h3 className="text-3xl font-bold tracking-tight">

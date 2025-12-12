@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Product, ProductVariant, ColorVariant } from '../types';
+import React, { useState } from 'react';
+import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { SizeSelector } from './SizeSelector';
@@ -24,14 +24,15 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
     const selectedVariant = product.variants.find(v => v.id === selectedVariantId) || product.variants[0];
     const selectedColor = product.images.colorVariants.find(c => c.colorId === selectedColorId);
 
-    // Effect: Update image when color changes
-    useEffect(() => {
-        if (selectedColor) {
-            setActiveImage(selectedColor.image);
+    const handleColorChange = (colorId: string) => {
+        setSelectedColorId(colorId);
+        const color = product.images.colorVariants.find(c => c.colorId === colorId);
+        if (color) {
+            setActiveImage(color.image);
         } else {
             setActiveImage(product.images.default);
         }
-    }, [selectedColor, product.images.default]);
+    };
 
     // Price Calculation
     const calculatePrice = () => {
@@ -141,7 +142,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                                 <ColorSwitcher
                                     colors={product.images.colorVariants}
                                     selectedColorId={selectedColorId}
-                                    onChange={setSelectedColorId}
+                                    onChange={handleColorChange}
                                 />
                             </div>
                         )}

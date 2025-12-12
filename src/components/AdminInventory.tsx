@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getProducts, getOrders } from '../lib/api';
 import { Product, Order } from '../types';
 import { formatMoney } from '../utils/formatMoney';
-import { Edit2, Trash2, Plus, X, Save, Eye, Package, ShoppingBag, TrendingUp, DollarSign } from 'lucide-react';
+import { Edit2, Trash2, Plus, X, Save, Package, ShoppingBag, TrendingUp, DollarSign } from 'lucide-react';
 
 export const AdminInventory = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -39,7 +39,7 @@ export const AdminInventory = () => {
     // CRUD Operations
     const openCreateModal = () => {
         setEditingProduct({
-            id: `prod-${Date.now()}`,
+            id: `prod - ${Date.now()} `,
             title: '',
             slug: '',
             category: 'watches',
@@ -199,8 +199,8 @@ export const AdminInventory = () => {
                     <div className="flex gap-8">
                         <button
                             onClick={() => setActiveTab('inventory')}
-                            className={`pb-4 px-2 text-sm uppercase tracking-wider font-medium transition-colors relative ${activeTab === 'inventory' ? 'text-gold' : 'text-gray-500 hover:text-white'
-                                }`}
+                            className={`pb - 4 px - 2 text - sm uppercase tracking - wider font - medium transition - colors relative ${activeTab === 'inventory' ? 'text-gold' : 'text-gray-500 hover:text-white'
+                                } `}
                         >
                             Inventory
                             {activeTab === 'inventory' && (
@@ -209,8 +209,8 @@ export const AdminInventory = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('orders')}
-                            className={`pb-4 px-2 text-sm uppercase tracking-wider font-medium transition-colors relative ${activeTab === 'orders' ? 'text-gold' : 'text-gray-500 hover:text-white'
-                                }`}
+                            className={`pb - 4 px - 2 text - sm uppercase tracking - wider font - medium transition - colors relative ${activeTab === 'orders' ? 'text-gold' : 'text-gray-500 hover:text-white'
+                                } `}
                         >
                             Orders
                             {activeTab === 'orders' && (
@@ -219,8 +219,8 @@ export const AdminInventory = () => {
                         </button>
                         <button
                             onClick={() => setActiveTab('analytics')}
-                            className={`pb-4 px-2 text-sm uppercase tracking-wider font-medium transition-colors relative ${activeTab === 'analytics' ? 'text-gold' : 'text-gray-500 hover:text-white'
-                                }`}
+                            className={`pb - 4 px - 2 text - sm uppercase tracking - wider font - medium transition - colors relative ${activeTab === 'analytics' ? 'text-gold' : 'text-gray-500 hover:text-white'
+                                } `}
                         >
                             Analytics
                             {activeTab === 'analytics' && (
@@ -285,8 +285,8 @@ export const AdminInventory = () => {
                                                         type="number"
                                                         value={p.stock}
                                                         onChange={(e) => updateStock(p.id, parseInt(e.target.value) || 0)}
-                                                        className={`w-20 bg-black border px-2 py-1 rounded text-white outline-none focus:border-gold ${p.stock < 5 ? 'border-red-500' : 'border-white/10'
-                                                            }`}
+                                                        className={`w - 20 bg - black border px - 2 py - 1 rounded text - white outline - none focus: border - gold ${p.stock < 5 ? 'border-red-500' : 'border-white/10'
+                                                            } `}
                                                     />
                                                     {p.stock < 5 && (
                                                         <span className="text-red-400 text-xs ml-2">Low</span>
@@ -295,8 +295,8 @@ export const AdminInventory = () => {
                                                 <td className="p-4">
                                                     <button
                                                         onClick={() => toggleFeatured(p.id)}
-                                                        className={`w-5 h-5 rounded-full border-2 transition-all ${p.featured ? 'bg-gold border-gold' : 'bg-transparent border-gray-600'
-                                                            }`}
+                                                        className={`w - 5 h - 5 rounded - full border - 2 transition - all ${p.featured ? 'bg-gold border-gold' : 'bg-transparent border-gray-600'
+                                                            } `}
                                                     />
                                                 </td>
                                                 <td className="p-4">

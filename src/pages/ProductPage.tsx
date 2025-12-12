@@ -11,6 +11,7 @@ export const ProductPage = () => {
 
     useEffect(() => {
         if (slug) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setLoading(true);
             getProductBySlug(slug).then(p => {
                 setProduct(p || null);

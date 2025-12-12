@@ -12,7 +12,7 @@ export const usePayment = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const processPayment = async (method: PaymentMethod, amount: number, details: any): Promise<PaymentResult> => {
+  const processPayment = async (method: PaymentMethod, amount: number, details: Record<string, unknown>): Promise<PaymentResult> => {
     setIsProcessing(true);
     setError(null);
 

@@ -4,9 +4,7 @@ import { ProductGrid } from '../components/ProductGrid';
 import { MarketingMarquee } from '../components/MarketingMarquee';
 import { getProducts } from '../lib/api';
 import { Product } from '../types';
-import { IMAGES } from '@/assets';
 import FeatureSection from '@/components/Featured';
-import { NewArrivals } from '../components/NewArrivals';
 import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
 import { Testimonials } from '../components/Testimonials';
 

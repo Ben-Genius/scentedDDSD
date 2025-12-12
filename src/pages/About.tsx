@@ -36,7 +36,9 @@ export const About: React.FC<AboutProps> = ({
                         onLoadedMetadata={(e) => {
                             try {
                                 (e.target as HTMLVideoElement).playbackRate = 0.6;
-                            } catch { }
+                            } catch {
+                                // ignore
+                            }
                         }}
                     />
                 ) : (
@@ -208,6 +210,7 @@ export const About: React.FC<AboutProps> = ({
                         </ul>
                     </div>
 
+
                     <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                         <img
                             src={IMAGES.soap}
@@ -234,6 +237,6 @@ export const About: React.FC<AboutProps> = ({
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     );
 };

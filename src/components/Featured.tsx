@@ -35,14 +35,7 @@ const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
         return () => clearTimeout(timer);
     });
 
-    const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-        <div className="flex flex-col items-center mx-2 md:mx-4">
-            <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-3xl md:text-5xl font-bold w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg">
-                {String(value).padStart(2, '0')}
-            </div>
-            <span className="text-gold text-xs uppercase tracking-widest mt-2">{label}</span>
-        </div>
-    );
+
 
     return (
         <div className="flex flex-wrap justify-center mt-8 mb-10">
@@ -62,7 +55,7 @@ export const FeatureSection = () => {
     return (
         <section className="relative py-32 overflow-hidden">
             {/* Background Image */}
-            
+
             <div className="absolute inset-0">
                 <img
                     src={IMAGES.allprod3}
@@ -71,7 +64,7 @@ export const FeatureSection = () => {
                 />
                 <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
             </div>
-                        <span className="block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
+            <span className="block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
 
             {/* Content of Featured Section */}
             <div className="container mx-auto px-4 relative z-10 text-center">
@@ -97,5 +90,14 @@ export const FeatureSection = () => {
         </section>
     );
 };
+
+const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+    <div className="flex flex-col items-center mx-2 md:mx-4">
+        <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-3xl md:text-5xl font-bold w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg">
+            {String(value).padStart(2, '0')}
+        </div>
+        <span className="text-gold text-xs uppercase tracking-widest mt-2">{label}</span>
+    </div>
+);
 
 export default FeatureSection;

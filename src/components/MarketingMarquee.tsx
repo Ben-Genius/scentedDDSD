@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
@@ -26,7 +26,7 @@ function Marquee({
             )}
             style={
                 {
-                    "--duration": `${speed}s`,
+                    "--duration": `${speed} s`,
                 } as React.CSSProperties
             }
         >
@@ -148,12 +148,12 @@ export const MarketingMarquee = () => {
                         <Marquee speed={50} reverse className="[--gap:1.5rem]">
                             {marqueeImages1.map((src, idx) => (
                                 <div
-                                    key={`m1-${idx}`}
+                                    key={`m1 - ${idx} `}
                                     className="relative w-64 h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-lg border border-white/10"
                                 >
                                     <img
                                         src={src}
-                                        alt={`Product ${idx + 1}`}
+                                        alt={`Product ${idx + 1} `}
                                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />
@@ -163,12 +163,12 @@ export const MarketingMarquee = () => {
                         <Marquee speed={45} className="[--gap:1.5rem]">
                             {marqueeImages2.map((src, idx) => (
                                 <div
-                                    key={`m2-${idx}`}
+                                    key={`m2 - ${idx} `}
                                     className="relative w-64 h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-lg border border-white/10"
                                 >
                                     <img
                                         src={src}
-                                        alt={`Product ${idx + 5}`}
+                                        alt={`Product ${idx + 5} `}
                                         className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />

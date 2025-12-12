@@ -5,28 +5,22 @@ import { Product, ProductVariant } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import { ShopProductCard } from '../components/ShopProductCard';
 import {
-    Sparkles,
-    Star,
-    TrendingUp,
     Filter,
     X,
     ShoppingCart,
-    ArrowRight,
-    Gift,
-    Bell,
-    Instagram,
-    ChevronDown,
-    Check,
-    Zap,
     Search,
     Facebook,
     MessageCircle,
-    Music
+    Music,
+    Instagram,
+    Check,
+    Star
 } from 'lucide-react';
 
 export const Shop = () => {
     const [products, setProducts] = useState<Product[]>([]);
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+    // filteredProducts is now derived
+
     const [activeProduct, setActiveProduct] = useState<Product | null>(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
@@ -40,26 +34,26 @@ export const Shop = () => {
     const [sortBy, setSortBy] = useState<string>('newest');
     const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
 
-    // Email capture
-    const [email, setEmail] = useState('');
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
+
 
     useEffect(() => {
         getProducts().then((prods) => {
             setProducts(prods);
-            setFilteredProducts(prods);
+            setProducts(prods);
+            // setFilteredProducts removed
+
         });
     }, []);
 
     // Sync state to URL
     useEffect(() => {
-        const params: any = {};
+        const params: Record<string, string> = {};
         if (categoryFilter && categoryFilter !== 'all') params.category = categoryFilter;
         setSearchParams(params);
     }, [categoryFilter, setSearchParams]);
 
     // Apply Filters
-    useEffect(() => {
+    const filteredProducts = React.useMemo(() => {
         let filtered = [...products];
 
         // Category filter
@@ -99,7 +93,7 @@ export const Shop = () => {
                 break;
         }
 
-        setFilteredProducts(filtered);
+        return filtered;
     }, [categoryFilter, scentFilter, sortBy, priceRange, products]);
 
     const openQuickAdd = (product: Product) => {
@@ -123,15 +117,7 @@ export const Shop = () => {
         closeDrawer();
     };
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Email submitted:', email);
-        setEmailSubmitted(true);
-        setTimeout(() => {
-            setEmail('');
-            setEmailSubmitted(false);
-        }, 3000);
-    };
+
 
     const currentPrice = selectedVariant?.priceGHS || activeProduct?.basePrice || 0;
 
@@ -508,13 +494,9 @@ export const Shop = () => {
 
 // Product Card Component (Same as NewArrivals but refined styles if needed)
 const ProductCard = ({ product, index, onQuickAdd }: { product: Product; index: number; onQuickAdd: () => void }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
         <article
             className="group relative bg-[#111] border border-white/5 rounded-xl overflow-hidden hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             style={{ animationDelay: `${index * 50}ms` }}
         >
             <div className="relative aspect-square overflow-hidden bg-gray-900">

@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { formatMoney } from '../utils/formatMoney';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
 
 interface CartDrawerProps {
     isOpen: boolean;
@@ -11,7 +10,7 @@ interface CartDrawerProps {
 }
 
 export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
-    const { items, removeItem, updateItemQuantity, getCartTotal, clearCart } = useLocalCart();
+    const { items, removeItem, updateItemQuantity, getCartTotal } = useLocalCart();
     const navigate = useNavigate();
     const total = getCartTotal();
 

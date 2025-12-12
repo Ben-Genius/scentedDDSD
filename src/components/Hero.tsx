@@ -27,7 +27,7 @@ export const Hero = () => {
                     Handcrafted candles, diffusers, and essential oils designed to transform your environment into a sanctuary of calm and opulence.
                 </p>
 
-                <div className="flex gap-4 animate-fade-in-up delay-300">
+                <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
                     <Link
                         to="/shop"
                         className="px-8 py-4 bg-gold text-black font-medium text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300 transform hover:scale-105 rounded-md"

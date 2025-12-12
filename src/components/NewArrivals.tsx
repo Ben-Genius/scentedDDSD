@@ -24,7 +24,8 @@ import {
 
 export const NewArrivals = () => {
     const [products, setProducts] = useState<Product[]>([]);
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+    // filteredProducts is now derived
+
     const [activeProduct, setActiveProduct] = useState<Product | null>(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
@@ -47,11 +48,12 @@ export const NewArrivals = () => {
             // For now, we take the first 12 as "New Arrivals" or filter by featured
             const newProducts = prods.filter(p => p.featured || p.stock > 0).slice(0, 12);
             setProducts(newProducts);
-            setFilteredProducts(newProducts);
+            // setFilteredProducts removed
+
         });
     }, []);
 
-    useEffect(() => {
+    const filteredProducts = React.useMemo(() => {
         let filtered = [...products];
 
         // Category filter
@@ -81,8 +83,8 @@ export const NewArrivals = () => {
                 break;
         }
 
-        setFilteredProducts(filtered);
-    }, [categoryFilter, scentFilter, sortBy, priceRange, products]);
+        return filtered;
+    }, [categoryFilter, sortBy, priceRange, products]);
 
     const openQuickAdd = (product: Product) => {
         setActiveProduct(product);
@@ -627,16 +629,10 @@ export const NewArrivals = () => {
 
 // Product Card Component
 const ProductCard = ({ product, index, onQuickAdd }: { product: Product; index: number; onQuickAdd: () => void }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
         <article
-            className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-gold/50 transition-all duration-500"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            style={{
-                animationDelay: `${index * 50}ms`
-            }}
+            className="group relative bg-[#111] border border-white/5 rounded-xl overflow-hidden hover:border-gold/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10"
+            style={{ animationDelay: `${index * 50}ms` }}
         >
             {/* Image Container */}
             <div className="relative aspect-square bg-gradient-to-br from-gold/10 to-black overflow-hidden">
