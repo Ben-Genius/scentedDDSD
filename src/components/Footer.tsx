@@ -1,3 +1,4 @@
+import { IMAGES } from '@/assets';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ export const Footer = () => {
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div className="col-span-1 md:col-span-1">
                     <Link to="/" className="text-2xl font-playfair font-bold text-gold mb-6 block">
-                        SCENTED <span className="block text-white text-xs font-inter tracking-[0.3em] mt-1">BY DDSD</span>
+                        <img src={IMAGES.logo1} alt="Logo" className="w-34 h-34 object-cover" />
                     </Link>
                     <p className="text-gray-400 text-sm leading-relaxed">
                         Experience luxury through scent. Handcrafted essentials for your home and lifestyle.
