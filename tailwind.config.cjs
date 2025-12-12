@@ -25,14 +25,19 @@ module.exports = {
       backgroundImage: {
         'metallic-gradient': 'linear-gradient(135deg, #B7852B 0%, #F5E0A3 50%, #B7852B 100%)',
       },
+      animation: {
+        marquee: 'marquee var(--duration) linear infinite',
+        'slide-in-right': 'slideInRight 0.3s ease-out',
+      },
       keyframes: {
         marquee: {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-100% - var(--gap)))' },
         },
-      },
-      animation: {
-        marquee: 'marquee var(--duration) linear infinite',
+        slideInRight: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
     },
   },

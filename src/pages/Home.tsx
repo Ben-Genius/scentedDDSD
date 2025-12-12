@@ -6,6 +6,8 @@ import { getProducts } from '../lib/api';
 import { Product } from '../types';
 import { IMAGES } from '@/assets';
 import FeatureSection from '@/components/Featured';
+import { NewArrivals } from '../components/NewArrivals';
+import { Testimonials } from '../components/Testimonials';
 
 export const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -24,6 +26,7 @@ export const Home = () => {
 
                 <MarketingMarquee />
 
+
                 <div className='flex flex-col items-center justify-center text-center'>
                     <span className="block text-gold text-xs uppercase tracking-[0.4em]  font-inter">
                         Holiday Exclusive
@@ -31,7 +34,7 @@ export const Home = () => {
 
                     <h2 className="text-4xl md:text-5xl font-playfair text-white mb-2 leading-tight">
                         Christmas Sale  <br />
-                        
+
                         <span className="mt-3 block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
 
                         <div className="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
@@ -39,8 +42,8 @@ export const Home = () => {
                     </h2>
 
                 </div>
-                <FeatureSection
-                />
+                <FeatureSection />
+                <Testimonials />
 
             </div>
         </>

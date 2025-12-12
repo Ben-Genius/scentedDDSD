@@ -145,7 +145,7 @@ export const MarketingMarquee = () => {
                         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
                         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-                        <Marquee speed={40} reverse className="[--gap:1.5rem]">
+                        <Marquee speed={50} reverse className="[--gap:1.5rem]">
                             {marqueeImages1.map((src, idx) => (
                                 <div
                                     key={`m1-${idx}`}
