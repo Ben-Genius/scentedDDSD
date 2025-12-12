@@ -10,7 +10,7 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings 0",
     "test": "echo \"No tests\" && exit 0",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md,css}\"",
-    "predeploy": "npm run build",
+    "predeploy": "tsc && vite build --base=/scentedDDSD/",
     "deploy": "gh-pages -d dist",
     "prepare": "husky"
   },
