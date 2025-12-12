@@ -25,8 +25,8 @@ export interface Product {
   title: string;
   slug: string;
   category: string;
-  shortDescription: string;
-  longDescription: string;
+  shortDescription?: string;
+  longDescription?: string;
   images: ProductImages;
   variants: ProductVariant[];
   scents: string[];
@@ -36,6 +36,8 @@ export interface Product {
   stock: number;
   featured: boolean;
   basePrice: number; // Base price before variants (if needed) or just use variant price
+  specs?: Record<string, string>;
+  description?: string;
 }
 
 export interface CartItem {
@@ -67,6 +69,6 @@ export interface Order {
   total: number;
   contact: UserContact;
   date: string;
-  status: 'pending' | 'paid' | 'shipped';
+  status: 'pending' | 'paid' | 'shipped' | 'processing' | 'delivered' | 'cancelled';
   paymentMethod: string;
 }

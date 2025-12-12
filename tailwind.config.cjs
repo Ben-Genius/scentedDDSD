@@ -25,6 +25,15 @@ module.exports = {
       backgroundImage: {
         'metallic-gradient': 'linear-gradient(135deg, #B7852B 0%, #F5E0A3 50%, #B7852B 100%)',
       },
+      keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - var(--gap)))' },
+        },
+      },
+      animation: {
+        marquee: 'marquee var(--duration) linear infinite',
+      },
     },
   },
   plugins: [],

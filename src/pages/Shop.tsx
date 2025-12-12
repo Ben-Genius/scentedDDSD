@@ -33,9 +33,9 @@ export const Shop = () => {
 
     return (
         <div className="container mx-auto px-4 py-8 pt-24">
-            <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex flex-col md:flex-row gap-2">
                 {/* Sidebar Filters */}
-                <div className="w-full md:w-64 flex-shrink-0">
+                <div className="w-full md:w-48 flex-shrink-0">
                     <h3 className="text-gold font-playfair text-xl mb-4">Categories</h3>
                     <ul className="space-y-2">
                         <li>
@@ -61,8 +61,8 @@ export const Shop = () => {
 
                 {/* Grid */}
                 <div className="flex-grow">
-                    <h1 className="text-3xl font-playfair text-white mb-8">{categoryFilter || 'All Products'}</h1>
-                    <ProductGrid products={filteredProducts} />
+                    <h1 className="text-3xl font-playfair text-white ">{categoryFilter || 'All Products'}</h1>
+                    <ProductGrid products={filteredProducts} variant="shop" />
                 </div>
             </div>
         </div>

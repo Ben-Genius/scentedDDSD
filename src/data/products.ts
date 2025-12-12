@@ -186,27 +186,7 @@ export const products: Product[] = [
     ],
     scents: ["Spiced Apple", "Winter Forest", "Cinnamon"]
   },
-  {
-    id: "p9",
-    title: "Gold Flake Hand Wash",
-    slug: "gold-flake-hand-wash",
-    category: "Hand Gel",
-    shortDescription: "Luxurious hand wash with real gold.",
-    longDescription: "Gentle cleansing with a touch of opulence.",
-    basePrice: 50,
-    stock: 90,
-    featured: true,
-    images: {
-      default: IMAGES.soap,
-      gallery: [],
-      colorVariants: []
-    },
-    variants: [
-      { id: "v9-md", label: "Classic", sizeMl: "250ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 50 },
-      { id: "v9-lg", label: "Grande", sizeMl: "500ml", sizeLabel: "Grande", multiplier: 1.8, priceGHS: 85 }
-    ],
-    scents: ["Amber", "Sandalwood"]
-  },
+
   {
     id: "p10",
     title: "Refreshing Body Scrub",
