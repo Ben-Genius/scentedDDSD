@@ -9,21 +9,21 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-black z-0">
                 <div className="absolute inset-0 bg-metallic-gradient opacity-10 mix-blend-overlay" />
                 <div
-                    className="absolute inset-0 opacity-30 bg-cover bg-center"
+                    className="absolute inset-0 opacity-90 bg-cover bg-center"
                     style={{ backgroundImage: `url(${IMAGES.hero})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10 flex flex-col justify-center h-full max-w-4xl">
-                <h2 className="text-gold text-sm tracking-[0.5em] uppercase font-inter mb-4 animate-fade-in-up">The Essence of Luxury</h2>
-                <h1 className="text-5xl md:text-7xl font-playfair text-white leading-tight mb-8 animate-fade-in-up delay-100">
+                <h2 className="text-gold text-sm tracking-[0.5em] uppercase font-inter mb-4 animate-fade-in-up drop-shadow-md">The Essence of Luxury</h2>
+                <h1 className="text-5xl md:text-7xl font-playfair text-white leading-tight mb-8 animate-fade-in-up delay-100 drop-shadow-lg">
                     Elevate Your Space with <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7852B] via-[#F5E0A3] to-[#B7852B] animate-shimmer bg-[size:200%_auto]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7852B] via-[#F5E0A3] to-[#B7852B] animate-shimmer bg-[size:200%_auto] drop-shadow-sm">
                         Timeless Scents
                     </span>
                 </h1>
-                <p className="text-gray-300 text-lg md:text-xl max-w-2xl font-light mb-10 leading-relaxed animate-fade-in-up delay-200">
+                <p className="text-gray-100 text-lg md:text-xl max-w-2xl font-light mb-10 leading-relaxed animate-fade-in-up delay-200 drop-shadow-md">
                     Handcrafted candles, diffusers, and essential oils designed to transform your environment into a sanctuary of calm and opulence.
                 </p>
 

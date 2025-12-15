@@ -3,6 +3,12 @@
 @theme {
   --color-gold-50: #f6efe0;
   --color-gold-100: #eee0c1;
+ --color-champagne: #F7E6CA;
+  --color-champagne-50: #FDFCF8;
+  --color-champagne-100: #FAF5EB;
+  --color-champagne-200: #F5E6D3;
+  --color-champagne-300: #fbab42ff;
+  --color-rose: #B76E79;
   --color-gold: #B7852B;
   --color-black: #0B0B0B;
 
@@ -36,7 +42,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
+
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
@@ -47,7 +53,7 @@
 }
 
 @utility bg-metallic-gradient {
-  background: linear-gradient(135deg, #B7852B 0%, #F5E0A3 50%, #B7852B 100%);
+  background: transparent;
 }
 
 @utility text-metallic-shimmer {

@@ -38,11 +38,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 className="block"
             >
                 {/* Image Container */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#111] mb-6
-                               shadow-[0_8px_30px_-10px_rgba(0,0,0,0.4)]
+                <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-black/90 mb-6
                                transition-all duration-500 ease-in-out
                                group-hover:scale-[1.02]
-                               group-hover:shadow-[0_0_60px_-15px_hsl(var(--theme-color)/0.6)]">
+                             ">
 
                     {/* Background Image with Parallax Effect */}
                     <img
@@ -70,7 +69,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                         <span className="px-6 py-3 bg-white/10 backdrop-blur-sm 
                                        border border-white/30 text-white text-xs 
                                        uppercase tracking-widest 
-                                       hover:bg-gold hover:border-gold hover:text-black 
+                                       hover:bg-gold hover:border-gold hover:text-white 
                                        transition-colors duration-300">
                             View Product
                         </span>
@@ -81,8 +80,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 <div className="text-center space-y-2">
                     {/* Category Tag */}
                     <p
-                        className="text-[10px] uppercase tracking-[0.2em] font-medium 
-                                 opacity-80 group-hover:opacity-100 transition-opacity"
+                        className="text-[10px] uppercase tracking-[0.2em] font-semibold 
+                                 opacity-90 group-hover:opacity-100 transition-opacity"
                         style={{
                             color: `hsl(var(--theme-color))`,
                         }}
@@ -91,23 +90,18 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                     </p>
 
                     {/* Product Title */}
-                    <h3 className="text-xl font-playfair text-white 
+                    <h3 className="text-xl font-playfair text-gold 
                                  transition-colors duration-300"
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.color = `hsl(var(--theme-color))`;
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.color = 'white';
-                        }}
+            
                     >
                         {product.title}
                     </h3>
 
                     {/* Price */}
-                    <p className="text-gray-400 text-sm font-light tracking-wide">
+                    <p className="text-gray-500 text-sm font-medium tracking-wide">
                         <span
-                            className="mr-2 opacity-60"
-                            style={{ color: `hsl(var(--theme-color))` }}
+                            className="mr-2 text-gold "
+
                         >
                             From
                         </span>

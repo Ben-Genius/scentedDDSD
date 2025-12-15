@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-inter selection:bg-gold selection:text-black">
+    <div className="min-h-screen text-white flex flex-col font-inter selection:bg-gold selection:text-black">
       <Header />
       <main className="flex-grow relative z-10">
         {children}

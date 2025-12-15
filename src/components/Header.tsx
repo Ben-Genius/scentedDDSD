@@ -17,7 +17,7 @@ export const Header = () => {
     ];
 
     return (
-        <header className="sticky top-0 z-40 w-full bg-black/95 backdrop-blur-sm border-b border-gold/20 transition-all duration-300">
+        <header className="sticky top-0 z-40 w-full bg-champagne backdrop-blur-sm  transition-all duration-300">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 {/* Mobile Menu Button */}
                 <button
@@ -29,7 +29,7 @@ export const Header = () => {
 
                 {/* Logo */}
                 <Link to="/" className="text-2xl font-playfair font-bold text-gold tracking-wider hover:opacity-80 transition-opacity">
-                    <img src={IMAGES.logo1} alt="Logo" className="w-30 h-24 mx-auto object-contain" />
+                    <img src={IMAGES.logo} alt="Logo" className="w-40 h-24 mx-auto object-contain " />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -39,8 +39,8 @@ export const Header = () => {
                             key={link.name}
                             to={link.path}
                             className={({ isActive }) => cn(
-                                "text-sm uppercase tracking-widest transition-colors duration-200 hover:text-gold ",
-                                isActive ? "text-gold font-medium" : "text-gray-300"
+                                "text-sm uppercase tracking-widest transition-colors duration-200 hover:text-gold-200 ",
+                                isActive ? "text-gold font-medium" : "text-gold"
                             )}
                         >
                             {link.name}

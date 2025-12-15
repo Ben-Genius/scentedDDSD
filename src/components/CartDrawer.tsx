@@ -47,8 +47,8 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
 
             {/* Drawer */}
             <div className={cn(
-                "fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#0F0F0F] border-l border-gold/10 z-50 transform transition-transform duration-300 ease-in-out shadow-[-10px_0_30px_rgba(0,0,0,0.8)]",
-                isOpen ? "translate-x-0" : "translate-x-full"
+                "fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#0F0F0F] border-l border-gold/10 z-50 transform transition-transform duration-300 ease-in-out",
+                isOpen ? "translate-x-0 shadow-[-10px_0_30px_rgba(0,0,0,0.8)]" : "translate-x-full"
             )}>
                 <div className="h-full flex flex-col p-6">
                     <div className="flex justify-between items-center mb-6">

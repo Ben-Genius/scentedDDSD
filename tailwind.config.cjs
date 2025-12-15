@@ -11,10 +11,20 @@ module.exports = {
     },
     extend: {
       colors: {
+        champagne: {
+          DEFAULT: '#F7E6CA',
+          50: '#FDFCF8',
+          100: '#FAF5EB',
+          200: '#F5E6D3', // Darker champagne for accents
+          300: '#fbab42ff', // Darker champagne for accents
+        
+     
+        },
         gold: {
           DEFAULT: '#B7852B',
           50: '#f6efe0',
           100: '#eee0c1',
+          200: '#B7852B',
         },
         black: '#0B0B0B',
       },

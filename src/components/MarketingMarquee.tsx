@@ -108,7 +108,7 @@ function ScrambleButton() {
         <Link to="/shop">
             <button
                 onMouseEnter={scramble}
-                className="px-8 py-3 bg-white text-black rounded-sm font-semibold hover:bg-gold hover:text-white transition-colors duration-300 uppercase tracking-widest text-sm"
+                className="px-8 py-3 bg-rose text-white rounded-sm font-semibold hover:bg-rose hover:text-white transition-colors duration-300 uppercase tracking-widest text-sm"
             >
                 {displayText}
             </button>
@@ -118,17 +118,17 @@ function ScrambleButton() {
 
 export const MarketingMarquee = () => {
     return (
-        <div className="py-20 bg-background text-foreground flex items-center overflow-hidden border-white/5 relative bg-black">
-            <div className="w-full container mx-auto px-4">
+        <div className="py-20 bg-champagne-100 text-foreground flex items-center overflow-hidden border-white/5 relative">
+            <div className="w-full px-12 max-w-[109rem]  mx-auto">
                 <div className="flex flex-col lg:flex-row items-center lg:gap-12">
                     {/* Left Content */}
                     <div className="flex-shrink-0 space-y-8 px-6 lg:px-0 py-12 lg:py-0 lg:max-w-xl text-center lg:text-left">
                         <div>
                             <span className="block text-gold text-xs uppercase tracking-[0.4em] mb-4 font-inter">Handcrafted in Ghana</span>
-                            <h2 className="text-4xl md:text-5xl font-playfair text-white mb-6 leading-tight">
+                            <h2 className="text-4xl md:text-5xl font-playfair text-rose mb-6 leading-tight">
                                 The Essence of <br /> Luxury Scents
                             </h2>
-                            <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                            <p className="text-gray-600 text-md leading-relaxed max-w-md mx-auto lg:mx-0">
                                 Scented by DDSD brings you an exquisite selection of home fragrances.
                                 Blending modern aesthetics with timeless aromas to elevate your sensory experience.
                             </p>
@@ -142,8 +142,8 @@ export const MarketingMarquee = () => {
                     {/* Right Marquee Grid */}
                     <div className="flex-1 w-full lg:w-auto space-y-6 overflow-hidden mt-12 lg:mt-0 relative">
                         {/* Gradient masks for smooth fade edges */}
-                        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-                        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-champagne-50 to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-champagne-50 to-transparent z-10 pointer-events-none" />
 
                         <Marquee speed={50} reverse className="[--gap:1.5rem]">
                             {marqueeImages1.map((src, idx) => (
@@ -154,7 +154,7 @@ export const MarketingMarquee = () => {
                                     <img
                                         src={src}
                                         alt={`Product ${idx + 1} `}
-                                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
+                                        className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />
                                 </div>
@@ -169,7 +169,7 @@ export const MarketingMarquee = () => {
                                     <img
                                         src={src}
                                         alt={`Product ${idx + 5} `}
-                                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
+                                        className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />
                                 </div>
