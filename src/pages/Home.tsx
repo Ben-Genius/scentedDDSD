@@ -9,6 +9,7 @@ import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
 import { Testimonials } from '../components/Testimonials';
 import { Link } from 'react-router-dom';
 import { IMAGES } from '@/assets';
+import { motion } from "motion/react";
 
 interface TimeLeft {
     days: number;
@@ -28,14 +29,14 @@ export const Home = () => {
 
 
     const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-        <div className="flex flex-col items-center mx-2 md:mx-4">
-            <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-3xl md:text-5xl font-bold w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg">
+        <div className="flex flex-col items-center mx-1 md:mx-4">
+            <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-xl md:text-5xl font-bold w-12 h-12 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg transition-transform hover:scale-105">
                 {String(value).padStart(2, '0')}
             </div>
-            <span className="text-gold text-xs uppercase tracking-widest mt-2">{label}</span>
+            <span className="text-gold text-[10px] md:text-xs uppercase tracking-widest mt-2">{label}</span>
         </div>
     );
-    
+
     const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
         const calculateTimeLeft = (): TimeLeft => {
             const difference = +targetDate - +new Date();
@@ -63,7 +64,7 @@ export const Home = () => {
         });
 
         return (
-            <div className="flex flex-wrap justify-center mt-8 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-0 mt-8 mb-10">
                 <TimeUnit value={timeLeft.days} label="Days" />
                 <TimeUnit value={timeLeft.hours} label="Hours" />
                 <TimeUnit value={timeLeft.minutes} label="Mins" />
@@ -71,68 +72,115 @@ export const Home = () => {
             </div>
         );
     };
+
+    const fadeInUp = {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: "-50px" },
+        transition: { duration: 0.6, ease: "easeOut" }
+    } as const;
+
     return (
-        <>
+        <div className="overflow-x-hidden">
             <Hero />
-            <div className="bg-champagne-100  relative z-10">
-                <ProductGrid products={featuredProducts} title="Featured Collections" />
-                <div className='flex flex-col items-center justify-center text-center '>
-                    <span className="block text-gold text-xs uppercase tracking-[0.4em]  font-inter">
+            <div className="bg-champagne-100 relative z-10 space-y-16 md:space-y-24 pb-20">
+
+                <motion.div {...fadeInUp}>
+                    <ProductGrid products={featuredProducts} title="Featured Collections" />
+                </motion.div>
+
+                <motion.div
+                    {...fadeInUp}
+                    className='flex flex-col items-center justify-center text-center px-4'
+                >
+                    <span className="block text-gold text-xs uppercase tracking-[0.4em] font-inter mb-2">
                         Holiday Exclusive
                     </span>
 
-                    <h2 className="text-4xl md:text-5xl font-playfair text-rose mb-2 leading-tight">
-                        Christmas Sale  <br />
-
-                        <span className="mt-3 block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
-
-                        <div className="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
-
+                    <h2 className="text-3xl md:text-5xl font-playfair text-rose mb-4 leading-tight">
+                        Christmas Sale
                     </h2>
 
-                </div>
+                    <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
+                </motion.div>
+
                 {/* Christmas Sale Section */}
-                <section className="relative py-32 overflow-hidden mb-9">
+                <motion.section
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative py-20 md:py-32 overflow-hidden mx-4 md:mx-8 rounded-2xl shadow-xl"
+                >
                     <div className="absolute inset-0">
                         <img
                             src={IMAGES.allprod3}
                             alt="Christmas Sale Background"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-[20s] hover:scale-110"
                         />
-                        <div className="absolute inset-0 " />
+                        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10 text-center">
-                        <span className="block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
+                        <motion.span
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="block text-gold text-xs md:text-sm uppercase tracking-[0.4em] mb-4 font-inter"
+                        >
+                            Ends In
+                        </motion.span>
 
-                        <p className="text-gray-200 max-w-2xl mx-auto mb-10 text-lg font-light leading-relaxed animate-fade-in-up delay-200 drop-shadow-md">
+                        <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-gray-100 max-w-2xl mx-auto mb-10 text-base md:text-lg font-light leading-relaxed drop-shadow-md"
+                        >
                             Discover the perfect gift for your loved ones. Elevate your holiday season with our handcrafted fragrances,
                             now available at exclusive prices for a limited time.
-                        </p>
+                        </motion.p>
 
-                        <div className="animate-fade-in-up delay-300">
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                        >
                             <CountdownTimer targetDate={new Date(`December 25, ${new Date().getFullYear()} 00:00:00`)} />
-                        </div>
+                        </motion.div>
 
-                        <div className="animate-fade-in-up delay-500">
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                        >
                             <Link
                                 to="/shop"
-                                className="inline-block px-10 py-4 bg-rose text-white font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-rose transition-colors duration-300 rounded-sm"
+                                className="inline-block px-8 py-3 md:px-10 md:py-4 bg-rose text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-rose transition-all duration-300 rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1"
                             >
                                 Shop Now
                             </Link>
-                        </div>
+                        </motion.div>
                     </div>
-                </section>
-                <MarketingMarquee />
+                </motion.section>
 
-                <SimpleNewArrivals />
+                <motion.div {...fadeInUp}>
+                    <MarketingMarquee />
+                </motion.div>
 
-            
-                <FeatureSection />
-                <Testimonials />
+                <motion.div {...fadeInUp}>
+                    <SimpleNewArrivals />
+                </motion.div>
+
+                <motion.div {...fadeInUp}>
+                    <FeatureSection />
+                </motion.div>
+
+                <motion.div {...fadeInUp}>
+                    <Testimonials />
+                </motion.div>
 
             </div>
-        </>
+        </div>
     );
 };

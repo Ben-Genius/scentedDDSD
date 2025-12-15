@@ -82,17 +82,6 @@ const thirdColumn = customerStories.slice(6, 9);
 
 // --- Components ---
 
-const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center mx-2 md:mx-4">
-        <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-3xl md:text-5xl font-bold w-16 h-16 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg">
-            {String(value).padStart(2, '0')}
-        </div>
-        <span className="text-gold text-xs uppercase tracking-widest mt-2">{label}</span>
-    </div>
-);
-
-
-
 export const TestimonialsColumn = (props: {
     className?: string;
     testimonials: Testimonial[];
@@ -116,8 +105,8 @@ export const TestimonialsColumn = (props: {
                     ...new Array(2).fill(0).map((_, index) => (
                         <React.Fragment key={index}>
                             {props.testimonials.map(({ text, image, name, role }, i) => (
-                                <div className="p-8 rounded-xl border border-rose/10 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 max-w-xs w-full" key={i}>
-                                    <div className="text-gray-600 font-light leading-relaxed italic">"{text}"</div>
+                                <div className="p-6 md:p-8 rounded-xl border border-rose/10 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 max-w-xs md:max-w-xs w-full mx-auto" key={i}>
+                                    <div className="text-gray-600 font-light leading-relaxed italic text-sm md:text-base">"{text}"</div>
                                     <div className="flex items-center gap-3 mt-6">
                                         <img
                                             width={40}
@@ -127,8 +116,8 @@ export const TestimonialsColumn = (props: {
                                             className="h-10 w-10 rounded-full border border-gold/30 object-cover"
                                         />
                                         <div className="flex flex-col">
-                                            <div className="font-playfair font-bold text-rose tracking-wide leading-5">{name}</div>
-                                            <div className="leading-5 text-gold text-xs uppercase tracking-wider mt-1">{role}</div>
+                                            <div className="font-playfair font-bold text-rose tracking-wide leading-5 text-sm md:text-base">{name}</div>
+                                            <div className="leading-5 text-gold text-[10px] md:text-xs uppercase tracking-wider mt-1">{role}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -144,17 +133,15 @@ export const TestimonialsColumn = (props: {
 export const Testimonials = () => {
     return (
         <div className="bg-champagne-200">
-           
-
             {/* Testimonials Section */}
-            <section className="bg-champagne-50 py-14 relative overflow-hidden">
+            <section className="bg-champagne-50 py-16 md:py-24 relative overflow-hidden">
                 <div className="container z-10 mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-16"
+                        className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-12 md:mb-16 px-4 text-center"
                     >
                         <div className="flex justify-center ">
                             <div className="block text-gold text-xs uppercase tracking-[0.4em] mb-2 font-inter">
@@ -162,20 +149,18 @@ export const Testimonials = () => {
                             </div>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-playfair text-rose mb-2 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-playfair text-rose mb-3 leading-tight">
                             What our users say
                         </h2>
-                        <p className="text-center text-black font-light text-lg">
+                        <p className="text-center text-gray-600 font-light text-base md:text-lg">
                             See what our customers have to say about the ambiance we create.
                         </p>
                     </motion.div>
 
-                    <div className="flex justify-center gap-6  max-h-[640px] overflow-hidden">
+                    <div className="flex justify-center gap-6 max-h-[500px] md:max-h-[640px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]">
                         <TestimonialsColumn testimonials={firstColumn} duration={15} />
                         <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
                         <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
-                        <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={15} />
-
                     </div>
                 </div>
             </section>

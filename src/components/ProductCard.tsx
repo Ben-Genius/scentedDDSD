@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatMoney } from '../utils/formatMoney';
 import { Product } from '../types';
+import { motion } from "motion/react";
 
 interface ProductCardProps {
     product: Product;
@@ -26,8 +27,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
     const themeColor = getCategoryColor(product.category);
 
+    const item = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <div
+        <motion.div
+            variants={item}
             className="group relative w-full"
             style={{
                 '--theme-color': themeColor,
@@ -38,77 +45,61 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 className="block"
             >
                 {/* Image Container */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-black/90 mb-6
-                               transition-all duration-500 ease-in-out
-                               group-hover:scale-[1.02]
-                             ">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-white/5 mb-4 md:mb-6 shadow-sm group-hover:shadow-md transition-shadow duration-300">
 
-                    {/* Background Image with Parallax Effect */}
+                    {/* Background Image */}
                     <img
                         src={product.images.default}
                         alt={product.title}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 ease-out 
-                                   group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                   group-hover:scale-110 opacity-100"
                     />
 
-                    {/* Featured Badge - Original Style */}
+                    {/* Featured Badge */}
                     {product.featured && (
-                        <span className="absolute top-4 left-4 bg-white/10 backdrop-blur-md 
-                                       border border-white/20 text-white text-[10px] font-medium 
-                                       px-3 py-1 uppercase tracking-[0.2em]">
+                        <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm 
+                                       text-rose text-[10px] font-bold 
+                                       px-3 py-1 uppercase tracking-widest shadow-sm rounded-sm">
                             Featured
                         </span>
                     )}
 
-                    {/* View Product Button - Original Style */}
+                    {/* View Product Button */}
                     <div className="absolute inset-x-0 bottom-6 flex justify-center 
                                   translate-y-4 opacity-0 
                                   group-hover:translate-y-0 group-hover:opacity-100 
-                                  transition-all duration-500 delay-100">
-                        <span className="px-6 py-3 bg-white/10 backdrop-blur-sm 
-                                       border border-white/30 text-white text-xs 
+                                  transition-all duration-300 delay-75">
+                        <span className="px-6 py-3 bg-white text-rose
+                                       text-xs font-bold
                                        uppercase tracking-widest 
-                                       hover:bg-gold hover:border-gold hover:text-white 
-                                       transition-colors duration-300">
+                                       shadow-lg hover:bg-rose hover:text-white 
+                                       transition-colors duration-300 rounded-sm">
                             View Product
                         </span>
                     </div>
                 </div>
 
-                {/* Text Content - Outside Image */}
-                <div className="text-center space-y-2">
+                {/* Text Content */}
+                <div className="text-center space-y-2 px-1">
                     {/* Category Tag */}
-                    <p
-                        className="text-[10px] uppercase tracking-[0.2em] font-semibold 
-                                 opacity-90 group-hover:opacity-100 transition-opacity"
-                        style={{
-                            color: `hsl(var(--theme-color))`,
-                        }}
-                    >
+                    <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-gray-400 group-hover:text-rose transition-colors">
                         {product.category}
                     </p>
 
                     {/* Product Title */}
-                    <h3 className="text-xl font-playfair text-gold 
-                                 transition-colors duration-300"
-            
-                    >
+                    <h3 className="text-lg md:text-xl font-playfair text-gray-900 
+                                 group-hover:text-rose transition-colors duration-300 leading-tight">
                         {product.title}
                     </h3>
 
                     {/* Price */}
                     <p className="text-gray-500 text-sm font-medium tracking-wide">
-                        <span
-                            className="mr-2 text-gold "
-
-                        >
-                            From
-                        </span>
-                        {formatMoney(lowestPrice)}
+                        <span className="mr-2 text-gray-400 text-xs uppercase">From</span>
+                        <span className="text-gold font-bold">{formatMoney(lowestPrice)}</span>
                     </p>
                 </div>
             </Link>
-        </div>
+        </motion.div>
     );
 };

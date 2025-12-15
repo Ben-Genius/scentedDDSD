@@ -288,207 +288,249 @@ export const Shop = () => {
                 )}
             </div>
 
-
-
-            {/* Social Proof */}
-            <div className="container mx-auto px-4 py-20 border-t border-white/5">
-                <div className="text-center mb-12">
-                    <span className="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Community</span>
-                    <h2 className="text-3xl font-playfair text-white">#ScentedByDDSD</h2>
+            <div className="container mx-auto px-4 py-20">
+                <div className="text-center mb-16">
+                    <span className="text-gold text-xs font-bold uppercase tracking-[0.3em] mb-3 block">
+                        Join Our Community
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-playfair text-white mb-4">
+                        #ScentedByDDSD
+                    </h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">
+                        Follow us on social media for behind-the-scenes content, special offers, and inspiration
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {/* Facebook */}
-                    <a
-                        href="https://web.facebook.com/people/ScentedBy-Ddsd/pfbid02asCf1ubE6Pmmtxk2LVcLkSae1NivtRs6hnjuBLkDze2jYGbLPQ1upZ6f3mBNRkixl/?mibextid=2JQ9oc"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative aspect-square bg-[#1877F2]/10 rounded-lg overflow-hidden group cursor-pointer border border-[#1877F2]/20 hover:border-[#1877F2] transition-colors"
-                    >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <Facebook className="w-12 h-12 text-[#1877F2]" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                            <span className="text-white text-xs font-bold uppercase tracking-wider">Follow Us</span>
-                        </div>
-                    </a>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
 
-                    {/* WhatsApp */}
-                    <a
-                        href="https://api.whatsapp.com/send/?phone=233257087042&text&type=phone_number&app_absent=0"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative aspect-square bg-[#25D366]/10 rounded-lg overflow-hidden group cursor-pointer border border-[#25D366]/20 hover:border-[#25D366] transition-colors"
-                    >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <MessageCircle className="w-12 h-12 text-[#25D366]" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                            <span className="text-white text-xs font-bold uppercase tracking-wider">Chat with Us</span>
-                        </div>
-                    </a>
+                  <a
+                    href="https://web.facebook.com/people/ScentedBy-Ddsd/pfbid02asCf1ubE6Pmmtxk2LVcLkSae1NivtRs6hnjuBLkDze2jYGbLPQ1upZ6f3mBNRkixl/?mibextid=2JQ9oc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square bg-gradient-to-br from-[#1877F2]/20 to-[#1877F2]/5 rounded-2xl overflow-hidden border border-[#1877F2]/30 hover:border-[#1877F2] hover:shadow-lg hover:shadow-[#1877F2]/20 transition-all duration-300 hover:scale-105"
+                >
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                        <Facebook className="w-14 h-14 text-[#1877F2] group-hover:scale-110 transition-transform duration-300" />
+                        <span className="text-white text-sm font-medium">Facebook</span>
+                        <span className="text-gray-400 text-xs">Follow for updates</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1877F2] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                        <span className="text-white text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                            Follow Us
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </div>
+                </a>
 
-                    {/* Instagram */}
-                    <a
-                        href="https://www.instagram.com/scented_by_ddsd_/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative aspect-square bg-[#E4405F]/10 rounded-lg overflow-hidden group cursor-pointer border border-[#E4405F]/20 hover:border-[#E4405F] transition-colors"
-                    >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <Instagram className="w-12 h-12 text-[#E4405F]" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                            <span className="text-white text-xs font-bold uppercase tracking-wider">Follow Us</span>
-                        </div>
-                    </a>
-
-                    {/* TikTok */}
-                    <a
-                        href="https://www.tiktok.com/@scentedbyddsd?is_from_webapp=1&sender_device=pc"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative aspect-square bg-[#000000]/30 rounded-lg overflow-hidden group cursor-pointer border border-white/20 hover:border-white transition-colors"
-                    >
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            {/* TikTok doesn't have a direct Lucide icon often, using Video or a path if needed, or stick to Video/Music for now since I can't import custom svgs easily here without creating files. Using Music for now. */}
-                            <Music className="w-12 h-12 text-white" />
-                        </div>
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                            <span className="text-white text-xs font-bold uppercase tracking-wider">Watch Videos</span>
-                        </div>
-                    </a>
+<a
+            
+                href="https://api.whatsapp.com/send/?phone=233257087042&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative aspect-square bg-gradient-to-br from-[#25D366]/20 to-[#25D366]/5 rounded-2xl overflow-hidden border border-[#25D366]/30 hover:border-[#25D366] hover:shadow-lg hover:shadow-[#25D366]/20 transition-all duration-300 hover:scale-105"
+                >
+                        
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                    <MessageCircle className="w-14 h-14 text-[#25D366] group-hover:scale-110 transition-transform duration-300" />
+                    <span className="text-white text-sm font-medium">WhatsApp</span>
+                    <span className="text-gray-400 text-xs">Chat with us</span>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#25D366] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                    <span className="text-white text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                        Message Us
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/scented_by_ddsd_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative aspect-square bg-gradient-to-br from-[#E4405F]/20 via-[#C13584]/20 to-[#833AB4]/20 rounded-2xl overflow-hidden border border-[#E4405F]/30 hover:border-[#E4405F] hover:shadow-lg hover:shadow-[#E4405F]/20 transition-all duration-300 hover:scale-105"
+                >
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                <Instagram className="w-14 h-14 text-[#E4405F] group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-white text-sm font-medium">Instagram</span>
+                <span className="text-gray-400 text-xs">See our gallery</span>
             </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#E4405F] via-[#C13584] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                <span className="text-white text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                    Follow Us
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </span>
+            </div>
+        </a>
 
-            {/* Quick Add Drawer */}
-            {drawerOpen && activeProduct && (
-                <div className="fixed inset-0 z-50 flex justify-end">
-                    <div
-                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-                        onClick={closeDrawer}
-                    />
-                    <aside className="relative w-full md:w-[480px] bg-[#0a0a0a] border-l border-white/10 overflow-y-auto animate-slide-in-right shadow-2xl shadow-black">
-                        <div className="sticky top-0 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5 p-6 flex items-center justify-between z-10">
-                            <h3 className="text-xl font-playfair text-gold">Quick Add</h3>
-                            <button onClick={closeDrawer} className="text-gray-400 hover:text-white transition-colors">
-                                <X className="w-6 h-6" />
+                
+                <a
+                    href = "https://www.tiktok.com/@scentedbyddsd?is_from_webapp=1&sender_device=pc"
+    target = "_blank"
+    rel = "noopener noreferrer"
+    className = "group relative aspect-square bg-gradient-to-br from-white/10 to-white/5 rounded-2xl overflow-hidden border border-white/30 hover:border-white hover:shadow-lg hover:shadow-white/20 transition-all duration-300 hover:scale-105"
+        >
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6">
+                        <Music className="w-14 h-14 text-white group-hover:scale-110 transition-transform duration-300" />
+                        <span className="text-white text-sm font-medium">TikTok</span>
+                        <span className="text-gray-400 text-xs">Watch videos</span>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#00f2ea] via-[#ff0050] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                        <span className="text-white text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+                            Watch Now
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </span>
+                    </div>
+                </a >
+            </div >
+
+    <div className="text-center mt-12">
+        <p className="text-gray-400 text-sm">
+            Tag us in your photos with <span className="text-gold font-semibold">#ScentedByDDSD</span> for a chance to be featured
+        </p>
+    </div>
+        </div >
+
+
+
+    {/* Quick Add Drawer */ }
+{
+    drawerOpen && activeProduct && (
+        <div className="fixed inset-0 z-50 flex justify-end">
+            <div
+                className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                onClick={closeDrawer}
+            />
+            <aside className="relative w-full md:w-[480px] bg-[#0a0a0a] border-l border-white/10 overflow-y-auto animate-slide-in-right shadow-2xl shadow-black">
+                <div className="sticky top-0 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5 p-6 flex items-center justify-between z-10">
+                    <h3 className="text-xl font-playfair text-gold">Quick Add</h3>
+                    <button onClick={closeDrawer} className="text-gray-400 hover:text-white transition-colors">
+                        <X className="w-6 h-6" />
+                    </button>
+                </div>
+                <div className="p-6 space-y-8">
+                    {/* Product Header */}
+                    <div className="flex gap-5">
+                        <div className="w-32 h-32 bg-white/5 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
+                            <img
+                                src={activeProduct.images.default}
+                                alt={activeProduct.title}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div className="flex-1">
+                            {activeProduct.featured && (
+                                <span className="inline-block bg-gold/10 border border-gold/30 text-gold text-[10px] font-bold px-2 py-1 rounded mb-2 uppercase tracking-wide">
+                                    Best Seller
+                                </span>
+                            )}
+                            <h4 className="text-white font-playfair text-xl mb-2 leading-tight">
+                                {activeProduct.title}
+                            </h4>
+                            <p className="text-gray-400 text-sm mb-3 line-clamp-2 font-light">
+                                {activeProduct.description}
+                            </p>
+                            <div className="flex items-center gap-1 text-gold text-xs">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-3 h-3 fill-current" />
+                                ))}
+                                <span className="text-gray-500 ml-2">4.8 (24 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Price */}
+                    <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex items-center justify-between">
+                        <span className="text-gray-400 text-sm uppercase tracking-wider">Total Price</span>
+                        <span className="text-3xl font-playfair text-gold">
+                            {formatMoney(currentPrice * quantity)}
+                        </span>
+                    </div>
+
+                    {/* Variants */}
+                    {activeProduct.variants.length > 0 && (
+                        <div>
+                            <label className="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
+                                Select Option
+                            </label>
+                            <div className="grid grid-cols-2 gap-3">
+                                {activeProduct.variants.map((variant) => (
+                                    <button
+                                        key={variant.id}
+                                        onClick={() => setSelectedVariant(variant)}
+                                        className={`p-4 rounded-xl border transition-all text-left relative overflow-hidden ${selectedVariant?.id === variant.id
+                                            ? 'border-gold bg-gold/10'
+                                            : 'border-white/10 bg-white/5 hover:border-gold/50'
+                                            }`}
+                                    >
+                                        <div className="font-semibold text-white mb-1 text-sm">
+                                            {variant.label}
+                                        </div>
+                                        <div className="text-gold text-xs font-bold">
+                                            {formatMoney(variant.priceGHS)}
+                                        </div>
+                                        {selectedVariant?.id === variant.id && (
+                                            <div className="absolute top-2 right-2 text-gold">
+                                                <Check className="w-4 h-4" />
+                                            </div>
+                                        )}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Quantity */}
+                    <div>
+                        <label className="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
+                            Quantity
+                        </label>
+                        <div className="flex items-center gap-4">
+                            <button
+                                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl hover:border-gold hover:text-gold transition-colors flex items-center justify-center text-xl"
+                            >
+                                -
+                            </button>
+                            <input
+                                type="number"
+                                value={quantity}
+                                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                                className="w-20 bg-transparent border-b border-white/20 text-white text-center py-2 text-xl font-playfair outline-none focus:border-gold"
+                            />
+                            <button
+                                onClick={() => setQuantity(quantity + 1)}
+                                className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl hover:border-gold hover:text-gold transition-colors flex items-center justify-center text-xl"
+                            >
+                                +
                             </button>
                         </div>
-                        <div className="p-6 space-y-8">
-                            {/* Product Header */}
-                            <div className="flex gap-5">
-                                <div className="w-32 h-32 bg-white/5 rounded-xl overflow-hidden flex-shrink-0 border border-white/10">
-                                    <img
-                                        src={activeProduct.images.default}
-                                        alt={activeProduct.title}
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="flex-1">
-                                    {activeProduct.featured && (
-                                        <span className="inline-block bg-gold/10 border border-gold/30 text-gold text-[10px] font-bold px-2 py-1 rounded mb-2 uppercase tracking-wide">
-                                            Best Seller
-                                        </span>
-                                    )}
-                                    <h4 className="text-white font-playfair text-xl mb-2 leading-tight">
-                                        {activeProduct.title}
-                                    </h4>
-                                    <p className="text-gray-400 text-sm mb-3 line-clamp-2 font-light">
-                                        {activeProduct.description}
-                                    </p>
-                                    <div className="flex items-center gap-1 text-gold text-xs">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} className="w-3 h-3 fill-current" />
-                                        ))}
-                                        <span className="text-gray-500 ml-2">4.8 (24 reviews)</span>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
 
-                            {/* Price */}
-                            <div className="bg-white/5 border border-white/5 rounded-xl p-5 flex items-center justify-between">
-                                <span className="text-gray-400 text-sm uppercase tracking-wider">Total Price</span>
-                                <span className="text-3xl font-playfair text-gold">
-                                    {formatMoney(currentPrice * quantity)}
-                                </span>
-                            </div>
-
-                            {/* Variants */}
-                            {activeProduct.variants.length > 0 && (
-                                <div>
-                                    <label className="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
-                                        Select Option
-                                    </label>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        {activeProduct.variants.map((variant) => (
-                                            <button
-                                                key={variant.id}
-                                                onClick={() => setSelectedVariant(variant)}
-                                                className={`p-4 rounded-xl border transition-all text-left relative overflow-hidden ${selectedVariant?.id === variant.id
-                                                    ? 'border-gold bg-gold/10'
-                                                    : 'border-white/10 bg-white/5 hover:border-gold/50'
-                                                    }`}
-                                            >
-                                                <div className="font-semibold text-white mb-1 text-sm">
-                                                    {variant.label}
-                                                </div>
-                                                <div className="text-gold text-xs font-bold">
-                                                    {formatMoney(variant.priceGHS)}
-                                                </div>
-                                                {selectedVariant?.id === variant.id && (
-                                                    <div className="absolute top-2 right-2 text-gold">
-                                                        <Check className="w-4 h-4" />
-                                                    </div>
-                                                )}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Quantity */}
-                            <div>
-                                <label className="block text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
-                                    Quantity
-                                </label>
-                                <div className="flex items-center gap-4">
-                                    <button
-                                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                                        className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl hover:border-gold hover:text-gold transition-colors flex items-center justify-center text-xl"
-                                    >
-                                        -
-                                    </button>
-                                    <input
-                                        type="number"
-                                        value={quantity}
-                                        onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                                        className="w-20 bg-transparent border-b border-white/20 text-white text-center py-2 text-xl font-playfair outline-none focus:border-gold"
-                                    />
-                                    <button
-                                        onClick={() => setQuantity(quantity + 1)}
-                                        className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl hover:border-gold hover:text-gold transition-colors flex items-center justify-center text-xl"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Actions */}
-                            <div className="grid grid-cols-2 gap-4 pt-4">
-                                <button
-                                    onClick={handleAddToCart}
-                                    className="col-span-2 bg-gold text-black py-4 font-bold uppercase tracking-widest rounded-xl hover:bg-white transition-colors flex items-center justify-center gap-3 shadow-lg shadow-gold/20"
-                                >
-                                    <ShoppingCart className="w-5 h-5" />
-                                    Add to Order
-                                </button>
-                            </div>
-                        </div>
-                    </aside>
+                    {/* Actions */}
+                    <div className="grid grid-cols-2 gap-4 pt-4">
+                        <button
+                            onClick={handleAddToCart}
+                            className="col-span-2 bg-gold text-black py-4 font-bold uppercase tracking-widest rounded-xl hover:bg-white transition-colors flex items-center justify-center gap-3 shadow-lg shadow-gold/20"
+                        >
+                            <ShoppingCart className="w-5 h-5" />
+                            Add to Order
+                        </button>
+                    </div>
                 </div>
-            )}
+            </aside>
         </div>
+    )
+}
+        </div >
     );
 };
 
