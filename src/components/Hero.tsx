@@ -5,69 +5,60 @@ import { motion } from "motion/react";
 
 export const Hero = () => {
     return (
-        <div className="relative h-[80vh] w-full overflow-hidden flex items-center">
-            {/* Background with Metallic Gradient Overlay */}
-            <div className="absolute inset-0 bg-black z-0">
-                <div className="absolute inset-0 bg-metallic-gradient opacity-10 mix-blend-overlay" />
+        <div className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center bg-champagne-100">
+            {/* Background Image with Gentle Zoom */}
+            <div className="absolute inset-0 z-0">
                 <motion.div
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 0.9 }}
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${IMAGES.hero})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                {/* Soft overlay for text readability (Cream fade instead of harsh black) */}
+                <div className="absolute inset-0 bg-black/10" />
             </div>
 
-            <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col justify-center h-full max-w-5xl">
+            <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center justify-center h-full max-w-4xl text-center">
 
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    className="text-gold text-xs md:text-sm tracking-[0.3em] uppercase font-inter mb-4 md:mb-6 drop-shadow-md"
+                    transition={{ delay: 0.3, duration: 0.8 }}
+                    className="text-white text-xs md:text-sm tracking-[0.4em] uppercase font-inter mb-6 drop-shadow-md font-medium"
                 >
-                    The Essence of Luxury
+                    The Holiday Collection
                 </motion.h2>
 
                 <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7, duration: 0.8 }}
-                    className="text-4xl md:text-7xl font-playfair text-white leading-tight mb-6 md:mb-8 drop-shadow-lg"
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="text-5xl md:text-8xl font-playfair text-white leading-tight mb-8 drop-shadow-xl"
                 >
-                    Elevate Your Space with <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7852B] via-[#F5E0A3] to-[#B7852B] animate-shimmer bg-[size:200%_auto] drop-shadow-sm">
-                        Timeless Scents
-                    </span>
+                    Scented by <br className="hidden md:block" />
+                    <span className="italic">Luxury</span>
                 </motion.h1>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9, duration: 0.8 }}
-                    className="text-gray-200 text-base md:text-xl max-w-2xl font-light mb-8 md:mb-10 leading-relaxed drop-shadow-md"
+                    transition={{ delay: 0.7, duration: 0.8 }}
+                    className="text-white/90 text-lg md:text-xl max-w-2xl font-light mb-12 leading-relaxed drop-shadow-md"
                 >
-                    Handcrafted candles, diffusers, and essential oils designed to transform your environment into a sanctuary of calm and opulence.
+                    Discover our new range of handcrafted fragrances, designed to illuminate your home with warmth and elegance.
                 </motion.p>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1, duration: 0.8 }}
-                    className="flex flex-wrap gap-4"
+                    transition={{ delay: 0.9, duration: 0.8 }}
                 >
                     <Link
                         to="/shop"
-                        className="px-8 py-3 md:px-10 md:py-4 bg-rose text-white font-medium text-xs md:text-sm tracking-widest uppercase hover:bg-white hover:text-rose transition-all duration-300 rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1"
+                        className="inline-block px-14 py-4 bg-black text-white font-semibold text-xs tracking-[0.25em] uppercase hover:bg-black/90 hover:scale-[1.01] transition-all duration-300 min-w-[240px] border border-black"
                     >
-                        Shop Collection
-                    </Link>
-                    <Link
-                        to="/bundles"
-                        className="px-8 py-3 md:px-10 md:py-4 border border-rose text-white font-medium text-xs md:text-sm tracking-widest uppercase hover:bg-rose/10 transition-all duration-300 rounded-sm hover:-translate-y-1"
-                    >
-                        View Bundles
+                        Shop Now
                     </Link>
                 </motion.div>
             </div>

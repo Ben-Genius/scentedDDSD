@@ -15,7 +15,7 @@ export const FeatureSection = () => {
             </div>
 
             {/* Content Section - Mission Statement */}
-            <div className="bg-champagne-100 py-20 px-6 relative z-10 -mt-10 rounded-t-3xl md:rounded-none md:mt-0">
+            <div className="bg-champagne-100 py-20 px-6 relative z-10 -mt-10 rounded-none md:mt-0">
                 <div className="container mx-auto max-w-4xl text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -23,15 +23,15 @@ export const FeatureSection = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-playfair text-rose mb-4">
+                        <h2 className="text-4xl md:text-5xl font-playfair text-black mb-4">
                             The Scented Mission
                         </h2>
 
-                        <p className="text-gold italic font-playfair text-lg md:text-xl mb-8">
+                        <p className="text-black/60 italic font-playfair text-lg md:text-xl mb-8">
                             Home of timeless, sustainable & eco conscious candles
                         </p>
 
-                        <p className="text-[#6D5D53] leading-relaxed mb-16 max-w-3xl mx-auto font-light text-base md:text-lg">
+                        <p className="text-black/70 leading-relaxed mb-16 max-w-3xl mx-auto font-light text-base md:text-lg">
                             At Scented by DDSD, our mission is to illuminate lives by crafting exceptional candles that transcend the ordinary.
                             We are dedicated to creating moments of serenity, joy, and connection through the art of candle-making.
                             With a commitment to quality, sustainability, and the celebration of craftsmanship, we strive to enhance
@@ -42,22 +42,22 @@ export const FeatureSection = () => {
                     {/* Icons Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-4xl mx-auto">
                         <MissionItem
-                            icon={<Recycle className="w-8 h-8 md:w-10 md:h-10 text-rose" strokeWidth={1} />}
+                            icon={<Recycle className="w-8 h-8 md:w-10 md:h-10 text-black" strokeWidth={1} />}
                             label="Sustainable"
                             delay={0}
                         />
                         <MissionItem
-                            icon={<Award className="w-8 h-8 md:w-10 md:h-10 text-rose" strokeWidth={1} />}
+                            icon={<Award className="w-8 h-8 md:w-10 md:h-10 text-black" strokeWidth={1} />}
                             label="Handcrafted"
                             delay={0.1}
                         />
                         <MissionItem
-                            icon={<Flame className="w-8 h-8 md:w-10 md:h-10 text-rose" strokeWidth={1} />}
+                            icon={<Flame className="w-8 h-8 md:w-10 md:h-10 text-black" strokeWidth={1} />}
                             label="Aromatic"
                             delay={0.2}
                         />
                         <MissionItem
-                            icon={<Leaf className="w-8 h-8 md:w-10 md:h-10 text-rose" strokeWidth={1} />}
+                            icon={<Leaf className="w-8 h-8 md:w-10 md:h-10 text-black" strokeWidth={1} />}
                             label="Eco-Friendly"
                             delay={0.3}
                         />
@@ -76,10 +76,10 @@ const MissionItem = ({ icon, label, delay }: { icon: React.ReactNode; label: str
         transition={{ delay, duration: 0.5, type: "spring" }}
         className="flex flex-col items-center gap-4 group"
     >
-        <div className="p-4 rounded-full border border-rose/30 bg-white/50 group-hover:border-rose group-hover:bg-white transition-all duration-300 shadow-sm group-hover:shadow-md">
+        <div className="p-6 rounded-none border border-black/10 bg-white/50 group-hover:border-black group-hover:bg-white transition-all duration-300 shadow-none">
             {icon}
         </div>
-        <span className="text-gold text-xs md:text-sm uppercase tracking-widest font-thin group-hover:text-rose transition-colors">{label}</span>
+        <span className="text-black/60 text-xs md:text-sm uppercase tracking-widest font-normal group-hover:text-black transition-colors">{label}</span>
     </motion.div>
 );
 

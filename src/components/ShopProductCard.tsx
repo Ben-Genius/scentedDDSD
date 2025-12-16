@@ -19,7 +19,7 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
     return (
         <div
             className={cn(
-                "group relative block overflow-hidden rounded-lg border bg-card text-card-foreground transition-all duration-300 ease-in-out hover:shadow-lg border-white/10 bg-white/5",
+                "group relative block overflow-hidden rounded-none border bg-white text-black transition-all duration-300 ease-in-out hover:shadow-none border-black/5 hover:border-black/20",
                 className
             )}
         >
@@ -35,23 +35,23 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
 
                     {/* Featured Badge */}
                     {product.featured && (
-                        <span className="absolute top-3 left-3 bg-gold/90 text-black text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider z-10">
+                        <span className="absolute top-3 left-3 bg-white text-black border border-black/10 text-[10px] font-medium px-2 py-1 uppercase tracking-wider z-10 rounded-none">
                             Featured
                         </span>
                     )}
 
                     {/* Gradient Overlay for text readability if needed, or just luxury touch */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Gradient Overlay removed for clean look */}
                 </div>
 
                 {/* Card content */}
-                <div className="p-4 bg-black/40 backdrop-blur-sm">
-                    <h3 className="font-playfair font-semibold text-lg text-white leading-tight truncate group-hover:text-gold transition-colors">
+                <div className="p-4 bg-white border-t border-black/5">
+                    <h3 className="font-playfair font-medium text-lg text-black leading-tight truncate group-hover:text-black/70 transition-colors">
                         {product.title}
                     </h3>
-                    <div className="mt-1 flex justify-between items-center bg-transparent">
-                        <p className="text-xs text-gold uppercase tracking-widest">{product.category}</p>
-                        <p className="text-sm text-gray-300 font-light">
+                    <div className="mt-2 flex justify-between items-center bg-transparent">
+                        <p className="text-[10px] text-gray-500 uppercase tracking-widest">{product.category}</p>
+                        <p className="text-sm text-black font-light">
                             {formatMoney(lowestPrice)}
                         </p>
                     </div>
@@ -60,7 +60,7 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
 
             {/* Save button - appears on hover (Visual only for now) */}
             <button
-                className="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gold hover:text-black hover:scale-110"
+                className="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-none bg-white border border-black/10 text-black opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black hover:text-white"
                 aria-label="Save product"
                 onClick={(e) => {
                     e.preventDefault();
@@ -73,7 +73,7 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
 
             {/* Quick Add / View Button - Centered Style */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
-                <span className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs uppercase tracking-widest hover:bg-gold hover:border-gold hover:text-black transition-colors duration-300 pointer-events-auto">
+                <span className="px-6 py-3 bg-white border border-black text-black text-xs uppercase tracking-widest hover:bg-black hover:text-white transition-colors duration-300 pointer-events-auto rounded-none font-medium">
                     View Product
                 </span>
             </div>

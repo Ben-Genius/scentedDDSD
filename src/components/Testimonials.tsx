@@ -105,19 +105,19 @@ export const TestimonialsColumn = (props: {
                     ...new Array(2).fill(0).map((_, index) => (
                         <React.Fragment key={index}>
                             {props.testimonials.map(({ text, image, name, role }, i) => (
-                                <div className="p-6 md:p-8 rounded-xl border border-rose/10 bg-white shadow-sm hover:shadow-md transition-shadow duration-300 max-w-xs md:max-w-xs w-full mx-auto" key={i}>
-                                    <div className="text-gray-600 font-light leading-relaxed italic text-sm md:text-base">"{text}"</div>
-                                    <div className="flex items-center gap-3 mt-6">
+                                <div className="p-8 rounded-none border border-black/5 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] max-w-xs md:max-w-xs w-full mx-auto" key={i}>
+                                    <div className="text-black/70 font-light leading-relaxed italic text-sm md:text-base tracking-wide">"{text}"</div>
+                                    <div className="flex items-center gap-4 mt-8 pt-6 border-t border-black/5">
                                         <img
                                             width={40}
                                             height={40}
                                             src={image}
                                             alt={name}
-                                            className="h-10 w-10 rounded-full border border-gold/30 object-cover"
+                                            className="h-10 w-10 rounded-full grayscale opacity-80 object-cover"
                                         />
                                         <div className="flex flex-col">
-                                            <div className="font-playfair font-bold text-rose tracking-wide leading-5 text-sm md:text-base">{name}</div>
-                                            <div className="leading-5 text-gold text-[10px] md:text-xs uppercase tracking-wider mt-1">{role}</div>
+                                            <div className="font-playfair font-medium text-black tracking-wide leading-5 text-sm md:text-base">{name}</div>
+                                            <div className="leading-5 text-black/40 text-[10px] md:text-xs uppercase tracking-widest mt-1">{role}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -132,27 +132,27 @@ export const TestimonialsColumn = (props: {
 
 export const Testimonials = () => {
     return (
-        <div className="bg-champagne-200">
+        <div className="bg-champagne-50">
             {/* Testimonials Section */}
-            <section className="bg-champagne-50 py-16 md:py-24 relative overflow-hidden">
+            <section className="bg-champagne-50 py-20 md:py-32 relative overflow-hidden">
                 <div className="container z-10 mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-12 md:mb-16 px-4 text-center"
+                        className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-16 md:mb-24 px-4 text-center"
                     >
                         <div className="flex justify-center ">
-                            <div className="block text-gold text-xs uppercase tracking-[0.4em] mb-2 font-inter">
-                                Testimonials
+                            <div className="block text-black/40 text-[10px] uppercase tracking-[0.4em] mb-4 font-inter">
+                                Reviews
                             </div>
                         </div>
 
-                        <h2 className="text-3xl md:text-5xl font-playfair text-rose mb-3 leading-tight">
-                            What our users say
+                        <h2 className="text-3xl md:text-5xl font-playfair text-black mb-4 leading-tight">
+                            Client Stories
                         </h2>
-                        <p className="text-center text-gray-600 font-light text-base md:text-lg">
+                        <p className="text-center text-black/60 font-light text-base md:text-lg">
                             See what our customers have to say about the ambiance we create.
                         </p>
                     </motion.div>

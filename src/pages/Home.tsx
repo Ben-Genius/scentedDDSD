@@ -29,11 +29,11 @@ export const Home = () => {
 
 
     const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-        <div className="flex flex-col items-center mx-1 md:mx-4">
-            <div className="bg-black/40 backdrop-blur-md border border-gold/30 text-white font-playfair text-xl md:text-5xl font-bold w-12 h-12 md:w-24 md:h-24 flex items-center justify-center rounded-lg shadow-lg transition-transform hover:scale-105">
+        <div className="flex flex-col items-center mx-2 md:mx-6">
+            <div className="bg-white border border-black/10 text-black font-playfair text-xl md:text-5xl font-normal w-12 h-12 md:w-24 md:h-24 flex items-center justify-center shadow-sm">
                 {String(value).padStart(2, '0')}
             </div>
-            <span className="text-gold text-[10px] md:text-xs uppercase tracking-widest mt-2">{label}</span>
+            <span className="text-black/60 text-[10px] md:text-xs uppercase tracking-widest mt-3">{label}</span>
         </div>
     );
 
@@ -81,9 +81,9 @@ export const Home = () => {
     } as const;
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden bg-champagne-50">
             <Hero />
-            <div className="bg-champagne-100 relative z-10 space-y-16 md:space-y-24 pb-20">
+            <div className="relative z-10 space-y-24 md:space-y-32 pb-24 pt-16">
 
                 <motion.div {...fadeInUp}>
                     <ProductGrid products={featuredProducts} title="Featured Collections" />
@@ -93,32 +93,33 @@ export const Home = () => {
                     {...fadeInUp}
                     className='flex flex-col items-center justify-center text-center px-4'
                 >
-                    <span className="block text-gold text-xs uppercase tracking-[0.4em] font-inter mb-2">
+                    <span className="block text-black/60 text-xs uppercase tracking-[0.4em] font-inter mb-4">
                         Holiday Exclusive
                     </span>
 
-                    <h2 className="text-3xl md:text-5xl font-playfair text-rose mb-4 leading-tight">
-                        Christmas Sale
+                    <h2 className="text-4xl md:text-6xl font-playfair text-black mb-6 leading-tight">
+                        The Gift of Scent
                     </h2>
 
-                    <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
+                    <div className="h-px w-24 bg-black/10 mx-auto" />
                 </motion.div>
 
                 {/* Christmas Sale Section */}
                 <motion.section
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative py-20 md:py-32 overflow-hidden mx-4 md:mx-8 rounded-2xl shadow-xl"
+                    className="relative py-24 md:py-36 overflow-hidden mx-4 md:mx-12"
                 >
                     <div className="absolute inset-0">
                         <img
                             src={IMAGES.allprod3}
                             alt="Christmas Sale Background"
-                            className="w-full h-full object-cover transition-transform duration-[20s] hover:scale-110"
+                            className="w-full h-full object-cover opacity-90"
                         />
-                        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+                        <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px]" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-champagne-50 via-transparent to-champagne-50 opacity-90" />
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10 text-center">
@@ -126,23 +127,23 @@ export const Home = () => {
                             initial={{ y: 20, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2 }}
-                            className="block text-gold text-xs md:text-sm uppercase tracking-[0.4em] mb-4 font-inter"
+                            className="block text-black text-xs md:text-sm uppercase tracking-[0.4em] mb-6 font-inter"
                         >
-                            Ends In
+                            Limited Time Offer
                         </motion.span>
 
                         <motion.p
                             initial={{ y: 20, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.3 }}
-                            className="text-gray-100 max-w-2xl mx-auto mb-10 text-base md:text-lg font-light leading-relaxed drop-shadow-md"
+                            className="text-black/80 max-w-2xl mx-auto mb-12 text-base md:text-xl font-light leading-relaxed"
                         >
                             Discover the perfect gift for your loved ones. Elevate your holiday season with our handcrafted fragrances,
                             now available at exclusive prices for a limited time.
                         </motion.p>
 
                         <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
+                            initial={{ scale: 0.9, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             transition={{ delay: 0.4 }}
                         >
@@ -156,7 +157,7 @@ export const Home = () => {
                         >
                             <Link
                                 to="/shop"
-                                className="inline-block px-8 py-3 md:px-10 md:py-4 bg-rose text-white font-bold uppercase tracking-widest text-xs md:text-sm hover:bg-white hover:text-rose transition-all duration-300 rounded-sm shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                className="inline-block px-12 py-4 bg-black text-white font-medium uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-white hover:text-black border border-black transition-all duration-300 shadow-xl"
                             >
                                 Shop Now
                             </Link>

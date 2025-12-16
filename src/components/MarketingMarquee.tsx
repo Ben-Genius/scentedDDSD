@@ -109,7 +109,7 @@ function ScrambleButton() {
         <Link to="/shop">
             <button
                 onMouseEnter={scramble}
-                className="px-8 py-3 bg-rose text-white rounded-sm font-semibold hover:bg-rose hover:text-white transition-colors duration-300 uppercase tracking-widest text-sm shadow-md hover:shadow-lg"
+                className="px-10 py-4 bg-black text-white rounded-none font-medium hover:bg-black/90 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs shadow-none border border-black"
             >
                 {displayText}
             </button>
@@ -130,11 +130,11 @@ export const MarketingMarquee = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="block text-gold text-xs uppercase tracking-[0.4em] mb-4 font-inter">Handcrafted in Ghana</span>
-                            <h2 className="text-4xl md:text-6xl font-playfair text-rose mb-6 leading-tight">
+                            <span className="block text-black/60 text-xs uppercase tracking-[0.4em] mb-4 font-inter">Handcrafted in Ghana</span>
+                            <h2 className="text-4xl md:text-6xl font-playfair text-black mb-6 leading-tight">
                                 The Essence of <br /> Luxury Scents
                             </h2>
-                            <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                            <p className="text-black/70 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
                                 Scented by DDSD brings you an exquisite selection of home fragrances.
                                 Blending modern aesthetics with timeless aromas to elevate your sensory experience.
                             </p>
@@ -167,7 +167,7 @@ export const MarketingMarquee = () => {
                             {marqueeImages1.map((src, idx) => (
                                 <div
                                     key={`m1 - ${idx} `}
-                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-xl border border-rose/10 shadow-sm"
+                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-none border border-black/5 shadow-none"
                                 >
                                     <img
                                         src={src}
@@ -182,7 +182,7 @@ export const MarketingMarquee = () => {
                             {marqueeImages2.map((src, idx) => (
                                 <div
                                     key={`m2 - ${idx} `}
-                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-xl border border-rose/10 shadow-sm"
+                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-none border border-black/5 shadow-none"
                                 >
                                     <img
                                         src={src}

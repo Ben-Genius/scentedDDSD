@@ -55,7 +55,7 @@ export const SimpleNewArrivals = () => {
     };
 
     return (
-        <section className="w-full py-16 md:py-24 bg-champagne-200 text-white relative pb-32">
+        <section className="w-full py-16 md:py-24 bg-white text-black relative pb-32">
             {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -64,13 +64,13 @@ export const SimpleNewArrivals = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-16 px-4"
             >
-                <p className="block text-gold text-xs uppercase tracking-[0.4em] mb-4 font-inter">
+                <p className="block text-black/60 text-[10px] uppercase tracking-[0.4em] mb-4 font-inter">
                     Customer Choice
                 </p>
-                <h2 className="text-4xl md:text-5xl font-playfair tracking-wide text-rose mb-6">
+                <h2 className="text-4xl md:text-5xl font-playfair tracking-normal text-black mb-6">
                     Explore New Arrivals
                 </h2>
-                <div className="h-px w-24 bg-gradient-to-r from-transparent via-rose to-transparent mx-auto opacity-50" />
+                <div className="h-px w-24 bg-black/10 mx-auto" />
             </motion.div>
 
             {/* Products Grid */}
@@ -85,28 +85,28 @@ export const SimpleNewArrivals = () => {
                     <motion.div variants={item} key={product.id}>
                         <Link to={`/shop?category=New`} className="group block">
                             {/* Image container */}
-                            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-xl border border-white/20 bg-white/5 shadow-sm group-hover:shadow-lg transition-shadow duration-300">
+                            <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-100 shadow-sm group-hover:shadow-md transition-shadow duration-300">
                                 <img
                                     src={product.image}
                                     alt={product.name}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-95 group-hover:opacity-100"
                                 />
 
                                 {/* Sale Badge */}
-                                <div className="absolute top-4 left-4 bg-rose text-white px-3 py-1 rounded-sm text-[10px] font-bold tracking-wider uppercase shadow-md">
+                                <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-none text-[10px] font-medium tracking-widest uppercase">
                                     {product.sale}
                                 </div>
                             </div>
 
                             {/* Text */}
                             <div className="mt-5 text-center px-2">
-                                <h3 className="text-lg font-playfair text-gray-800 group-hover:text-rose transition-colors duration-300 leading-tight">
+                                <h3 className="text-base font-medium font-inter text-black group-hover:text-black/70 transition-colors duration-300 leading-tight tracking-wide">
                                     {product.name}
                                 </h3>
 
                                 <div className="mt-2 flex items-center justify-center gap-3 text-sm">
-                                    <span className="text-gold font-bold">{product.price}</span>
-                                    <span className="text-rose/60 line-through text-xs">{product.oldPrice}</span>
+                                    <span className="text-black font-normal">{product.price}</span>
+                                    <span className="text-black/40 line-through text-xs font-light">{product.oldPrice}</span>
                                 </div>
                             </div>
                         </Link>
@@ -124,13 +124,13 @@ export const SimpleNewArrivals = () => {
             >
                 <Link
                     to="/shop?category=New"
-                    className="inline-block border-b-2 border-rose text-rose hover:text-rose/80 hover:border-rose/60 transition-colors pb-1 text-sm uppercase tracking-widest font-bold"
+                    className="inline-block border-b border-black text-black hover:opacity-70 transition-opacity pb-1 text-xs uppercase tracking-[0.2em]"
                 >
                     View All New Arrivals
                 </Link>
             </motion.div>
 
-            {/* Curved Bottom Edge - SVG Wave */}
+            {/* Curved Bottom Edge - SVG Wave (Updated fill) */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
                 <svg
                     className="relative block w-full h-[40px] sm:h-[60px]"
@@ -140,7 +140,7 @@ export const SimpleNewArrivals = () => {
                 >
                     <path
                         d="M0,20 Q600,70 1200,20 L1200,120 L0,120 Z"
-                        className="fill-champagne-100" // Matches next section background
+                        className="fill-champagne-50" // Matches next section background
                     />
                 </svg>
             </div>

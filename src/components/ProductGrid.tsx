@@ -29,11 +29,11 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
         <section className="py-24 px-4 max-w-[109rem] mx-auto">
             {title && (
                 <div className="text-center mb-16 px-4">
-                    <span className="block text-gold text-xs uppercase tracking-[0.4em] mb-3 font-inter">Curated Selection</span>
-                    <h2 className="text-3xl md:text-5xl font-playfair text-rose mb-4 leading-tight">
+                    <span className="block text-black/60 text-[10px] uppercase tracking-[0.4em] mb-4 font-inter">Curated Selection</span>
+                    <h2 className="text-3xl md:text-5xl font-playfair text-black mb-6 leading-tight">
                         {title}
                     </h2>
-                    <div className="h-px w-24 bg-gradient-to-r from-transparent via-rose to-transparent mx-auto opacity-50" />
+                    <div className="h-px w-24 bg-black/10 mx-auto" />
                 </div>
             )}
 
