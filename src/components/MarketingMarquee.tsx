@@ -27,7 +27,7 @@ function Marquee({
             )}
             style={
                 {
-                    "--duration": `${speed} s`,
+                    "--duration": `${speed}s`,
                 } as React.CSSProperties
             }
         >
@@ -119,7 +119,7 @@ function ScrambleButton() {
 
 export const MarketingMarquee = () => {
     return (
-        <div className="py-20 md:py-32 bg-champagne-100 text-foreground flex items-center overflow-hidden border-white/5 relative">
+        <div className="py-0 md:py-10  text-foreground flex items-center overflow-hidden border-white/5 relative">
             <div className="w-full px-6 md:px-12 max-w-[109rem] mx-auto">
                 <div className="flex flex-col lg:flex-row items-center lg:gap-20">
                     {/* Left Content */}

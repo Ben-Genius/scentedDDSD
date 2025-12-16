@@ -6,10 +6,10 @@ import { getProducts } from '../lib/api';
 import { Product } from '../types';
 import FeatureSection from '@/components/Featured';
 import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
-import { Testimonials } from '../components/Testimonials';
 import { Link } from 'react-router-dom';
 import { IMAGES } from '@/assets';
 import { motion } from "motion/react";
+import Testimonials from '@/components/Testimonials';
 
 interface TimeLeft {
     days: number;
@@ -81,14 +81,21 @@ export const Home = () => {
     } as const;
 
     return (
-        <div className="overflow-x-hidden bg-champagne-50">
+        <div className="overflow-x-hidden bg-champagne-100">
             <Hero />
             <div className="relative z-10 space-y-24 md:space-y-32 pb-24 pt-16">
 
                 <motion.div {...fadeInUp}>
                     <ProductGrid products={featuredProducts} title="Featured Collections" />
                 </motion.div>
+                <motion.div {...fadeInUp}>
+                    <SimpleNewArrivals />
+                </motion.div>
 
+                <motion.div {...fadeInUp}>
+                    <FeatureSection />
+                </motion.div>
+                {/* 
                 <motion.div
                     {...fadeInUp}
                     className='flex flex-col items-center justify-center text-center px-4'
@@ -102,10 +109,10 @@ export const Home = () => {
                     </h2>
 
                     <div className="h-px w-24 bg-black/10 mx-auto" />
-                </motion.div>
+                </motion.div> */}
 
                 {/* Christmas Sale Section */}
-                <motion.section
+                {/* <motion.section
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -163,19 +170,12 @@ export const Home = () => {
                             </Link>
                         </motion.div>
                     </div>
-                </motion.section>
+                </motion.section> */}
 
-                <motion.div {...fadeInUp}>
-                    <MarketingMarquee />
-                </motion.div>
 
-                <motion.div {...fadeInUp}>
-                    <SimpleNewArrivals />
-                </motion.div>
 
-                <motion.div {...fadeInUp}>
-                    <FeatureSection />
-                </motion.div>
+               
+
 
                 <motion.div {...fadeInUp}>
                     <Testimonials />

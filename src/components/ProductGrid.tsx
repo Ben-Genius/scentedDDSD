@@ -26,14 +26,16 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
     };
 
     return (
-        <section className="py-24 px-4 max-w-[109rem] mx-auto">
+        <section className="py-6 px-4 max-w-[109rem] mx-auto">
             {title && (
-                <div className="text-center mb-16 px-4">
-                    <span className="block text-black/60 text-[10px] uppercase tracking-[0.4em] mb-4 font-inter">Curated Selection</span>
-                    <h2 className="text-3xl md:text-5xl font-playfair text-black mb-6 leading-tight">
+                <div className="text-center mb-10 px-4">
+                    <h2 className="text-2xl md:text-3xl font-playfair text-black mb-4 uppercase tracking-[0.1em]">
                         {title}
                     </h2>
-                    <div className="h-px w-24 bg-black/10 mx-auto" />
+                    <div className="flex justify-center">
+                        {/* Subtle sun/star icon similar to inspo */}
+                        <span className="text-black/20 text-xl">✦</span>
+                    </div>
                 </div>
             )}
 
@@ -42,8 +44,8 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
-                className={`grid gap-6 md:gap-10 ${variant === 'shop'
-                    ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+                className={`grid gap-x-8 gap-y-16 ${variant === 'shop'
+                    ? 'grid-cols-2 lg:grid-cols-3'
                     : 'grid-cols-2 lg:grid-cols-4'
                     }`}
             >
