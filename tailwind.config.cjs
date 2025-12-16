@@ -26,6 +26,7 @@ module.exports = {
         },
         black: '#000000', // Pure black for text
         rose: '#000000', // Replaced rose with black for the premium monochrome look
+        'holiday-red': '#8B0000',
       },
       borderRadius: {
         'none': '0',

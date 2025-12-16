@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Hero } from '../components/Hero';
 import { ProductGrid } from '../components/ProductGrid';
-import { MarketingMarquee } from '../components/MarketingMarquee';
+import { MarketingMarquee } from '@/components/MarketingMarquee';
 import { getProducts } from '../lib/api';
 import { Product } from '../types';
 import FeatureSection from '@/components/Featured';

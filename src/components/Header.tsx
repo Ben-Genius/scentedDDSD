@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
-import cn from 'classnames';
+import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
 
 export const Header = () => {
     const { openDrawer, getItemCount } = useLocalCart();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
     const count = getItemCount();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navLinks = [
         { name: 'Shop', path: '/shop' },
@@ -17,8 +28,12 @@ export const Header = () => {
     ];
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-champagne border-b border-black/5 transition-all duration-300">
-            <div className="container mx-auto px-6 h-auto py-6 grid grid-cols-12 items-center">
+        <header
+            className="sticky top-0 z-50 w-full bg-champagne border-b border-black/5 transition-all duration-300"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="container mx-auto px-6 h-auto py-2 grid grid-cols-12 items-center">
 
                 {/* Left: Mobile Menu & Search */}
                 <div className="col-span-3 flex items-center justify-start space-x-6">
@@ -51,8 +66,9 @@ export const Header = () => {
                         onClick={openDrawer}
                         className="group relative flex items-center justify-center text-black hover:opacity-60 transition-opacity"
                     >
-                        <span className="text-xs uppercase tracking-widest font-inter hidden lg:inline-block mr-2">Bag</span>
+                        <span className="text-xs uppercase tracking-widest font-inter hidden lg:inline-block mr-2">Cart</span>
                         <svg className="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+
                         {count > 0 && (
                             <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center bg-black text-white text-[9px] font-medium rounded-none">
                                 {count}
@@ -63,7 +79,12 @@ export const Header = () => {
             </div>
 
             {/* Desktop Nav - Centered Below Logo with Hairline Borders */}
-            <nav className="hidden md:flex items-center justify-center border-t border-black/5 py-3.5 bg-champagne">
+            <nav
+                className={cn(
+                    "hidden md:flex items-center justify-center py-3.5 bg-champagne overflow-hidden transition-all duration-300 ease-in-out",
+                    isScrolled && !isHovered ? "max-h-0 py-0 opacity-0 border-t-0" : "max-h-20 opacity-100 border-t border-black/5"
+                )}
+            >
                 <div className="flex space-x-16">
                     {navLinks.map((link) => (
                         <NavLink
