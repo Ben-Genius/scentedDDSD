@@ -104,8 +104,13 @@ export const SimpleNewArrivals = () => {
     .swiper-slide {
       background-position: center;
       background-size: cover;
-      width: 300px;
-      /* height: 450px; */
+      width: 280px;
+    }
+
+    @media (min-width: 768px) {
+      .swiper-slide {
+        width: 350px;
+      }
     }
     
     .swiper-3d .swiper-slide-shadow-left,
@@ -115,7 +120,7 @@ export const SimpleNewArrivals = () => {
     `;
 
     return (
-        <section className="w-full py-16 md:py-24 bg-white text-black relative pb-32 overflow-hidden">
+        <section className="w-full py-12 md:py-24 bg-white text-black relative pb-24 md:pb-32 overflow-hidden">
             <style>{css}</style>
 
             {/* Header */}
@@ -126,7 +131,7 @@ export const SimpleNewArrivals = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-0 px-4"
             >
-      
+
                 <h2 className="text-2xl md:text-3xl font-playfair text-black mb-4 uppercase tracking-[0.1em]">
                     Explore New Arrivals
                 </h2>
@@ -134,7 +139,7 @@ export const SimpleNewArrivals = () => {
             </motion.div>
 
             {/* Swiper Carousel */}
-            <div className="w-full ">
+            <div className="w-full">
                 <Swiper
                     effect={"coverflow"}
                     grabCursor={true}
@@ -154,13 +159,13 @@ export const SimpleNewArrivals = () => {
                         disableOnInteraction: false,
                     }}
                     modules={[EffectCoverflow, Pagination, Autoplay]}
-                    className="mySwiper left-30"
+                    className="mySwiper"
                 >
                     {products.map((product) => (
                         <SwiperSlide key={product.id}>
-                            <div className="w-[400px] h-full group relative ">
-                                <div className="bg-white rounded-xl overflow-hidden shadow-sm  h-[550px] relative">
-                                    <div className="w-full h-[70%] bg-gray-50 overflow-hidden relative">
+                            <div className="w-full h-full group relative px-2 md:px-0">
+                                <div className="bg-white rounded-xl overflow-hidden shadow-sm h-[400px] md:h-[550px] relative">
+                                    <div className="w-full h-[65%] md:h-[70%] bg-gray-50 overflow-hidden relative">
                                         <img
                                             src={product.image}
                                             alt={product.name}
@@ -171,7 +176,7 @@ export const SimpleNewArrivals = () => {
                                         </div>
                                     </div>
 
-                                    <div className="p-6 text-center h-[30%] flex flex-col justify-center bg-white relative z-10">
+                                    <div className="p-4 md:p-6 text-center h-[35%] md:h-[30%] flex flex-col justify-center bg-white relative z-10">
                                         <h3 className="text-sm font-medium font-inter text-black mb-2 line-clamp-1 uppercase tracking-wide">
                                             {product.name}
                                         </h3>

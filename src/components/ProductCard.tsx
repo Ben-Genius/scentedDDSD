@@ -63,6 +63,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                         </span>
                     )}
 
+
                     {/* View Product Button */}
                     <div className="absolute inset-x-0 bottom-6 flex justify-center 
                                   translate-y-4 opacity-0 

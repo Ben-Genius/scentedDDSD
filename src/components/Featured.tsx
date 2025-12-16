@@ -1,23 +1,35 @@
-import React from "react";
+import { useRef } from "react";
 import { IMAGES } from "@/assets";
-import { Leaf, Award, Flame, Recycle } from 'lucide-react';
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { MarketingMarquee } from "./MarketingMarquee";
 
 export const FeatureSection = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
     return (
-        <section className="relative w-full ">
+        <section ref={containerRef} className="relative w-full overflow-hidden">
             {/* Top Parallax Image Section */}
-            <div
-                className="h-[400px] md:h-[450px] w-full bg-fixed bg-center bg-cover relative"
-                style={{ backgroundImage: `url(${IMAGES.allprod3})` }}
-            >
-                <div className="absolute inset-0 bg-black/20" /> {/* Slight overlay for depth */}
+            <div className="h-[400px] md:h-[500px] w-full relative overflow-hidden">
+                <motion.div
+                    style={{ y }}
+                    className="absolute inset-0 w-full h-[120%]"
+                >
+                    <img
+                        src={IMAGES.allprod3}
+                        alt="Featured Collection"
+                        className="w-full h-full object-cover"
+                    />
+                </motion.div>
+                <div className="absolute inset-0 bg-black/10" />
             </div>
-            <br/>
 
-            <MarketingMarquee />
-
+            {/* Removed internal Marquee to avoid duplication since it's in Home.tsx now */}
         </section>
     );
 };

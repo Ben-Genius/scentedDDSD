@@ -1,11 +1,18 @@
 import { IMAGES } from '@/assets';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from "motion/react";
 
 export const Footer = () => {
     return (
         <footer className="bg-champagne border-t border-black/10 pt-20 pb-10">
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-12 mb-20">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-12 mb-20"
+            >
                 <div className="col-span-1 md:col-span-1">
                     <Link to="/" className="text-2xl font-playfair font-bold text-black mb-8 block uppercase tracking-widest">
                         {/* Use text or img depending on asset */}
@@ -52,7 +59,7 @@ export const Footer = () => {
                         </form>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             <div className="container mx-auto px-4 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-black/60">
                 <p>&copy; {new Date().getFullYear()} Scented by DDSD. All rights reserved.</p>

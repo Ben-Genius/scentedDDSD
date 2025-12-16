@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion } from "motion/react";
 
 const Testimonials = () => {
     const [tooltip, setTooltip] = useState({
@@ -54,6 +55,21 @@ const Testimonials = () => {
         setTooltip((prev) => ({ ...prev, visible: false }));
     };
 
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    };
+
+    const item = {
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
+
     return (
         <div className="flex flex-col items-center justify-center gap-6 py-24 px-6 md:px-12 bg-white">
             {/* Title and description */}
@@ -64,10 +80,17 @@ const Testimonials = () => {
                 <div className="h-px w-24 bg-black/10 mx-auto" />
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-8">
+            <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-50px" }}
+                className="flex flex-wrap items-center justify-center gap-8"
+            >
                 {testimonials.map((testimonial, index) => (
-                    <div
+                    <motion.div
                         key={index}
+                        variants={item}
                         ref={(el) => { cardRefs.current[index] = el }}
                         onMouseMove={(e) => handleMouseMove(e, index)}
                         onMouseLeave={handleMouseLeave}
@@ -108,9 +131,9 @@ const Testimonials = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };

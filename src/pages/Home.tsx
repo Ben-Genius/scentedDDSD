@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Hero } from '../components/Hero';
 import { ProductGrid } from '../components/ProductGrid';
 import { MarketingMarquee } from '@/components/MarketingMarquee';
 import { getProducts } from '../lib/api';
@@ -10,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { IMAGES } from '@/assets';
 import { motion } from "motion/react";
 import Testimonials from '@/components/Testimonials';
+import Hero from '@/components/Hero';
 
 interface TimeLeft {
     days: number;
@@ -88,6 +88,7 @@ export const Home = () => {
                 <motion.div {...fadeInUp}>
                     <ProductGrid products={featuredProducts} title="Featured Collections" />
                 </motion.div>
+
                 <motion.div {...fadeInUp}>
                     <SimpleNewArrivals />
                 </motion.div>
@@ -95,87 +96,15 @@ export const Home = () => {
                 <motion.div {...fadeInUp}>
                     <FeatureSection />
                 </motion.div>
-                {/* 
+
                 <motion.div
-                    {...fadeInUp}
-                    className='flex flex-col items-center justify-center text-center px-4'
-                >
-                    <span className="block text-black/60 text-xs uppercase tracking-[0.4em] font-inter mb-4">
-                        Holiday Exclusive
-                    </span>
-
-                    <h2 className="text-4xl md:text-6xl font-playfair text-black mb-6 leading-tight">
-                        The Gift of Scent
-                    </h2>
-
-                    <div className="h-px w-24 bg-black/10 mx-auto" />
-                </motion.div> */}
-
-                {/* Christmas Sale Section */}
-                {/* <motion.section
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative py-24 md:py-36 overflow-hidden mx-4 md:mx-12"
                 >
-                    <div className="absolute inset-0">
-                        <img
-                            src={IMAGES.allprod3}
-                            alt="Christmas Sale Background"
-                            className="w-full h-full object-cover opacity-90"
-                        />
-                        <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px]" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-champagne-50 via-transparent to-champagne-50 opacity-90" />
-                    </div>
-
-                    <div className="container mx-auto px-4 relative z-10 text-center">
-                        <motion.span
-                            initial={{ y: 20, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="block text-black text-xs md:text-sm uppercase tracking-[0.4em] mb-6 font-inter"
-                        >
-                            Limited Time Offer
-                        </motion.span>
-
-                        <motion.p
-                            initial={{ y: 20, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.3 }}
-                            className="text-black/80 max-w-2xl mx-auto mb-12 text-base md:text-xl font-light leading-relaxed"
-                        >
-                            Discover the perfect gift for your loved ones. Elevate your holiday season with our handcrafted fragrances,
-                            now available at exclusive prices for a limited time.
-                        </motion.p>
-
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.4 }}
-                        >
-                            <CountdownTimer targetDate={new Date(`December 25, ${new Date().getFullYear()} 00:00:00`)} />
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ y: 20, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.5 }}
-                        >
-                            <Link
-                                to="/shop"
-                                className="inline-block px-12 py-4 bg-black text-white font-medium uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-white hover:text-black border border-black transition-all duration-300 shadow-xl"
-                            >
-                                Shop Now
-                            </Link>
-                        </motion.div>
-                    </div>
-                </motion.section> */}
-
-
-
-               
-
+                    <MarketingMarquee />
+                </motion.div>
 
                 <motion.div {...fadeInUp}>
                     <Testimonials />
