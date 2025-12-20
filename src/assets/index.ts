@@ -39,6 +39,7 @@ import spray from './images/spray.png';
 import sweethome from './images/sweethome.png';
 import logo1 from './images/logo1.png';
 import hero1 from './images/hero1.png'
+import bundle from './images/bundle.png'
 export const IMAGES = {
   diffsc,
   allprod1,
@@ -56,6 +57,7 @@ export const IMAGES = {
   artifact6,
   artifact7,
   artifact8,
+  bundle,
   candle,
   candle2Copy,
   candle2,

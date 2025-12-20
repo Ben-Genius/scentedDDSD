@@ -23,7 +23,7 @@ export const Header = () => {
     const navLinks = [
         { name: 'Shop', path: '/shop' },
         { name: 'Bundles', path: '/bundles' },
-        { name: 'Collections', path: '/collections' },
+        // { name: 'Collections', path: '/collections' },
         { name: 'About', path: '/about' },
     ];
 
