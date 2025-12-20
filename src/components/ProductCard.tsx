@@ -45,7 +45,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                 className="block text-center cursor-pointer"
             >
                 {/* Image Container - Arch Shape */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-t-[1000px] mb-6 transition-transform duration-500 hover:-translate-y-2">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-sm mb-6 transition-transform duration-500 hover:-translate-y-2">
                     {/* Background Image */}
                     <img
                         src={product.images.default}

@@ -89,9 +89,9 @@ export const Home = () => {
                     <ProductGrid products={featuredProducts} title="Featured Collections" />
                 </motion.div>
 
-                {/* <motion.div {...fadeInUp}>
+                <motion.div {...fadeInUp}>
                     <SimpleNewArrivals />
-                </motion.div> */}
+                </motion.div>
 
                 <motion.div {...fadeInUp}>
                     <FeatureSection />
