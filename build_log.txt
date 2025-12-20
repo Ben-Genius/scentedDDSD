@@ -1,0 +1,30 @@
+$ tsc && vite build
+vite v7.2.7 building client environment for production...
+transforming...
+Error: Cannot apply unknown utility class `bg-background`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    at onInvalidCandidate (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:21:1314)
+    at Te (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:16:36652)
+    at /Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:21:355
+    at Rr (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:3:1718)
+    at _ (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:3:1377)
+    at $e (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:21:172)
+    at un (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:38:294)
+    at async cn (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/tailwindcss/dist/lib.js:38:631)
+    at async Xr (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/@tailwindcss/node/dist/index.js:10:3417)
+    at async I (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/@tailwindcss/postcss/dist/index.js:10:3977)
+✓ 8 modules transformed.
+✗ Build failed in 299ms
+error during build:
+[vite:css] [postcss] tailwindcss: /Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/src/styles/global.css:1:1: Cannot apply unknown utility class `bg-background`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+file: /Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/src/styles/global.css:1:0
+    at Input.error (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/postcss/lib/input.js:135:16)
+    at Root.error (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/postcss/lib/node.js:146:32)
+    at Object.Once (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)
+    at async LazyResult.runAsync (/Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/postcss/lib/lazy-result.js:293:11)
+    at async runPostCSS (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/vite/dist/node/chunks/config.js:30144:19)
+    at async compilePostCSS (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/vite/dist/node/chunks/config.js:30128:6)
+    at async compileCSS (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/vite/dist/node/chunks/config.js:30058:26)
+    at async Object.handler (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/vite/dist/node/chunks/config.js:29591:54)
+    at async transform (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/rollup/dist/es/shared/node-entry.js:21163:16)
+    at async ModuleLoader.addModuleSource (file:///Users/azaygenius_1/Desktop/ProjectsGenius/scentedDDSD/node_modules/rollup/dist/es/shared/node-entry.js:21377:36)
+error: script "build" exited with code 1

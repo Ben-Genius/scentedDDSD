@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductDetail } from '../components/ProductDetail';
-import { getProductBySlug } from '../lib/api';
+import { useInventory } from '../hooks/useInventory';
 import { Product } from '../types';
 
 export const ProductPage = () => {
     const { slug } = useParams();
+    const { getProductBySlug } = useInventory();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         if (slug) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
             setLoading(true);
-            getProductBySlug(slug).then(p => {
-                setProduct(p || null);
-                setLoading(false);
-            });
+            const foundProduct = getProductBySlug(slug);
+            setProduct(foundProduct || null);
+            setLoading(false);
         }
-    }, [slug]);
+    }, [slug, getProductBySlug]);
 
     if (loading) return <div className="pt-32 text-center text-gray-500">Loading...</div>;
     if (!product) return <div className="pt-32 text-center text-gray-500">Product not found.</div>;

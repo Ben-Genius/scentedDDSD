@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Hero } from '../components/Hero';
 import { ProductGrid } from '../components/ProductGrid';
-import { MarketingMarquee } from '../components/MarketingMarquee';
+import { MarketingMarquee } from '@/components/MarketingMarquee';
 import { getProducts } from '../lib/api';
 import { Product } from '../types';
 import FeatureSection from '@/components/Featured';
 import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
-import { Testimonials } from '../components/Testimonials';
+import { Link } from 'react-router-dom';
+import { IMAGES } from '@/assets';
+import { motion } from "motion/react";
+import Testimonials from '@/components/Testimonials';
+import Hero from '@/components/Hero';
+
+interface TimeLeft {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
 
 export const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -17,35 +27,90 @@ export const Home = () => {
         });
     }, []);
 
+
+    const TimeUnit = ({ value, label }: { value: number; label: string }) => (
+        <div className="flex flex-col items-center mx-2 md:mx-6">
+            <div className="bg-white border border-black/10 text-black font-playfair text-xl md:text-5xl font-normal w-12 h-12 md:w-24 md:h-24 flex items-center justify-center shadow-sm">
+                {String(value).padStart(2, '0')}
+            </div>
+            <span className="text-black/60 text-[10px] md:text-xs uppercase tracking-widest mt-3">{label}</span>
+        </div>
+    );
+
+    const CountdownTimer = ({ targetDate }: { targetDate: Date }) => {
+        const calculateTimeLeft = (): TimeLeft => {
+            const difference = +targetDate - +new Date();
+            let timeLeft: TimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+            if (difference > 0) {
+                timeLeft = {
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                };
+            }
+            return timeLeft;
+        };
+
+        const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setTimeLeft(calculateTimeLeft());
+            }, 1000);
+
+            return () => clearTimeout(timer);
+        });
+
+        return (
+            <div className="flex flex-wrap justify-center gap-2 md:gap-0 mt-8 mb-10">
+                <TimeUnit value={timeLeft.days} label="Days" />
+                <TimeUnit value={timeLeft.hours} label="Hours" />
+                <TimeUnit value={timeLeft.minutes} label="Mins" />
+                <TimeUnit value={timeLeft.seconds} label="Secs" />
+            </div>
+        );
+    };
+
+    const fadeInUp = {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: "-50px" },
+        transition: { duration: 0.6, ease: "easeOut" }
+    } as const;
+
     return (
-        <>
+        <div className="overflow-x-hidden bg-champagne-100">
             <Hero />
-            <div className="bg-black relative z-10">
-                <ProductGrid products={featuredProducts} title="Featured Collections" />
+            <div className="relative z-10 space-y-24 md:space-y-32 pb-24 pt-16">
 
-                <MarketingMarquee />
+                <motion.div {...fadeInUp}>
+                    <ProductGrid products={featuredProducts} title="Featured Collections" />
+                </motion.div>
 
-                <SimpleNewArrivals />
+                <motion.div {...fadeInUp}>
+                    <SimpleNewArrivals />
+                </motion.div>
+{/* 
+                <motion.div {...fadeInUp}>
+                    <FeatureSection />
+                </motion.div> */}
 
-                <div className='flex flex-col items-center justify-center text-center mt-12'>
-                    <span className="block text-gold text-xs uppercase tracking-[0.4em]  font-inter">
-                        Holiday Exclusive
-                    </span>
+                {/* <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <MarketingMarquee />
+                </motion.div> */}
 
-                    <h2 className="text-4xl md:text-5xl font-playfair text-white mb-2 leading-tight">
-                        Christmas Sale  <br />
-
-                        <span className="mt-3 block text-gold text-sm uppercase tracking-[0.4em] mb-4 font-inter">Ends In</span>
-
-                        <div className="h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto opacity-50" />
-
-                    </h2>
-
-                </div>
-                <FeatureSection />
-                <Testimonials />
+                <motion.div {...fadeInUp}>
+                    <Testimonials />
+                </motion.div>
 
             </div>
-        </>
+        </div>
     );
 };

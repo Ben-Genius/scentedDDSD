@@ -1,47 +1,55 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { IMAGES } from '@/assets';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { IMAGES } from '../assets';
 
-export const Hero = () => {
+const Hero = () => {
+    const containerRef = useRef(null);
+    const textRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+        tl.fromTo(imageRef.current,
+            { scale: 1.1, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 1.5 }
+        )
+            .fromTo(textRef.current,
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, stagger: 0.2 },
+                "-=1"
+            );
+    }, { scope: containerRef });
+
     return (
-        <div className="relative h-[80vh] w-full overflow-hidden flex items-center">
-            {/* Background with Metallic Gradient Overlay */}
-            <div className="absolute inset-0 bg-black z-0">
-                <div className="absolute inset-0 bg-metallic-gradient opacity-10 mix-blend-overlay" />
-                <div
-                    className="absolute inset-0 opacity-30 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${IMAGES.hero})` }}
+        <div ref={containerRef} className="relative w-full h-[77vh] bg-rose-gold overflow-hidden">
+            {/* Background Image - Full Cover */}
+            <div className="absolute inset-0 w-full h-full">
+                <img
+                    ref={imageRef}  
+                    src={IMAGES.hero1}
+                    alt="Holiday Collection"
+                    className="w-full h-full object-cover object-center pl-2"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+                {/* Subtle gradient overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/20" />
             </div>
 
-            <div className="container mx-auto px-4 relative z-10 flex flex-col justify-center h-full max-w-4xl">
-                <h2 className="text-gold text-sm tracking-[0.5em] uppercase font-inter mb-4 animate-fade-in-up">The Essence of Luxury</h2>
-                <h1 className="text-5xl md:text-7xl font-playfair text-white leading-tight mb-8 animate-fade-in-up delay-100">
-                    Elevate Your Space with <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7852B] via-[#F5E0A3] to-[#B7852B] animate-shimmer bg-[size:200%_auto]">
-                        Timeless Scents
-                    </span>
-                </h1>
-                <p className="text-gray-300 text-lg md:text-xl max-w-2xl font-light mb-10 leading-relaxed animate-fade-in-up delay-200">
-                    Handcrafted candles, diffusers, and essential oils designed to transform your environment into a sanctuary of calm and opulence.
-                </p>
-
-                <div className="flex flex-wrap gap-4 animate-fade-in-up delay-300">
-                    <Link
-                        to="/shop"
-                        className="px-8 py-4 bg-gold text-black font-medium text-sm tracking-widest uppercase hover:bg-white transition-colors duration-300 transform hover:scale-105 rounded-md"
-                    >
-                        Shop Collection
-                    </Link>
-                    <Link
-                        to="/bundles"
-                        className="px-8 py-4 border border-gold text-gold font-medium text-sm tracking-widest uppercase hover:bg-gold/10 transition-colors duration-300 rounded-md"
-                    >
-                        View Bundles
-                    </Link>
-                </div>
+            {/* Content Overlay */}
+            <div ref={textRef} className="absolute bottom-6 left-2 md:bottom-6 md:left-3 max-w-sm bg-black/30 backdrop-blur-md border border-white/10 p-8 md:p-10 rounded-2xl text-white shadow-2xl">
+                <h2 className="text-xl font-playfair text-white mb-4 uppercase tracking-[0.1em]">
+                    Timeless scents for every season                </h2>
+                <Link
+                    to="/shop"
+                    className="inline-block px-8 py-3 bg-white text-black font-medium hover:bg-champagne hover:scale-105 transition-all duration-300 uppercase tracking-widest text-sm"
+                >
+                    Shop Now
+                </Link>
             </div>
         </div>
     );
 };
+
+export default Hero;

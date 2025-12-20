@@ -3,7 +3,7 @@ import { AdminInventory as AdminComponent } from '../components/AdminInventory';
 
 export const AdminInventory = () => {
     return (
-        <div className="pt-20 min-h-screen bg-black">
+        <div className="">
             <AdminComponent />
         </div>
     );

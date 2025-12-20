@@ -16,12 +16,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col font-inter selection:bg-gold selection:text-black">
-      <Header />
+    <div className="min-h-screen text-white flex flex-col font-inter selection:bg-gold selection:text-black">
+      { location.pathname !== '/admin' &&
+        <Header />}
       <main className="flex-grow relative z-10">
         {children}
       </main>
-      <Footer />
+      { location.pathname !== '/admin' &&
+        <Footer />}
 
       {/* Global Elements */}
       <CartDrawer isOpen={isDrawerOpen} onClose={closeDrawer} />

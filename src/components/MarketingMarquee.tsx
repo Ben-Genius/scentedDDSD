@@ -2,6 +2,7 @@ import React, { useState, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
+import { motion } from "motion/react";
 
 interface MarqueeProps {
     children: ReactNode;
@@ -26,7 +27,7 @@ function Marquee({
             )}
             style={
                 {
-                    "--duration": `${speed} s`,
+                    "--duration": `${speed}s`,
                 } as React.CSSProperties
             }
         >
@@ -108,7 +109,7 @@ function ScrambleButton() {
         <Link to="/shop">
             <button
                 onMouseEnter={scramble}
-                className="px-8 py-3 bg-white text-black rounded-sm font-semibold hover:bg-gold hover:text-white transition-colors duration-300 uppercase tracking-widest text-sm"
+                className="px-10 py-4 bg-black text-white rounded-none font-medium hover:bg-black/90 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs shadow-none border border-black"
             >
                 {displayText}
             </button>
@@ -118,64 +119,81 @@ function ScrambleButton() {
 
 export const MarketingMarquee = () => {
     return (
-        <div className="py-20 bg-background text-foreground flex items-center overflow-hidden border-white/5 relative bg-black">
-            <div className="w-full container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row items-center lg:gap-12">
+        <div className="py-0 md:py-10  text-foreground flex items-center overflow-hidden border-white/5 relative">
+            <div className="w-full px-6 md:px-12 max-w-[109rem] mx-auto">
+                <div className="flex flex-col lg:flex-row items-center lg:gap-20">
                     {/* Left Content */}
-                    <div className="flex-shrink-0 space-y-8 px-6 lg:px-0 py-12 lg:py-0 lg:max-w-xl text-center lg:text-left">
-                        <div>
-                            <span className="block text-gold text-xs uppercase tracking-[0.4em] mb-4 font-inter">Handcrafted in Ghana</span>
-                            <h2 className="text-4xl md:text-5xl font-playfair text-white mb-6 leading-tight">
+                    <div className="flex-shrink-0 space-y-6 md:space-y-8 px-4 lg:px-0 lg:max-w-xl text-center lg:text-left z-10">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="block text-black/60 text-xs uppercase tracking-[0.4em] mb-4 font-inter">Handcrafted in Ghana</span>
+                            <h2 className="text-4xl md:text-6xl font-playfair text-black mb-6 leading-tight">
                                 The Essence of <br /> Luxury Scents
                             </h2>
-                            <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                            <p className="text-black/70 text-base md:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
                                 Scented by DDSD brings you an exquisite selection of home fragrances.
                                 Blending modern aesthetics with timeless aromas to elevate your sensory experience.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="pt-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
+                            className="pt-4"
+                        >
                             <ScrambleButton />
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Right Marquee Grid */}
-                    <div className="flex-1 w-full lg:w-auto space-y-6 overflow-hidden mt-12 lg:mt-0 relative">
-                        {/* Gradient masks for smooth fade edges */}
-                        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-                        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        className="flex-1 w-full lg:w-auto space-y-6 overflow-hidden mt-16 lg:mt-0 relative"
+                    >
+                        {/* Gradient masks for smooth fade edges - Responsive widths */}
+                        <div className="absolute inset-y-0 left-0 w-12 md:w-28 bg-gradient-to-r from-champagne-100 to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-12 md:w-28 bg-gradient-to-l from-champagne-100 to-transparent z-10 pointer-events-none" />
 
-                        <Marquee speed={50} reverse className="[--gap:1.5rem]">
+                        <Marquee speed={50} reverse className="[--gap:1rem] md:[--gap:1.5rem]">
                             {marqueeImages1.map((src, idx) => (
                                 <div
                                     key={`m1 - ${idx} `}
-                                    className="relative w-64 h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-lg border border-white/10"
+                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-none border border-black/5 shadow-none"
                                 >
                                     <img
                                         src={src}
                                         alt={`Product ${idx + 1} `}
-                                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
+                                        className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />
                                 </div>
                             ))}
                         </Marquee>
-                        <Marquee speed={45} className="[--gap:1.5rem]">
+                        <Marquee speed={45} className="[--gap:1rem] md:[--gap:1.5rem]">
                             {marqueeImages2.map((src, idx) => (
                                 <div
                                     key={`m2 - ${idx} `}
-                                    className="relative w-64 h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-lg border border-white/10"
+                                    className="relative w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 overflow-hidden flex-shrink-0 rounded-none border border-black/5 shadow-none"
                                 >
                                     <img
                                         src={src}
                                         alt={`Product ${idx + 5} `}
-                                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
+                                        className="w-full h-full object-cover hover:opacity-100 transition-opacity duration-500 hover:scale-105 transform ease-out"
                                         loading="lazy"
                                     />
                                 </div>
                             ))}
                         </Marquee>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

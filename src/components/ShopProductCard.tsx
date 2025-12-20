@@ -19,64 +19,55 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
     return (
         <div
             className={cn(
-                "group relative block overflow-hidden rounded-lg border bg-card text-card-foreground transition-all duration-300 ease-in-out hover:shadow-lg border-white/10 bg-white/5",
+                "group relative block bg-transparent transition-all duration-300 ease-in-out",
                 className
             )}
         >
             <Link to={`/product/${product.slug}`} aria-label={product.title}>
-                {/* Image container with taller aspect ratio to cover more space */}
-                <div className="aspect-[4/5] overflow-hidden bg-[#111] relative">
+                {/* Image container with taller aspect ratio (Quince style) */}
+                <div className="aspect-[3/4] overflow-hidden bg-[#f5f5f5] relative mb-3">
                     <img
                         src={product.images.default}
                         alt={product.title}
-                        className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         loading="lazy"
                     />
 
-                    {/* Featured Badge */}
+                    {/* Featured Badge - Minimalist text only */}
                     {product.featured && (
-                        <span className="absolute top-3 left-3 bg-gold/90 text-black text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider z-10">
-                            Featured
+                        <span className="absolute top-2 left-2 text-xs font-medium tracking-widest text-black uppercase">
+                            New
                         </span>
                     )}
 
-                    {/* Gradient Overlay for text readability if needed, or just luxury touch */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                {/* Card content */}
-                <div className="p-4 bg-black/40 backdrop-blur-sm">
-                    <h3 className="font-playfair font-semibold text-lg text-white leading-tight truncate group-hover:text-gold transition-colors">
-                        {product.title}
-                    </h3>
-                    <div className="mt-1 flex justify-between items-center bg-transparent">
-                        <p className="text-xs text-gold uppercase tracking-widest">{product.category}</p>
-                        <p className="text-sm text-gray-300 font-light">
-                            {formatMoney(lowestPrice)}
-                        </p>
+                    {/* Quick Add - Slide up from bottom */}
+                    <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+                        <button
+                            className="w-full bg-white/95 backdrop-blur-sm py-3 text-xs font-bold uppercase tracking-widest text-black hover:bg-black hover:text-white transition-colors border-t border-black/5"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                // Interaction handled by parent usually, or we can dispatch event
+                            }}
+                        >
+                            Quick Add
+                        </button>
                     </div>
                 </div>
+
+                {/* Card content - Minimalist */}
+                <div className="space-y-1">
+                    <div className="flex justify-between items-start">
+                        <h3 className="font-sans text-sm font-medium text-black leading-snug group-hover:text-black/70 transition-colors">
+                            {product.title}
+                        </h3>
+                        <span className="text-sm font-medium text-black ml-4">
+                            {formatMoney(lowestPrice)}
+                        </span>
+                    </div>
+
+                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">{product.category}</p>
+                </div>
             </Link>
-
-            {/* Save button - appears on hover (Visual only for now) */}
-            <button
-                className="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gold hover:text-black hover:scale-110"
-                aria-label="Save product"
-                onClick={(e) => {
-                    e.preventDefault();
-                    // Future wishlist logic here
-                    console.log('Saved', product.id);
-                }}
-            >
-                <Bookmark className="h-4 w-4" />
-            </button>
-
-            {/* Quick Add / View Button - Centered Style */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
-                <span className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs uppercase tracking-widest hover:bg-gold hover:border-gold hover:text-black transition-colors duration-300 pointer-events-auto">
-                    View Product
-                </span>
-            </div>
         </div>
     );
 };

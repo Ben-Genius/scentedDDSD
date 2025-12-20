@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -11,12 +12,33 @@ module.exports = {
     },
     extend: {
       colors: {
-        gold: {
-          DEFAULT: '#B7852B',
-          50: '#f6efe0',
-          100: '#eee0c1',
+        champagne: {
+          DEFAULT: '#FDFCF5', // Light Cream (Jo Malone background)
+          50: '#FFFFFF',
+          100: '#FDFCF5',
+          200: '#F2F0EB', 
+          300: '#E8E6E0',
         },
-        black: '#0B0B0B',
+        gold: {
+          DEFAULT: '#B7852B', // Keeping for subtle accents only
+          50: '#FDFCF5',
+          100: '#EEEADE',
+          200: '#B7852B',
+        },
+        black: '#000000', // Pure black for text
+        rose: '#000000', // Replaced rose with black for the premium monochrome look
+        'holiday-red': '#8B0000',
+      },
+      borderRadius: {
+        'none': '0',
+        'sm': '0',
+        DEFAULT: '0',
+        'md': '0',
+        'lg': '0',
+        'xl': '0',
+        '2xl': '0',
+        '3xl': '0',
+        'full': '9999px',
       },
       fontFamily: {
         playfair: ['"Playfair Display"', 'serif'],
