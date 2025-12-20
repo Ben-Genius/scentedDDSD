@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
-import { motion, Variants } from 'motion/react';
-import { Globe, Phone, MapPin, Truck, Leaf, ShieldCheck } from 'lucide-react';
+import { motion, Variants, HTMLMotionProps } from 'motion/react';
+import { Truck, Leaf, ShieldCheck } from 'lucide-react';
 
 // Icon component for contact details (Adapted to Lucide)
 const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
@@ -13,7 +13,7 @@ const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
     return <div className="mr-2 flex-shrink-0">{icons[type]}</div>;
 };
 
-interface HeroSectionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+interface HeroSectionProps extends Omit<HTMLMotionProps<"section">, 'title'> {
     logo?: {
         url: string;
         alt: string;
@@ -70,7 +70,7 @@ const BundlesHero = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
-                {...(props as any)}
+                {...props}
             >
                 {/* Left Side: Content */}
                 <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-2/5 lg:p-16 relative z-10">

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BundleBuilder } from '../components/BundleBuilder';
 import { useInventory } from '../hooks/useInventory';
-import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
-import { ShoppingBag, Check } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { IMAGES } from '../assets';
 import { motion } from 'motion/react';
@@ -174,7 +173,7 @@ export const Bundles = () => {
                         {['all', 'relaxation', 'romantic', 'luxury'].map((cat) => (
                             <button
                                 key={cat}
-                                onClick={() => setActiveCategory(cat as any)}
+                                onClick={() => setActiveCategory(cat as typeof activeCategory)}
                                 className={`px-6 py-2 rounded-full text-xs font-bold uppercase transition-all ${activeCategory === cat ? 'bg-white shadow-sm text-black' : 'text-black/40 hover:text-black'
                                     }`}
                             >

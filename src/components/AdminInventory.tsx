@@ -1,21 +1,36 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo, ElementType } from 'react';
 import { getOrders } from '../lib/api';
 import { useInventory } from '../hooks/useInventory';
-import { Product, Order, CartItem } from '../types';
+import { Product, Order } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import {
-    Edit2, Trash2, Plus, X, Save, Package, ShoppingBag, TrendingUp, DollarSign,
-    Mail, Lock, Home, Monitor, ShoppingCart, Tag, BarChart3, Users,
-    ChevronDown, ChevronsRight, Activity, Bell, Settings, HelpCircle, User,
-    MapPin, Phone, Calendar, Search, Filter, ArrowUpRight, ArrowDownRight, Printer, ArrowLeft
+    Edit2, Trash2, Plus, X, ShoppingBag, DollarSign,
+    Mail, Lock, Home, Monitor, ShoppingCart, Users,
+    Activity, Bell, Settings, User,
+    MapPin, Calendar, Search, Filter, ArrowUpRight, ArrowDownRight, Printer, ArrowLeft
 } from 'lucide-react';
 import { IMAGES } from '@/assets';
-import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
 // --- Types ---
 type ViewState = 'Dashboard' | 'Sales' | 'Products' | 'Customers' | 'Settings';
 
+interface MetricCardProps {
+    title: string;
+    value: string | number;
+    subtext: string;
+    icon: ElementType;
+    trend?: 'up' | 'down';
+}
+
+interface SidebarOptionProps {
+    Icon: ElementType;
+    title: string;
+    selected: ViewState;
+    setSelected: (view: ViewState) => void;
+    open: boolean;
+    notifs?: number;
+}
 // --- Sub-Components ---
 
 const Logo = () => (
@@ -24,11 +39,11 @@ const Logo = () => (
     </div>
 );
 
-const SidebarOption = ({ Icon, title, selected, setSelected, open, notifs }: any) => {
+const SidebarOption = ({ Icon, title, selected, setSelected, open, notifs }: SidebarOptionProps) => {
     const isSelected = selected === title;
     return (
         <button
-            onClick={() => setSelected(title)}
+            onClick={() => setSelected(title as ViewState)}
             className={`relative flex h-11 w-full items-center rounded-md transition-all duration-200 ${isSelected
                 ? "bg-yellow-50 text-yellow-900 shadow-sm border-l-2 border-yellow-500"
                 : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -51,7 +66,7 @@ const SidebarOption = ({ Icon, title, selected, setSelected, open, notifs }: any
     );
 };
 
-const MetricCard = ({ title, value, subtext, icon: Icon, trend }: any) => (
+const MetricCard = ({ title, value, subtext, icon: Icon, trend }: MetricCardProps) => (
     <div className="p-6 rounded-xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center justify-between mb-4">
             <div className="p-2 bg-yellow-50 rounded-lg">
@@ -185,7 +200,6 @@ export const AdminInventory = () => {
         const lowStockProducts = products.filter(p => p.stock < 5).length;
 
         // Simple mock trend data
-        const recentOrders = orders.slice(0, 10);
         const avgOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
 
         // Customers Aggregation
@@ -222,7 +236,7 @@ export const AdminInventory = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     // Layout & View State
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+    const [sidebarOpen] = useState(true);
     const [selectedView, setSelectedView] = useState<ViewState>("Dashboard");
     const [searchQuery, setSearchQuery] = useState('');
     const [salesStatusFilter, setSalesStatusFilter] = useState('all');
@@ -686,7 +700,7 @@ export const AdminInventory = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100">
-                                    {analytics.distinctCustomers.map((cust: any) => (
+                                    {analytics.distinctCustomers.map((cust: { id: string; name: string; email: string; phone: string; city: string; totalOrders: number; totalSpend: number; lastOrder: string }) => (
                                         <tr key={cust.id} className="hover:bg-gray-50 transition-colors">
                                             <td className="p-4 font-medium text-gray-900">
                                                 <div className="flex items-center gap-3">

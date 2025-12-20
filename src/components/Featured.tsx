@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { IMAGES } from "@/assets";
 import { motion, useScroll, useTransform } from "motion/react";
-import { MarketingMarquee } from "./MarketingMarquee";
+
 
 export const FeatureSection = () => {
     const containerRef = useRef(null);
