@@ -92,10 +92,10 @@ export const Home = () => {
                 <motion.div {...fadeInUp}>
                     <SimpleNewArrivals />
                 </motion.div>
-
+{/* 
                 <motion.div {...fadeInUp}>
                     <FeatureSection />
-                </motion.div>
+                </motion.div> */}
 
                 {/* <motion.div
                     initial={{ opacity: 0, x: -20 }}
