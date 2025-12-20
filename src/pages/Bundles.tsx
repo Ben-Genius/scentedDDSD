@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BundleBuilder } from '../components/BundleBuilder';
-import { getProducts } from '../lib/api';
+import { useInventory } from '../hooks/useInventory';
 import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Check } from 'lucide-react';
+import { useLocalCart } from '../hooks/useLocalCart';
 import { IMAGES } from '../assets';
 import { motion } from 'motion/react';
 import { BundlesHero } from '../components/BundlesHero';
@@ -24,12 +25,29 @@ interface PrebuiltBundle {
 }
 
 export const Bundles = () => {
-    const [products, setProducts] = useState<Product[]>([]);
+    const { products } = useInventory();
+    const { addItem } = useLocalCart();
     const [activeCategory, setActiveCategory] = useState<'all' | 'relaxation' | 'romantic' | 'energizing' | 'luxury'>('all');
 
-    useEffect(() => {
-        getProducts().then(setProducts);
-    }, []);
+    const handleAddPrebuiltBundle = (bundle: PrebuiltBundle) => {
+        let addedCount = 0;
+        bundle.items.forEach(itemName => {
+            // Fuzzy match logic or direct match
+            const product = products.find(p => p.title.includes(itemName) || itemName.includes(p.title));
+            if (product) {
+                addItem(product, product.variants[0], undefined, product.scents[0], undefined, 1);
+                addedCount++;
+            }
+        });
+
+        if (addedCount > 0) {
+            alert(`Added ${bundle.name} to cart!`);
+        } else {
+            alert("Could not find items for this bundle in inventory.");
+        }
+    };
+
+
 
     const prebuiltBundles: PrebuiltBundle[] = [
         {
@@ -192,7 +210,10 @@ export const Bundles = () => {
                                         </span>
                                     ) : <span></span>}
 
-                                    <button className="w-10 h-10 rounded-full bg-white/10 backdrop-blur flex items-center justify-center hover:bg-white hover:text-black transition-colors">
+                                    <button
+                                        onClick={() => handleAddPrebuiltBundle(bundle)}
+                                        className="w-10 h-10 rounded-full bg-white/10 backdrop-blur flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                                    >
                                         <ShoppingBag className="w-4 h-4" />
                                     </button>
                                 </div>
