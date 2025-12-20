@@ -26,7 +26,7 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
     };
 
     return (
-        <section className="py-6 px-4 max-w-[109rem] mx-auto">
+        <section className="py-6 px-4 container  mx-auto">
             {title && (
                 <div className="text-center mb-10 px-4">
                     <h2 className="text-2xl md:text-3xl font-playfair text-black mb-4 uppercase tracking-[0.1em]">
@@ -44,8 +44,8 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
-                className={`grid gap-x-8 gap-y-16 ${variant === 'shop'
-                    ? 'grid-cols-2 lg:grid-cols-3'
+                className={`grid gap-x-16 gap-y-16 ${variant === 'shop'
+                    ? 'grid-cols-2 lg:grid-cols-4'
                     : 'grid-cols-2 lg:grid-cols-4'
                     }`}
             >

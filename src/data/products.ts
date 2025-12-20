@@ -2,54 +2,45 @@ import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
 export const products: Product[] = [
-  {
-    id: "p1",
-    title: "Luxury Hand Gel",
-    slug: "luxury-hand-gel",
-    category: "Hand Gel",
-    shortDescription: "Premium moisturizing hand gel with gold flakes.",
-    longDescription: "Experience the ultimate in hygiene and luxury. Our hand gel is infused with moisturizing aloe vera and shimmer gold flakes, leaving your hands soft, sanitized, and subtly scented.",
-    basePrice: 45,
-    stock: 100,
+   {
+    id: "p15",
+    title: "Scented Sachets",
+    slug: "scented-sachets",
+    category: "Potpourri",
+    shortDescription: "For drawers and closets.",
+    longDescription: "Keep your linens and clothes smelling fresh with these long-lasting scented sachets.",
+    basePrice: 25,
+    stock: 200,
     featured: true,
     images: {
-      default: IMAGES.soap,
-      gallery: [
-         IMAGES.soap2,
-         IMAGES.artifact1
-      ],
-      colorVariants: []
-    },
-    variants: [
-      { id: "v1-sm", label: "Travel", sizeMl: "50ml", sizeLabel: "Petite", multiplier: 1, priceGHS: 45 },
-      { id: "v1-md", label: "Regular", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1.8, priceGHS: 80 },
-      { id: "v1-lg", label: "Large", sizeMl: "250ml", sizeLabel: "Grande", multiplier: 3.5, priceGHS: 150 },
-      { id: "v1-xl", label: "Refill", sizeMl: "500ml", sizeLabel: "Luxe", multiplier: 6, priceGHS: 250 }
-    ],
-    scents: ["Oud Wood", "Vanilla Bean", "Fresh Linen", "Rose Gold"]
-  },
-  {
-    id: "p2",
-    title: "Silk Shower Gel",
-    slug: "silk-shower-gel",
-    category: "Shower Gel",
-    shortDescription: "Silky smooth body wash for a spa-like feel.",
-    longDescription: "Transform your daily shower into a spa ritual. Enriched with silk proteins and essential oils.",
-    basePrice: 60,
-    stock: 80,
-    featured: true,
-    images: {
-      default: IMAGES.soap2,
+      default: IMAGES.artifact7,
       gallery: [],
       colorVariants: []
     },
     variants: [
-      { id: "v2-sm", label: "Travel", sizeMl: "100ml", sizeLabel: "Petite", multiplier: 1, priceGHS: 60 },
-      { id: "v2-md", label: "Regular", sizeMl: "250ml", sizeLabel: "Classic", multiplier: 2, priceGHS: 110 },
-      { id: "v2-lg", label: "Large", sizeMl: "500ml", sizeLabel: "Grande", multiplier: 3.5, priceGHS: 200 },
-      { id: "v2-xl", label: "Family", sizeMl: "1000ml", sizeLabel: "Luxe", multiplier: 6, priceGHS: 350 }
+      { id: "v15-3pk", label: "3-Pack", sizeMl: "", sizeLabel: "Classic", multiplier: 1, priceGHS: 25 }
     ],
-    scents: ["Lavender Dreams", "Citrus Burst", "Cocoa Butter"]
+    scents: ["Lavender", "Rose", "Cedar"]
+  },
+  {
+    id: "p16",
+    title: "Massage Oil",
+    slug: "massage-oil",
+    category: "Essential Oils",
+    shortDescription: "Relaxing massage blend.",
+    longDescription: "A soothing blend of essential oils and carrier oils perfect for winding down.",
+    basePrice: 65,
+    stock: 60,
+    featured: true,
+    images: {
+      default: IMAGES.artifact8,
+      gallery: [],
+      colorVariants: []
+    },
+    variants: [
+      { id: "v16-100", label: "100ml", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 65 }
+    ],
+    scents: ["Relaxing", "Energizing", "Sensual"]
   },
   {
     id: "p3",
