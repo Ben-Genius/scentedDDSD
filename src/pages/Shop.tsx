@@ -6,7 +6,6 @@ import { Product, ProductVariant } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import { IMAGES } from '@/assets';
 import {
-    Filter,
     X,
     ShoppingCart,
     Search,

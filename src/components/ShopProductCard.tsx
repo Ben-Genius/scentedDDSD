@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Bookmark } from 'lucide-react';
 import { Product } from '@/types';
 import { formatMoney } from '@/utils/formatMoney';
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { formatMoney } from '../utils/formatMoney';
-import { X, Plus, Package, ShoppingBag, ArrowRight } from 'lucide-react';
+import { X, Plus } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface BundleBuilderProps {
@@ -46,8 +46,8 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
 
             {/* 1. Sticky "The Stage" - Visual representation of the box */}
             <div className="sticky top-4 z-40">
-                <div className="bg-white/80 backdrop-blur-xl border border-black/5 rounded-3xl shadow-2xl p-8 transition-all duration-300">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div className="bg-white/80 backdrop-blur-xl border border-black/5 rounded-3xl shadow-2xl p-6 md:p-8 transition-all duration-300">
+                    <div className="flex flex-col md:flex-row items-start justify-between gap-8">
 
                         {/* Box Visualizer */}
                         <div className="flex-1 w-full">
@@ -76,7 +76,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                             </div>
 
                             {/* Slots */}
-                            <div className="grid grid-cols-5 gap-4">
+                            <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 md:gap-4">
                                 {[...Array(5)].map((_, i) => (
                                     <div key={i} className="aspect-square rounded-xl border-2 border-dashed border-black/10 flex items-center justify-center relative overflow-hidden bg-gray-50/50">
                                         <AnimatePresence mode='popLayout'>
@@ -106,7 +106,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                         </div>
 
                         {/* Summary & Action */}
-                        <div className="md:w-72 w-full flex flex-col gap-4 border-l border-black/5 md:pl-8">
+                        <div className="md:w-72 w-full flex flex-col gap-4 border-t md:border-t-0 md:border-l border-black/5 pt-6 md:pt-0 md:pl-8">
                             <div className="space-y-2">
                                 <div className="flex justify-between text-sm">
                                     <span className="text-black/50">Value</span>
@@ -141,7 +141,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                     {availableProducts.map((product) => (
                         <motion.button
                             layout
