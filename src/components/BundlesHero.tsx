@@ -6,9 +6,9 @@ import { Truck, Leaf, ShieldCheck } from 'lucide-react';
 // Icon component for contact details (Adapted to Lucide)
 const InfoIcon = ({ type }: { type: 'website' | 'phone' | 'address' }) => {
     const icons = {
-        website: <Truck className="h-5 w-5 text-gold" />,
-        phone: <ShieldCheck className="h-5 w-5 text-gold" />,
-        address: <Leaf className="h-5 w-5 text-gold" />,
+        website: <Truck className="h-4 w-4 md:h-5 md:w-5 text-gold" />,
+        phone: <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-gold" />,
+        address: <Leaf className="h-4 w-4 md:h-5 md:w-5 text-gold" />,
     };
     return <div className="mr-2 flex-shrink-0">{icons[type]}</div>;
 };
@@ -64,7 +64,8 @@ const BundlesHero = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             <motion.section
                 ref={ref}
                 className={cn(
-                    "relative flex w-full flex-col overflow-hidden bg-champagne-50 text-black md:flex-row h-[90vh]",
+                    "relative flex w-full flex-col overflow-hidden bg-champagne-50 text-black md:flex-row",
+                    "min-h-screen md:min-h-[90vh] h-auto",
                     className
                 )}
                 initial="hidden"
@@ -73,32 +74,49 @@ const BundlesHero = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 {...props}
             >
                 {/* Left Side: Content */}
-                <div className="flex w-full flex-col justify-between p-8 md:w-1/2 md:p-12 lg:w-2/5 lg:p-16 relative z-10">
+                <div className="flex w-full flex-col justify-between p-6 sm:p-8 md:w-1/2 md:p-10 lg:w-2/5 lg:p-16 xl:p-20 relative z-10 order-2 md:order-1">
                     {/* Top Section: Logo & Main Content */}
                     <div>
-                        <motion.header className="mb-12" variants={itemVariants}>
+                        <motion.header className="mb-6 sm:mb-8 md:mb-10 lg:mb-12" variants={itemVariants}>
                             {logo && (
                                 <div className="flex items-center">
-                                    {logo.url && <img src={logo.url} alt={logo.alt} className="mr-3 h-8" />}
+                                    {logo.url && <img src={logo.url} alt={logo.alt} className="mr-2 sm:mr-3 h-6 sm:h-7 md:h-8" />}
                                     <div>
-                                        {logo.text && <p className="text-lg font-bold text-black font-playfair">{logo.text}</p>}
-                                        {slogan && <p className="text-xs tracking-wider text-black/60 uppercase font-inter">{slogan}</p>}
+                                        {logo.text && (
+                                            <p className="text-base sm:text-lg font-bold text-black font-playfair">
+                                                {logo.text}
+                                            </p>
+                                        )}
+                                        {slogan && (
+                                            <p className="text-[10px] sm:text-xs tracking-wider text-black/60 uppercase font-inter">
+                                                {slogan}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             )}
                         </motion.header>
 
                         <motion.main variants={containerVariants}>
-                            <motion.h1 className="text-5xl font-playfair font-medium leading-[1.1] text-black md:text-7xl" variants={itemVariants}>
+                            <motion.h1
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-medium leading-[1.1] text-black"
+                                variants={itemVariants}
+                            >
                                 {title}
                             </motion.h1>
-                            <motion.div className="my-8 h-1 w-20 bg-gold" variants={itemVariants}></motion.div>
-                            <motion.p className="mb-10 max-w-md text-lg text-black/70 font-light leading-relaxed" variants={itemVariants}>
+                            <motion.div
+                                className="my-6 sm:my-7 md:my-8 h-0.5 sm:h-1 w-16 sm:w-20 bg-gold"
+                                variants={itemVariants}
+                            ></motion.div>
+                            <motion.p
+                                className="mb-8 sm:mb-9 md:mb-10 max-w-md text-base sm:text-lg text-black/70 font-light leading-relaxed"
+                                variants={itemVariants}
+                            >
                                 {subtitle}
                             </motion.p>
                             <motion.a
                                 href={callToAction.href}
-                                className="inline-block text-sm font-bold tracking-[0.2em] uppercase text-black border-b border-black pb-1 transition-colors hover:text-gold hover:border-gold"
+                                className="inline-block text-xs sm:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase text-black border-b border-black pb-1 transition-colors hover:text-gold hover:border-gold active:opacity-70"
                                 variants={itemVariants}
                             >
                                 {callToAction.text}
@@ -107,17 +125,17 @@ const BundlesHero = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     </div>
 
                     {/* Bottom Section: Footer Info */}
-                    <motion.footer className="mt-12 w-full" variants={itemVariants}>
-                        <div className="grid grid-cols-1 gap-6 text-xs text-black/60 sm:grid-cols-3 font-medium uppercase tracking-wider">
+                    <motion.footer className="mt-8 sm:mt-10 md:mt-12 w-full" variants={itemVariants}>
+                        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 md:gap-6 text-[10px] sm:text-xs text-black/60 font-medium uppercase tracking-wider">
                             <div className="flex items-center">
                                 <InfoIcon type="website" />
-                                <span>{contactInfo.website}</span>
+                                <span className="break-all">{contactInfo.website}</span>
                             </div>
                             <div className="flex items-center">
                                 <InfoIcon type="phone" />
                                 <span>{contactInfo.phone}</span>
                             </div>
-                            <div className="flex items-center">
+                            <div className="flex items-center xs:col-span-2 sm:col-span-1">
                                 <InfoIcon type="address" />
                                 <span>{contactInfo.address}</span>
                             </div>
@@ -127,15 +145,25 @@ const BundlesHero = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
                 {/* Right Side: Image with Clip Path Animation */}
                 <motion.div
-                    className="w-full min-h-[300px] bg-cover bg-center md:w-1/2 md:min-h-full lg:w-3/5 absolute right-0 top-0 bottom-0 md:relative"
+                    className="w-full min-h-[40vh] sm:min-h-[45vh] md:min-h-full bg-cover bg-center md:w-1/2 lg:w-3/5 md:absolute md:right-0 md:top-0 md:bottom-0 lg:relative order-1 md:order-2"
                     style={{
                         backgroundImage: `url(${backgroundImage})`,
+                        backgroundPosition: 'center',
                     }}
-                    initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-                    animate={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
-                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }} // Elegant easing
+                    initial={{
+                        clipPath: window.innerWidth < 768
+                            ? 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+                            : 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)'
+                    }}
+                    animate={{
+                        clipPath: window.innerWidth < 768
+                            ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+                            : 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)'
+                    }}
+                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <div className="absolute inset-0 bg-black/10 md:hidden"></div> {/* Overlay for mobile text readability */}
+                    {/* Gradient overlay for better text contrast on mobile */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/5 md:hidden"></div>
                 </motion.div>
             </motion.section>
         );

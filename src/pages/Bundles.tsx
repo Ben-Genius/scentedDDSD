@@ -46,8 +46,6 @@ export const Bundles = () => {
         }
     };
 
-
-
     const prebuiltBundles: PrebuiltBundle[] = [
         {
             id: 'bundle-4', // Luxury Set - Large Featured Item
@@ -123,9 +121,9 @@ export const Bundles = () => {
         : prebuiltBundles.filter(b => b.category === activeCategory);
 
     return (
-        <div className="min-h-screen bg-champagne-50 text-black font-inter selection:bg-gold selection:text-white pb-32">
+        <div className="min-h-screen bg-champagne-50 text-black font-inter selection:bg-gold selection:text-white pb-16 sm:pb-24 md:pb-32">
 
-            {/* 1. New Hero Section (Inspiration from User) */}
+            {/* 1. Hero Section */}
             <BundlesHero
                 logo={{
                     url: "", // No logo needed here, simpler
@@ -152,29 +150,21 @@ export const Bundles = () => {
                 }}
             />
 
-            {/* 2. Marquee Divider */}
-            <div className="py-6 border-b border-black/5 bg-white overflow-hidden whitespace-nowrap">
-                <div className="inline-flex animate-marquee">
-                    {[...Array(6)].map((_, i) => (
-                        <span key={i} className="text-6xl mx-12 font-playfair italic text-black/5 font-bold uppercase">
-                            Hand Poured • Luxury • Sustainable •
-                        </span>
-                    ))}
-                </div>
-            </div>
+            {/* 3. Bento Grid Collection - Fully Responsive */}
+            <section id="collection" className="max-w-[115rem]  mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+                {/* Header Section - Responsive */}
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-10 md:mb-12 lg:mb-16 gap-4 sm:gap-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair">Signature Sets</h2>
 
-            {/* 3. Bento Grid Collection */}
-            <section id="collection" className="container mx-auto px-4 py-24">
-                <div className="flex justify-between items-end mb-16">
-                    <h2 className="text-5xl font-playfair">Signature Sets</h2>
-
-                    {/* Minimalist Tab Switcher */}
-                    <div className="hidden md:flex gap-1 bg-black/5 p-1 rounded-full">
+                    {/* Responsive Tab Switcher - Horizontal Scroll on Mobile */}
+                    <div className="flex w-full md:w-auto overflow-x-auto pb-2 md:pb-0 gap-1 md:gap-1 md:bg-black/5 md:p-1 md:rounded-full scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
                         {['all', 'relaxation', 'romantic', 'luxury'].map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat as typeof activeCategory)}
-                                className={`px-6 py-2 rounded-full text-xs font-bold uppercase transition-all ${activeCategory === cat ? 'bg-white shadow-sm text-black' : 'text-black/40 hover:text-black'
+                                className={`px-4 sm:px-5 md:px-6 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase transition-all whitespace-nowrap flex-shrink-0 ${activeCategory === cat
+                                    ? 'bg-black text-white md:bg-white md:shadow-sm md:text-black'
+                                    : 'text-black/60 bg-black/5 md:bg-transparent md:text-black/40 hover:text-black active:bg-black/10'
                                     }`}
                             >
                                 {cat}
@@ -183,50 +173,78 @@ export const Bundles = () => {
                     </div>
                 </div>
 
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 h-auto md:h-[900px]">
+      
+                <motion.div
+                    layout
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-3 sm:gap-4 md:h-[700px] lg:h-[900px]"
+                >
                     {filteredBundles.map((bundle) => (
                         <motion.div
                             layout
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.4 }}
                             key={bundle.id}
-                            className={`group relative bg-white rounded-3xl overflow-hidden border border-black/5 hover:border-black/20 transition-colors ${bundle.gridArea || 'md:col-span-1 md:row-span-1'}`}
+                            className={`group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-black/5 hover:border-black/20 transition-colors min-h-[350px] sm:min-h-[400px] md:min-h-0 ${bundle.gridArea || 'md:col-span-1 md:row-span-1'
+                                } ${
+                                // Make luxury bundle span 2 columns on tablet as well
+                                bundle.id === 'bundle-4' ? 'sm:col-span-2' : ''
+                                }`}
                         >
                             {/* Image Background */}
                             <div className="absolute inset-0 z-0">
-                                <img src={bundle.image} alt={bundle.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+                                <img
+                                    src={bundle.image}
+                                    alt={bundle.name}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent md:from-black/60 md:via-transparent opacity-80 md:opacity-60" />
                             </div>
 
-                            {/* Content Layout */}
-                            <div className="absolute inset-0 z-10 p-8 flex flex-col justify-between text-white">
+                            {/* Content Layout - Responsive Padding */}
+                            <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-7 lg:p-8 flex flex-col justify-between text-white">
+                                {/* Top Section - Badge & Cart Button */}
                                 <div className="flex justify-between items-start">
                                     {bundle.badge ? (
-                                        <span className="px-3 py-1 bg-white/20 backdrop-blur border border-white/20 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                        <span className="px-2.5 sm:px-3 py-1 bg-white/20 backdrop-blur border border-white/20 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                                             {bundle.badge}
                                         </span>
                                     ) : <span></span>}
 
                                     <button
                                         onClick={() => handleAddPrebuiltBundle(bundle)}
-                                        className="w-10 h-10 rounded-full bg-white/10 backdrop-blur flex items-center justify-center hover:bg-white hover:text-black transition-colors"
+                                        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 backdrop-blur flex items-center justify-center hover:bg-white hover:text-black transition-colors active:scale-95"
+                                        aria-label={`Add ${bundle.name} to cart`}
                                     >
                                         <ShoppingBag className="w-4 h-4" />
                                     </button>
                                 </div>
 
-                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <span className="text-gold text-xs font-bold uppercase tracking-widest mb-2 block">{bundle.tagline}</span>
-                                    <h3 className={`font-playfair leading-tight mb-2 ${bundle.gridArea?.includes('col-span-2') ? 'text-4xl' : 'text-2xl'}`}>
+                                {/* Bottom Section - Content (Always visible on mobile, hover on desktop) */}
+                                <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                                    <span className="text-gold text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1.5 sm:mb-2 block">
+                                        {bundle.tagline}
+                                    </span>
+                                    <h3 className={`font-playfair leading-tight mb-2 sm:mb-3 ${bundle.gridArea?.includes('col-span-2')
+                                        ? 'text-2xl sm:text-3xl md:text-4xl'
+                                        : 'text-xl sm:text-2xl'
+                                        }`}>
                                         {bundle.name}
                                     </h3>
-                                    <div className="h-0 group-hover:h-auto overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-                                        <p className="text-white/80 text-sm mb-4 line-clamp-2">{bundle.description}</p>
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-lg font-medium">{formatMoney(bundle.price)}</span>
-                                            <span className="text-sm text-white/50 line-through">{formatMoney(bundle.originalPrice)}</span>
+
+                                    {/* Description & Pricing - Always visible on mobile, hover on desktop */}
+                                    <div className="h-auto md:h-0 md:group-hover:h-auto overflow-visible md:overflow-hidden opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 md:delay-75">
+                                        <p className="text-white/90 md:text-white/80 text-sm sm:text-base mb-3 sm:mb-4 line-clamp-2">
+                                            {bundle.description}
+                                        </p>
+                                        <div className="flex items-center gap-2 sm:gap-3">
+                                            <span className="text-base sm:text-lg font-medium">
+                                                {formatMoney(bundle.price)}
+                                            </span>
+                                            <span className="text-xs sm:text-sm text-white/50 line-through">
+                                                {formatMoney(bundle.originalPrice)}
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -236,13 +254,20 @@ export const Bundles = () => {
                 </motion.div>
             </section>
 
-            {/* 4. Interactive Bundle Builder Sections */}
-            <div id="custom-builder" className="py-24 bg-white border-t border-black/5">
-                <div className="container mx-auto px-4">
-                    <div className="mb-16 text-center">
-                        <span className="text-gold text-xs font-bold uppercase tracking-widest mb-4 block">Personalized</span>
-                        <h2 className="text-5xl font-playfair mb-6">Build Your Own</h2>
-                        <p className="max-w-2xl mx-auto text-lg text-black/60 font-light">Create a custom collection tailored to your preferences.</p>
+            {/* 4. Interactive Bundle Builder Section - Responsive */}
+            <div id="custom-builder" className="py-16 sm:py-20 md:py-24 bg-white border-t border-black/5">
+                <div className="max-w-[115rem] mx-auto px-4 sm:px-6 lg:px-8">
+                    {/* Header - Responsive */}
+                    <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+                        <span className="text-gold text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3 sm:mb-4 block">
+                            Personalized
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair mb-4 sm:mb-6">
+                            Build Your Own
+                        </h2>
+                        <p className="max-w-2xl mx-auto text-base sm:text-lg text-black/60 font-light px-4">
+                            Create a custom collection tailored to your preferences.
+                        </p>
                     </div>
 
                     <BundleBuilder availableProducts={products} />
