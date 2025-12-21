@@ -5,11 +5,9 @@ import { Product, Order } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import {
     Edit2, Trash2, Plus, X, ShoppingBag, DollarSign,
-    Mail, Lock, Home, Monitor, ShoppingCart, Users,
+    Mail, Lock, Home, ShoppingCart, Users,
     Activity, Bell, Settings, User,
-    MapPin, Calendar, Search, Filter, ArrowUpRight, ArrowDownRight, Printer, ArrowLeft, Menu,
-    MenuIcon,
-    LucideMenu
+    MapPin, Calendar, Search, Filter, ArrowUpRight, ArrowDownRight, Printer, ArrowLeft, Menu
 } from 'lucide-react';
 import { IMAGES } from '@/assets';
 import { Link } from 'react-router-dom';
@@ -34,7 +32,6 @@ interface SidebarOptionProps {
     notifs?: number;
 }
 
-
 const SidebarOption = ({ Icon, title, selected, setSelected, open, notifs }: SidebarOptionProps) => {
     const isSelected = selected === title;
     return (
@@ -48,11 +45,13 @@ const SidebarOption = ({ Icon, title, selected, setSelected, open, notifs }: Sid
             <div className="grid h-full w-10 sm:w-12 place-content-center">
                 <Icon className={`h-4 w-4 ${isSelected ? "text-yellow-700" : ""}`} />
             </div>
+
             {open && (
-                <span className={`text-xs sm:text-sm text-black font-medium transition-opacity duration-200 ${open ? 'opacity-100' : 'opacity-0'}`}>
+                <span className="text-xs sm:text-sm text-black font-medium">
                     {title}
                 </span>
             )}
+
             {notifs && open && (
                 <span className="absolute right-2 sm:right-3 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-yellow-500 text-[10px] sm:text-xs text-black font-bold">
                     {notifs}
@@ -219,16 +218,14 @@ export const AdminInventory = () => {
         const totalProducts = products.length;
         const lowStockProducts = products.filter(p => p.stock < 5).length;
 
-        // Simple mock trend data
         const avgOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
 
-        // Customers Aggregation
         const customersMap = new Map();
         orders.forEach(order => {
             const email = order.contact.email;
             if (!customersMap.has(email)) {
                 customersMap.set(email, {
-                    id: email, // simple ID
+                    id: email,
                     name: order.contact.name,
                     email: email,
                     phone: order.contact.phone,
@@ -255,8 +252,15 @@ export const AdminInventory = () => {
     const [password, setPassword] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    // Layout & View State
-    const [sidebarOpen, setSidebarOpen] = useState(false); // Mobile: closed by default
+    // Layout & View State - FIXED: Initialize based on screen size
+    const [sidebarOpen, setSidebarOpen] = useState(() => {
+        // Check if we're on desktop (md breakpoint is 768px)
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768;
+        }
+        return true; // Default to open for SSR
+    });
+
     const [selectedView, setSelectedView] = useState<ViewState>("Dashboard");
     const [searchQuery, setSearchQuery] = useState('');
     const [salesStatusFilter, setSalesStatusFilter] = useState('all');
@@ -281,12 +285,24 @@ export const AdminInventory = () => {
         document.documentElement.classList.remove('dark');
     }, []);
 
-    // Close sidebar on mobile when view changes
+    // Handle window resize to keep sidebar open on desktop
     useEffect(() => {
-        if (window.innerWidth < 768) {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setSidebarOpen(true);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const handleViewChange = (view: ViewState) => {
+        setSelectedView(view);
+        if (typeof window !== 'undefined' && window.innerWidth < 768) {
             setSidebarOpen(false);
         }
-    }, [selectedView]);
+    };
 
     // Auth Handlers
     const handleLogin = (e: React.FormEvent) => {
@@ -359,7 +375,6 @@ export const AdminInventory = () => {
                     <img className="h-full w-full object-cover" src={IMAGES.hero} alt="Admin Background" />
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-6 sm:p-8 bg-champagne-100 md:border-l border-black/5 relative min-h-screen">
-                    {/* Back to Home Link */}
                     <div className="absolute top-6 sm:top-8 left-6 sm:left-8">
                         <Link to="/" className="flex items-center gap-2 text-gray-500 hover:text-black transition-colors font-medium text-xs sm:text-sm">
                             <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4" /> Back to Store
@@ -400,7 +415,7 @@ export const AdminInventory = () => {
             {/* Mobile Overlay */}
             {sidebarOpen && (
                 <div
-                    className="fixed inset-0 bg-black/40 z-40 md:hidden "
+                    className="fixed inset-0 bg-black/40 z-40 md:hidden"
                     onClick={() => setSidebarOpen(false)}
                 />
             )}
@@ -410,27 +425,27 @@ export const AdminInventory = () => {
                 } md:w-64`}>
                 <div className="mb-4 sm:mb-6 border-b border-gray-100 pb-3 sm:pb-4">
                     <div className="flex cursor-pointer items-center justify-between rounded-md p-2 hover:bg-gray-50">
-                        <div className="flex flex-col items-center justify-center">
-                           <img src={IMAGES.logo} alt="logo" className='w-50 h-30 object-contain' />
-                            <h2 className="block text-xs sm:text-sm font-semibold text-gray-900 font-playfair">Admin Panel</h2>
-
+                        <div className="flex flex-col items-center justify-center w-full">
+                            <img src={IMAGES.logo} alt="logo" className='w-full h-20 object-contain' />
+                            <h2 className="block text-xs sm:text-sm font-semibold text-gray-900 font-playfair mt-2">Admin Panel</h2>
                         </div>
                     </div>
                 </div>
 
-                <div className="space-y-4 mb-6 sm:mb-8 ">
-            
-                    <SidebarOption Icon={Home} title="Dashboard" selected={selectedView} setSelected={setSelectedView} open={sidebarOpen} />
-                    <SidebarOption Icon={DollarSign} title="Sales" selected={selectedView} setSelected={setSelectedView} open={sidebarOpen} notifs={orders.filter(o => o.status === 'pending').length || undefined} />
-                    <SidebarOption Icon={ShoppingCart} title="Products" selected={selectedView} setSelected={setSelectedView} open={sidebarOpen} />
-                    <SidebarOption Icon={Users} title="Customers" selected={selectedView} setSelected={setSelectedView} open={sidebarOpen} />
+                <div className="space-y-1 mb-6 sm:mb-8">
+                    <SidebarOption Icon={Home} title="Dashboard" selected={selectedView} setSelected={handleViewChange} open={sidebarOpen} />
+                    <SidebarOption Icon={DollarSign} title="Sales" selected={selectedView} setSelected={handleViewChange} open={sidebarOpen} notifs={orders.filter(o => o.status === 'pending').length || undefined} />
+                    <SidebarOption Icon={ShoppingCart} title="Products" selected={selectedView} setSelected={handleViewChange} open={sidebarOpen} />
+                    <SidebarOption Icon={Users} title="Customers" selected={selectedView} setSelected={handleViewChange} open={sidebarOpen} />
                 </div>
+
                 <div className="border-t border-gray-100 pt-3 sm:pt-4 space-y-1">
                     <div className="px-3 py-2 text-[10px] sm:text-xs font-medium text-gray-500 uppercase tracking-wide">System</div>
-                    <SidebarOption Icon={Settings} title="Settings" selected={selectedView} setSelected={setSelectedView} open={sidebarOpen} />
-                    <div onClick={handleLogout}><SidebarOption Icon={User} title="Logout" selected={selectedView} setSelected={() => { }} open={sidebarOpen} /></div>
+                    <SidebarOption Icon={Settings} title="Settings" selected={selectedView} setSelected={handleViewChange} open={sidebarOpen} />
+                    <div onClick={handleLogout}>
+                        <SidebarOption Icon={User} title="Logout" selected={selectedView} setSelected={() => { }} open={sidebarOpen} />
+                    </div>
                 </div>
-              
             </nav>
 
             {/* Main Content Area */}
@@ -440,9 +455,9 @@ export const AdminInventory = () => {
                     <div className="flex items-center gap-3">
                         <button
                             onClick={() => setSidebarOpen(!sidebarOpen)}
-                            className="md:hidden p-2 hover:bg-gray-100 rounded-lg "
+                            className="md:hidden p-2 hover:bg-gray-100 rounded-lg"
                         >
-                            <MenuIcon className="w-5 h-5 " color='black'/>
+                            <Menu className="w-5 h-5" color='black' />
                         </button>
                         <div>
                             <h1 className="text-2xl sm:text-3xl font-bold font-playfair text-gray-900">{selectedView}</h1>
@@ -468,10 +483,10 @@ export const AdminInventory = () => {
                     </div>
                 </div>
 
+                {/* Rest of the views remain the same... I'll continue with Dashboard view */}
                 {/* VIEW: DASHBOARD */}
                 {selectedView === 'Dashboard' && (
                     <div className="space-y-6 sm:space-y-8">
-                        {/* Stats Grid */}
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                             <MetricCard title="Total Revenue" value={formatMoney(analytics.totalRevenue)} subtext="Lifetime volume" icon={DollarSign} trend="up" />
                             <MetricCard title="Orders" value={analytics.totalOrders} subtext="Total Processing" icon={ShoppingBag} />
@@ -479,7 +494,6 @@ export const AdminInventory = () => {
                             <MetricCard title="Avg. Order" value={formatMoney(analytics.avgOrderValue)} subtext="Per transaction" icon={Activity} />
                         </div>
 
-                        {/* Analytic Charts */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                             <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm">
                                 <h3 className="font-bold text-gray-900 mb-4 sm:mb-6 font-playfair text-sm sm:text-base">Revenue Trend</h3>
@@ -521,7 +535,6 @@ export const AdminInventory = () => {
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-                            {/* Low Stock Alert */}
                             <div className="lg:col-span-1 bg-white p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm">
                                 <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 font-playfair text-sm sm:text-base">
                                     <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" /> Low Stock Alerts
@@ -545,7 +558,6 @@ export const AdminInventory = () => {
                                 </div>
                             </div>
 
-                            {/* Recent Activity Feed */}
                             <div className="lg:col-span-2 bg-white p-4 sm:p-6 rounded-xl border border-gray-100 shadow-sm">
                                 <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 font-playfair text-sm sm:text-base">Recent Sales Activity</h3>
                                 <div className="space-y-3 sm:space-y-4">
@@ -872,10 +884,8 @@ export const AdminInventory = () => {
                         </div>
                     </div>
                 )}
-
             </div>
 
-            {/* Modal Layer */}
             {selectedOrder && (
                 <OrderDetailsModal order={selectedOrder} onClose={() => setSelectedOrder(null)} />
             )}
