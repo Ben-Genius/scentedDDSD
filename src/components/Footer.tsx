@@ -62,11 +62,15 @@ export const Footer = () => {
             </motion.div>
 
             <div className="container mx-auto px-4 pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-black/60">
-                <p>&copy; {new Date().getFullYear()} Scented by DDSD. All rights reserved.</p>
+                <div className="flex flex-col md:flex-row md:items-center gap-4 text-center md:text-left">
+                    <p>&copy; {new Date().getFullYear()} Scented by DDSD. All rights reserved.</p>
+                    <span className="hidden md:inline text-black/20">|</span>
+                    <a href="tel:+233257087042" className="hover:text-black transition-colors">+233 25 708 7042</a>
+                </div>
                 <div className="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" className="hover:text-black transition-colors">Instagram</a>
-                    <a href="#" className="hover:text-black transition-colors">Twitter</a>
-                    <a href="#" className="hover:text-black transition-colors">Facebook</a>
+                    <a href="https://instagram.com/scented_by_ddsd_" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">Instagram</a>
+                    <a href="https://tiktok.com/@scentedbyddsd" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">TikTok</a>
+                    <a href="https://wa.me/233257087042" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">WhatsApp</a>
                 </div>
             </div>
         </footer>

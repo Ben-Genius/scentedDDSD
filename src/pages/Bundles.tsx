@@ -173,7 +173,7 @@ export const Bundles = () => {
                     </div>
                 </div>
 
-      
+
                 <motion.div
                     layout
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-3 sm:gap-4 md:h-[700px] lg:h-[900px]"

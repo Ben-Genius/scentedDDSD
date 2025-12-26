@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { ProductGrid } from '../components/ProductGrid';
 import { getProducts } from '../lib/api';
 import { Product } from '../types';
-import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
 import { motion } from "motion/react";
 import Testimonials from '@/components/Testimonials';
 import Hero from '@/components/Hero';
+import FeatureSection from '@/components/Featured';
 
 export const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -33,7 +33,7 @@ export const Home = () => {
                 </motion.div>
 
                 <motion.div {...fadeInUp}>
-                    <SimpleNewArrivals />
+                    <FeatureSection />
                 </motion.div>
 
                 <motion.div {...fadeInUp}>

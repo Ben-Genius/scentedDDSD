@@ -56,12 +56,13 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
                 {/* Card content - Minimalist */}
                 <div className="space-y-1">
                     <div className="flex justify-between items-start">
-                        <h3 className="font-sans text-sm font-medium text-black leading-snug group-hover:text-black/70 transition-colors">
+                        <h3 className="text-sm uppercase tracking-[0.2em] font-playfair text-black leading-snug group-hover:text-black/70 transition-colors">
                             {product.title}
                         </h3>
-                        <span className="text-sm font-medium text-black ml-4">
+                        {/* Price */}
+                        <p className="text-black/60 text-xs font-inter tracking-widest font-medium ml-4">
                             {formatMoney(lowestPrice)}
-                        </span>
+                        </p>
                     </div>
 
                     <p className="text-[10px] text-gray-500 uppercase tracking-widest">{product.category}</p>

@@ -1,242 +1,294 @@
-import React from "react";
+"use client";
+import { TimelineContent } from "@/components/ui/timeline-animation";
+import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
+import { ArrowRight, Instagram, Linkedin, Facebook, Youtube } from "lucide-react";
+import { useRef } from "react";
 import { IMAGES } from "@/assets";
 
-type TeamMember = {
-    id: number;
-    name: string;
-    role: string;
-    bio?: string;
-    photo?: string;
-    linkedin?: string;
-};
-
-type AboutProps = {
-    heroVideo?: string;
-    heroImage?: string;
-    team?: TeamMember[];
-};
-
-export const About: React.FC<AboutProps> = ({
-    heroVideo,
-    heroImage = IMAGES.hero,
-    team = []
-}) => {
+export const About = () => {
+    const heroRef = useRef<HTMLDivElement>(null);
+    const revealVariants = {
+        visible: (i: number) => ({
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            transition: {
+                delay: i * 0.4,
+                duration: 0.5,
+            },
+        }),
+        hidden: {
+            filter: "blur(10px)",
+            y: -20,
+            opacity: 0,
+        },
+    };
+    const scaleVariants = {
+        visible: (i: number) => ({
+            opacity: 1,
+            filter: "blur(0px)",
+            transition: {
+                delay: i * 0.4,
+                duration: 0.5,
+            },
+        }),
+        hidden: {
+            filter: "blur(10px)",
+            opacity: 0,
+        },
+    };
     return (
-        <main className="w-full text-gray-900 bg-white">
-            {/* HERO */}
-            <section className="relative h-[60vh] lg:h-[70vh] w-full overflow-hidden bg-black text-white">
-                {heroVideo ? (
-                    <video
-                        className="absolute inset-0 w-full h-full object-cover opacity-80"
-                        src={heroVideo}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        onLoadedMetadata={(e) => {
-                            try {
-                                (e.target as HTMLVideoElement).playbackRate = 0.6;
-                            } catch {
-                                // ignore
-                            }
-                        }}
-                    />
-                ) : (
-                    <img
-                        src={heroImage}
-                        alt="Scented By DDSD - artisans at work"
-                        className="absolute inset-0 w-full h-full object-cover opacity-70"
-                    />
-                )}
+        <section className="py-8 px-4 bg-[#f9f9f9]" ref={heroRef}>
+            <div className="max-w-[100rem] mx-auto">
+                <div className="relative">
+                    {/* Header with social icons */}
+                    <div className="flex justify-between items-center mb-8 w-[85%] absolute lg:top-4 md:top-0 sm:-top-2 -top-3 z-10">
+                        <div className="flex items-center gap-2  text-xl">
+                            <span className="text-gold animate-spin">✱</span>
+                            <TimelineContent
+                                as="span"
+                                animationNum={0}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="text-sm font-medium text-gray-600"
+                            >
+                                WHO WE ARE
+                            </TimelineContent>
+                        </div>
+                        <div className="flex gap-4 mr-10">
+                            <TimelineContent
+                                as="a"
+                                animationNum={0}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                href="https://www.facebook.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-gray-200 bg-blue-600  rounded-lg flex items-center justify-center  cursor-pointer hover:bg-gold/10 transition-colors"
+                                aria-label="Facebook"
+                            >
+                                <Facebook size={16} />
+                            </TimelineContent>
+                            <TimelineContent
+                                as="a"
+                                animationNum={1}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-gray-200 bg-red-500 rounded-lg flex items-center justify-center  cursor-pointer hover:bg-gold/10 transition-colors"
+                                aria-label="Instagram"
+                            >
+                                <Instagram size={16} />
+                            </TimelineContent>
+                            <TimelineContent
+                                as="a"
+                                animationNum={2}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                href="https://www.linkedin.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-gray-200 bg-blue-500 rounded-lg flex items-center justify-center  cursor-pointer hover:bg-gold/10 transition-colors"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin size={16} />
+                            </TimelineContent>
+                            <TimelineContent
+                                as="a"
+                                animationNum={3}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                href="https://www.youtube.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border  border-gray-200 bg-red-500 rounded-lg flex items-center justify-center  cursor-pointer hover:bg-gold/10 transition-colors"
+                                aria-label="YouTube"
+                            >
+                                <Youtube size={16} />
+                            </TimelineContent>
+                        </div>
+                    </div>
 
-                {/* subtle gold overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
-                <div className="relative z-10 container mx-auto px-6 lg:px-8 h-full flex items-center">
-                    <div className="max-w-3xl">
-                        <p className="text-gold text-sm tracking-[0.2em] uppercase mb-4 font-bold">Our Story</p>
-                        <h1 className="text-3xl md:text-5xl font-playfair leading-tight mb-6">
-                            Hand-poured craft. <br />Ghanaian heart. <br /><span className="text-gold">Global standards.</span>
-                        </h1>
-                        <p className="text-gray-200 max-w-2xl mb-8 text-lg leading-relaxed font-light">
-                            At Scented By DDSD we craft luxurious home fragrances — candles, diffusers, oils and care rituals — using premium ingredients and an artisanal process rooted in Ghanaian care.
-                        </p>
-
-                        <a
-                            href="#mission"
-                            className="inline-block px-8 py-3 bg-gold text-black font-semibold rounded hover:bg-white transition-colors duration-300"
+                    <TimelineContent
+                        as="figure"
+                        animationNum={4}
+                        timelineRef={heroRef}
+                        customVariants={scaleVariants}
+                        className="relative group"
+                    >
+                        <svg
+                            className="w-full h-auto"
+                            viewBox="0 0 100 40"
+                            preserveAspectRatio="xMidYMid meet"
+                            style={{ maxHeight: '600px' }}
                         >
-                            Learn about our mission
-                        </a>
+                            <defs>
+                                <clipPath
+                                    id="clip-inverted"
+                                    clipPathUnits={"objectBoundingBox"}
+                                >
+                                    <path
+                                        d="M0.0998072 1H0.422076H0.749756C0.767072 1 0.774207 0.961783 0.77561 0.942675V0.807325C0.777053 0.743631 0.791844 0.731953 0.799059 0.734076H0.969813C0.996268 0.730255 1.00088 0.693206 0.999875 0.675159V0.0700637C0.999875 0.0254777 0.985045 0.00477707 0.977629 0H0.902473C0.854975 0 0.890448 0.138535 0.850165 0.138535H0.0204424C0.00408849 0.142357 0 0.180467 0 0.199045V0.410828C0 0.449045 0.0136283 0.46603 0.0204424 0.469745H0.0523086C0.0696245 0.471019 0.0735527 0.497877 0.0733523 0.511146V0.915605C0.0723903 0.983121 0.090588 1 0.0998072 1Z"
+                                        fill="#D9D9D9"
+                                    />
+                                </clipPath>
+                            </defs>
+                            <image
+                                clipPath="url(#clip-inverted)"
+                                preserveAspectRatio="xMidYMid slice"
+                                width={"100%"}
+                                height={"100%"}
+                                href={IMAGES.hero}
+                            />
+                        </svg>
+                    </TimelineContent>
+
+                    {/* Stats */}
+                    <div className="flex flex-wrap lg:justify-start justify-between items-center py-3 text-sm">
+                     
+                        <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
+                            <TimelineContent
+                                as="div"
+                                animationNum={6}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="flex lg:text-4xl sm:text-3xl text-2xl items-center gap-2 mb-2"
+                            >
+                                <span className="text-gold font-semibold">1000+</span>
+                                <span className="text-gray-600 uppercase text-lg lg:text-xl">Happy Clients</span>
+                            </TimelineContent>
+                            <TimelineContent
+                                as="div"
+                                animationNum={7}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="flex items-center gap-2 mb-2 sm:text-base text-xs"
+                            >
+                                <span className="text-gold font-bold">Global</span>
+                                <span className="text-gray-600">Standards</span>
+                                <span className="text-gray-300 lg:hidden block">|</span>
+                            </TimelineContent>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            {/* MISSION / VISION */}
-            <section id="mission" className="py-20 bg-white">
-                <div className="container mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-playfair mb-6">Our Mission</h2>
-                        <p className="text-gray-600 mb-8 leading-relaxed text-lg">
-                            To create meaningful scent experiences that awaken memories, calm the mind, and elevate everyday rituals — all while supporting local artisans and sustainable practices.
-                        </p>
-
-                        <h3 className="text-xl font-playfair mb-3">Vision</h3>
-                        <p className="text-gray-600 leading-relaxed">
-                            To be Ghana’s leading luxury fragrance house — recognized for craft, quality and social impact.
-                        </p>
-                    </div>
-
-                    <div className="space-y-8">
-                        <div className="flex gap-6">
-                            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center font-bold text-xl text-gold shrink-0 border border-gold/20">01</div>
-                            <div>
-                                <h4 className="font-playfair text-xl mb-2">Craftsmanship</h4>
-                                <p className="text-gray-600">Hand-poured batches, small-run quality control and aroma accuracy.</p>
+                {/* Main Content */}
+                <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-7xl mx-auto">
+                    <div className="md:col-span-2">
+                        <TimelineContent
+                            as="div"
+                            animationNum={5}
+                            timelineRef={heroRef}
+                            customVariants={revealVariants}
+                            className="flex gap-4"
+                        >
+                            <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
+                                <span className="text-gold font-bold">2018</span>
+                                <span className="text-gray-600">Established</span>
+                                <span className="text-gray-300">|</span>
                             </div>
-                        </div>
-
-                        <div className="flex gap-6">
-                            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center font-bold text-xl text-gold shrink-0 border border-gold/20">02</div>
-                            <div>
-                                <h4 className="font-playfair text-xl mb-2">Sustainability</h4>
-                                <p className="text-gray-600">Eco-friendly packaging, responsibly sourced waxes, and locally funded initiatives.</p>
+                            <div className="flex items-center gap-2 mb-2 sm:text-base text-xs">
+                                <span className="text-gold font-bold">100%</span>
+                                <span className="text-gray-600">Handcrafted</span>
                             </div>
-                        </div>
+                        </TimelineContent>
+                        <h1 className="sm:text-4xl md:text-5xl text-3xl !leading-[110%] font-semibold text-gray-900 mb-8 font-playfair">
+                            <VerticalCutReveal
+                                splitBy="words"
+                                staggerDuration={0.1}
+                                staggerFrom="first"
+                                reverse={true}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 250,
+                                    damping: 30,
+                                    delay: 0.5,
+                                }}
+                            >
+                                Crafting Scents That Make a Difference.
+                            </VerticalCutReveal>
+                        </h1>
 
-                        <div className="flex gap-6">
-                            <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center font-bold text-xl text-gold shrink-0 border border-gold/20">03</div>
-                            <div>
-                                <h4 className="font-playfair text-xl mb-2">Community</h4>
-                                <p className="text-gray-600">Training and fair wages for local makers — growing a sustainable craft economy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* TIMELINE / HISTORY */}
-            <section className="py-20 bg-[#faf9f6]">
-                <div className="container mx-auto px-6 lg:px-8">
-                    <h3 className="text-center text-3xl font-playfair mb-12">Our Journey</h3>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                            <span className="text-gold font-bold text-lg mb-2 block">2018</span>
-                            <h4 className="font-playfair text-xl mb-3">Founded</h4>
-                            <p className="text-sm text-gray-600 leading-relaxed">A small kitchen atelier in Accra, experimenting with local wax blends and discovering the perfect scent combinations.</p>
-                        </div>
-
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 transform lg:-translate-y-4">
-                            <span className="text-gold font-bold text-lg mb-2 block">2019</span>
-                            <h4 className="font-playfair text-xl mb-3">First Collection</h4>
-                            <p className="text-sm text-gray-600 leading-relaxed">Our first signature scents launched: Amber & Oud, Lavender Calm and Champagne Blossom, setting the standard for quality.</p>
-                        </div>
-
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                            <span className="text-gold font-bold text-lg mb-2 block">2022</span>
-                            <h4 className="font-playfair text-xl mb-3">Growth & Impact</h4>
-                            <p className="text-sm text-gray-600 leading-relaxed">Expanded to a dedicated studio, created community training programs and launched ethical sourcing policies.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* TEAM */}
-            <section id="team" className="py-20 bg-white">
-                <div className="container mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <p className="text-gold text-xs uppercase tracking-widest font-bold mb-2">The People Behind The Brand</p>
-                        <h3 className="text-3xl md:text-4xl font-playfair">Meet the Makers</h3>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                        {team.length ? (
-                            team.map((m) => (
-                                <div key={m.id} className="text-center group">
-                                    <div className="relative mx-auto w-48 h-48 mb-6 overflow-hidden rounded-full shadow-lg">
-                                        <img
-                                            src={m.photo ?? "/images/about/team-placeholder.jpg"}
-                                            alt={m.name}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                    </div>
-                                    <h4 className="font-playfair text-lg">{m.name}</h4>
-                                    <p className="text-sm text-gold font-medium mb-2">{m.role}</p>
-                                    {m.bio && <p className="text-gray-500 text-sm leading-relaxed">{m.bio}</p>}
-                                </div>
-                            ))
-                        ) : (
-                            <>
-                                {Array.from({ length: 4 }).map((_, i) => (
-                                    <div key={i} className="text-center group">
-                                        {/* Using a generic placeholder div since we don't have team photos yet */}
-                                        <div className="mx-auto w-40 h-40 rounded-full bg-gray-100 mb-6 flex items-center justify-center text-gray-300 border border-gray-200">
-                                            <span className="text-4xl font-playfair opacity-20">{i + 1}</span>
-                                        </div>
-                                        <h4 className="font-playfair text-lg">Team Member</h4>
-                                        <p className="text-sm text-gold font-medium">Artisan Specialist</p>
-                                    </div>
-                                ))}
-                            </>
-                        )}
-                    </div>
-                </div>
-            </section>
-
-            {/* SUSTAINABILITY & SOCIAL IMPACT */}
-            <section className="py-20 bg-[#faf9f6]">
-                <div className="container mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span className="text-gold text-xs uppercase tracking-widest font-bold mb-2 block">Our Commitment</span>
-                        <h3 className="text-3xl md:text-4xl font-playfair mb-6">Sustainability & Impact</h3>
-                        <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                            We use a mix of 100% natural wax blends, recyclable packaging, and ethically sourced fragrance oils. A portion of each sale supports local artisan training and community projects.
-                        </p>
-
-                        <ul className="space-y-4 text-gray-600">
-                            <li className="flex items-start gap-3">
-                                <span className="text-gold mt-1">✦</span>
-                                Plant-based wax blends (soy / rapeseed / coconut mixes)
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-gold mt-1">✦</span>
-                                Minimal plastic, recyclable boxes and soy-based inks
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="text-gold mt-1">✦</span>
-                                Fair pay & craft training for local makers
-                            </li>
-                        </ul>
+                        <TimelineContent
+                            as="div"
+                            animationNum={4}
+                            timelineRef={heroRef}
+                            customVariants={revealVariants}
+                            className="grid md:grid-cols-2 gap-8 text-gray-600"
+                        >
+                            <TimelineContent
+                                as="div"
+                                animationNum={5}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="sm:text-base text-sm"
+                            >
+                                <p className="leading-relaxed text-justify">
+                                    Scented By DDSD began as a small kitchen atelier in Accra, born from a passion for evocative fragrances. We specialize in transforming ideas into compelling aromatic experiences that elevate spaces and moods.
+                                </p>
+                            </TimelineContent>
+                            <TimelineContent
+                                as="div"
+                                animationNum={6}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="sm:text-base text-sm"
+                            >
+                                <p className="leading-relaxed text-justify">
+                                    Every scent tells a story. By blending creativity with traditional craftsmanship and sustainable practices, we create luxurious home fragrances that resonate with memory and emotion.
+                                </p>
+                            </TimelineContent>
+                        </TimelineContent>
                     </div>
 
+                    <div className="md:col-span-1">
+                        <div className="text-right">
+                            <TimelineContent
+                                as="div"
+                                animationNum={8}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="text-gold text-2xl font-bold mb-2 font-playfair"
+                            >
+                                Scented By DDSD
+                            </TimelineContent>
+                            <TimelineContent
+                                as="div"
+                                animationNum={13}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="text-gray-600 text-sm mb-8"
+                            >
+                                Artisanal Home Fragrances
+                            </TimelineContent>
 
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img
-                            src={IMAGES.soap}
-                            alt="Sustainable packaging"
-                            className="w-full h-[500px] object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div className="absolute bottom-6 left-6 text-white max-w-xs">
-                            <p className="font-playfair italic text-lg">"Respecting nature in every pour."</p>
+                            <TimelineContent
+                                as="div"
+                                animationNum={14}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="mb-6"
+                            >
+                                <p className="text-gray-900 font-medium mb-4">
+                                    Ready to transform your space?
+                                </p>
+                            </TimelineContent>
+
+                            <TimelineContent
+                                as="a"
+                                href="/shop"
+                                animationNum={15}
+                                timelineRef={heroRef}
+                                customVariants={revealVariants}
+                                className="bg-neutral-900 hover:bg-gold shadow-lg shadow-neutral-900/20 border border-neutral-700 flex w-fit ml-auto gap-2 hover:gap-4 transition-all duration-300 ease-in-out text-white px-6 py-3 rounded-lg cursor-pointer font-semibold items-center"
+                            >
+                                EXPLORE COLLECTION <ArrowRight className="w-4 h-4" />
+                            </TimelineContent>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            {/* CTA */}
-            <section className="py-24 bg-black text-white text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
-                <div className="container mx-auto px-6 lg:px-8 relative z-10">
-                    <h4 className="text-3xl md:text-4xl font-playfair mb-6">Experience the Craft</h4>
-                    <p className="text-gray-400 mb-10 max-w-xl mx-auto text-lg">Explore our collections or act us to book a studio visit to see how our luxurious scents are made.</p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-6">
-                        <a className="px-8 py-3 bg-gold text-black rounded font-semibold hover:bg-white transition-colors duration-300" href="/shop">Shop Collections</a>
-                        <a className="px-8 py-3 border border-white/30 text-white rounded hover:bg-white/10 transition-colors duration-300" href="/contact">Visit Studio</a>
-                    </div>
-                </div>
-            </section>
-        </main >
+            </div>
+        </section>
     );
 };
