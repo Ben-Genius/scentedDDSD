@@ -212,14 +212,14 @@ export const About = () => {
 
                         <TimelineContent
                             as="div"
-                            animationNum={9}
+                            animationNum={4}
                             timelineRef={heroRef}
                             customVariants={revealVariants}
                             className="grid md:grid-cols-2 gap-8 text-gray-600"
                         >
                             <TimelineContent
                                 as="div"
-                                animationNum={10}
+                                animationNum={5}
                                 timelineRef={heroRef}
                                 customVariants={revealVariants}
                                 className="sm:text-base text-sm"
@@ -230,7 +230,7 @@ export const About = () => {
                             </TimelineContent>
                             <TimelineContent
                                 as="div"
-                                animationNum={11}
+                                animationNum={6}
                                 timelineRef={heroRef}
                                 customVariants={revealVariants}
                                 className="sm:text-base text-sm"
@@ -246,7 +246,7 @@ export const About = () => {
                         <div className="text-right">
                             <TimelineContent
                                 as="div"
-                                animationNum={12}
+                                animationNum={8}
                                 timelineRef={heroRef}
                                 customVariants={revealVariants}
                                 className="text-gold text-2xl font-bold mb-2 font-playfair"

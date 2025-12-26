@@ -76,10 +76,10 @@ export const Header = () => {
 
                     {/* Right: Actions */}
                     <div className="col-span-3 flex items-center justify-end space-x-8">
-                        <button className="hidden md:block text-black hover:opacity-60 transition-opacity">
-                            <span className="text-xs uppercase tracking-widest font-inter hidden lg:inline-block mr-2">Log In</span>
+                        <Link to="/contact" className="hidden md:block text-black hover:opacity-60 transition-opacity" >
+                            <span className="text-xs uppercase tracking-widest font-inter hidden lg:inline-block mr-2">Help</span>
                             <svg className="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                        </button>
+                        </Link>
 
                         <button
                             onClick={openDrawer}

@@ -45,8 +45,8 @@ export const ProductGrid = ({ products, title, variant = 'default' }: ProductGri
                 whileInView="show"
                 viewport={{ once: true, margin: "-50px" }}
                 className={`grid gap-x-16 gap-y-16 ${variant === 'shop'
-                    ? 'grid-cols-2 lg:grid-cols-4'
-                    : 'grid-cols-2 lg:grid-cols-4'
+                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
+                    : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
                     }`}
             >
                 {products.map((product) => (

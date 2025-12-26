@@ -11,7 +11,9 @@ import {
     Wand2,
     Activity,
     PenTool,
-    Info
+    Info,
+    X,
+    ChevronUp
 } from 'lucide-react';
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
@@ -59,6 +61,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const { addItem } = useLocalCart();
     const [bundleItems, setBundleItems] = useState<BundleItem[]>([]);
     const [activeCategory, setActiveCategory] = useState('All');
+    const [isMobileTrayOpen, setIsMobileTrayOpen] = useState(false);
 
     // Local "AI" State
     const [isAiLoading, setIsAiLoading] = useState(false);
@@ -71,8 +74,18 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const subtotal = bundleItems.reduce((sum, p) => sum + p.variants[0].priceGHS, 0);
     const total = subtotal * (1 - discount);
 
-    const addToBundle = (product: Product) => {
-        if (bundleItems.length < 5) {
+    const toggleProductSelection = (product: Product) => {
+        const isSelected = bundleItems.some(item => item.id === product.id);
+
+        if (isSelected) {
+            // Unselect: Remove all instances of this product
+            setBundleItems(bundleItems.filter(item => item.id !== product.id));
+        } else {
+            // Select: Add item if space permits
+            if (bundleItems.length >= 5) {
+                alert("Your curator tray is full! Remove an item to add more.");
+                return;
+            }
             setBundleItems([...bundleItems, { ...product, uniqueId: Math.random() }]);
         }
     };
@@ -198,16 +211,223 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
 
     const categoriesFiltered = ['All', ...Array.from(new Set(availableProducts.map(p => p.category)))];
 
+    // Reusable Tray Content
+    const CuratorTrayContent = () => (
+        <div className="bg-white lg:rounded-3xl p-8 border-stone-100 lg:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)] relative overflow-hidden h-full lg:h-auto overflow-y-auto">
+            <div className="absolute top-0 right-0 p-8 opacity-5">
+                <Gift size={120} />
+            </div>
+
+            <div className="relative z-10">
+                <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-2xl font-serif">Your Curator Tray</h3>
+                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${bundleItems.length === 5 ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                        {bundleItems.length} / 5 Slots
+                    </span>
+                </div>
+
+                <RewardTrack count={bundleItems.length} />
+
+                {/* Slots Grid */}
+                <div className="grid grid-cols-5 gap-3 mt-8">
+                    {[...Array(5)].map((_, i) => (
+                        <div key={i} className="aspect-square relative">
+                            <AnimatePresence mode="popLayout">
+                                {bundleItems[i] ? (
+                                    <motion.div
+                                        initial={{ scale: 0.5, opacity: 0, rotate: -10 }}
+                                        animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                                        exit={{ scale: 0.5, opacity: 0 }}
+                                        className="absolute inset-0"
+                                    >
+                                        <div className="w-full h-full rounded-xl overflow-hidden shadow-md border border-stone-100 group relative">
+                                            <img src={bundleItems[i].images.default} className="w-full h-full object-cover" alt="" />
+                                            <button
+                                                onClick={() => removeFromBundle(bundleItems[i].uniqueId)}
+                                                className="absolute inset-0 bg-red-500/80 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity z-20"
+                                            >
+                                                <Trash2 size={16} />
+                                            </button>
+                                        </div>
+                                    </motion.div>
+                                ) : (
+                                    <div className="w-full h-full rounded-xl border-2 border-dashed border-stone-100 bg-stone-50/50 flex items-center justify-center text-stone-200">
+                                        <Sparkles size={14} />
+                                    </div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                </div>
+
+                {/* AI Harmony Checker */}
+                {bundleItems.length >= 2 && (
+                    <div className="mt-8 border-t border-stone-100 pt-6">
+                        <button
+                            onClick={analyzeHarmonyLocal}
+                            disabled={isHarmonyLoading}
+                            className="flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-xs font-bold uppercase tracking-widest mb-3"
+                        >
+                            <Activity size={14} className={isHarmonyLoading ? 'animate-pulse' : ''} />
+                            {isHarmonyLoading ? 'Analyzing Composition...' : '✨ Harmony Check'}
+                        </button>
+                        {harmonyReport && (
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="p-4 bg-stone-50 rounded-2xl border border-stone-100 text-sm italic text-stone-600 leading-relaxed"
+                            >
+                                "{harmonyReport}"
+                            </motion.div>
+                        )}
+                    </div>
+                )}
+
+                {/* Empty State Help */}
+                {bundleItems.length === 0 && (
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-center py-10 text-stone-400 text-sm italic"
+                    >
+                        Select scents from the library to fill your tray...
+                    </motion.p>
+                )}
+
+                {/* Calculation Table */}
+                <div className="mt-10 pt-8 border-t border-stone-100 space-y-3">
+                    <div className="flex justify-between text-stone-400 text-sm">
+                        <span>Subtotal</span>
+                        <span>{formatMoney(subtotal)}</span>
+                    </div>
+
+                    <AnimatePresence>
+                        {discount > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                className="flex justify-between text-green-600 text-sm font-bold bg-green-50 px-3 py-2 rounded-lg"
+                            >
+                                <span className="flex items-center gap-2">
+                                    <Check size={14} />
+                                    {discount * 100}% Bundle Discount
+                                </span>
+                                <span>-{formatMoney(subtotal * discount)}</span>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
+                    <div className="flex justify-between items-baseline pt-4">
+                        <span className="text-lg font-serif">Bundle Total</span>
+                        <div className="text-right">
+                            <span className="text-3xl font-serif text-stone-900 block">
+                                {formatMoney(total)}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 mt-8 pb-8 lg:pb-0">
+                    <button
+                        disabled={bundleItems.length === 0}
+                        className={`
+                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98] border
+                      ${bundleItems.length === 0
+                                ? 'bg-stone-50 border-stone-100 text-stone-300'
+                                : 'bg-white border-stone-200 text-stone-900 hover:bg-stone-50'}
+                    `}
+                    >
+                        <PenTool size={14} />
+                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">✨ Gift Note</span>
+                    </button>
+                    <button
+                        onClick={handleCheckout}
+                        disabled={bundleItems.length === 0}
+                        className={`
+                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98]
+                      ${bundleItems.length === 0
+                                ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
+                                : 'bg-stone-900 text-white shadow-xl hover:bg-black'}
+                    `}
+                    >
+                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">Checkout</span>
+                        <ShoppingBag size={14} />
+                    </button>
+                </div>
+
+                <p className="mt-4 text-[10px] text-center text-stone-400 uppercase tracking-widest font-bold">
+                    Free Premium Packaging Included
+                </p>
+            </div>
+        </div>
+    );
+
     return (
         <div className="min-h-screen bg-[#FAF9F6] text-stone-900 font-sans selection:bg-amber-100 pb-20 rounded-3xl">
 
-    
+
 
             <main className="max-w-full mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
+                    {/* Desktop Sidebar (Reference Reusable Content) */}
+                    <aside className="lg:col-span-5 lg:order-2 sticky top-14 pt-10 mt-8 z-30 hidden lg:block border border-stone-100 rounded-3xl shadow-sm">
+                        <CuratorTrayContent />
+                    </aside>
+
+                    {/* Mobile Floating Button */}
+                    <div className="fixed bottom-6 right-6 z-50 lg:hidden">
+                        <button
+                            onClick={() => setIsMobileTrayOpen(true)}
+                            className="bg-stone-900 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 active:scale-95 transition-transform"
+                        >
+                            <Gift size={20} />
+                            <span className="font-bold text-xs uppercase tracking-widest">
+                                Tray
+                            </span>
+                            <span className="bg-amber-400 text-black w-6 h-6 flex items-center justify-center rounded-full text-[10px] font-bold">
+                                {bundleItems.length}
+                            </span>
+                        </button>
+                    </div>
+
+                    {/* Mobile Drawer Overlay */}
+                    <AnimatePresence>
+                        {isMobileTrayOpen && (
+                            <>
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 lg:hidden"
+                                    onClick={() => setIsMobileTrayOpen(false)}
+                                />
+                                <motion.div
+                                    initial={{ y: '100%' }}
+                                    animate={{ y: 0 }}
+                                    exit={{ y: '100%' }}
+                                    transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                                    className="fixed bottom-0 left-0 right-0 h-[85vh] bg-white rounded-t-[2rem] z-50 lg:hidden overflow-hidden shadow-[0_-20px_60px_rgba(0,0,0,0.2)]"
+                                >
+                                    <div className="absolute top-4 right-4 z-20">
+                                        <button
+                                            onClick={() => setIsMobileTrayOpen(false)}
+                                            className="p-2 bg-stone-100 rounded-full hover:bg-stone-200"
+                                        >
+                                            <X size={20} />
+                                        </button>
+                                    </div>
+                                    <div className="w-12 h-1 bg-stone-200 rounded-full mx-auto mt-4 mb-2" />
+                                    <CuratorTrayContent />
+                                </motion.div>
+                            </>
+                        )}
+                    </AnimatePresence>
+
+
                     {/* Library of Products */}
-                    <div className="lg:col-span-7">
+                    <div className="lg:col-span-7 lg:order-1">
                         {/* AI Mood Input Box */}
                         <div className="mb-12 bg-stone-900 text-white p-8 rounded-[2rem] shadow-2xl relative overflow-hidden group">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform">
@@ -247,214 +467,73 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                         </div>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                            {availableProducts.filter(p => activeCategory === 'All' || p.category === activeCategory).map((product, idx) => (
-                                <motion.div
-                                    key={product.id}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: idx * 0.05 }}
-                                    className="group"
-                                >
-                                    <div className="relative aspect-[3/4] bg-stone-100 rounded-2xl overflow-hidden mb-4 shadow-sm">
-                                        <img
-                                            src={product.images.default}
-                                            alt={product.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
-                                        />
+                            {availableProducts.filter(p => activeCategory === 'All' || p.category === activeCategory).map((product, idx) => {
+                                const isSelected = bundleItems.some(i => i.id === product.id);
 
-                                        <div className="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                            <button
-                                                onClick={() => addToBundle(product)}
-                                                disabled={bundleItems.length >= 5}
-                                                className="bg-white text-stone-900 p-4 rounded-full shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
-                                            >
-                                                {bundleItems.length >= 5 ? <Info size={20} /> : <Plus size={24} />}
-                                            </button>
+                                return (
+                                    <motion.div
+                                        key={product.id}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: idx * 0.05 }}
+                                        className="group"
+                                    >
+                                        <div className={`relative aspect-[3/4] bg-stone-100 rounded-2xl overflow-hidden mb-4 shadow-sm transition-all duration-300 ${isSelected ? 'ring-2 ring-amber-400 ring-offset-2' : ''}`}>
+                                            <img
+                                                src={product.images.default}
+                                                alt={product.title}
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                                            />
+
+                                            {isSelected && (
+                                                <div className="absolute top-2 right-2 z-10 bg-amber-400 text-black px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-md flex items-center gap-1">
+                                                    <Check size={10} /> Added
+                                                </div>
+                                            )}
+
+                                            <div className="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                                <button
+                                                    onClick={() => toggleProductSelection(product)}
+                                                    className={`
+                                                    p-4 rounded-full shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform hover:scale-110 active:scale-95
+                                                    ${isSelected ? 'bg-amber-400 text-black' : 'bg-white text-stone-900'}
+                                                `}
+                                                >
+                                                    {isSelected ? <Check size={24} /> : (bundleItems.length >= 5 ? <Info size={24} /> : <Plus size={24} />)}
+                                                </button>
+                                            </div>
+
+                                            <div className="absolute top-4 left-4">
+                                                <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">
+                                                    {product.category}
+                                                </span>
+                                            </div>
                                         </div>
 
-                                        <div className="absolute top-4 left-4">
-                                            <span className="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-sm">
-                                                {product.category}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex justify-between items-start px-1 mt-4 text-center">
-                                        <div className="w-full space-y-2">
-                                            {/* Product Title - Matches ProductCard */}
-                                            <h4 className="text-sm uppercase tracking-[0.2em] font-playfair text-black 
+                                        <div className="flex justify-between items-start px-1 mt-4 text-center">
+                                            <div className="w-full space-y-2">
+                                                {/* Product Title - Matches ProductCard */}
+                                                <h4 className="text-sm uppercase tracking-[0.2em] font-playfair text-black 
                                   group-hover:text-black/70 transition-colors duration-300">
-                                                {product.title}
-                                            </h4>
+                                                    {product.title}
+                                                </h4>
 
-                                            <p className="text-[10px] text-stone-400 font-medium uppercase tracking-widest mb-1 truncate max-w-full mx-auto">{product.scents.join(', ')}</p>
+                                                <p className="text-[10px] text-stone-400 font-medium uppercase tracking-widest mb-1 truncate max-w-full mx-auto">{product.scents.join(', ')}</p>
 
-                                            {/* Price - Matches ProductCard */}
-                                            <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
-                                                {formatMoney(product.variants[0].priceGHS)}
-                                            </p>
+                                                {/* Price - Matches ProductCard */}
+                                                <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
+                                                    {formatMoney(product.variants[0].priceGHS)}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </div>
-
-                    {/* Sticky Curator Tray */}
-                    <aside className="lg:col-span-5 sticky top-14 pt-10 mt-8">
-                        <div className="bg-white rounded-3xl p-8 border border-stone-100 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)] relative overflow-hidden">
-                            <div className="absolute top-0 right-0 p-8 opacity-5">
-                                <Gift size={120} />
-                            </div>
-
-                            <div className="relative z-10">
-                                <div className="flex justify-between items-center mb-2">
-                                    <h3 className="text-2xl font-serif">Your Curator Tray</h3>
-                                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${bundleItems.length === 5 ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
-                                        {bundleItems.length} / 5 Slots
-                                    </span>
-                                </div>
-
-                                <RewardTrack count={bundleItems.length} />
-
-                                {/* Slots Grid */}
-                                <div className="grid grid-cols-5 gap-3 mt-8">
-                                    {[...Array(5)].map((_, i) => (
-                                        <div key={i} className="aspect-square relative">
-                                            <AnimatePresence mode="popLayout">
-                                                {bundleItems[i] ? (
-                                                    <motion.div
-                                                        initial={{ scale: 0.5, opacity: 0, rotate: -10 }}
-                                                        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                                                        exit={{ scale: 0.5, opacity: 0 }}
-                                                        className="absolute inset-0"
-                                                    >
-                                                        <div className="w-full h-full rounded-xl overflow-hidden shadow-md border border-stone-100 group relative">
-                                                            <img src={bundleItems[i].images.default} className="w-full h-full object-cover" alt="" />
-                                                            <button
-                                                                onClick={() => removeFromBundle(bundleItems[i].uniqueId)}
-                                                                className="absolute inset-0 bg-red-500/80 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity z-20"
-                                                            >
-                                                                <Trash2 size={16} />
-                                                            </button>
-                                                        </div>
-                                                    </motion.div>
-                                                ) : (
-                                                    <div className="w-full h-full rounded-xl border-2 border-dashed border-stone-100 bg-stone-50/50 flex items-center justify-center text-stone-200">
-                                                        <Sparkles size={14} />
-                                                    </div>
-                                                )}
-                                            </AnimatePresence>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* AI Harmony Checker */}
-                                {bundleItems.length >= 2 && (
-                                    <div className="mt-8 border-t border-stone-100 pt-6">
-                                        <button
-                                            onClick={analyzeHarmonyLocal}
-                                            disabled={isHarmonyLoading}
-                                            className="flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-xs font-bold uppercase tracking-widest mb-3"
-                                        >
-                                            <Activity size={14} className={isHarmonyLoading ? 'animate-pulse' : ''} />
-                                            {isHarmonyLoading ? 'Analyzing Composition...' : '✨ Harmony Check'}
-                                        </button>
-                                        {harmonyReport && (
-                                            <motion.div
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                className="p-4 bg-stone-50 rounded-2xl border border-stone-100 text-sm italic text-stone-600 leading-relaxed"
-                                            >
-                                                "{harmonyReport}"
-                                            </motion.div>
-                                        )}
-                                    </div>
-                                )}
-
-                                {/* Empty State Help */}
-                                {bundleItems.length === 0 && (
-                                    <motion.p
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        className="text-center py-10 text-stone-400 text-sm italic"
-                                    >
-                                        Select scents from the library to fill your tray...
-                                    </motion.p>
-                                )}
-
-                                {/* Calculation Table */}
-                                <div className="mt-10 pt-8 border-t border-stone-100 space-y-3">
-                                    <div className="flex justify-between text-stone-400 text-sm">
-                                        <span>Subtotal</span>
-                                        <span>{formatMoney(subtotal)}</span>
-                                    </div>
-
-                                    <AnimatePresence>
-                                        {discount > 0 && (
-                                            <motion.div
-                                                initial={{ opacity: 0, height: 0 }}
-                                                animate={{ opacity: 1, height: 'auto' }}
-                                                exit={{ opacity: 0, height: 0 }}
-                                                className="flex justify-between text-green-600 text-sm font-bold bg-green-50 px-3 py-2 rounded-lg"
-                                            >
-                                                <span className="flex items-center gap-2">
-                                                    <Check size={14} />
-                                                    {discount * 100}% Bundle Discount
-                                                </span>
-                                                <span>-{formatMoney(subtotal * discount)}</span>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-
-                                    <div className="flex justify-between items-baseline pt-4">
-                                        <span className="text-lg font-serif">Bundle Total</span>
-                                        <div className="text-right">
-                                            <span className="text-3xl font-serif text-stone-900 block">
-                                                {formatMoney(total)}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-3 mt-8">
-                                    <button
-                                        disabled={bundleItems.length === 0}
-                                        className={`
-                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98] border
-                      ${bundleItems.length === 0
-                                                ? 'bg-stone-50 border-stone-100 text-stone-300'
-                                                : 'bg-white border-stone-200 text-stone-900 hover:bg-stone-50'}
-                    `}
-                                    >
-                                        <PenTool size={14} />
-                                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">✨ Gift Note</span>
-                                    </button>
-                                    <button
-                                        onClick={handleCheckout}
-                                        disabled={bundleItems.length === 0}
-                                        className={`
-                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98]
-                      ${bundleItems.length === 0
-                                                ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
-                                                : 'bg-stone-900 text-white shadow-xl hover:bg-black'}
-                    `}
-                                    >
-                                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">Checkout</span>
-                                        <ShoppingBag size={14} />
-                                    </button>
-                                </div>
-
-                                <p className="mt-4 text-[10px] text-center text-stone-400 uppercase tracking-widest font-bold">
-                                    Free Premium Packaging Included
-                                </p>
-                            </div>
-                        </div>
-                    </aside>
-
                 </div>
             </main>
         </div>
     );
-}
+};
