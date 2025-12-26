@@ -6,6 +6,7 @@ import { SimpleNewArrivals } from '../components/SimpleNewArrivals';
 import { motion } from "motion/react";
 import Testimonials from '@/components/Testimonials';
 import Hero from '@/components/Hero';
+import FeatureSection from '@/components/Featured';
 
 export const Home = () => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -33,7 +34,7 @@ export const Home = () => {
                 </motion.div>
 
                 <motion.div {...fadeInUp}>
-                    <SimpleNewArrivals />
+                    <FeatureSection />
                 </motion.div>
 
                 <motion.div {...fadeInUp}>

@@ -34,6 +34,8 @@ export const Header = () => {
     }, []);
 
     const navLinks = [
+        { name: 'Home', path: '/' },
+
         { name: 'Shop', path: '/shop' },
         { name: 'Bundles', path: '/bundles' },
         // { name: 'Collections', path: '/collections' },

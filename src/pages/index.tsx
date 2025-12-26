@@ -8,9 +8,10 @@ export { Checkout } from './Checkout';
 export { AdminInventory } from './AdminInventory';
 
 // Simple placeholders
-export const Collections = () => <div className=""><Blog/></div>;
+// Simple placeholders
+export const Collections = () => <div className=""><Blog /></div>;
 export { About } from './About';
-export const Contact = () => <div className="pt-24 container mx-auto text-center text-gray-500">Contact Us</div>;
-export const HowToOrder = () => <div className="pt-24 container mx-auto text-center text-gray-500"></div>;
-export const BlogList = () => <div className="pt-24  mx-auto text-center text-gray-500"> <Blog/> </div>;
+export { Contact } from './Contact';
+export { HowToOrder } from './HowToOrder';
+export const BlogList = () => <div className="pt-24  mx-auto text-center text-gray-500"> <Blog /> </div>;
 export const BlogPost = () => <div className="pt-24 container mx-auto text-center text-gray-500">Blog Post</div>;
