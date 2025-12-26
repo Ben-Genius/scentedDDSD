@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Phone, Mail, MapPin, Instagram, Clock, Send, Facebook, Twitter, Linkedin, MessageCircle } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { Phone, Mail, MapPin, Instagram, Clock, Send, MessageCircle } from 'lucide-react';
 
 export const Contact = () => {
     const contactInfo = [

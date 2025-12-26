@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Product } from '@/types';
 import { formatMoney } from '@/utils/formatMoney';
-import { Heart, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ShopProductCardProps {

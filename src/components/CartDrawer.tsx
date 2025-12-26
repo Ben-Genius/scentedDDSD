@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { formatMoney } from '../utils/formatMoney';
 import { X, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
-import cn from 'classnames';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface CartDrawerProps {
     isOpen: boolean;
@@ -15,7 +14,10 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
     const { items, removeItem, updateItemQuantity, getCartTotal } = useLocalCart();
     const navigate = useNavigate();
     const total = getCartTotal();
-    const [isClosing, setIsClosing] = useState(false);
+
+    const handleClose = useCallback(() => {
+        onClose();
+    }, [onClose]);
 
     // Handle ESC close
     useEffect(() => {
@@ -24,15 +26,7 @@ export const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
         };
         if (isOpen) window.addEventListener('keydown', handleEsc);
         return () => window.removeEventListener('keydown', handleEsc);
-    }, [isOpen]);
-
-    const handleClose = () => {
-        setIsClosing(true);
-        setTimeout(() => {
-            setIsClosing(false);
-            onClose();
-        }, 300);
-    };
+    }, [isOpen, handleClose]);
 
     const handleWhatsAppOrder = () => {
         const phone = import.meta.env.VITE_WHATSAPP_PHONE_NUMBER || '';

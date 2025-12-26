@@ -12,11 +12,14 @@ import {
     Activity,
     PenTool,
     Info,
-    X,
-    ChevronUp
+    X
 } from 'lucide-react';
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
+
+function generateUniqueId() {
+    return Date.now() + Math.random();
+}
 
 const formatMoney = (amount: number) => new Intl.NumberFormat('en-GH', {
     style: 'currency',
@@ -57,10 +60,184 @@ const RewardTrack = ({ count }: { count: number }) => {
     );
 };
 
+// Reusable Tray Content Component
+interface CuratorTrayContentProps {
+    bundleItems: BundleItem[];
+    removeFromBundle: (id: number) => void;
+    analyzeHarmonyLocal: () => void;
+    isHarmonyLoading: boolean;
+    harmonyReport: string | null;
+    subtotal: number;
+    discount: number;
+    total: number;
+    handleCheckout: () => void;
+}
+
+const CuratorTrayContent = ({
+    bundleItems,
+    removeFromBundle,
+    analyzeHarmonyLocal,
+    isHarmonyLoading,
+    harmonyReport,
+    subtotal,
+    discount,
+    total,
+    handleCheckout
+}: CuratorTrayContentProps) => (
+    <div className="bg-white lg:rounded-3xl p-8 border-stone-100 lg:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)] relative overflow-hidden h-full lg:h-auto overflow-y-auto">
+        <div className="absolute top-0 right-0 p-8 opacity-5">
+            <Gift size={120} />
+        </div>
+
+        <div className="relative z-10">
+            <div className="flex justify-between items-center mb-2">
+                <h3 className="text-2xl font-serif">Your Curator Tray</h3>
+                <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${bundleItems.length === 5 ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                    {bundleItems.length} / 5 Slots
+                </span>
+            </div>
+
+            <RewardTrack count={bundleItems.length} />
+
+            {/* Slots Grid */}
+            <div className="grid grid-cols-5 gap-3 mt-8">
+                {[...Array(5)].map((_, i) => (
+                    <div key={i} className="aspect-square relative">
+                        <AnimatePresence mode="popLayout">
+                            {bundleItems[i] ? (
+                                <motion.div
+                                    initial={{ scale: 0.5, opacity: 0, rotate: -10 }}
+                                    animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                                    exit={{ scale: 0.5, opacity: 0 }}
+                                    className="absolute inset-0"
+                                >
+                                    <div className="w-full h-full rounded-xl overflow-hidden shadow-md border border-stone-100 group relative">
+                                        <img src={bundleItems[i].images.default} className="w-full h-full object-cover" alt="" />
+                                        <button
+                                            onClick={() => removeFromBundle(bundleItems[i].uniqueId)}
+                                            className="absolute inset-0 bg-red-500/80 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity z-20"
+                                        >
+                                            <Trash2 size={16} />
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            ) : (
+                                <div className="w-full h-full rounded-xl border-2 border-dashed border-stone-100 bg-stone-50/50 flex items-center justify-center text-stone-200">
+                                    <Sparkles size={14} />
+                                </div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                ))}
+            </div>
+
+            {/* AI Harmony Checker */}
+            {bundleItems.length >= 2 && (
+                <div className="mt-8 border-t border-stone-100 pt-6">
+                    <button
+                        onClick={analyzeHarmonyLocal}
+                        disabled={isHarmonyLoading}
+                        className="flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-xs font-bold uppercase tracking-widest mb-3"
+                    >
+                        <Activity size={14} className={isHarmonyLoading ? 'animate-pulse' : ''} />
+                        {isHarmonyLoading ? 'Analyzing Composition...' : '✨ Harmony Check'}
+                    </button>
+                    {harmonyReport && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="p-4 bg-stone-50 rounded-2xl border border-stone-100 text-sm italic text-stone-600 leading-relaxed"
+                        >
+                            "{harmonyReport}"
+                        </motion.div>
+                    )}
+                </div>
+            )}
+
+            {/* Empty State Help */}
+            {bundleItems.length === 0 && (
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-center py-10 text-stone-400 text-sm italic"
+                >
+                    Select scents from the library to fill your tray...
+                </motion.p>
+            )}
+
+            {/* Calculation Table */}
+            <div className="mt-10 pt-8 border-t border-stone-100 space-y-3">
+                <div className="flex justify-between text-stone-400 text-sm">
+                    <span>Subtotal</span>
+                    <span>{formatMoney(subtotal)}</span>
+                </div>
+
+                <AnimatePresence>
+                    {discount > 0 && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="flex justify-between text-green-600 text-sm font-bold bg-green-50 px-3 py-2 rounded-lg"
+                        >
+                            <span className="flex items-center gap-2">
+                                <Check size={14} />
+                                {discount * 100}% Bundle Discount
+                            </span>
+                            <span>-{formatMoney(subtotal * discount)}</span>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                <div className="flex justify-between items-baseline pt-4">
+                    <span className="text-lg font-serif">Bundle Total</span>
+                    <div className="text-right">
+                        <span className="text-3xl font-serif text-stone-900 block">
+                            {formatMoney(total)}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 mt-8 pb-8 lg:pb-0">
+                <button
+                    disabled={bundleItems.length === 0}
+                    className={`
+                  group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98] border
+                  ${bundleItems.length === 0
+                            ? 'bg-stone-50 border-stone-100 text-stone-300'
+                            : 'bg-white border-stone-200 text-stone-900 hover:bg-stone-50'}
+                `}
+                >
+                    <PenTool size={14} />
+                    <span className="text-[10px] font-black uppercase tracking-[0.1em]">✨ Gift Note</span>
+                </button>
+                <button
+                    onClick={handleCheckout}
+                    disabled={bundleItems.length === 0}
+                    className={`
+                  group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98]
+                  ${bundleItems.length === 0
+                            ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
+                            : 'bg-stone-900 text-white shadow-xl hover:bg-black'}
+                `}
+                >
+                    <span className="text-[10px] font-black uppercase tracking-[0.1em]">Checkout</span>
+                    <ShoppingBag size={14} />
+                </button>
+            </div>
+
+            <p className="mt-4 text-[10px] text-center text-stone-400 uppercase tracking-widest font-bold">
+                Free Premium Packaging Included
+            </p>
+        </div>
+    </div>
+);
+
 export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const { addItem } = useLocalCart();
     const [bundleItems, setBundleItems] = useState<BundleItem[]>([]);
-    const [activeCategory, setActiveCategory] = useState('All');
+    const [activeCategory] = useState('All');
     const [isMobileTrayOpen, setIsMobileTrayOpen] = useState(false);
 
     // Local "AI" State
@@ -86,7 +263,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                 alert("Your curator tray is full! Remove an item to add more.");
                 return;
             }
-            setBundleItems([...bundleItems, { ...product, uniqueId: Math.random() }]);
+            setBundleItems([...bundleItems, { ...product, uniqueId: generateUniqueId() }]);
         }
     };
 
@@ -118,15 +295,9 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                 if (product.category.toLowerCase().includes(word)) score += 1;
 
                 // Semantic adjustments (simple thesaurus)
-                if (word === 'relax' || word === 'calm' || word === 'sleep') {
-                    if (product.scents.some(s => /lavender|chamomile|vanilla|sandalwood/i.test(s))) score += 2;
-                }
-                if (word === 'fresh' || word === 'morning' || word === 'clean') {
-                    if (product.scents.some(s => /lemon|citrus|mint|cotton|ocean|sea/i.test(s))) score += 2;
-                }
-                if (word === 'romantic' || word === 'date' || word === 'love') {
-                    if (product.scents.some(s => /rose|jasmine|amber|musk|oud/i.test(s))) score += 2;
-                }
+                if (word === 'relax' && (product.category === 'Candle' || product.scents.includes('Lavender'))) score += 2;
+                if (word === 'fresh' && product.scents.some(s => /citrus|mint|sea/i.test(s))) score += 2;
+                if (word === 'romantic' && product.scents.some(s => /rose|jasmine|amber/i.test(s))) score += 2;
             });
 
             return { product, score };
@@ -137,45 +308,34 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
 
         const selected = scoredProducts.slice(0, 5).map(item => ({
             ...item.product,
-            uniqueId: Math.random()
+            uniqueId: Date.now() + Math.random()
         }));
 
-        // If we didn't get 5 good matches (low scores), fill with random favorites
-        while (selected.length < 5) {
-            const random = availableProducts[Math.floor(Math.random() * availableProducts.length)];
-            if (!selected.find(p => p.id === random.id)) {
-                selected.push({ ...random, uniqueId: Math.random() });
-            }
+        // Fallback if no specific matches found (e.g. nonsense input)
+        if (selected.every((_, i) => scoredProducts[i].score < 1)) {
+            setAiMessage("That's a unique vibe! Here's a balanced mix I think you'll love.");
+        } else {
+            setAiMessage(`Curated just for you based on "${input}".`);
         }
 
         setBundleItems(selected);
-
-        // Dynamic Curator Note
-        const bestMatchWord = keywords.length > 0 ? keywords[0] : 'your vibe';
-        const notes = [
-            `I've selected these scents to perfectly match the "${bestMatchWord}" mood you're looking for.`,
-            `A curated collection inspired by your request for "${bestMatchWord}".`,
-            `This selection balances notes that evoke "${bestMatchWord}" with complementary undertones.`,
-        ];
-        setAiMessage(notes[Math.floor(Math.random() * notes.length)]);
         setChatInput("");
         setIsAiLoading(false);
     };
 
     /**
-     * LOCAL AI SIMULATION: Harmony Analysis
-     * Analyzes the composition of the bundle locally.
+     * LOCAL HARMONY CHECK
+     * Simple heuristics to give "feedback" on the bundle.
      */
     const analyzeHarmonyLocal = async () => {
         if (bundleItems.length < 2) return;
         setIsHarmonyLoading(true);
 
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1200));
 
         // Gather stats
         const allScents = bundleItems.flatMap(i => i.scents);
         const categories = bundleItems.map(i => i.category);
-        const textDesc = bundleItems.map(i => i.title).join(' ');
 
         let critique = "A beautiful selection.";
 
@@ -186,15 +346,15 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
         const hasFloral = allScents.some(s => /rose|jasmine|lavender/i.test(s));
 
         if (uniqueCategories.size === 1) {
-            critique = "A highly focused collection. Using the same product type ensures a consistent fragrance throw throughout your space.";
+            critique = "A highly focused collection. Perfect for someone who knows exactly what they want.";
         } else if (uniqueCategories.size >= 3) {
             critique = "A versatile assortment! This multi-format bundle allows you to layer scents across different rooms for a fully immersive experience.";
         } else if (hasOud && hasCitrus) {
-            critique = "An intriguing contrast! The depth of Oud balances beautifully with the brightness of citrus notes for a sophisticated profile.";
+            critique = "An intriguing contrast! The depth of Oud balances beautifully with the brightness of Citrus.";
         } else if (hasFloral && hasOud) {
-            critique = "Classic elegance. The floral top notes will lift the rich, woody base of the Oud for a timeless and romantic atmosphere.";
+            critique = "Classic elegance. The floral notes soften the intensity of the Oud for a sophisticated profile.";
         } else {
-            critique = "This selection offers a harmonious blend of notes that will create a welcoming and refined ambiance in any home.";
+            critique = "These scents share a harmonious character. They will complement each other wonderfully in your space.";
         }
 
         setHarmonyReport(critique);
@@ -209,160 +369,6 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
         alert("Bundle added to cart successfully!");
     }
 
-    const categoriesFiltered = ['All', ...Array.from(new Set(availableProducts.map(p => p.category)))];
-
-    // Reusable Tray Content
-    const CuratorTrayContent = () => (
-        <div className="bg-white lg:rounded-3xl p-8 border-stone-100 lg:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)] relative overflow-hidden h-full lg:h-auto overflow-y-auto">
-            <div className="absolute top-0 right-0 p-8 opacity-5">
-                <Gift size={120} />
-            </div>
-
-            <div className="relative z-10">
-                <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-2xl font-serif">Your Curator Tray</h3>
-                    <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${bundleItems.length === 5 ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
-                        {bundleItems.length} / 5 Slots
-                    </span>
-                </div>
-
-                <RewardTrack count={bundleItems.length} />
-
-                {/* Slots Grid */}
-                <div className="grid grid-cols-5 gap-3 mt-8">
-                    {[...Array(5)].map((_, i) => (
-                        <div key={i} className="aspect-square relative">
-                            <AnimatePresence mode="popLayout">
-                                {bundleItems[i] ? (
-                                    <motion.div
-                                        initial={{ scale: 0.5, opacity: 0, rotate: -10 }}
-                                        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                                        exit={{ scale: 0.5, opacity: 0 }}
-                                        className="absolute inset-0"
-                                    >
-                                        <div className="w-full h-full rounded-xl overflow-hidden shadow-md border border-stone-100 group relative">
-                                            <img src={bundleItems[i].images.default} className="w-full h-full object-cover" alt="" />
-                                            <button
-                                                onClick={() => removeFromBundle(bundleItems[i].uniqueId)}
-                                                className="absolute inset-0 bg-red-500/80 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity z-20"
-                                            >
-                                                <Trash2 size={16} />
-                                            </button>
-                                        </div>
-                                    </motion.div>
-                                ) : (
-                                    <div className="w-full h-full rounded-xl border-2 border-dashed border-stone-100 bg-stone-50/50 flex items-center justify-center text-stone-200">
-                                        <Sparkles size={14} />
-                                    </div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    ))}
-                </div>
-
-                {/* AI Harmony Checker */}
-                {bundleItems.length >= 2 && (
-                    <div className="mt-8 border-t border-stone-100 pt-6">
-                        <button
-                            onClick={analyzeHarmonyLocal}
-                            disabled={isHarmonyLoading}
-                            className="flex items-center gap-2 text-stone-500 hover:text-stone-900 transition-colors text-xs font-bold uppercase tracking-widest mb-3"
-                        >
-                            <Activity size={14} className={isHarmonyLoading ? 'animate-pulse' : ''} />
-                            {isHarmonyLoading ? 'Analyzing Composition...' : '✨ Harmony Check'}
-                        </button>
-                        {harmonyReport && (
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                className="p-4 bg-stone-50 rounded-2xl border border-stone-100 text-sm italic text-stone-600 leading-relaxed"
-                            >
-                                "{harmonyReport}"
-                            </motion.div>
-                        )}
-                    </div>
-                )}
-
-                {/* Empty State Help */}
-                {bundleItems.length === 0 && (
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-center py-10 text-stone-400 text-sm italic"
-                    >
-                        Select scents from the library to fill your tray...
-                    </motion.p>
-                )}
-
-                {/* Calculation Table */}
-                <div className="mt-10 pt-8 border-t border-stone-100 space-y-3">
-                    <div className="flex justify-between text-stone-400 text-sm">
-                        <span>Subtotal</span>
-                        <span>{formatMoney(subtotal)}</span>
-                    </div>
-
-                    <AnimatePresence>
-                        {discount > 0 && (
-                            <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                className="flex justify-between text-green-600 text-sm font-bold bg-green-50 px-3 py-2 rounded-lg"
-                            >
-                                <span className="flex items-center gap-2">
-                                    <Check size={14} />
-                                    {discount * 100}% Bundle Discount
-                                </span>
-                                <span>-{formatMoney(subtotal * discount)}</span>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-
-                    <div className="flex justify-between items-baseline pt-4">
-                        <span className="text-lg font-serif">Bundle Total</span>
-                        <div className="text-right">
-                            <span className="text-3xl font-serif text-stone-900 block">
-                                {formatMoney(total)}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 mt-8 pb-8 lg:pb-0">
-                    <button
-                        disabled={bundleItems.length === 0}
-                        className={`
-                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98] border
-                      ${bundleItems.length === 0
-                                ? 'bg-stone-50 border-stone-100 text-stone-300'
-                                : 'bg-white border-stone-200 text-stone-900 hover:bg-stone-50'}
-                    `}
-                    >
-                        <PenTool size={14} />
-                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">✨ Gift Note</span>
-                    </button>
-                    <button
-                        onClick={handleCheckout}
-                        disabled={bundleItems.length === 0}
-                        className={`
-                      group flex items-center justify-center gap-2 py-4 rounded-full transition-all active:scale-[0.98]
-                      ${bundleItems.length === 0
-                                ? 'bg-stone-100 text-stone-400 cursor-not-allowed'
-                                : 'bg-stone-900 text-white shadow-xl hover:bg-black'}
-                    `}
-                    >
-                        <span className="text-[10px] font-black uppercase tracking-[0.1em]">Checkout</span>
-                        <ShoppingBag size={14} />
-                    </button>
-                </div>
-
-                <p className="mt-4 text-[10px] text-center text-stone-400 uppercase tracking-widest font-bold">
-                    Free Premium Packaging Included
-                </p>
-            </div>
-        </div>
-    );
-
     return (
         <div className="min-h-screen bg-[#FAF9F6] text-stone-900 font-sans selection:bg-amber-100 pb-20 rounded-3xl">
 
@@ -373,7 +379,17 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
 
                     {/* Desktop Sidebar (Reference Reusable Content) */}
                     <aside className="lg:col-span-5 lg:order-2 sticky top-14 pt-10 mt-8 z-30 hidden lg:block border border-stone-100 rounded-3xl shadow-sm">
-                        <CuratorTrayContent />
+                        <CuratorTrayContent
+                            bundleItems={bundleItems}
+                            removeFromBundle={removeFromBundle}
+                            analyzeHarmonyLocal={analyzeHarmonyLocal}
+                            isHarmonyLoading={isHarmonyLoading}
+                            harmonyReport={harmonyReport}
+                            subtotal={subtotal}
+                            discount={discount}
+                            total={total}
+                            handleCheckout={handleCheckout}
+                        />
                     </aside>
 
                     {/* Mobile Floating Button */}
@@ -419,7 +435,17 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                         </button>
                                     </div>
                                     <div className="w-12 h-1 bg-stone-200 rounded-full mx-auto mt-4 mb-2" />
-                                    <CuratorTrayContent />
+                                    <CuratorTrayContent
+                                        bundleItems={bundleItems}
+                                        removeFromBundle={removeFromBundle}
+                                        analyzeHarmonyLocal={analyzeHarmonyLocal}
+                                        isHarmonyLoading={isHarmonyLoading}
+                                        harmonyReport={harmonyReport}
+                                        subtotal={subtotal}
+                                        discount={discount}
+                                        total={total}
+                                        handleCheckout={handleCheckout}
+                                    />
                                 </motion.div>
                             </>
                         )}

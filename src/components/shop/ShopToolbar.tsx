@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown, LayoutGrid, List, Check, SlidersHorizontal } from 'lucide-react';
+import { ChevronDown, LayoutGrid, List, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ShopToolbarProps {
@@ -9,7 +9,6 @@ interface ShopToolbarProps {
     setViewMode: (mode: 'grid' | 'list') => void;
     sortBy: string;
     setSortBy: (sort: string) => void;
-    onToggleFilter: () => void;
 }
 
 export const ShopToolbar = ({
@@ -17,8 +16,7 @@ export const ShopToolbar = ({
     viewMode,
     setViewMode,
     sortBy,
-    setSortBy,
-    onToggleFilter
+    setSortBy
 }: ShopToolbarProps) => {
     const [isSortOpen, setIsSortOpen] = useState(false);
 
@@ -35,7 +33,7 @@ export const ShopToolbar = ({
         <div className="flex justify-between items-center mb-6 pb-4 border-b border-black/5">
             {/* Left: Filter Toggle & View Mode */}
             <div className="flex items-center gap-6">
-            
+
 
 
                 <div className="hidden md:flex items-center bg-black/5 rounded-lg p-1">

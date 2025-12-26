@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { SlidersHorizontal, ChevronDown, Check, Minus } from 'lucide-react';
+import { ChevronDown, Check, Minus } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ShopSidebarProps {

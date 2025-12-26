@@ -4,14 +4,13 @@ import { useInventory } from '../hooks/useInventory';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { Product, ProductVariant } from '../types';
 import { formatMoney } from '../utils/formatMoney';
-import { X, ShoppingCart, Search, SlidersHorizontal, Loader2 } from 'lucide-react';
+import { X, ShoppingCart, Search, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import cn from 'classnames';
 
 // New Components
 import { ShopHero } from '../components/ShopHero';
 import { ShopCategories } from '../components/shop/ShopCategories';
-import { ShopSidebar } from '../components/shop/ShopSidebar';
 import { ShopToolbar } from '../components/shop/ShopToolbar';
 import { ShopProductCard } from '../components/shop/ShopProductCard';
 
@@ -29,7 +28,6 @@ export const Shop = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     // Filters & UI State
-    const [filtersOpen, setFiltersOpen] = useState(false);
     const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
     // Filter State
@@ -164,31 +162,9 @@ export const Shop = () => {
                         setViewMode={setViewMode}
                         sortBy={sortBy}
                         setSortBy={setSortBy}
-                        onToggleFilter={() => setFiltersOpen(!filtersOpen)}
                     />
 
-                    <AnimatePresence>
-                        {filtersOpen && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="overflow-hidden border-b border-black/5 mb-8"
-                            >
-                                <ShopSidebar
-                                    className="w-full pb-8"
-                                    categoryFilter={categoryFilter}
-                                    setCategoryFilter={setCategoryFilter}
-                                    scentFilter={scentFilter}
-                                    setScentFilter={setScentFilter}
-                                    priceRange={priceRange}
-                                    setPriceRange={setPriceRange}
-                                    onReset={() => { setCategoryFilter('all'); setScentFilter('all'); setPriceRange([0, 1000]); }}
-                                />
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+
 
                     {/* 4. Main Product Grid */}
                     <main className="flex-1">

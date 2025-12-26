@@ -1,6 +1,5 @@
 import React from 'react';
 import { IMAGES } from '@/assets';
-import { motion } from 'motion/react';
 
 interface ShopHeroProps {
     onCategorySelect: (category: string) => void;
@@ -46,7 +45,7 @@ export const ShopHero = ({ onCategorySelect }: ShopHeroProps) => {
                 <div className="relative group overflow-hidden h-full flex items-end p-8 md:p-12 bg-gray-200 rounded-sm">
                     <img
                         src={IMAGES.allprod1}
-                        alt="Gift Sets"     
+                        alt="Gift Sets"
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
