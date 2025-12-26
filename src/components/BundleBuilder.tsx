@@ -201,35 +201,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     return (
         <div className="min-h-screen bg-[#FAF9F6] text-stone-900 font-sans selection:bg-amber-100 pb-20 rounded-3xl">
 
-            {/* Dynamic Header */}
-            <header className="pt-12 pb-12 px-6 max-w-7xl mx-auto border-b border-stone-200/60">
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                        <span className="text-xs font-bold tracking-[0.3em] text-amber-600 uppercase mb-3 block">
-                            Curated Experience
-                        </span>
-                        <h1 className="text-4xl md:text-5xl font-serif leading-tight">
-                            Build your <br /><span className="italic text-stone-400">Signature Box.</span>
-                        </h1>
-                    </motion.div>
-
-                    <div className="flex flex-wrap gap-2">
-                        {categoriesFiltered.map(cat => (
-                            <button
-                                key={cat}
-                                onClick={() => setActiveCategory(cat)}
-                                className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all
-                  ${activeCategory === cat
-                                        ? 'bg-stone-900 text-white shadow-lg'
-                                        : 'bg-white text-stone-400 hover:text-stone-900 border border-stone-200'}
-                `}
-                            >
-                                {cat}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </header>
+    
 
             <main className="max-w-full mx-auto px-6 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -308,11 +280,20 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                         </div>
                                     </div>
 
-                                    <div className="flex justify-between items-start px-1">
-                                        <div>
-                                            <h4 className="font-serif text-lg group-hover:text-amber-700 transition-colors">{product.title}</h4>
-                                            <p className="text-[10px] text-stone-400 font-bold uppercase tracking-tighter mb-1 truncate max-w-[140px]">{product.scents.join(', ')}</p>
-                                            <p className="text-sm text-stone-900 font-bold">{formatMoney(product.variants[0].priceGHS)}</p>
+                                    <div className="flex justify-between items-start px-1 mt-4 text-center">
+                                        <div className="w-full space-y-2">
+                                            {/* Product Title - Matches ProductCard */}
+                                            <h4 className="text-sm uppercase tracking-[0.2em] font-playfair text-black 
+                                  group-hover:text-black/70 transition-colors duration-300">
+                                                {product.title}
+                                            </h4>
+
+                                            <p className="text-[10px] text-stone-400 font-medium uppercase tracking-widest mb-1 truncate max-w-full mx-auto">{product.scents.join(', ')}</p>
+
+                                            {/* Price - Matches ProductCard */}
+                                            <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
+                                                {formatMoney(product.variants[0].priceGHS)}
+                                            </p>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -321,7 +302,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                     </div>
 
                     {/* Sticky Curator Tray */}
-                    <aside className="lg:col-span-5 sticky top-12">
+                    <aside className="lg:col-span-5 sticky top-14 pt-10 mt-8">
                         <div className="bg-white rounded-3xl p-8 border border-stone-100 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.06)] relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-8 opacity-5">
                                 <Gift size={120} />

@@ -255,8 +255,8 @@ export const Shop = () => {
                                         <img src={activeProduct.images.default} alt={activeProduct.title} className="w-full h-full object-cover" />
                                     </div>
                                     <div>
-                                        <h4 className="text-black font-playfair text-xl mb-1">{activeProduct.title}</h4>
-                                        <p className="text-black/60 font-medium text-lg">{formatMoney(currentPrice)}</p>
+                                        <h4 className="text-black font-playfair text-xl mb-1 uppercase tracking-widest">{activeProduct.title}</h4>
+                                        <p className="text-black/60 font-medium font-inter text-lg">{formatMoney(currentPrice)}</p>
                                     </div>
                                 </div>
 
