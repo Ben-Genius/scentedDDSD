@@ -15,7 +15,9 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
         <nav
             className={cn(
                 "hidden md:flex items-center justify-center w-full bg-champagne transition-all duration-300 ease-in-out relative",
-                isScrolled && !isHeaderHovered ? "max-h-0 opacity-0 border-t-0" : "max-h-20 opacity-100 border-t border-black/5"
+                isScrolled && !isHeaderHovered
+                    ? "max-h-0 opacity-0 border-t-0 overflow-hidden"
+                    : "max-h-20 opacity-100 border-t border-black/5"
             )}
             onMouseLeave={() => setActiveDropdown(null)}
         >
@@ -59,7 +61,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                     {/* Section Image */}
                                                     {section.image && (
                                                         <Link
-                                                            to={section.links[0]?.path || item.path}
+                                                            to={section.path || section.links[0]?.path || item.path}
                                                             className="w-[200px] h-[200px] object-contain overflow-hidden bg-gray-50 relative"
                                                         >
                                                             <img
@@ -73,21 +75,23 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                     )}
 
                                                     {/* Section Title */}
-                                                    <div className="space-y-4">
-                                                        <h4 className="font-inter text-base lg:text-lg font-medium text-black tracking-wide border-b border-black/10">
+                                                    <div className="space-y-4 w-[200px]">
+                                                        <Link
+                                                            to={section.path || section.links[0]?.path || item.path}
+                                                            className="font-inter text-base font-medium text-black hover:opacity-70 transition-opacity block border-b border-black/10 pb-2"
+                                                        >
                                                             {section.title}
-                                                        </h4>
+                                                        </Link>
 
                                                         {/* Links */}
-                                                        <ul className="flex flex-col ">
+                                                        <ul className="flex flex-col space-y-1">
                                                             {section.links.map((link) => (
                                                                 <li key={link.path}>
-                                                                    <Link
-                                                                        to={link.path}
-                                                                        className="text-xs font-normal text-black/70 hover:text-black transition-all duration-200 block py-1 hover:translate-x-1"
+                                                                    <h4
+                                                                        className="text-sm font-normal text-black/70 hover:text-black transition-all duration-200 block py-1 hover:translate-x-1"
                                                                     >
                                                                         {link.name}
-                                                                    </Link>
+                                                                    </h4>
                                                                 </li>
                                                             ))}
                                                         </ul>
