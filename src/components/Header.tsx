@@ -35,11 +35,14 @@ export const Header = () => {
 
     const navLinks = [
         { name: 'Home', path: '/' },
-
-        { name: 'Shop', path: '/shop' },
-        { name: 'Bundles', path: '/bundles' },
         // { name: 'Collections', path: '/collections' },
-        { name: 'About', path: '/about' },
+        { name: 'Scented Candles', path: '/home-candles' },
+        { name: 'Diffusers', path: '/diffusers' },
+        { name: 'Essential Oils', path: '/essential-oils' },
+        { name: 'Air Freshners', path: '/air-freshners' },
+        { name: 'Bath & Body', path: '/bath-body' },
+        { name: 'Shop', path: '/shop' },
+        { name: 'Gift-Set', path: '/bundles' },
     ];
 
     return (
@@ -63,8 +66,16 @@ export const Header = () => {
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1} d="M4 6h16M4 12h16m-7 6h7" /></svg>
                         </button>
                         <button className="hidden md:flex text-black hover:opacity-60 transition-opacity">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        </button>
+                            <NavLink
+                                key='home'
+                                to='/'
+                                className={({ isActive }) => cn(
+                                    "text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300",
+                                    isActive ? "text-black border-b border-black" : "text-black/60 hover:text-black"
+                                )}
+                            >
+                                Home🏠
+                            </NavLink>                        </button>
                     </div>
 
                     {/* Center: Logo */}
@@ -106,16 +117,18 @@ export const Header = () => {
                 >
                     <div className="flex space-x-16">
                         {navLinks.map((link) => (
-                            <NavLink
-                                key={link.name}
-                                to={link.path}
-                                className={({ isActive }) => cn(
-                                    "text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300",
-                                    isActive ? "text-black border-b border-black" : "text-black/60 hover:text-black"
-                                )}
-                            >
-                                {link.name}
-                            </NavLink>
+                            link.name !== "Home" ? (
+                                <NavLink
+                                    key={link.name}
+                                    to={link.path}
+                                    className={({ isActive }) => cn(
+                                        "text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300",
+                                        isActive ? "text-black border-b border-black" : "text-black/60 hover:text-black"
+                                    )}
+                                >
+                                    {link.name}
+                                </NavLink>
+                            ) : null
                         ))}
                     </div>
                 </nav>
