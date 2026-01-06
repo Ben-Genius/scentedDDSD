@@ -85,12 +85,27 @@ export const ShopProductCard = ({
             <Link to={`/product/${product.slug}`} aria-label={product.title} className="block relative">
                 {/* Image container */}
                 <div className="aspect-[3/4] overflow-hidden bg-[#f5f5f5] relative mb-4 rounded-sm">
+                    {/* Main Image */}
                     <img
                         src={product.images.default}
                         alt={product.title}
-                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        className={cn(
+                            "absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out",
+                            // If gallery has image, fade out default on hover. Else zoom.
+                            product.images.gallery[0] ? "group-hover:opacity-0" : "group-hover:scale-105"
+                        )}
                         loading="lazy"
                     />
+
+                    {/* Secondary Image (Hover) - Only if available */}
+                    {product.images.gallery[0] && (
+                        <img
+                            src={product.images.gallery[0]}
+                            alt={`${product.title} view`}
+                            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out opacity-0 group-hover:opacity-100"
+                            loading="lazy"
+                        />
+                    )}
 
                     {/* Featured/Stock Badges */}
                     <div className="absolute top-2 left-2 flex flex-col gap-1">
@@ -107,7 +122,7 @@ export const ShopProductCard = ({
                     </div>
 
                     {/* Quick Add - Slide up from bottom */}
-                    {onQuickAdd && (
+                    {/* {onQuickAdd && (
                         <div className="absolute inset-x-0 bottom-4 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-300 z-20 flex justify-center px-4">
                             <button
                                 className="w-fit bg-white/95 backdrop-blur-sm px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-black hover:bg-black hover:text-white transition-colors border border-black/5 shadow-lg rounded-sm"
@@ -120,13 +135,13 @@ export const ShopProductCard = ({
                                 Quick Add
                             </button>
                         </div>
-                    )}
+                    )} */}
                 </div>
 
                 {/* Card content */}
                 <div className="space-y-1">
                     <div className="flex justify-between items-start">
-                        <h3 className="font-playfair text-sm text-black leading-snug group-hover:text-black/70 transition-colors">
+                        <h3 className="font-playfair text-md text-black leading-snug group-hover:text-black/70 transition-colors">
                             {product.title}
                         </h3>
                         <span className="text-sm font-medium text-black ml-4">
@@ -134,14 +149,19 @@ export const ShopProductCard = ({
                         </span>
                     </div>
 
-                    {/* Rating Stub (Optional visual candy) */}
-                    <div className="flex items-center gap-1 opacity-50">
-                        <div className="flex text-black/40">
-                            {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-2.5 h-2.5 fill-current" />
-                            ))}
-                        </div>
-                    </div>
+                    {/* Quick Add / Add to Cart replacing stars */}
+                    {onQuickAdd && (
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                onQuickAdd();
+                            }}
+                            className="mt-2 w-full bg-transparent border border-black/10 hover:border-black text-black text-[10px] font-bold uppercase tracking-widest py-2 rounded-sm transition-all hover:bg-black hover:text-white"
+                        >
+                            Add to Cart
+                        </button>
+                    )}
                 </div>
             </Link>
         </motion.div>

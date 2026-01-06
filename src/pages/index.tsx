@@ -4,6 +4,7 @@ export { Home } from './Home';
 export { Shop } from './Shop';
 export { ProductPage } from './ProductPage';
 export { Bundles } from './Bundles';
+export { CollectionPage } from './CollectionPage';
 export { Checkout } from './Checkout';
 export { AdminInventory } from './AdminInventory';
 

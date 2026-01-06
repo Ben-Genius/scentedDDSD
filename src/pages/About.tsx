@@ -147,7 +147,7 @@ export const About = () => {
 
                     {/* Stats */}
                     <div className="flex flex-wrap lg:justify-start justify-between items-center py-3 text-sm">
-                     
+
                         <div className="lg:absolute right-0 bottom-16 flex lg:flex-col flex-row-reverse lg:gap-0 gap-4">
                             <TimelineContent
                                 as="div"
@@ -206,7 +206,7 @@ export const About = () => {
                                     delay: 0.5,
                                 }}
                             >
-                                Crafting Scents That Make a Difference.
+                                About Scented by DDSD
                             </VerticalCutReveal>
                         </h1>
 
@@ -215,30 +215,20 @@ export const About = () => {
                             animationNum={4}
                             timelineRef={heroRef}
                             customVariants={revealVariants}
-                            className="grid md:grid-cols-2 gap-8 text-gray-600"
+                            className="flex flex-col gap-6 text-gray-600 sm:text-base text-sm leading-relaxed text-justify"
                         >
-                            <TimelineContent
-                                as="div"
-                                animationNum={5}
-                                timelineRef={heroRef}
-                                customVariants={revealVariants}
-                                className="sm:text-base text-sm"
-                            >
-                                <p className="leading-relaxed text-justify">
-                                    Scented By DDSD began as a small kitchen atelier in Accra, born from a passion for evocative fragrances. We specialize in transforming ideas into compelling aromatic experiences that elevate spaces and moods.
-                                </p>
-                            </TimelineContent>
-                            <TimelineContent
-                                as="div"
-                                animationNum={6}
-                                timelineRef={heroRef}
-                                customVariants={revealVariants}
-                                className="sm:text-base text-sm"
-                            >
-                                <p className="leading-relaxed text-justify">
-                                    Every scent tells a story. By blending creativity with traditional craftsmanship and sustainable practices, we create luxurious home fragrances that resonate with memory and emotion.
-                                </p>
-                            </TimelineContent>
+                            <p>
+                                Scented by DDSD was born from Daisy Stead’s natural gift for creating warm, inviting spaces. What began in her kitchen as a simple passion—blending essential oils, pouring wax, and crafting candles by hand—soon became something much more. Initially made as thoughtful gifts for friends and family, her candles quickly became cherished for their uniqueness, comforting aromas, and the love poured into every piece.
+                            </p>
+                            <p>
+                                Inspired by the overwhelming encouragement she received, Daisy took a bold step and transformed her passion into a brand. She named it Scented by DDSD, honouring the initials of her family, a constant source of inspiration and support. From those humble beginnings, the brand grew organically, evolving beyond candles into a thoughtfully curated collection of reed diffusers, essential oils, potpourris, wax melts, and burners, all crafted with intention, care, and attention to detail.
+                            </p>
+                            <p>
+                                Today, Scented by DDSD is more than a fragrance brand, it is a lifestyle and a community of scent lovers who value ambiance, comfort, and the art of a beautifully scented home. Daisy’s journey from a home-based creator to an entrepreneur reflects the power of passion, consistency, and heartfelt craftsmanship.
+                            </p>
+                            <blockquote className="border-l-4 border-gold pl-4 italic text-gray-800 my-4">
+                                "At Scented by DDSD, it’s scent-sational vibes only. From our heart to your home, thank you for being part of our journey."
+                            </blockquote>
                         </TimelineContent>
                     </div>
 

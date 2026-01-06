@@ -14,7 +14,7 @@ export const ProductPage = () => {
 
     return (
         <div className="pt-16 bg-black min-h-screen">
-            <ProductDetail product={product} />
+            <ProductDetail key={product.id} product={product} />
         </div>
     );
 };
