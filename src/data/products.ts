@@ -14,7 +14,7 @@ export const products: Product[] = [
         stock: 50,
         featured: true,
         images: {
-            default: IMAGES.diffavent,
+            default: IMAGES.difflover,
             gallery: [IMAGES.diffavent2, IMAGES.new1, IMAGES.new2, IMAGES.new3],
             colorVariants: []
         },
@@ -32,9 +32,9 @@ export const products: Product[] = [
         longDescription: "Premium collection of sophisticated fragrances for a refined atmosphere.",
         basePrice: 150,
         stock: 50,
-        featured: true,
+        featured: false,
         images: {
-            default: IMAGES.diffavent2,
+            default: IMAGES.diffchannel,
             gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new6],
             colorVariants: []
         },
@@ -284,7 +284,7 @@ export const products: Product[] = [
         longDescription: "A calming, deep lavender scent inspired by moonlit fields in Provence.",
         basePrice: 130,
         stock: 40,
-        featured: true,
+        featured: false,
         images: {
             default: "/images/products/floral/lavande-de-minuit-main.png",
             gallery: ["/images/products/floral/lavande-de-minuit-hover.png"],
@@ -376,7 +376,7 @@ export const products: Product[] = [
         longDescription: "Rich and textural, wrapped with smoky oud wood. Spiked with clove, decadent with praline.",
         basePrice: 145,
         stock: 35,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new10, // Placeholder
             gallery: [IMAGES.new11],
@@ -450,7 +450,7 @@ export const products: Product[] = [
         longDescription: "Rich tobacco leaf spices with vanilla and cacao.",
         basePrice: 155,
         stock: 25,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.diffaventus, // Placeholder
             gallery: [IMAGES.diffavent2],
@@ -468,7 +468,7 @@ export const products: Product[] = [
         longDescription: "A golden, warm blend of amber, patchouli, and sandalwood.",
         basePrice: 140,
         stock: 30,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.scentedcandle, // Placeholder
             gallery: [IMAGES.new8],
@@ -504,7 +504,7 @@ export const products: Product[] = [
         longDescription: "Rich, hand-harvested sap of the Namibian myrrh tree, mingling with warm almond and lush vanilla notes of tonka bean.",
         basePrice: 165,
         stock: 20,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new13, // Placeholder
             gallery: [IMAGES.new11],
@@ -578,7 +578,7 @@ export const products: Product[] = [
         longDescription: "Rich espresso blended with steamed milk and vanilla syrup.",
         basePrice: 125,
         stock: 50,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new14, // Placeholder
             gallery: [IMAGES.new15],
@@ -650,7 +650,7 @@ export const products: Product[] = [
         longDescription: "Juicy peaches mixed with sparkling prosecco.",
         basePrice: 140,
         stock: 30,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new22, // Placeholder
             gallery: [IMAGES.new23],
@@ -706,7 +706,7 @@ export const products: Product[] = [
         longDescription: "The mineral scent of the rugged cliffs not far from the ocean.",
         basePrice: 135,
         stock: 45,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new1, // Placeholder
             gallery: [IMAGES.new2],
@@ -760,7 +760,7 @@ export const products: Product[] = [
         longDescription: "Clean white tea leaves with a hint of jasmine and cedar.",
         basePrice: 130,
         stock: 35,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.new7, // Placeholder
             gallery: [IMAGES.new8],

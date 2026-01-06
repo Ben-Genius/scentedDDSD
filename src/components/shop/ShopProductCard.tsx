@@ -141,7 +141,7 @@ export const ShopProductCard = ({
                 {/* Card content */}
                 <div className="space-y-1">
                     <div className="flex justify-between items-start">
-                        <h3 className="font-playfair text-sm text-black leading-snug group-hover:text-black/70 transition-colors">
+                        <h3 className="font-playfair text-md text-black leading-snug group-hover:text-black/70 transition-colors">
                             {product.title}
                         </h3>
                         <span className="text-sm font-medium text-black ml-4">

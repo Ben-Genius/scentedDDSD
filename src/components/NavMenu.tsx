@@ -62,6 +62,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                     {section.image && (
                                                         <Link
                                                             to={section.path || section.links[0]?.path || item.path}
+                                                            onClick={() => setActiveDropdown(null)}
                                                             className="w-[200px] h-[200px] object-contain overflow-hidden bg-gray-50 relative"
                                                         >
                                                             <img
@@ -78,6 +79,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                     <div className="space-y-4 w-[200px]">
                                                         <Link
                                                             to={section.path || section.links[0]?.path || item.path}
+                                                            onClick={() => setActiveDropdown(null)}
                                                             className="font-inter text-base font-medium text-black hover:opacity-70 transition-opacity block border-b border-black/10 pb-2"
                                                         >
                                                             {section.title}
@@ -87,11 +89,13 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                         <ul className="flex flex-col space-y-1">
                                                             {section.links.map((link) => (
                                                                 <li key={link.path}>
-                                                                    <h4
+                                                                    <Link
+                                                                        to={link.path}
+                                                                        onClick={() => setActiveDropdown(null)}
                                                                         className="text-sm font-normal text-black/70 hover:text-black transition-all duration-200 block py-1 hover:translate-x-1"
                                                                     >
                                                                         {link.name}
-                                                                    </h4>
+                                                                    </Link>
                                                                 </li>
                                                             ))}
                                                         </ul>
