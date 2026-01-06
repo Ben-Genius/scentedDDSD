@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
 import { navigationData } from '@/data/navigation';
 import { NavMenu } from './NavMenu';
+import { MobileMenu } from './MobileMenu';
 
 export const Header = () => {
     const { openDrawer, getItemCount } = useLocalCart();
@@ -49,7 +50,7 @@ export const Header = () => {
                     {/* Left: Mobile Menu & Home */}
                     <div className="col-span-3 flex items-center justify-start space-x-6">
                         <button
-                            className="md:hidden text-black hover:opacity-60 transition-opacity"
+                            className="lg:hidden text-black hover:opacity-60 transition-opacity"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Toggle menu"
                         >
@@ -60,7 +61,7 @@ export const Header = () => {
                         <NavLink
                             to='/'
                             className={({ isActive }) => cn(
-                                "hidden md:block text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300",
+                                "hidden lg:block text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300",
                                 isActive ? "text-black border-b border-black" : "text-black/60 hover:text-black"
                             )}
                         >
@@ -86,7 +87,7 @@ export const Header = () => {
                     <div className="col-span-3 flex items-center justify-end space-x-8">
                         <Link
                             to="/contact"
-                            className="hidden md:flex items-center text-black hover:opacity-60 transition-opacity group"
+                            className="hidden lg:flex items-center text-black hover:opacity-60 transition-opacity group"
                         >
                             <span className="text-xs uppercase tracking-widest font-inter hidden lg:inline-block mr-2">
                                 Help
@@ -121,57 +122,7 @@ export const Header = () => {
                 <NavMenu isScrolled={isScrolled} isHeaderHovered={isHovered} />
 
                 {/* Mobile Nav Drawer */}
-                {isMenuOpen && (
-                    <div className="md:hidden absolute top-full left-0 w-full bg-champagne border-b border-black/10 py-8 px-8 flex flex-col space-y-6 shadow-lg animate-slide-in-right z-50 h-screen overflow-y-auto">
-                        {navigationData.map((link) => (
-                            <div key={link.name} className="border-b border-black/5 pb-4">
-                                <Link
-                                    to={link.path}
-                                    className="text-black hover:opacity-60 uppercase tracking-[0.2em] text-sm font-medium block mb-4"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
-
-                                {/* Mobile Sub-menu */}
-                                {link.sections && (
-                                    <div className="pl-4 space-y-3">
-                                        {link.sections.map((section) => (
-                                            <div key={section.title} className="space-y-2">
-                                                <h5 className="text-xs uppercase tracking-wider text-black/50 font-medium">
-                                                    {section.title}
-                                                </h5>
-                                                <ul className="space-y-2">
-                                                    {section.links.map((subLink) => (
-                                                        <li key={subLink.path}>
-                                                            <Link
-                                                                to={subLink.path}
-                                                                className="text-sm text-black/70 hover:text-black block"
-                                                                onClick={() => setIsMenuOpen(false)}
-                                                            >
-                                                                {subLink.name}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-
-                        <div className="pt-6">
-                            <Link
-                                to="/contact"
-                                className="block text-black hover:opacity-60 uppercase tracking-[0.2em] text-sm mb-4"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Contact Us
-                            </Link>
-                        </div>
-                    </div>
-                )}
+                <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
             </header>
         </>
     );

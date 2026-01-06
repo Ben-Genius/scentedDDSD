@@ -1,6 +1,73 @@
 import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
+import candle1 from '../assets/collections/candles/1.png';
+import candle1Hover from '../assets/collections/candles/1.1.png';
+import candle2 from '../assets/collections/candles/2.png';
+import candle2Hover from '../assets/collections/candles/2.2.png';
+import candle3 from '../assets/collections/candles/3.png';
+import candle3Hover from '../assets/collections/candles/3.3.png';
+import candle4 from '../assets/collections/candles/4.png';
+import candle4Hover from '../assets/collections/candles/4.4.png';
+import candle5 from '../assets/collections/candles/5.png';
+import candle5Hover from '../assets/collections/candles/5.5.png';
+import candle6 from '../assets/collections/candles/6.png';
+import candle6Hover from '../assets/collections/candles/6.6.png';
+
+import wood1 from '../assets/collections/candles/wood/w1.png';
+import wood1Hover from '../assets/collections/candles/wood/w11.png';
+import wood2 from '../assets/collections/candles/wood/w2.png';
+import wood2Hover from '../assets/collections/candles/wood/w22.png';
+import wood3 from '../assets/collections/candles/wood/w3.png';
+import wood3Hover from '../assets/collections/candles/wood/w33.png';
+import wood4 from '../assets/collections/candles/wood/w4.png';
+import wood4Hover from '../assets/collections/candles/wood/w44.png';
+
+import oriental1 from '../assets/collections/candles/oriental/o1.png';
+import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
+import oriental2 from '../assets/collections/candles/oriental/o2.png';
+import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
+import oriental3 from '../assets/collections/candles/oriental/o3.png';
+import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
+import oriental4 from '../assets/collections/candles/oriental/o4.png';
+import oriental4Hover from '../assets/collections/candles/oriental/o44.png';
+import oriental5 from '../assets/collections/candles/oriental/o5.png';
+import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
+import oriental6 from '../assets/collections/candles/oriental/o6.png';
+import oriental6Hover from '../assets/collections/candles/oriental/o66.png';
+import oriental7 from '../assets/collections/candles/oriental/o7.png';
+import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
+
+import gourmet1 from '../assets/collections/candles/gourmet/g1.png';
+import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
+import gourmet2 from '../assets/collections/candles/gourmet/g2.png';
+import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
+import gourmet3 from '../assets/collections/candles/gourmet/g3.png';
+import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
+import gourmet4 from '../assets/collections/candles/gourmet/g4.png';
+import gourmet4Hover from '../assets/collections/candles/gourmet/g4.png';
+import gourmet5 from '../assets/collections/candles/gourmet/g5.png';
+import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
+import gourmet6 from '../assets/collections/candles/gourmet/g6.png';
+import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
+import gourmet7 from '../assets/collections/candles/gourmet/g7.png';
+import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
+
+import fresh1 from '../assets/collections/candles/fresh/f1.png';
+import fresh1Hover from '../assets/collections/candles/fresh/f11.png';
+import fresh2 from '../assets/collections/candles/fresh/f2.png';
+import fresh2Hover from '../assets/collections/candles/fresh/f22.png';
+import fresh3 from '../assets/collections/candles/fresh/f3.png';
+import fresh3Hover from '../assets/collections/candles/fresh/f33.png';
+import fresh4 from '../assets/collections/candles/fresh/f4.png';
+import fresh4Hover from '../assets/collections/candles/fresh/f44.png';
+import fresh5 from '../assets/collections/candles/fresh/f5.png';
+import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
+import fresh6 from '../assets/collections/candles/fresh/f6.png';
+import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
+import fresh7 from '../assets/collections/candles/fresh/f7.png';
+import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
+
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
     {
@@ -268,8 +335,8 @@ export const products: Product[] = [
         stock: 50,
         featured: true,
         images: {
-            default: "/images/products/floral/royal-rose-bloom-main.png",
-            gallery: ["/images/products/floral/royal-rose-bloom-hover.png"],
+            default: candle1,
+            gallery: [candle1Hover],
             colorVariants: []
         },
         variants: [{ id: "v-royal", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -286,8 +353,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: "/images/products/floral/lavande-de-minuit-main.png",
-            gallery: ["/images/products/floral/lavande-de-minuit-hover.png"],
+            default: candle2,
+            gallery: [candle2Hover],
             colorVariants: []
         },
         variants: [{ id: "v-lavande", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
@@ -304,8 +371,8 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: "/images/products/floral/jasmine-main.png",
-            gallery: ["/images/products/floral/jasmine-hover.png"],
+            default: candle3,
+            gallery: [candle3Hover],
             colorVariants: []
         },
         variants: [{ id: "v-jasmine", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
@@ -322,8 +389,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: "/images/products/floral/golden-hang-main.png",
-            gallery: ["/images/products/floral/golden-hang-hover.png"],
+            default: candle4,
+            gallery: [candle4Hover],
             colorVariants: []
         },
         variants: [{ id: "v-golden", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
@@ -340,8 +407,8 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: "/images/products/floral/lotus-veil-main.png",
-            gallery: ["/images/products/floral/lotus-veil-hover.png"],
+            default: candle5,
+            gallery: [candle5Hover],
             colorVariants: []
         },
         variants: [{ id: "v-lotus", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
@@ -358,8 +425,8 @@ export const products: Product[] = [
         stock: 20,
         featured: true,
         images: {
-            default: "/images/products/floral/amour-d-orchidthat-main.png",
-            gallery: ["/images/products/floral/amour-d-orchidthat-hover.png"],
+            default: candle6,
+            gallery: [candle6Hover],
             colorVariants: []
         },
         variants: [{ id: "v-amour", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
@@ -378,8 +445,8 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.new10, // Placeholder
-            gallery: [IMAGES.new11],
+            default: wood1,
+            gallery: [wood1Hover],
             colorVariants: []
         },
         variants: [{ id: "v-velvet", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 145 }],
@@ -396,8 +463,8 @@ export const products: Product[] = [
         stock: 15,
         featured: false,
         images: {
-            default: IMAGES.diffaventus, // Placeholder
-            gallery: [IMAGES.new12],
+            default: wood2,
+            gallery: [wood2Hover],
             colorVariants: []
         },
         variants: [{ id: "v-black", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 160 }],
@@ -414,8 +481,8 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.new6, // Placeholder
-            gallery: [IMAGES.new9],
+            default: wood3,
+            gallery: [wood3Hover],
             colorVariants: []
         },
         variants: [{ id: "v-fig", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
@@ -432,8 +499,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new3, // Placeholder
-            gallery: [IMAGES.diffavent2],
+            default: wood4,
+            gallery: [wood4Hover],
             colorVariants: []
         },
         variants: [{ id: "v-sandal", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
@@ -452,8 +519,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.diffaventus, // Placeholder
-            gallery: [IMAGES.diffavent2],
+            default: oriental1,
+            gallery: [oriental1Hover],
             colorVariants: []
         },
         variants: [{ id: "v-tobacco", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 155 }],
@@ -470,8 +537,8 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.scentedcandle, // Placeholder
-            gallery: [IMAGES.new8],
+            default: oriental2,
+            gallery: [oriental2Hover],
             colorVariants: []
         },
         variants: [{ id: "v-amber", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
@@ -488,8 +555,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new12, // Placeholder
-            gallery: [IMAGES.new10],
+            default: oriental3,
+            gallery: [oriental3Hover],
             colorVariants: []
         },
         variants: [{ id: "v-cedar", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
@@ -506,8 +573,8 @@ export const products: Product[] = [
         stock: 20,
         featured: false,
         images: {
-            default: IMAGES.new13, // Placeholder
-            gallery: [IMAGES.new11],
+            default: oriental4,
+            gallery: [oriental4Hover],
             colorVariants: []
         },
         variants: [{ id: "v-myrrh", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 165 }],
@@ -524,8 +591,8 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.new5, // Placeholder
-            gallery: [IMAGES.new4],
+            default: oriental5,
+            gallery: [oriental5Hover],
             colorVariants: []
         },
         variants: [{ id: "v-pom", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 145 }],
@@ -542,8 +609,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.new2, // Placeholder
-            gallery: [IMAGES.new1],
+            default: oriental6,
+            gallery: [oriental6Hover],
             colorVariants: []
         },
         variants: [{ id: "v-lovers", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
@@ -560,8 +627,8 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.new9, // Placeholder
-            gallery: [IMAGES.new6],
+            default: oriental7,
+            gallery: [oriental7Hover],
             colorVariants: []
         },
         variants: [{ id: "v-blackb", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
@@ -580,8 +647,8 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.new14, // Placeholder
-            gallery: [IMAGES.new15],
+            default: gourmet1,
+            gallery: [gourmet1Hover],
             colorVariants: []
         },
         variants: [{ id: "v-creme", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
@@ -598,8 +665,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new16, // Placeholder
-            gallery: [IMAGES.new17],
+            default: gourmet2,
+            gallery: [gourmet2Hover],
             colorVariants: []
         },
         variants: [{ id: "v-marsh", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
@@ -616,8 +683,8 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.new18, // Placeholder
-            gallery: [IMAGES.new19],
+            default: gourmet3,
+            gallery: [gourmet3Hover],
             colorVariants: []
         },
         variants: [{ id: "v-butter", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -634,8 +701,8 @@ export const products: Product[] = [
         stock: 55,
         featured: false,
         images: {
-            default: IMAGES.new20, // Placeholder
-            gallery: [IMAGES.new21],
+            default: gourmet4,
+            gallery: [gourmet4Hover],
             colorVariants: []
         },
         variants: [{ id: "v-sugar", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
@@ -652,8 +719,8 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.new22, // Placeholder
-            gallery: [IMAGES.new23],
+            default: gourmet5,
+            gallery: [gourmet5Hover],
             colorVariants: []
         },
         variants: [{ id: "v-peach", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
@@ -670,8 +737,8 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.new24, // Placeholder
-            gallery: [IMAGES.new25],
+            default: gourmet6,
+            gallery: [gourmet6Hover],
             colorVariants: []
         },
         variants: [{ id: "v-pina", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
@@ -688,8 +755,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.new26, // Placeholder
-            gallery: [IMAGES.new27],
+            default: gourmet7,
+            gallery: [gourmet7Hover],
             colorVariants: []
         },
         variants: [{ id: "v-champagne", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
@@ -708,8 +775,8 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.new1, // Placeholder
-            gallery: [IMAGES.new2],
+            default: fresh1,
+            gallery: [fresh1Hover],
             colorVariants: []
         },
         variants: [{ id: "v-sage", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
@@ -726,8 +793,8 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.new3, // Placeholder
-            gallery: [IMAGES.new4],
+            default: fresh2,
+            gallery: [fresh2Hover],
             colorVariants: []
         },
         variants: [{ id: "v-pepper", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
@@ -744,8 +811,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new5, // Placeholder
-            gallery: [IMAGES.new6],
+            default: fresh3,
+            gallery: [fresh3Hover],
             colorVariants: []
         },
         variants: [{ id: "v-lemon", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
@@ -762,8 +829,8 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.new7, // Placeholder
-            gallery: [IMAGES.new8],
+            default: fresh4,
+            gallery: [fresh4Hover],
             colorVariants: []
         },
         variants: [{ id: "v-white", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
@@ -780,8 +847,8 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.new9, // Placeholder
-            gallery: [IMAGES.new10],
+            default: fresh5,
+            gallery: [fresh5Hover],
             colorVariants: []
         },
         variants: [{ id: "v-lime", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
@@ -798,8 +865,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new11, // Placeholder
-            gallery: [IMAGES.new12],
+            default: fresh6,
+            gallery: [fresh6Hover],
             colorVariants: []
         },
         variants: [{ id: "v-apple", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
@@ -816,8 +883,8 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.new13, // Placeholder
-            gallery: [IMAGES.new14],
+            default: fresh7,
+            gallery: [fresh7Hover],
             colorVariants: []
         },
         variants: [{ id: "v-bergamot", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],

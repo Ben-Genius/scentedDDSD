@@ -14,7 +14,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
     return (
         <nav
             className={cn(
-                "hidden md:flex items-center justify-center w-full bg-champagne transition-all duration-300 ease-in-out relative",
+                "hidden lg:flex items-center justify-center w-full bg-champagne transition-all duration-300 ease-in-out relative",
                 isScrolled && !isHeaderHovered
                     ? "max-h-0 opacity-0 border-t-0 overflow-hidden"
                     : "max-h-20 opacity-100 border-t border-black/5"
