@@ -328,23 +328,51 @@ export const navigationData: NavItem[] = [
         path: '/diffusers',
         sections: [
             {
-                title: 'Reed Diffusers',
-                image: '/images/collections/reed-diffusers.png',
-                path: '/diffusers',
+                title: 'Floral Romance Collection',
+                image: '/images/collections/floral-romance.png',
+                path: '/collections/floral-romance-diffusers',
                 links: [
-                    { name: 'All Diffusers', path: '/diffusers' },
-                    { name: 'Refills', path: '/diffusers/refills' },
-                    { name: 'Sticks & Accessories', path: '/diffusers/accessories' },
+                    { name: 'Freesia and English Pear', path: '/product/freesia-english-pear-diffuser' },
+                    { name: "Amour D'Osmanthus", path: '/product/amour-d-osmanthus-diffuser' },
+                    { name: 'Midnight Lavender', path: '/product/midnight-lavender-diffuser' },
+                    { name: 'Royal Rose Bloom', path: '/product/royal-rose-bloom-diffuser' },
                 ]
             },
             {
-                title: 'Popular Scents',
-                image: '/images/collections/diffuser-scents.png',
-                path: '/diffusers?filter=popular',
+                title: 'Woody and Suede Collection',
+                image: '/images/collections/woody-exotic.png',
+                path: '/collections/woody-suede-diffusers',
                 links: [
-                    { name: 'Ocean Breeze', path: '/diffusers/ocean' },
-                    { name: 'Lavender Mist', path: '/diffusers/lavender' },
-                    { name: 'Vanilla Bean', path: '/diffusers/vanilla' },
+                    { name: 'Tobacco Noir', path: '/product/tobacco-noir-diffuser' },
+                    { name: 'Black Oud', path: '/product/black-oud-diffuser' },
+                    { name: 'Wild Fig', path: '/product/wild-fig-diffuser' },
+                ]
+            },
+            {
+                title: 'Oriental Luxe Collection',
+                image: '/images/collections/oriental-luxe.png',
+                path: '/collections/oriental-luxe-diffusers',
+                links: [
+                    { name: 'Pomegranate', path: '/product/pomegranate-diffuser' },
+                ]
+            },
+            {
+                title: 'Gourmand Indulgence Collection',
+                image: '/images/collections/gourmet-indulgence.png',
+                path: '/collections/gourmand-indulgence-diffusers',
+                links: [
+                    { name: 'Champagne Cocktail', path: '/product/champagne-cocktail-diffuser' },
+                    { name: 'Sugar Vanilla', path: '/product/sugar-vanilla-diffuser' },
+                    { name: 'Peach Bellini', path: '/product/peach-bellini-diffuser' },
+                ]
+            },
+            {
+                title: 'Fresh Whisper Collection',
+                image: '/images/collections/fresh-whisper.png',
+                path: '/collections/fresh-whisper-diffusers',
+                links: [
+                    { name: 'Sage & Sea Salt', path: '/product/sage-sea-salt-diffuser' },
+                    { name: 'Lemongrass', path: '/product/lemongrass-diffuser' },
                 ]
             }
         ]
@@ -355,23 +383,52 @@ export const navigationData: NavItem[] = [
         path: '/essential-oils',
         sections: [
             {
-                title: 'Pure Oils',
-                image: '/images/collections/pure-oils.png',
-                path: '/essential-oils/single',
+                title: 'Floral Romance Collection',
+                image: '/images/collections/floral-romance.png',
+                path: '/collections/floral-romance-oils',
                 links: [
-                    { name: 'Single Notes', path: '/essential-oils/single' },
-                    { name: 'Blends', path: '/essential-oils/blends' },
-                    { name: 'Roll-ons', path: '/essential-oils/roll-ons' },
+                    { name: 'Freesia and English Pear', path: '/product/freesia-english-pear-oil' },
+                    { name: 'Blush Peony', path: '/product/blush-peony-oil' },
+                    { name: 'Midnight Lavender', path: '/product/midnight-lavender-oil' },
                 ]
             },
             {
-                title: 'Shop By Mood',
-                image: '/images/collections/mood-oils.png',
-                path: '/shop?mood=relax',
+                title: 'Woody and Suede Collection',
+                image: '/images/collections/woody-exotic.png',
+                path: '/collections/woody-suede-oils',
                 links: [
-                    { name: 'Relaxation', path: '/shop?mood=relax' },
-                    { name: 'Energy', path: '/shop?mood=energy' },
-                    { name: 'Focus', path: '/shop?mood=focus' },
+                    { name: 'Tobacco Noir', path: '/product/tobacco-noir-oil' },
+                    { name: 'Black Oud', path: '/product/black-oud-oil' },
+                    { name: 'Wild Fig', path: '/product/wild-fig-oil' },
+                ]
+            },
+            {
+                title: 'Oriental Luxe Collection',
+                image: '/images/collections/oriental-luxe.png',
+                path: '/collections/oriental-luxe-oils',
+                links: [
+                    { name: 'Lovers Rock', path: '/product/lovers-rock-oil' },
+                    { name: 'Pomegranate', path: '/product/pomegranate-oil' },
+                ]
+            },
+            {
+                title: 'Gourmand Indulgence Collection',
+                image: '/images/collections/gourmet-indulgence.png',
+                path: '/collections/gourmand-indulgence-oils',
+                links: [
+                    { name: 'Champagne Cocktail', path: '/product/champagne-cocktail-oil' },
+                    { name: 'Sugar Vanilla', path: '/product/sugar-vanilla-oil' },
+                    { name: 'Peach Bellini', path: '/product/peach-bellini-oil' },
+                ]
+            },
+            {
+                title: 'Fresh Whisper Collection',
+                image: '/images/collections/fresh-whisper.png',
+                path: '/collections/fresh-whisper-oils',
+                links: [
+                    { name: 'Sage & Sea Salt', path: '/product/sage-sea-salt-oil' },
+                    { name: 'White Tea', path: '/product/white-tea-oil' },
+                    { name: 'Sweet Bergamot', path: '/product/sweet-bergamot-oil' },
                 ]
             }
         ]

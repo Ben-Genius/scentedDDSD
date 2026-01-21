@@ -68,6 +68,18 @@ import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7 from '../assets/collections/candles/fresh/f7.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
+import diffFloral from '../assets/collections/diffusers/floral.png';
+import diffWoody from '../assets/collections/diffusers/woody.png';
+import diffOriental from '../assets/collections/diffusers/oriental.png';
+import diffGourmand from '../assets/collections/diffusers/gourmand.png';
+import diffFresh from '../assets/collections/diffusers/fresh.png';
+
+import oilFloral from '../assets/collections/oils/floral.png';
+import oilWoody from '../assets/collections/oils/woody.png';
+import oilOriental from '../assets/collections/oils/oriental.png';
+import oilGourmand from '../assets/collections/oils/gourmand.png';
+import oilFresh from '../assets/collections/oils/fresh.png';
+
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
     {
@@ -132,6 +144,512 @@ export const products: Product[] = [
             { id: "v-diff-luxury", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
         ],
         scents: ["Champagne Cocktail"]
+    },
+
+    // --- REED DIFFUSERS - Floral Romance Collection ---
+    {
+        id: "p-freesia-english-pear-diffuser",
+        title: "Freesia & English Pear Diffuser",
+        slug: "freesia-english-pear-diffuser",
+        category: "Floral Romance",
+        shortDescription: "Delicate freesia and ripe pear.",
+        longDescription: "The sensuous freshness of just-ripe pears is wrapped in a bouquet of white freesias.",
+        basePrice: 120,
+        stock: 50,
+        featured: false,
+        images: {
+            default: diffFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-fep-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
+        scents: ["Freesia", "Pear", "Patchouli"]
+    },
+    {
+        id: "p-amour-d-osmanthus-diffuser",
+        title: "Amour D'Osmanthus Diffuser",
+        slug: "amour-d-osmanthus-diffuser",
+        category: "Floral Romance",
+        shortDescription: "Sweet apricot-like floral.",
+        longDescription: "A loving bouquet of sweet osmanthus flowers with fruity undertones.",
+        basePrice: 125,
+        stock: 45,
+        featured: false,
+        images: {
+            default: diffFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-ado-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
+        scents: ["Osmanthus", "Benzoin", "Orange"]
+    },
+    {
+        id: "p-midnight-lavender-diffuser",
+        title: "Midnight Lavender Diffuser",
+        slug: "midnight-lavender-diffuser",
+        category: "Floral Romance",
+        shortDescription: "Calming night-blooming lavender.",
+        longDescription: "A soothing blend of lavender, musk, and tonka bean for a restful atmosphere.",
+        basePrice: 115,
+        stock: 60,
+        featured: false,
+        images: {
+            default: diffFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-ml-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
+        scents: ["Lavender", "Musk", "Tonka Bean"]
+    },
+    {
+        id: "p-royal-rose-bloom-diffuser",
+        title: "Royal Rose Bloom Diffuser",
+        slug: "royal-rose-bloom-diffuser",
+        category: "Floral Romance",
+        shortDescription: "Majestic rose garden.",
+        longDescription: "A regal scent of blooming red roses and soft peony petals.",
+        basePrice: 130,
+        stock: 40,
+        featured: false,
+        images: {
+            default: diffFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-rrb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
+        scents: ["Red Rose", "Peony", "Musk"]
+    },
+
+    // --- REED DIFFUSERS - Woody and Suede Collection ---
+    {
+        id: "p-tobacco-noir-diffuser",
+        title: "Tobacco Noir Diffuser",
+        slug: "tobacco-noir-diffuser",
+        category: "Woody & Exotic",
+        shortDescription: "Smoky and sweet tobacco.",
+        longDescription: "Rich tobacco leaf spices with vanilla and cacao for a sophisticated aroma.",
+        basePrice: 140,
+        stock: 35,
+        featured: false,
+        images: {
+            default: diffWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-tn-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
+        scents: ["Tobacco", "Vanilla", "Wood"]
+    },
+    {
+        id: "p-black-oud-diffuser",
+        title: "Black Oud Diffuser",
+        slug: "black-oud-diffuser",
+        category: "Woody & Exotic",
+        shortDescription: "Intense black oud.",
+        longDescription: "A deep, resinous scent of black oud wood, leather, and black pepper.",
+        basePrice: 150,
+        stock: 30,
+        featured: false,
+        images: {
+            default: diffWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bo-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
+        scents: ["Oud", "Leather", "Pepper"]
+    },
+    {
+        id: "p-wild-fig-diffuser",
+        title: "Wild Fig Diffuser",
+        slug: "wild-fig-diffuser",
+        category: "Woody & Exotic",
+        shortDescription: "Warm figs and cedar.",
+        longDescription: "Plump, sun-warmed figs blended with cassis and cedarwood.",
+        basePrice: 135,
+        stock: 40,
+        featured: false,
+        images: {
+            default: diffWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-wf-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
+        scents: ["Fig", "Cedarwood", "Cassis"]
+    },
+
+    // --- REED DIFFUSERS - Oriental Luxe Collection ---
+    {
+        id: "p-pomegranate-diffuser",
+        title: "Pomegranate Diffuser",
+        slug: "pomegranate-diffuser",
+        category: "Oriental Luxe",
+        shortDescription: "Dark enigmatic fruit.",
+        longDescription: "Ruby-rich juices of pomegranate, raspberry and plum spiked with pink pepper.",
+        basePrice: 145,
+        stock: 30,
+        featured: false,
+        images: {
+            default: diffOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pom-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 145 }],
+        scents: ["Pomegranate", "Pink Pepper", "Lily"]
+    },
+
+    // --- REED DIFFUSERS - Gourmand Indulgence Collection ---
+    {
+        id: "p-champagne-cocktail-diffuser",
+        title: "Champagne Cocktail Diffuser",
+        slug: "champagne-cocktail-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Celebratory fizzy scent.",
+        longDescription: "Crisp champagne notes with a twist of citrus zest.",
+        basePrice: 160,
+        stock: 25,
+        featured: false,
+        images: {
+            default: diffGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-cc-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 160 }],
+        scents: ["Champagne", "Citrus", "Grape"]
+    },
+    {
+        id: "p-sugar-vanilla-diffuser",
+        title: "Sugar Vanilla Diffuser",
+        slug: "sugar-vanilla-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Sweet vanilla warmth.",
+        longDescription: "Sparkling sugar crystals over warm Madagascar vanilla beans.",
+        basePrice: 115,
+        stock: 50,
+        featured: false,
+        images: {
+            default: diffGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sv-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
+        scents: ["Vanilla", "Sugar", "Musk"]
+    },
+    {
+        id: "p-peach-bellini-diffuser",
+        title: "Peach Bellini Diffuser",
+        slug: "peach-bellini-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Fruity sparkling cocktail.",
+        longDescription: "Juicy peaches mixed with sparkling prosecco.",
+        basePrice: 125,
+        stock: 45,
+        featured: false,
+        images: {
+            default: diffGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
+        scents: ["Peach", "Prosecco", "Orange"]
+    },
+
+    // --- REED DIFFUSERS - Fresh Whisper Collection ---
+    {
+        id: "p-sage-sea-salt-diffuser",
+        title: "Sage & Sea Salt Diffuser",
+        slug: "sage-sea-salt-diffuser",
+        category: "Fresh Whisper",
+        shortDescription: "Coastal breeze.",
+        longDescription: "The mineral scent of the rugged cliffs not far from the ocean.",
+        basePrice: 130,
+        stock: 50,
+        featured: false,
+        images: {
+            default: diffFresh,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sss-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
+        scents: ["Sage", "Sea Salt", "Ambrette"]
+    },
+    {
+        id: "p-lemongrass-diffuser",
+        title: "Lemongrass Diffuser",
+        slug: "lemongrass-diffuser",
+        category: "Fresh Whisper",
+        shortDescription: "Zesty and uplifting.",
+        longDescription: "Bright lemongrass with a touch of ginger and lime.",
+        basePrice: 110,
+        stock: 60,
+        featured: false,
+        images: {
+            default: diffFresh,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-lg-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        scents: ["Lemongrass", "Ginger", "Lime"]
+    },
+
+    // --- ESSENTIAL OILS - Floral Romance Collection ---
+    {
+        id: "p-freesia-english-pear-oil",
+        title: "Freesia & English Pear Oil",
+        slug: "freesia-english-pear-oil",
+        category: "Essential Oils",
+        shortDescription: "Delicate floral concentrate.",
+        longDescription: "Pure essential oil blend of freesia and English pear.",
+        basePrice: 85,
+        stock: 100,
+        featured: false,
+        images: {
+            default: oilFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-fep-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["Freesia", "Pear"]
+    },
+    {
+        id: "p-blush-peony-oil",
+        title: "Blush Peony Oil",
+        slug: "blush-peony-oil",
+        category: "Essential Oils",
+        shortDescription: "Soft pink floral oil.",
+        longDescription: "Concentrated oil of blooming blush peonies.",
+        basePrice: 90,
+        stock: 80,
+        featured: false,
+        images: {
+            default: oilFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bp-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        scents: ["Peony", "Rose", "Honey"]
+    },
+    {
+        id: "p-midnight-lavender-oil",
+        title: "Midnight Lavender Oil",
+        slug: "midnight-lavender-oil",
+        category: "Essential Oils",
+        shortDescription: "Relaxing lavender oil.",
+        longDescription: "Pure lavender oil for relaxation and sleep.",
+        basePrice: 80,
+        stock: 120,
+        featured: false,
+        images: {
+            default: oilFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-ml-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 80 }],
+        scents: ["Lavender"]
+    },
+
+    // --- ESSENTIAL OILS - Woody and Suede Collection ---
+    {
+        id: "p-tobacco-noir-oil",
+        title: "Tobacco Noir Oil",
+        slug: "tobacco-noir-oil",
+        category: "Essential Oils",
+        shortDescription: "Rich tobacco oil.",
+        longDescription: "Warm and spicy tobacco leaf essential oil blend.",
+        basePrice: 95,
+        stock: 70,
+        featured: false,
+        images: {
+            default: oilWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-tn-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        scents: ["Tobacco", "Spice"]
+    },
+    {
+        id: "p-black-oud-oil",
+        title: "Black Oud Oil",
+        slug: "black-oud-oil",
+        category: "Essential Oils",
+        shortDescription: "Potent oud oil.",
+        longDescription: "Highly concentrated black oud oil for intense fragrance.",
+        basePrice: 110,
+        stock: 50,
+        featured: false,
+        images: {
+            default: oilWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bo-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        scents: ["Oud", "Wood"]
+    },
+    {
+        id: "p-wild-fig-oil",
+        title: "Wild Fig Oil",
+        slug: "wild-fig-oil",
+        category: "Essential Oils",
+        shortDescription: "Green fig oil.",
+        longDescription: "Fresh and green wild fig essential oil.",
+        basePrice: 90,
+        stock: 60,
+        featured: false,
+        images: {
+            default: oilWoody,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-wf-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        scents: ["Fig", "Green Leaf"]
+    },
+
+    // --- ESSENTIAL OILS - Oriental Luxe Collection ---
+    {
+        id: "p-lovers-rock-oil",
+        title: "Lovers Rock Oil",
+        slug: "lovers-rock-oil",
+        category: "Essential Oils",
+        shortDescription: "Romantic blend.",
+        longDescription: "A passionate blend of essential oils for a romantic atmosphere.",
+        basePrice: 100,
+        stock: 50,
+        featured: false,
+        images: {
+            default: oilOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-lr-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
+        scents: ["Rose", "Sandalwood", "Ylang Ylang"]
+    },
+    {
+        id: "p-pomegranate-oil",
+        title: "Pomegranate Oil",
+        slug: "pomegranate-oil",
+        category: "Essential Oils",
+        shortDescription: "Fruity oil blend.",
+        longDescription: "Sweet and tart pomegranate oil concentrate.",
+        basePrice: 95,
+        stock: 60,
+        featured: false,
+        images: {
+            default: oilOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pom-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        scents: ["Pomegranate"]
+    },
+
+    // --- ESSENTIAL OILS - Gourmand Indulgence Collection ---
+    {
+        id: "p-champagne-cocktail-oil",
+        title: "Champagne Cocktail Oil",
+        slug: "champagne-cocktail-oil",
+        category: "Essential Oils",
+        shortDescription: "Sparkling citrus oil.",
+        longDescription: "Effervescent champagne and citrus essential oil blend.",
+        basePrice: 105,
+        stock: 40,
+        featured: false,
+        images: {
+            default: oilGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-cc-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 105 }],
+        scents: ["Champagne", "Grapefruit"]
+    },
+    {
+        id: "p-sugar-vanilla-oil",
+        title: "Sugar Vanilla Oil",
+        slug: "sugar-vanilla-oil",
+        category: "Essential Oils",
+        shortDescription: "Sweet vanilla oil.",
+        longDescription: "Pure vanilla essential oil with a sugary twist.",
+        basePrice: 85,
+        stock: 100,
+        featured: false,
+        images: {
+            default: oilGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sv-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["Vanilla"]
+    },
+    {
+        id: "p-peach-bellini-oil",
+        title: "Peach Bellini Oil",
+        slug: "peach-bellini-oil",
+        category: "Essential Oils",
+        shortDescription: "Juicy peach oil.",
+        longDescription: "Fresh peach essential oil blend with prosecco notes.",
+        basePrice: 90,
+        stock: 75,
+        featured: false,
+        images: {
+            default: oilGourmand,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        scents: ["Peach"]
+    },
+
+    // --- ESSENTIAL OILS - Fresh Whisper Collection ---
+    {
+        id: "p-sage-sea-salt-oil",
+        title: "Sage & Sea Salt Oil",
+        slug: "sage-sea-salt-oil",
+        category: "Essential Oils",
+        shortDescription: "Sea breeze oil.",
+        longDescription: "Refreshing sage and sea salt essential oil blend.",
+        basePrice: 90,
+        stock: 80,
+        featured: false,
+        images: {
+            default: oilFresh,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sss-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        scents: ["Sage", "Sea Salt"]
+    },
+    {
+        id: "p-white-tea-oil",
+        title: "White Tea Oil",
+        slug: "white-tea-oil",
+        category: "Essential Oils",
+        shortDescription: "Delicate tea oil.",
+        longDescription: "Soothing white tea essential oil with clean notes.",
+        basePrice: 85,
+        stock: 90,
+        featured: false,
+        images: {
+            default: oilFresh,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-wt-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["White Tea"]
+    },
+    {
+        id: "p-sweet-bergamot-oil",
+        title: "Sweet Bergamot Oil",
+        slug: "sweet-bergamot-oil",
+        category: "Essential Oils",
+        shortDescription: "Citrus bergamot oil.",
+        longDescription: "Uplifting sweet bergamot essential oil.",
+        basePrice: 85,
+        stock: 90,
+        featured: false,
+        images: {
+            default: oilFresh,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["Bergamot", "Citrus"]
     },
 
     // --- Essential Oils ---
