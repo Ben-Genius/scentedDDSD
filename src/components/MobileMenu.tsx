@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NavItem, navigationData } from '@/data/navigation';
 import { ChevronRight, ChevronLeft, Plus, Minus, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -18,14 +18,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
     // Handle animation
     useEffect(() => {
+        let timer: NodeJS.Timeout;
         if (isOpen) {
-            setIsVisible(true);
+            // Delay setting isVisible to avoid synchronous state update warning
+            timer = setTimeout(() => setIsVisible(true), 0);
             document.body.style.overflow = 'hidden';
         } else {
-            const timer = setTimeout(() => setIsVisible(false), 300);
+            timer = setTimeout(() => setIsVisible(false), 300);
             document.body.style.overflow = 'unset';
-            return () => clearTimeout(timer);
         }
+        return () => clearTimeout(timer);
     }, [isOpen]);
 
     // Cleanup on unmount

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
-import { navigationData } from '@/data/navigation';
+
 import { NavMenu } from './NavMenu';
 import { MobileMenu } from './MobileMenu';
 
