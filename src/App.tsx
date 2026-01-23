@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Home, Shop, ProductPage, Collections, Bundles, About, HowToOrder, Contact, BlogList, BlogPost, AdminInventory, Checkout } from '@/pages';
+import { Home, Shop, ProductPage, Collections, CollectionPage, Bundles, About, HowToOrder, Contact, BlogList, BlogPost, AdminInventory, Checkout } from '@/pages';
 import { CartDrawer } from '@/components/CartDrawer';
 import { useLocalCart } from '@/hooks/useLocalCart';
 
@@ -17,12 +18,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen text-white flex flex-col font-inter selection:bg-gold selection:text-black">
-      { location.pathname !== '/admin' &&
+      {location.pathname !== '/admin' &&
         <Header />}
       <main className="flex-grow relative z-10">
         {children}
       </main>
-      { location.pathname !== '/admin' &&
+      {location.pathname !== '/admin' &&
         <Footer />}
 
       {/* Global Elements */}
@@ -47,10 +48,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 function App() {
   return (
     <Layout>
+      <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:slug" element={<ProductPage />} />
+        <Route path="/collections/:slug" element={<CollectionPage />} />
         <Route path="/collections" element={<Collections />} />
         <Route path="/bundles" element={<Bundles />} />
         <Route path="/about" element={<About />} />

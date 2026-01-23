@@ -35,7 +35,7 @@ export const Footer = () => {
                     <h4 className="text-black font-playfair text-lg mb-8 uppercase tracking-widest font-normal border-b border-black/10 pb-2 inline-block">Client Care</h4>
                     <ul className="space-y-4 text-xs uppercase tracking-[0.15em] text-black/70">
                         <li><Link to="/how-to-order" className="hover:text-black transition-colors">How to Order</Link></li>
-                        <li><Link to="/contact" className="hover:text-black transition-colors">Contact Us</Link></li>
+                        <li><Link to="/about" className="hover:text-black transition-colors">About Us</Link></li>
                         <li><Link to="/shipping" className="hover:text-black transition-colors">Shipping & Returns</Link></li>
                         <li><Link to="/admin" className="hover:text-black transition-colors">Admin Login</Link></li>
                     </ul>
