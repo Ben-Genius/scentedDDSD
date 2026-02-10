@@ -32,6 +32,16 @@ export const ShopProductCard = ({ product, className }: ShopProductCardProps) =>
                         loading="lazy"
                     />
 
+                    {/* Hover Image */}
+                    {product.images.gallery && product.images.gallery.length > 0 && (
+                        <img
+                            src={product.images.gallery[0]}
+                            alt={product.title}
+                            className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out opacity-0 group-hover:opacity-100"
+                            loading="lazy"
+                        />
+                    )}
+
                     {/* Featured Badge - Minimalist text only */}
                     {product.featured && (
                         <span className="absolute top-2 left-2 text-xs font-medium tracking-widest text-black uppercase">

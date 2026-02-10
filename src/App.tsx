@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Home, Shop, ProductPage, Collections, CollectionPage, Bundles, About, HowToOrder, Contact, BlogList, BlogPost, AdminInventory, Checkout } from '@/pages';
 import { CartDrawer } from '@/components/CartDrawer';
 import { useLocalCart } from '@/hooks/useLocalCart';
+import { Candles } from './pages/Headers/ScentedCandle/Candles';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDrawerOpen, closeDrawer } = useLocalCart();
@@ -52,6 +53,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/home-candles" element={<Candles />} />
         <Route path="/product/:slug" element={<ProductPage />} />
         <Route path="/collections/:slug" element={<CollectionPage />} />
         <Route path="/collections" element={<Collections />} />

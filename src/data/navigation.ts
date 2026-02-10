@@ -65,6 +65,9 @@ import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7 from '../assets/collections/candles/fresh/f7.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
+import whiteCandle from '../assets/images/whiteCandle.png';
+import blackCandle from '../assets/images/blackCandle.png';
+
 export interface SubLink {
     name: string;
     path: string;
@@ -100,223 +103,222 @@ export const navigationData: NavItem[] = [
         sections: [
             {
                 title: 'Floral Romance Collection',
-                image: '/images/collections/floral-romance.png',
+                image: whiteCandle,
                 path: '/collections/floral-romance',
                 links: [
                     {
-                        name: 'Royal Rose Bloom',
-                        path: '/product/royal-rose-bloom',
-                        image: candle1,
+                        name: 'Freesia and English Pear',
+                        path: '/product/freesia-english-pear',
+                        image: whiteCandle,
                         hoverImage: candle1Hover
                     },
                     {
-                        name: 'Lavande de Minuit',
-                        path: '/product/lavande-de-minuit',
-                        image: candle2,
+                        name: 'Blush Peony',
+                        path: '/product/blush-peony',
+                        image: whiteCandle,
+                        hoverImage: candle1Hover // Assuming shared image or duplicate
+                    },
+                    {
+                        name: 'Midnight Lavender',
+                        path: '/product/midnight-lavender',
+                        image: whiteCandle,
                         hoverImage: candle2Hover
                     },
                     {
-                        name: 'Jasmine',
-                        path: '/product/jasmine',
-                        image: candle3,
-                        hoverImage: candle3Hover
-                    },
-                    {
-                        name: 'Golden Hang',
-                        path: '/product/golden-hang',
-                        image: candle4,
-                        hoverImage: candle4Hover
+                        name: 'Royal Rose Bloom',
+                        path: '/product/royal-rose-bloom',
+                        image: whiteCandle,
+                        hoverImage: candle1Hover // Assuming shared image or duplicate
                     },
                     {
                         name: 'Lotus Veil',
                         path: '/product/lotus-veil',
-                        image: candle5,
+                        image: whiteCandle,
                         hoverImage: candle5Hover
                     },
                     {
-                        name: "Amour d'Orchidthat",
-                        path: '/product/amour-d-orchidthat',
-                        image: candle6,
+                        name: "Amour D'Osmanthus",
+                        path: '/product/amour-d-osmanthus',
+                        image: whiteCandle,
                         hoverImage: candle6Hover
+                    },
+                    {
+                        name: 'Golden Ylang',
+                        path: '/product/golden-ylang',
+                        image: whiteCandle,
+                        hoverImage: candle4Hover
+                    },
+                    {
+                        name: 'Jasmin',
+                        path: '/product/jasmin',
+                        image: whiteCandle,
+                        hoverImage: candle3Hover
                     },
                 ]
             },
             {
-                title: 'Woody & Exotic Collection',
-                image: '/images/collections/woody-exotic.png',
-                path: '/collections/woody-exotic',
+                title: 'Woody and Suede Collection',
+                image: blackCandle,
+                path: '/collections/woody-suede',
                 links: [
                     {
-                        name: 'Velvet Rose & Oud',
+                        name: 'Tobacco Noir',
+                        path: '/product/tobacco-noir',
+                        image: blackCandle,
+                        hoverImage: oriental1Hover
+                    },
+                    {
+                        name: 'Velvet Rose and Oud',
                         path: '/product/velvet-rose-oud',
-                        image: wood1,
+                        image: blackCandle,
                         hoverImage: wood1Hover
+                    },
+                    {
+                        name: 'Sandalwood',
+                        path: '/product/sandalwood',
+                        image: blackCandle,
+                        hoverImage: wood4Hover
                     },
                     {
                         name: 'Black Oud',
                         path: '/product/black-oud',
-                        image: wood2,
+                        image: blackCandle,
                         hoverImage: wood2Hover
                     },
                     {
                         name: 'Wild Fig',
                         path: '/product/wild-fig',
-                        image: wood3,
+                        image: blackCandle,
                         hoverImage: wood3Hover
                     },
                     {
-                        name: 'Sandalwood',
-                        path: '/product/sandalwood',
-                        image: wood4,
-                        hoverImage: wood4Hover
+                        name: 'Amber Luxe',
+                        path: '/product/amber-luxe',
+                        image: blackCandle,
+                        hoverImage: oriental2Hover
+                    },
+                    {
+                        name: 'Cedar Caress',
+                        path: '/product/cedar-caress',
+                        image: blackCandle,
+                        hoverImage: oriental3Hover
                     },
                 ]
             },
             {
                 title: 'Oriental Luxe Collection',
-                image: '/images/collections/oriental-luxe.png',
+                image: blackCandle,
                 path: '/collections/oriental-luxe',
                 links: [
                     {
-                        name: 'Tobacco Noir',
-                        path: '/product/tobacco-noir',
-                        image: oriental1,
-                        hoverImage: oriental1Hover
-                    },
-                    {
-                        name: 'Amber Luxe',
-                        path: '/product/amber-luxe',
-                        image: oriental2,
-                        hoverImage: oriental2Hover
-                    },
-                    {
-                        name: 'Cedar Carves',
-                        path: '/product/cedar-carves',
-                        image: oriental3,
-                        hoverImage: oriental3Hover
-                    },
-                    {
-                        name: 'Myrrh & Tonka',
-                        path: '/product/myrrh-tonka',
-                        image: oriental4,
-                        hoverImage: oriental4Hover
-                    },
-                    {
-                        name: 'Pomegranate Elixir',
-                        path: '/product/pomegranate-elixir',
-                        image: oriental5,
-                        hoverImage: oriental5Hover
-                    },
-                    {
-                        name: "Lover's Rush",
-                        path: '/product/lovers-rush',
-                        image: oriental6,
+                        name: 'Lovers Rock',
+                        path: '/product/lovers-rock',
+                        image: blackCandle,
                         hoverImage: oriental6Hover
                     },
                     {
-                        name: 'Blackberry Blissin',
-                        path: '/product/blackberry-blissin',
-                        image: oriental7,
+                        name: 'Pomegranate Noir',
+                        path: '/product/pomegranate-noir',
+                        image: blackCandle,
+                        hoverImage: oriental5Hover
+                    },
+                    {
+                        name: 'Blackberry Bloom',
+                        path: '/product/blackberry-bloom',
+                        image: blackCandle,
                         hoverImage: oriental7Hover
                     },
                 ]
             },
             {
-                title: 'Gourmet Indulgence Collection',
-                image: '/images/collections/gourmet-indulgence.png',
-                path: '/collections/gourmet-indulgence',
+                title: 'Gourmand Indulgence Collection',
+                image: whiteCandle,
+                path: '/collections/gourmand-indulgence',
                 links: [
                     {
-                        name: 'Crème de Latte',
-                        path: '/product/creme-de-latte',
-                        image: gourmet1,
-                        hoverImage: gourmet1Hover
-                    },
-                    {
-                        name: 'Marshmallow Cheesecake',
-                        path: '/product/marshmallow-cheesecake',
-                        image: gourmet2,
-                        hoverImage: gourmet2Hover
-                    },
-                    {
-                        name: 'Buttercotch',
-                        path: '/product/buttercotch',
-                        image: gourmet3,
-                        hoverImage: gourmet3Hover
+                        name: 'Champagne Cocktail',
+                        path: '/product/champagne-cocktail',
+                        image: whiteCandle,
+                        hoverImage: gourmet7Hover
                     },
                     {
                         name: 'Sugar Vanilla',
                         path: '/product/sugar-vanilla',
-                        image: gourmet4,
+                        image: whiteCandle,
                         hoverImage: gourmet4Hover
                     },
                     {
                         name: 'Peach Bellini',
                         path: '/product/peach-bellini',
-                        image: gourmet5,
+                        image: whiteCandle,
                         hoverImage: gourmet5Hover
                     },
                     {
                         name: 'Piña Colada',
                         path: '/product/pina-colada',
-                        image: gourmet6,
+                        image: whiteCandle,
                         hoverImage: gourmet6Hover
                     },
                     {
-                        name: 'Champagne Cocktail',
-                        path: '/product/champagne-cocktail',
-                        image: gourmet7,
-                        hoverImage: gourmet7Hover
+                        name: 'Butterscotch',
+                        path: '/product/butterscotch',
+                        image: whiteCandle,
+                        hoverImage: gourmet3Hover
+                    },
+                    {
+                        name: 'Marshmallow Cheesecake',
+                        path: '/product/marshmallow-cheesecake',
+                        image: whiteCandle,
+                        hoverImage: gourmet2Hover
                     },
                 ]
             },
             {
                 title: 'Fresh Whisper Collection',
-                image: '/images/collections/fresh-whisper.png',
+                image: whiteCandle,
                 path: '/collections/fresh-whisper',
                 links: [
-
                     {
                         name: 'Sage & Sea Salt',
                         path: '/product/sage-sea-salt',
-                        image: fresh1,
+                        image: whiteCandle,
                         hoverImage: fresh1Hover
-                    },
-                    {
-                        name: 'Peppermint',
-                        path: '/product/peppermint',
-                        image: fresh2,
-                        hoverImage: fresh2Hover
-                    },
-                    {
-                        name: 'Lemongrass Eclat',
-                        path: '/product/lemongrass-eclat',
-                        image: fresh3,
-                        hoverImage: fresh3Hover
                     },
                     {
                         name: 'White Tea',
                         path: '/product/white-tea',
-                        image: fresh4,
+                        image: whiteCandle,
                         hoverImage: fresh4Hover
+                    },
+                    {
+                        name: 'Sweet Bergamot',
+                        path: '/product/sweet-bergamot',
+                        image: whiteCandle,
+                        hoverImage: fresh7Hover
+                    },
+                    {
+                        name: 'Lemongrass',
+                        path: '/product/lemongrass',
+                        image: whiteCandle,
+                        hoverImage: fresh3Hover
                     },
                     {
                         name: 'Lemon and Lime',
                         path: '/product/lemon-lime',
-                        image: fresh5,
+                        image: whiteCandle,
                         hoverImage: fresh5Hover
                     },
                     {
                         name: 'Frosted Apple',
                         path: '/product/frosted-apple',
-                        image: fresh6,
+                        image: whiteCandle,
                         hoverImage: fresh6Hover
                     },
                     {
-                        name: 'Sweet Bergamot',
-                        path: '/product/sweet-bergamot',
-                        image: fresh7,
-                        hoverImage: fresh7Hover
+                        name: 'Peppermint',
+                        path: '/product/peppermint',
+                        image: whiteCandle,
+                        hoverImage: fresh2Hover
                     },
                 ]
             }
@@ -546,26 +548,26 @@ export const navigationData: NavItem[] = [
                 image: '/images/collections/oils/fresh.png',
                 path: '/collections/fresh-whisper-oils',
                 links: [
-                   
-                        {
-                            name: 'Sage & Sea Salt',
-                            path: '/product/sage-sea-salt-oil',
-                            image: '/images/products/oils/sage-sea-salt.png',
-                            hoverImage: '/images/ingredients/oils/sage-sea-salt-oil.png'
-                        },
-                        {
-                            name: 'White Tea',
-                            path: '/product/white-tea-oil',
-                            image: '/images/products/oils/white-tea.png',
-                            hoverImage: '/images/ingredients/oils/white-tea.png'
-                        },
-                        {
-                            name: 'Sweet Bergamot',
-                            path: '/product/sweet-bergamot-oil',
-                            image: '/images/products/oils/sweet-bergamot.png',
-                            hoverImage: '/images/ingredients/oils/sweet-bergamot.png'
-                        },
-                    
+
+                    {
+                        name: 'Sage & Sea Salt',
+                        path: '/product/sage-sea-salt-oil',
+                        image: '/images/products/oils/sage-sea-salt.png',
+                        hoverImage: '/images/ingredients/oils/sage-sea-salt-oil.png'
+                    },
+                    {
+                        name: 'White Tea',
+                        path: '/product/white-tea-oil',
+                        image: '/images/products/oils/white-tea.png',
+                        hoverImage: '/images/ingredients/oils/white-tea.png'
+                    },
+                    {
+                        name: 'Sweet Bergamot',
+                        path: '/product/sweet-bergamot-oil',
+                        image: '/images/products/oils/sweet-bergamot.png',
+                        hoverImage: '/images/ingredients/oils/sweet-bergamot.png'
+                    },
+
                 ]
             }
         ]

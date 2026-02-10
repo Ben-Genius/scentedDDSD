@@ -57,42 +57,49 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                                         "grid-cols-4"
                                         )}>
                                             {item.sections.map((section, idx) => (
-                                                <div key={idx} className="flex flex-col space-y-6 group/section">
+                                                <div key={idx} className="group/card flex flex-col items-center text-center p-6 rounded-2xl transition-all duration-500 hover:bg-white hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-transparent hover:border-black/5 relative overflow-hidden">
+
+                                                    {/* Decorative Background for Image - Subtle Glow */}
+                                                    <div className="absolute top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-champagne-dark/20 to-transparent rounded-full blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
                                                     {/* Section Image */}
                                                     {section.image && (
                                                         <Link
                                                             to={section.path || section.links[0]?.path || item.path}
                                                             onClick={() => setActiveDropdown(null)}
-                                                            className="w-[200px] h-[200px] object-contain overflow-hidden bg-gray-50 relative"
+                                                            className="w-[180px] h-[220px] flex items-center justify-center relative mb-6 z-10"
                                                         >
+                                                            <div className="absolute inset-x-4 bottom-0 h-4 bg-black/20 blur-xl rounded-[100%] opacity-0 group-hover/card:opacity-40 transition-opacity duration-500 translate-y-2" />
                                                             <img
                                                                 src={section.image}
                                                                 alt={section.title}
-                                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/section:scale-105"
+                                                                className="h-full w-auto object-contain transition-transform duration-700 ease-out group-hover/card:scale-105 group-hover/card:-translate-y-2 drop-shadow-lg"
                                                             />
-                                                            {/* Subtle overlay on hover */}
-                                                            <div className="absolute inset-0 bg-black/0 group-hover/section:bg-black/5 transition-all duration-300" />
                                                         </Link>
                                                     )}
 
                                                     {/* Section Title */}
-                                                    <div className="space-y-4 w-[200px]">
+                                                    <div className="space-y-4 w-full max-w-[220px] relative z-10">
                                                         <Link
                                                             to={section.path || section.links[0]?.path || item.path}
                                                             onClick={() => setActiveDropdown(null)}
-                                                            className="font-inter text-base font-medium text-black hover:opacity-70 transition-opacity block border-b border-black/10 pb-2"
+                                                            className="block"
                                                         >
-                                                            {section.title}
+                                                            <h3 className="font-playfair text-xl font-medium text-black mb-1 group-hover/card:text-black/80 transition-colors">
+                                                                {section.title}
+                                                            </h3>
+                                                            {/* Animated Underline */}
+                                                            <div className="h-px w-12 bg-black/10 mx-auto group-hover/card:w-24 group-hover/card:bg-black/30 transition-all duration-500 ease-out" />
                                                         </Link>
 
                                                         {/* Links */}
-                                                        <ul className="flex flex-col space-y-1">
+                                                        <ul className="flex flex-col space-y-2 items-center pt-2">
                                                             {section.links.map((link) => (
                                                                 <li key={link.path}>
                                                                     <Link
                                                                         to={link.path}
                                                                         onClick={() => setActiveDropdown(null)}
-                                                                        className="text-sm font-normal text-black/70 hover:text-black transition-all duration-200 block py-1 hover:translate-x-1"
+                                                                        className="text-[10px] uppercase tracking-[0.2em] font-medium text-black/50 hover:text-black transition-all duration-300 block py-1 hover:scale-105"
                                                                     >
                                                                         {link.name}
                                                                     </Link>
