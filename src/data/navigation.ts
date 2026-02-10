@@ -103,7 +103,7 @@ export const navigationData: NavItem[] = [
         sections: [
             {
                 title: 'Floral Romance Collection',
-                image: '/images/collections/floral-romance.png',
+                image: whiteCandle,
                 path: '/collections/floral-romance',
                 links: [
                     {
@@ -158,7 +158,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Woody and Suede Collection',
-                image: '/images/collections/woody-exotic.png',
+                image: blackCandle,
                 path: '/collections/woody-suede',
                 links: [
                     {
@@ -207,7 +207,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Oriental Luxe Collection',
-                image: '/images/collections/oriental-luxe.png',
+                image: blackCandle,
                 path: '/collections/oriental-luxe',
                 links: [
                     {
@@ -232,7 +232,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Gourmand Indulgence Collection',
-                image: '/images/collections/gourmet-indulgence.png',
+                image: whiteCandle,
                 path: '/collections/gourmand-indulgence',
                 links: [
                     {
@@ -275,7 +275,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Fresh Whisper Collection',
-                image: '/images/collections/fresh-whisper.png',
+                image: whiteCandle,
                 path: '/collections/fresh-whisper',
                 links: [
                     {

@@ -853,7 +853,7 @@ export const products: Product[] = [
         longDescription: "The sensuous freshness of just-ripe pears is wrapped in a bouquet of white freesias, and mellowed by amber, patchouli and woods.",
         basePrice: 120,
         stock: 50,
-        featured: true,
+        featured: false,
         images: {
             default: whiteCandle,
             gallery: [candle1Hover],
