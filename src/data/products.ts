@@ -2,6 +2,8 @@ import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
 import candle1 from '../assets/collections/candles/1.png';
+import whiteCandle from "../assets/images/whiteCandle.png";
+import blackCandle from "../assets/images/blackCandle.png";
 import candle1Hover from '../assets/collections/candles/1.1.png';
 import candle2 from '../assets/collections/candles/2.png';
 import candle2Hover from '../assets/collections/candles/2.2.png';
@@ -11,7 +13,7 @@ import candle4 from '../assets/collections/candles/4.png';
 import candle4Hover from '../assets/collections/candles/4.4.png';
 import candle5 from '../assets/collections/candles/5.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
-import candle6 from '../assets/collections/candles/6.png';
+import candle6 from '../assets/images/blackCandle.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
 
 import wood1 from '../assets/collections/candles/wood/w1.png';
@@ -212,7 +214,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: diffFloral,
+            default: whiteCandle,
             gallery: [],
             colorVariants: []
         },
@@ -843,6 +845,42 @@ export const products: Product[] = [
     },
     // --- NEW COLLECTION: Floral Romance ---
     {
+        id: "p-freesia-english-pear",
+        title: "Freesia and English Pear",
+        slug: "freesia-english-pear",
+        category: "Floral Romance",
+        shortDescription: "Orchard freshness.",
+        longDescription: "The sensuous freshness of just-ripe pears is wrapped in a bouquet of white freesias, and mellowed by amber, patchouli and woods.",
+        basePrice: 120,
+        stock: 50,
+        featured: true,
+        images: {
+            default: whiteCandle,
+            gallery: [candle1Hover],
+            colorVariants: []
+        },
+        variants: [{ id: "v-freesia", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
+        scents: ["King William Pear", "Freesia", "Patchouli"]
+    },
+    {
+        id: "p-blush-peony",
+        title: "Blush Peony",
+        slug: "blush-peony",
+        category: "Floral Romance",
+        shortDescription: "Flirtatious floral.",
+        longDescription: "Peonies in voluptuous bloom, exquisitely fragile. Flirting with the juicy bite of red apple and the opulence of jasmine, rose and gillyflower.",
+        basePrice: 120,
+        stock: 50,
+        featured: false,
+        images: {
+            default: whiteCandle,
+            gallery: [candle1Hover],
+            colorVariants: []
+        },
+        variants: [{ id: "v-blush", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
+        scents: ["Red Apple", "Peony", "Suede"]
+    },
+    {
         id: "p-royal-rose-bloom",
         title: "Royal Rose Bloom",
         slug: "royal-rose-bloom",
@@ -853,7 +891,7 @@ export const products: Product[] = [
         stock: 50,
         featured: true,
         images: {
-            default: candle1,
+            default: whiteCandle,
             gallery: [candle1Hover],
             colorVariants: []
         },
@@ -861,9 +899,9 @@ export const products: Product[] = [
         scents: ["Red Rose", "Peony", "Musk"]
     },
     {
-        id: "p-lavande-de-minuit",
-        title: "Lavande de Minuit",
-        slug: "lavande-de-minuit",
+        id: "p-midnight-lavender",
+        title: "Midnight Lavender",
+        slug: "midnight-lavender",
         category: "Floral Romance",
         shortDescription: "Midnight lavender fields.",
         longDescription: "A calming, deep lavender scent inspired by moonlit fields in Provence.",
@@ -871,7 +909,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: candle2,
+            default: whiteCandle,
             gallery: [candle2Hover],
             colorVariants: []
         },
@@ -879,9 +917,9 @@ export const products: Product[] = [
         scents: ["Lavender", "Moonflower", "Amber"]
     },
     {
-        id: "p-jasmine",
-        title: "Jasmine",
-        slug: "jasmine",
+        id: "p-jasmin",
+        title: "Jasmin",
+        slug: "jasmin",
         category: "Floral Romance",
         shortDescription: "Pure classic jasmine.",
         longDescription: "The intoxicating, sweet scent of freshly picked jasmine flowers.",
@@ -889,7 +927,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: candle3,
+            default: whiteCandle,
             gallery: [candle3Hover],
             colorVariants: []
         },
@@ -897,9 +935,9 @@ export const products: Product[] = [
         scents: ["Jasmine", "Green Leaf"]
     },
     {
-        id: "p-golden-hang",
-        title: "Golden Hang",
-        slug: "golden-hang",
+        id: "p-golden-ylang",
+        title: "Golden Ylang",
+        slug: "golden-ylang",
         category: "Floral Romance",
         shortDescription: "Exotic floral blend.",
         longDescription: "A unique blend of golden exotic flowers and warm spices.",
@@ -907,7 +945,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: candle4,
+            default: whiteCandle,
             gallery: [candle4Hover],
             colorVariants: []
         },
@@ -925,7 +963,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: candle5,
+            default: whiteCandle,
             gallery: [candle5Hover],
             colorVariants: []
         },
@@ -933,9 +971,9 @@ export const products: Product[] = [
         scents: ["White Lotus", "Water Lily", "Bamboo"]
     },
     {
-        id: "p-amour-d-orchidthat",
-        title: "Amour d'Orchidthat",
-        slug: "amour-d-orchidthat",
+        id: "p-amour-d-osmanthus",
+        title: "Amour d'Osmanthus",
+        slug: "amour-d-osmanthus",
         category: "Floral Romance",
         shortDescription: "Rare orchid elegance.",
         longDescription: "Sophisticated and rare, capturing the elusive scent of the black orchid.",
@@ -943,7 +981,7 @@ export const products: Product[] = [
         stock: 20,
         featured: true,
         images: {
-            default: candle6,
+            default: whiteCandle,
             gallery: [candle6Hover],
             colorVariants: []
         },
@@ -951,19 +989,19 @@ export const products: Product[] = [
         scents: ["Black Orchid", "Dark Chocolate", "Patchouli"]
     },
 
-    // --- NEW COLLECTION: Woody & Exotic ---
+    // --- NEW COLLECTION: Woody and Suede ---
     {
         id: "p-velvet-rose-oud",
         title: "Velvet Rose & Oud",
         slug: "velvet-rose-oud",
-        category: "Woody & Exotic",
+        category: "Woody and Suede",
         shortDescription: "Darkest Damask Rose wrapped in smoky Oud.",
         longDescription: "Rich and textural, wrapped with smoky oud wood. Spiked with clove, decadent with praline.",
         basePrice: 145,
         stock: 35,
         featured: false,
         images: {
-            default: wood1,
+            default: blackCandle,
             gallery: [wood1Hover],
             colorVariants: []
         },
@@ -974,14 +1012,14 @@ export const products: Product[] = [
         id: "p-black-oud",
         title: "Black Oud",
         slug: "black-oud",
-        category: "Woody & Exotic",
+        category: "Woody and Suede",
         shortDescription: "Intense and mysterious.",
         longDescription: "A deep, resinous scent of black oud wood, leather, and black pepper.",
         basePrice: 160,
         stock: 15,
         featured: false,
         images: {
-            default: wood2,
+            default: blackCandle,
             gallery: [wood2Hover],
             colorVariants: []
         },
@@ -992,14 +1030,14 @@ export const products: Product[] = [
         id: "p-wild-fig",
         title: "Wild Fig",
         slug: "wild-fig",
-        category: "Woody & Exotic",
+        category: "Woody and Suede",
         shortDescription: "Sun-drenched figs and woods.",
         longDescription: "Plump, sun-warmed figs blended with cassis and cedarwood.",
         basePrice: 125,
         stock: 45,
         featured: false,
         images: {
-            default: wood3,
+            default: blackCandle,
             gallery: [wood3Hover],
             colorVariants: []
         },
@@ -1010,14 +1048,14 @@ export const products: Product[] = [
         id: "p-sandalwood",
         title: "Sandalwood",
         slug: "sandalwood",
-        category: "Woody & Exotic",
+        category: "Woody and Suede",
         shortDescription: "Creamy, smooth wood.",
         longDescription: "The classic, creamy scent of Mysore sandalwood with a touch of spice.",
         basePrice: 135,
         stock: 40,
         featured: false,
         images: {
-            default: wood4,
+            default: blackCandle,
             gallery: [wood4Hover],
             colorVariants: []
         },
@@ -1037,7 +1075,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: oriental1,
+            default: blackCandle,
             gallery: [oriental1Hover],
             colorVariants: []
         },
@@ -1055,7 +1093,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: oriental2,
+            default: blackCandle,
             gallery: [oriental2Hover],
             colorVariants: []
         },
@@ -1063,9 +1101,9 @@ export const products: Product[] = [
         scents: ["Amber", "Patchouli", "Sandalwood"]
     },
     {
-        id: "p-cedar-carves",
-        title: "Cedar Carves",
-        slug: "cedar-carves",
+        id: "p-cedar-caress",
+        title: "Cedar Caress",
+        slug: "cedar-caress",
         category: "Oriental Luxe",
         shortDescription: "Majestic cedarwood.",
         longDescription: "The sharp, clean scent of cedarwood carved into elegance.",
@@ -1073,7 +1111,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: oriental3,
+            default: blackCandle,
             gallery: [oriental3Hover],
             colorVariants: []
         },
@@ -1091,7 +1129,7 @@ export const products: Product[] = [
         stock: 20,
         featured: false,
         images: {
-            default: oriental4,
+            default: blackCandle,
             gallery: [oriental4Hover],
             colorVariants: []
         },
@@ -1099,9 +1137,9 @@ export const products: Product[] = [
         scents: ["Lavender", "Omumbiri Myrrh", "Tonka Bean"]
     },
     {
-        id: "p-pomegranate-elixir",
-        title: "Pomegranate Elixir",
-        slug: "pomegranate-elixir",
+        id: "p-pomegranate-noir",
+        title: "Pomegranate Noir",
+        slug: "pomegranate-noir",
         category: "Oriental Luxe",
         shortDescription: "Dark and enigmatic fruits.",
         longDescription: "Ruby-rich juices of pomegranate, raspberry and plum are spiked with pink pepper and laced with Casablanca lily and spicy woods.",
@@ -1109,7 +1147,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: oriental5,
+            default: blackCandle,
             gallery: [oriental5Hover],
             colorVariants: []
         },
@@ -1117,9 +1155,9 @@ export const products: Product[] = [
         scents: ["Pomegranate", "Casablanca Lily", "Guaiacwood"]
     },
     {
-        id: "p-lovers-rush",
-        title: "Lover's Rush",
-        slug: "lovers-rush",
+        id: "p-lovers-rock",
+        title: "Lovers Rock",
+        slug: "lovers-rock",
         category: "Oriental Luxe",
         shortDescription: "Passionate and intense.",
         longDescription: "A rush of adrenaline and passion, captured in a bottle.",
@@ -1127,7 +1165,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: oriental6,
+            default: blackCandle,
             gallery: [oriental6Hover],
             colorVariants: []
         },
@@ -1135,9 +1173,9 @@ export const products: Product[] = [
         scents: ["Red Berries", "Jasmine", "Musk"]
     },
     {
-        id: "p-blackberry-blissin",
-        title: "Blackberry Blissin",
-        slug: "blackberry-blissin",
+        id: "p-blackberry-bloom",
+        title: "Blackberry Bloom",
+        slug: "blackberry-bloom",
         category: "Oriental Luxe",
         shortDescription: "Sweet and tart blackberry.",
         longDescription: "A burst of deep, tart blackberry juice, blending with fresh bay and brambly woods.",
@@ -1145,7 +1183,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: oriental7,
+            default: blackCandle,
             gallery: [oriental7Hover],
             colorVariants: []
         },
@@ -1153,19 +1191,19 @@ export const products: Product[] = [
         scents: ["Blackberry", "Bay Leaves", "Cedarwood"]
     },
 
-    // --- NEW COLLECTION: Gourmet Indulgence ---
+    // --- NEW COLLECTION: Gourmand Indulgence ---
     {
         id: "p-creme-de-latte",
         title: "Crème de Latte",
         slug: "creme-de-latte",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Creamy coffee delight.",
         longDescription: "Rich espresso blended with steamed milk and vanilla syrup.",
         basePrice: 125,
         stock: 50,
         featured: false,
         images: {
-            default: gourmet1,
+            default: whiteCandle,
             gallery: [gourmet1Hover],
             colorVariants: []
         },
@@ -1176,14 +1214,14 @@ export const products: Product[] = [
         id: "p-marshmallow-cheesecake",
         title: "Marshmallow Cheesecake",
         slug: "marshmallow-cheesecake",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Sweet dessert bliss.",
         longDescription: "Fluffy marshmallows topping a creamy vanilla cheesecake.",
         basePrice: 135,
         stock: 40,
         featured: false,
         images: {
-            default: gourmet2,
+            default: whiteCandle,
             gallery: [gourmet2Hover],
             colorVariants: []
         },
@@ -1191,17 +1229,17 @@ export const products: Product[] = [
         scents: ["Marshmallow", "Cream Cheese", "Graham Cracker"]
     },
     {
-        id: "p-buttercotch",
-        title: "Buttercotch",
-        slug: "buttercotch",
-        category: "Gourmet Indulgence",
+        id: "p-butterscotch",
+        title: "Butterscotch",
+        slug: "butterscotch",
+        category: "Gourmand Indulgence",
         shortDescription: "Golden buttery sweetness.",
         longDescription: "Rich, gooey butterscotch sauce with a hint of sea salt.",
         basePrice: 120,
         stock: 60,
         featured: false,
         images: {
-            default: gourmet3,
+            default: whiteCandle,
             gallery: [gourmet3Hover],
             colorVariants: []
         },
@@ -1212,14 +1250,14 @@ export const products: Product[] = [
         id: "p-sugar-vanilla",
         title: "Sugar Vanilla",
         slug: "sugar-vanilla",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Classic sweet warmth.",
         longDescription: "Sparkling sugar crystals over warm Madagascar vanilla beans.",
         basePrice: 115,
         stock: 55,
         featured: false,
         images: {
-            default: gourmet4,
+            default: whiteCandle,
             gallery: [gourmet4Hover],
             colorVariants: []
         },
@@ -1230,14 +1268,14 @@ export const products: Product[] = [
         id: "p-peach-bellini",
         title: "Peach Bellini",
         slug: "peach-bellini",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Fruity sparkling cocktail.",
         longDescription: "Juicy peaches mixed with sparkling prosecco.",
         basePrice: 140,
         stock: 30,
         featured: false,
         images: {
-            default: gourmet5,
+            default: whiteCandle,
             gallery: [gourmet5Hover],
             colorVariants: []
         },
@@ -1248,14 +1286,14 @@ export const products: Product[] = [
         id: "p-pina-colada",
         title: "Piña Colada",
         slug: "pina-colada",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Tropical coconut treat.",
         longDescription: "Fresh pineapple juice blended with creamy coconut milk.",
         basePrice: 130,
         stock: 35,
         featured: false,
         images: {
-            default: gourmet6,
+            default: whiteCandle,
             gallery: [gourmet6Hover],
             colorVariants: []
         },
@@ -1266,14 +1304,14 @@ export const products: Product[] = [
         id: "p-champagne-cocktail",
         title: "Champagne Cocktail",
         slug: "champagne-cocktail",
-        category: "Gourmet Indulgence",
+        category: "Gourmand Indulgence",
         shortDescription: "Celebratory fizzy scent.",
         longDescription: "Crisp champagne notes with a twist of citrus zest.",
         basePrice: 150,
         stock: 25,
         featured: false,
         images: {
-            default: gourmet7,
+            default: whiteCandle,
             gallery: [gourmet7Hover],
             colorVariants: []
         },
@@ -1293,7 +1331,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: fresh1,
+            default: whiteCandle,
             gallery: [fresh1Hover],
             colorVariants: []
         },
@@ -1311,7 +1349,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: fresh2,
+            default: whiteCandle,
             gallery: [fresh2Hover],
             colorVariants: []
         },
@@ -1319,9 +1357,9 @@ export const products: Product[] = [
         scents: ["Peppermint", "Eucalyptus", "Snow"]
     },
     {
-        id: "p-lemongrass-eclat",
-        title: "Lemongrass Eclat",
-        slug: "lemongrass-eclat",
+        id: "p-lemongrass",
+        title: "Lemongrass",
+        slug: "lemongrass",
         category: "Fresh Whisper",
         shortDescription: "Zesty citrus glow.",
         longDescription: "Bright lemongrass with a touch of ginger and lime.",
@@ -1329,7 +1367,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: fresh3,
+            default: whiteCandle,
             gallery: [fresh3Hover],
             colorVariants: []
         },
@@ -1347,7 +1385,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: fresh4,
+            default: whiteCandle,
             gallery: [fresh4Hover],
             colorVariants: []
         },
@@ -1365,7 +1403,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: fresh5,
+            default: whiteCandle,
             gallery: [fresh5Hover],
             colorVariants: []
         },
@@ -1383,7 +1421,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: fresh6,
+            default: whiteCandle,
             gallery: [fresh6Hover],
             colorVariants: []
         },
@@ -1401,7 +1439,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: fresh7,
+            default: whiteCandle,
             gallery: [fresh7Hover],
             colorVariants: []
         },
