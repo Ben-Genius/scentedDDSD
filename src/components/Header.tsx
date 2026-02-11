@@ -122,7 +122,7 @@ export const Header = () => {
                 <NavMenu isScrolled={isScrolled} isHeaderHovered={isHovered} />
 
                 {/* Mobile Nav Drawer */}
-                <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+                <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}/>
             </header>
         </>
     );
