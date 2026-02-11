@@ -1621,7 +1621,7 @@ export const products: Product[] = [
         longDescription: "A rich, foaming body wash that gently cleanses and scents the skin.",
         basePrice: 95,
         stock: 50,
-        featured: true,
+        featured: false,
         images: {
             default: '/images/products/bath-body/body-main.png',
             gallery: [],
@@ -1639,7 +1639,7 @@ export const products: Product[] = [
         longDescription: "Lightweight yet deeply hydrating body lotion for silky smooth skin.",
         basePrice: 110,
         stock: 40,
-        featured: true,
+        featured: false,
         images: {
             default: '/images/products/bath-body/body-main.png',
             gallery: [],

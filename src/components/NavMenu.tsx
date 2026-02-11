@@ -30,6 +30,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                     >
                         <NavLink
                             to={item.path}
+                            onClick={() => setActiveDropdown(null)}
                             className={({ isActive }) => cn(
                                 "nav-link text-[11px] uppercase tracking-[0.2em] font-medium font-inter transition-all duration-300 py-4",
                                 isActive ? "text-black border-b-2 border-black" : "text-black/60 hover:text-black",
@@ -105,7 +106,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
                                         </div>
                                     ) : (
                                         /* Standard Grid Layout (Candles etc) */
-                                        <div className="container mx-auto px-8 lg:px-12 py-16">
+                                        <div className="container mx-auto px-8 lg:px-12 py-0">
                                             {/* Grid Layout - Jo Malone Style */}
                                             <div className={cn(
                                                 "grid gap-x-8 lg:gap-x-12 gap-y-12",

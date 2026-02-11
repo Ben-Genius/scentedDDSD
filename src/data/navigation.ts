@@ -65,7 +65,8 @@ import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7 from '../assets/collections/candles/fresh/f7.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-
+import whiteCandle from '../assets/images/whiteCandle.png';
+import blackCandle from '../assets/images/blackCandle.png';
 
 export interface SubLink {
     name: string;
@@ -99,225 +100,224 @@ export const navigationData: NavItem[] = [
         id: 'candles',
         name: 'Scented Candles',
         path: '/home-candles',
-        featuredImage: '/images/collections/candles/hero-main.png',
         sections: [
             {
                 title: 'Floral Romance Collection',
-                image: '/images/collections/candles/floral.png',
+                image: whiteCandle,
                 path: '/collections/floral-romance',
                 links: [
                     {
                         name: 'Freesia and English Pear',
                         path: '/product/freesia-english-pear',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle1Hover
                     },
                     {
                         name: 'Blush Peony',
                         path: '/product/blush-peony',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle1Hover // Assuming shared image or duplicate
                     },
                     {
                         name: 'Midnight Lavender',
                         path: '/product/midnight-lavender',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle2Hover
                     },
                     {
                         name: 'Royal Rose Bloom',
                         path: '/product/royal-rose-bloom',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle1Hover // Assuming shared image or duplicate
                     },
                     {
                         name: 'Lotus Veil',
                         path: '/product/lotus-veil',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle5Hover
                     },
                     {
                         name: "Amour D'Osmanthus",
                         path: '/product/amour-d-osmanthus',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle6Hover
                     },
                     {
                         name: 'Golden Ylang',
                         path: '/product/golden-ylang',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle4Hover
                     },
                     {
                         name: 'Jasmin',
                         path: '/product/jasmin',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: candle3Hover
                     },
                 ]
             },
             {
                 title: 'Woody and Suede Collection',
-                image: '/images/collections/candles/woody.png',
+                image: blackCandle,
                 path: '/collections/woody-suede',
                 links: [
                     {
                         name: 'Tobacco Noir',
                         path: '/product/tobacco-noir',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental1Hover
                     },
                     {
                         name: 'Velvet Rose and Oud',
                         path: '/product/velvet-rose-oud',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: wood1Hover
                     },
                     {
                         name: 'Sandalwood',
                         path: '/product/sandalwood',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: wood4Hover
                     },
                     {
                         name: 'Black Oud',
                         path: '/product/black-oud',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: wood2Hover
                     },
                     {
                         name: 'Wild Fig',
                         path: '/product/wild-fig',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: wood3Hover
                     },
                     {
                         name: 'Amber Luxe',
                         path: '/product/amber-luxe',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental2Hover
                     },
                     {
                         name: 'Cedar Caress',
                         path: '/product/cedar-caress',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental3Hover
                     },
                 ]
             },
             {
                 title: 'Oriental Luxe Collection',
-                image: '/images/collections/candles/oriental.png',
+                image: blackCandle,
                 path: '/collections/oriental-luxe',
                 links: [
                     {
                         name: 'Lovers Rock',
                         path: '/product/lovers-rock',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental6Hover
                     },
                     {
                         name: 'Pomegranate Noir',
                         path: '/product/pomegranate-noir',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental5Hover
                     },
                     {
                         name: 'Blackberry Bloom',
                         path: '/product/blackberry-bloom',
-                        image: '/images/products/candles/candle-main.png',
+                        image: blackCandle,
                         hoverImage: oriental7Hover
                     },
                 ]
             },
             {
                 title: 'Gourmand Indulgence Collection',
-                image: '/images/collections/candles/gourmand.png',
+                image: whiteCandle,
                 path: '/collections/gourmand-indulgence',
                 links: [
                     {
                         name: 'Champagne Cocktail',
                         path: '/product/champagne-cocktail',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet7Hover
                     },
                     {
                         name: 'Sugar Vanilla',
                         path: '/product/sugar-vanilla',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet4Hover
                     },
                     {
                         name: 'Peach Bellini',
                         path: '/product/peach-bellini',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet5Hover
                     },
                     {
                         name: 'Piña Colada',
                         path: '/product/pina-colada',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet6Hover
                     },
                     {
                         name: 'Butterscotch',
                         path: '/product/butterscotch',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet3Hover
                     },
                     {
                         name: 'Marshmallow Cheesecake',
                         path: '/product/marshmallow-cheesecake',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: gourmet2Hover
                     },
                 ]
             },
             {
                 title: 'Fresh Whisper Collection',
-                image: '/images/collections/candles/fresh.png',
+                image: whiteCandle,
                 path: '/collections/fresh-whisper',
                 links: [
                     {
                         name: 'Sage & Sea Salt',
                         path: '/product/sage-sea-salt',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh1Hover
                     },
                     {
                         name: 'White Tea',
                         path: '/product/white-tea',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh4Hover
                     },
                     {
                         name: 'Sweet Bergamot',
                         path: '/product/sweet-bergamot',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh7Hover
                     },
                     {
                         name: 'Lemongrass',
                         path: '/product/lemongrass',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh3Hover
                     },
                     {
                         name: 'Lemon and Lime',
                         path: '/product/lemon-lime',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh5Hover
                     },
                     {
                         name: 'Frosted Apple',
                         path: '/product/frosted-apple',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh6Hover
                     },
                     {
                         name: 'Peppermint',
                         path: '/product/peppermint',
-                        image: '/images/products/candles/candle-main.png',
+                        image: whiteCandle,
                         hoverImage: fresh2Hover
                     },
                 ]
