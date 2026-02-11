@@ -7,6 +7,9 @@ import { Home, Shop, ProductPage, Collections, CollectionPage, Bundles, About, H
 import { CartDrawer } from '@/components/CartDrawer';
 import { useLocalCart } from '@/hooks/useLocalCart';
 import { Candles } from './pages/Headers/ScentedCandle/Candles';
+import { Diffusers } from './pages/Headers/Diffusers/Diffusers';
+import { AllRefreshner } from './pages/Headers/Air Refreshner/AllRefreshner';
+import { BathBody } from './pages/Headers/BathBody/BathBody';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDrawerOpen, closeDrawer } = useLocalCart();
@@ -54,6 +57,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/home-candles" element={<Candles />} />
+        <Route path="/diffusers" element={<Diffusers />} />
+        <Route path="/air-freshners" element={<AllRefreshner />} />
+        <Route path="/bath-body" element={<BathBody />} />
         <Route path="/product/:slug" element={<ProductPage />} />
         <Route path="/collections/:slug" element={<CollectionPage />} />
         <Route path="/collections" element={<Collections />} />

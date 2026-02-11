@@ -1513,7 +1513,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.new10,
+            default: '/images/products/air-fresheners/air-freshener-main.png',
             gallery: [IMAGES.new11, IMAGES.new12],
             colorVariants: []
         },
@@ -1609,5 +1609,61 @@ export const products: Product[] = [
         },
         variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
         scents: ["Lemon", "Basil", "Thyme"]
+    },
+
+    // --- NEW COLLECTION: Bath & Body ---
+    {
+        id: "p-body-wash-luxe",
+        title: "Luxury Body Wash",
+        slug: "luxury-body-wash",
+        category: "Bath & Body",
+        shortDescription: "Gentle cleansing gel.",
+        longDescription: "A rich, foaming body wash that gently cleanses and scents the skin.",
+        basePrice: 95,
+        stock: 50,
+        featured: true,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bw-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        scents: ["Rose", "Oud"]
+    },
+    {
+        id: "p-body-lotion-silk",
+        title: "Silk Body Lotion",
+        slug: "silk-body-lotion",
+        category: "Bath & Body",
+        shortDescription: "Hydrating smooth lotion.",
+        longDescription: "Lightweight yet deeply hydrating body lotion for silky smooth skin.",
+        basePrice: 110,
+        stock: 40,
+        featured: true,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bl-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        scents: ["Vanilla", "Cocoa Butter"]
+    },
+    {
+        id: "p-bath-soak",
+        title: "Relaxing Bath Soak",
+        slug: "relaxing-bath-soak",
+        category: "Bath & Body",
+        shortDescription: "Calming bath salts.",
+        longDescription: "Mineral-rich bath salts infused with essential oils for a relaxing soak.",
+        basePrice: 85,
+        stock: 60,
+        featured: false,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bs-std", label: "Standard", sizeMl: "500g", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["Lavender", "Eucalyptus"]
     }
 ];
