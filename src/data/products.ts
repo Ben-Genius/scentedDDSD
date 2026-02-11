@@ -1,73 +1,42 @@
 import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
-import candle1 from '../assets/collections/candles/1.png';
 import whiteCandle from "../assets/images/whiteCandle.png";
 import blackCandle from "../assets/images/blackCandle.png";
 import candle1Hover from '../assets/collections/candles/1.1.png';
-import candle2 from '../assets/collections/candles/2.png';
 import candle2Hover from '../assets/collections/candles/2.2.png';
-import candle3 from '../assets/collections/candles/3.png';
 import candle3Hover from '../assets/collections/candles/3.3.png';
-import candle4 from '../assets/collections/candles/4.png';
 import candle4Hover from '../assets/collections/candles/4.4.png';
-import candle5 from '../assets/collections/candles/5.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
-import candle6 from '../assets/images/blackCandle.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
 
-import wood1 from '../assets/collections/candles/wood/w1.png';
 import wood1Hover from '../assets/collections/candles/wood/w11.png';
-import wood2 from '../assets/collections/candles/wood/w2.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';
-import wood3 from '../assets/collections/candles/wood/w3.png';
 import wood3Hover from '../assets/collections/candles/wood/w33.png';
-import wood4 from '../assets/collections/candles/wood/w4.png';
 import wood4Hover from '../assets/collections/candles/wood/w44.png';
 
-import oriental1 from '../assets/collections/candles/oriental/o1.png';
 import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
-import oriental2 from '../assets/collections/candles/oriental/o2.png';
 import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
-import oriental3 from '../assets/collections/candles/oriental/o3.png';
 import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
-import oriental4 from '../assets/collections/candles/oriental/o4.png';
 import oriental4Hover from '../assets/collections/candles/oriental/o44.png';
-import oriental5 from '../assets/collections/candles/oriental/o5.png';
 import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
-import oriental6 from '../assets/collections/candles/oriental/o6.png';
 import oriental6Hover from '../assets/collections/candles/oriental/o66.png';
-import oriental7 from '../assets/collections/candles/oriental/o7.png';
 import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
-import gourmet1 from '../assets/collections/candles/gourmet/g1.png';
 import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
-import gourmet2 from '../assets/collections/candles/gourmet/g2.png';
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
-import gourmet3 from '../assets/collections/candles/gourmet/g3.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4 from '../assets/collections/candles/gourmet/g4.png';
 import gourmet4Hover from '../assets/collections/candles/gourmet/g4.png';
-import gourmet5 from '../assets/collections/candles/gourmet/g5.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
-import gourmet6 from '../assets/collections/candles/gourmet/g6.png';
 import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
-import gourmet7 from '../assets/collections/candles/gourmet/g7.png';
 import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
 
-import fresh1 from '../assets/collections/candles/fresh/f1.png';
 import fresh1Hover from '../assets/collections/candles/fresh/f11.png';
-import fresh2 from '../assets/collections/candles/fresh/f2.png';
 import fresh2Hover from '../assets/collections/candles/fresh/f22.png';
-import fresh3 from '../assets/collections/candles/fresh/f3.png';
 import fresh3Hover from '../assets/collections/candles/fresh/f33.png';
-import fresh4 from '../assets/collections/candles/fresh/f4.png';
 import fresh4Hover from '../assets/collections/candles/fresh/f44.png';
-import fresh5 from '../assets/collections/candles/fresh/f5.png';
 import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
-import fresh6 from '../assets/collections/candles/fresh/f6.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
-import fresh7 from '../assets/collections/candles/fresh/f7.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
 import diffFloral from '../assets/collections/diffusers/floral.png';
@@ -1513,7 +1482,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.new10,
+            default: '/images/products/air-fresheners/air-freshener-main.png',
             gallery: [IMAGES.new11, IMAGES.new12],
             colorVariants: []
         },
@@ -1609,5 +1578,61 @@ export const products: Product[] = [
         },
         variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
         scents: ["Lemon", "Basil", "Thyme"]
+    },
+
+    // --- NEW COLLECTION: Bath & Body ---
+    {
+        id: "p-body-wash-luxe",
+        title: "Luxury Body Wash",
+        slug: "luxury-body-wash",
+        category: "Bath & Body",
+        shortDescription: "Gentle cleansing gel.",
+        longDescription: "A rich, foaming body wash that gently cleanses and scents the skin.",
+        basePrice: 95,
+        stock: 50,
+        featured: false,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bw-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        scents: ["Rose", "Oud"]
+    },
+    {
+        id: "p-body-lotion-silk",
+        title: "Silk Body Lotion",
+        slug: "silk-body-lotion",
+        category: "Bath & Body",
+        shortDescription: "Hydrating smooth lotion.",
+        longDescription: "Lightweight yet deeply hydrating body lotion for silky smooth skin.",
+        basePrice: 110,
+        stock: 40,
+        featured: false,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bl-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        scents: ["Vanilla", "Cocoa Butter"]
+    },
+    {
+        id: "p-bath-soak",
+        title: "Relaxing Bath Soak",
+        slug: "relaxing-bath-soak",
+        category: "Bath & Body",
+        shortDescription: "Calming bath salts.",
+        longDescription: "Mineral-rich bath salts infused with essential oils for a relaxing soak.",
+        basePrice: 85,
+        stock: 60,
+        featured: false,
+        images: {
+            default: '/images/products/bath-body/body-main.png',
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-bs-std", label: "Standard", sizeMl: "500g", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        scents: ["Lavender", "Eucalyptus"]
     }
 ];

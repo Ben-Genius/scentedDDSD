@@ -1,14 +1,10 @@
 "use client";
 
-import React from 'react';
 import { navigationData } from '@/data/navigation';
 import { products } from '@/data/products';
 import { Link } from 'react-router-dom';
-import whiteCandle from '@/assets/images/whiteCandle.png';
-import blackCandle from '@/assets/images/blackCandle.png';
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { formatMoney } from '@/utils/formatMoney';
 
 export const Candles = () => {
