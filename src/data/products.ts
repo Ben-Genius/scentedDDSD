@@ -9,6 +9,8 @@ import candle3Hover from '../assets/collections/candles/3.3.png';
 import candle4Hover from '../assets/collections/candles/4.4.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
+import candle7Hover from '../assets/collections/candles/2.2.png';
+import candle8Hover from '../assets/collections/candles/3.png';
 
 import wood1Hover from '../assets/collections/candles/wood/w11.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';
@@ -65,7 +67,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.difflover,
-            gallery: [IMAGES.diffavent2, IMAGES.new1, IMAGES.new2, IMAGES.new3],
+            gallery: [IMAGES.diffavent2, IMAGES.new1, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -734,7 +736,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.candle2,
-            gallery: [IMAGES.new20, IMAGES.new21, IMAGES.new22],
+            gallery: [IMAGES.new28, IMAGES.new27, IMAGES.new26],
             colorVariants: []
         },
         variants: [
@@ -843,7 +845,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: whiteCandle,
-            gallery: [candle1Hover],
+            gallery: [candle7Hover],
             colorVariants: []
         },
         variants: [{ id: "v-blush", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -861,7 +863,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: whiteCandle,
-            gallery: [candle1Hover],
+            gallery: [candle8Hover],
             colorVariants: []
         },
         variants: [{ id: "v-royal", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -1429,7 +1431,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.new1,
-            gallery: [IMAGES.new2, IMAGES.new3],
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-1", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -1537,7 +1539,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.new19,
-            gallery: [IMAGES.new20, IMAGES.new21],
+            gallery: [IMAGES.new25, IMAGES.new24],
             colorVariants: []
         },
         variants: [{ id: "v-new-7", label: "Medium", sizeMl: "200g", sizeLabel: "Medium", multiplier: 1, priceGHS: 115 }],
@@ -1554,8 +1556,8 @@ export const products: Product[] = [
         stock: 15,
         featured: false,
         images: {
-            default: IMAGES.new22,
-            gallery: [IMAGES.new23, IMAGES.new24],
+            default: IMAGES.new23,
+            gallery: [IMAGES.new22, IMAGES.new21],
             colorVariants: []
         },
         variants: [{ id: "v-new-8", label: "Set", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 280 }],
@@ -1572,8 +1574,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new25,
-            gallery: [IMAGES.new26, IMAGES.new27],
+            default: IMAGES.new20,
+            gallery: [IMAGES.new19, IMAGES.new18],
             colorVariants: []
         },
         variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],

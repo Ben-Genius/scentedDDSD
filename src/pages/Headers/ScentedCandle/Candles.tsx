@@ -4,12 +4,14 @@ import { navigationData } from '@/data/navigation';
 import { products } from '@/data/products';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { formatMoney } from '@/utils/formatMoney';
+import { ShopProductCard } from '@/components/shop/ShopProductCard';
+import { useLocalCart } from '@/hooks/useLocalCart';
+import toast from 'react-hot-toast';
 
 export const Candles = () => {
     // 1. Find the Scented Candles navigation item
     const candlesNav = navigationData.find(item => item.id === 'candles');
+    const addItem = useLocalCart((state) => state.addItem);
 
     if (!candlesNav || !candlesNav.sections) {
         return <div className="p-10 text-center">Scented Candles collection not found.</div>;
@@ -75,67 +77,19 @@ export const Candles = () => {
                         return <div className="col-span-full text-center py-20 text-gray-500">No products found.</div>;
                     }
 
-                    return allCandles.map((product, index) => {
-                        // Determine display price
-                        const lowestPrice = product.variants.length > 0
-                            ? Math.min(...product.variants.map(v => v.priceGHS))
-                            : product.basePrice;
-
-                        return (
-                            <motion.div
-                                key={product.id}
-                                className="group relative bg-[#F5F5F5] rounded-xl min-h-[450px] w-full overflow-hidden transition-all duration-500 hover:shadow-xl"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                            >
-                                <Link to={`/product/${product.slug}`} className="block w-full h-full relative p-6">
-                                    {/* Images - Background Fill */}
-                                    <div className="absolute inset-0 z-0">
-                                        {/* Main Image */}
-                                        <img
-                                            src={product.images.default}
-                                            alt={product.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 origin-center"
-                                        />
-
-                                        {/* Hover Image (Fruit/Flower) */}
-                                        {product.images.gallery && product.images.gallery.length > 0 && (
-                                            <img
-                                                src={product.images.gallery[0]}
-                                                alt={product.title}
-                                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-10"
-                                            />
-                                        )}
-
-                                        {/* Subtle overlay to ensure text readability */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/10 transition-all duration-300" />
-                                    </div>
-
-                                    {/* Content Overlay */}
-                                    <div className="relative z-20 flex flex-col h-full pointer-events-none">
-                                        <h2 className="text-center text-xl font-playfair font-bold text-black my-2 group-hover:text-black/80 transition-colors duration-300 px-2 line-clamp-2 drop-shadow-md">
-                                            {product.title}
-                                        </h2>
-
-                                        <div className="flex-grow" />
-
-                                        <div className="flex flex-col items-center justify-end pb-8">
-                                            <span className="text-sm font-inter text-black font-bold tracking-widest bg-white/40 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">
-                                                {formatMoney(lowestPrice)}
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="absolute bottom-0 right-0 w-20 h-20 bg-white rounded-tl-[2rem] flex items-center justify-center z-30 border-l border-t border-gray-100 pointer-events-auto">
-                                        <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center group-hover:bg-[#d4af37] group-hover:scale-110 transition-all duration-300 shadow-lg text-white">
-                                            <ArrowUpRight className="w-6 h-6" />
-                                        </div>
-                                    </div>
-                                </Link>
-                            </motion.div>
-                        );
-                    });
+                    return allCandles.map((product, index) => (
+                        <ShopProductCard
+                            key={product.id}
+                            product={product}
+                            onQuickAdd={() => {
+                                if (product.variants.length > 0) {
+                                    addItem(product, product.variants[0]);
+                                    toast.success(`Added ${product.title} to cart`);
+                                }
+                            }}
+                            className="w-full"
+                        />
+                    ));
                 })()}
             </div>
         </div>
