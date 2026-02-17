@@ -16,6 +16,9 @@ import wood1Hover from '../assets/collections/candles/wood/w11.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';
 import wood3Hover from '../assets/collections/candles/wood/w33.png';
 import wood4Hover from '../assets/collections/candles/wood/w44.png';
+import w_ref4 from '../assets/images/candles/white/w_ref3.png';
+import w_ref5 from '../assets/images/candles/white/w_ref4.png';
+
 
 import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
 import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
@@ -862,7 +865,7 @@ export const products: Product[] = [
         stock: 50,
         featured: true,
         images: {
-            default: whiteCandle,
+            default: w_ref4,
             gallery: [candle8Hover],
             colorVariants: []
         },
@@ -952,7 +955,7 @@ export const products: Product[] = [
         stock: 20,
         featured: true,
         images: {
-            default: whiteCandle,
+            default: w_ref5,
             gallery: [candle6Hover],
             colorVariants: []
         },

@@ -263,25 +263,25 @@ export const navigationData: NavItem[] = [
                     {
                         name: 'Sweet Bergamot',
                         path: '/product/sweet-bergamot',
-                        image: IMAGES.c9,
+                        image: IMAGES.w_ref1,
                         hoverImage: fresh7Hover
                     },
                     {
                         name: 'Lemongrass',
                         path: '/product/lemongrass',
-                        image: IMAGES.c10,
+                        image: IMAGES.w_ref2,
                         hoverImage: fresh3Hover
                     },
                     {
                         name: 'Lemon and Lime',
                         path: '/product/lemon-lime',
-                        image: IMAGES.c11,
+                        image: IMAGES.w_ref3,
                         hoverImage: fresh5Hover
                     },
                     {
                         name: 'Frosted Apple',
                         path: '/product/frosted-apple',
-                        image: IMAGES.c12,
+                        image: IMAGES.w_ref4,
                         hoverImage: fresh6Hover
                     },
                     {

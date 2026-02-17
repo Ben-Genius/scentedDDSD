@@ -101,6 +101,10 @@ import whiteCandleBig2 from './images/candles/white/whiteCandleBig2.png';
 import whiteCandleVariant3 from './images/candles/white/whiteCandleVariant3.png';
 import whiteCandleVariant4 from './images/candles/white/whiteCandleVariant4.png';
 import whiteCandleVariant5 from './images/candles/white/whiteCandleVariant5.png';
+import w_ref1 from './images/candles/white/w_ref1.png';
+import w_ref2 from './images/candles/white/w_ref2.png';
+import w_ref3 from './images/candles/white/w_ref3.png';
+import w_ref4 from './images/candles/white/w_ref4.png';
 
 import c1 from './images/candles/assorted/c1.png';
 import c2 from './images/candles/assorted/c2.png';
@@ -227,6 +231,7 @@ export const IMAGES = {
   whiteCandleVariant3,
   whiteCandleVariant4,
   whiteCandleVariant5,
+  w_ref1, w_ref2, w_ref3, w_ref4,
   c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
   c11, c12, c13, c14, c15, c16, c17, c18,
   blackCandleBig1,
