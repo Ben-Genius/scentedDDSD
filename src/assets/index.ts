@@ -3,8 +3,6 @@ import allprod1 from './images/allprod1.png';
 import allprod2 from './images/allprod2.png';
 import allprod3 from './images/allprod3.png';
 import allprod4 from './images/allprod4.png';
-import amber from './images/amber.png';
-import ambercandle from './images/ambercandle.png';
 import amberspray from './images/amberspray.png';
 import artifact1 from './images/artifact1.png';
 import artifact2 from './images/artifact2.png';
@@ -33,8 +31,6 @@ import roseapple from './images/roseapple.png';
 import royalenglish from './images/royalenglish.png';
 import royalpear from './images/royalpear.png';
 import scentedcandle from './images/scentedcandle.png';
-import soap from './images/soap.png';
-import soap2 from './images/soap2.png';
 import spray from './images/spray.png';
 import sweethome from './images/sweethome.png';
 import logo1 from './images/logo1.png';
@@ -42,34 +38,72 @@ import hero1 from './images/newHero.png';
 import bundle from './images/bundle.png';
 
 // New Images
-import new1 from './images/3121431293500027524 - 639e623b32dfdf49b01064328fbb3114.jpg';
-import new2 from './images/3121432491361579641 - 4d659eb054fe874b4e0ef35c8dfc1928 (1).jpg';
 import new3 from './images/3121432491361579641 - 4d659eb054fe874b4e0ef35c8dfc1928.jpg';
 import new4 from './images/3121432947185062500 - e8b4142ab779e3b60224a0b15474d458.jpg';
 import new5 from './images/3121433145061933636 - 477f25add842179fe383b69d392a3a30.jpg';
-import new6 from './images/3121433233399824561 - 8ce2ab1ea80ee86c10285424fb7b7589.jpg';
-import new7 from './images/3121433328804748164 - 53df28f1f306185b188997ea980f2c9a.jpg';
-import new8 from './images/3121433459544831025 - b78df14f3376ba95e874ca94bc615595.jpg';
-import new9 from './images/3121433597351948356 - 453211d28145796da3b7d71184ab4dcc.jpg';
-import new10 from './images/3121434258119450641 - 512a7e6a82d6adcfd0f585d1bcb9ea8f.jpg';
-import new11 from './images/3121434261652966884 - 4683e98d32f148d1d294939ea0575ebe.jpg';
-import new12 from './images/3121434265186483129 - 022363144c7e241a7a40e690906dca1c.jpg';
-import new13 from './images/3121434265186483129 - df8582f70749ab4bdd4687b133b7cbc7.jpg';
-import new14 from './images/3121434519599658025 - ece05964843c0fde3b0fa6e79a3ff781.jpg';
-import new15 from './images/3121434993090872241 - 93bc40f6efb2b2cac6d9ddd3a26f4750.jpg';
-import new16 from './images/3121436145017409025 - 39beead7ea87760e43b9d141e1ac276d.jpg';
-import new17 from './images/3121436523103772644 - 4659c9173e134fa1d6f7b4de267efd3c.jpg';
-import new18 from './images/3121436523103772644 - e09b079143a42ccf4a9cfa3339d75564.jpg';
-import new19 from './images/3121436657377440000 - 4eacf7e0d6288da6eeffaa009972dcf9.jpg';
-import new20 from './images/3121436657377440000 - b17e01deedf18119f8ca682ddf42fe96.jpg';
-import new21 from './images/3121436657377440000 - bafd5dde8e8bfa4a3f8d8b9a8125f241.jpg';
-import new22 from './images/3121436819919251716 - f17fea29aea2cf23c69e4c197380cadd.jpg';
-import new23 from './images/3121436819919251716 - fdb7021f751f66bb9da8a4af5bdb97aa.jpg';
-import new24 from './images/3121436982461067664 - fa8050c0c234f96dd4849f7bb6134a71.jpg';
-import new25 from './images/3121437205072692025 - d8bf29f4326b5aa9bc58a937a64ab994.jpg';
-import new26 from './images/3121437349946928016 - 1030d6dcb38245d63470f59fd1a15cb0.jpg';
-import new27 from './images/3121437349946928016 - 6285067436d4686c1fd9af312ee22c82.jpg';
-import new28 from './images/3121437349946928016 - 9a926f90a4d3271ca3a7842c9b540869.jpg';
+
+import collectionFloral from './images/collection-floral.png';
+import collectionWoody from './images/collection-woody.png';
+import collectionOriental from './images/collection-oriental.png';
+import collectionFresh from './images/collection-fresh.png';
+
+import diffuserHeader1 from './collections/diffusers/Diffuser/1.png';
+import diffuserHeader2 from './collections/diffusers/Diffuser/2.png';
+import diffuserHeader3 from './collections/diffusers/Diffuser/3.png';
+import diffuserHeader4 from './collections/diffusers/Diffuser/4.png';
+import diffuserHeader5 from './collections/diffusers/Diffuser/5.png';
+import diffuserHeader6 from './collections/diffusers/Diffuser/6.png';
+import diffuserHeader7 from './collections/diffusers/Diffuser/7.png';
+import diffuserHeader8 from './collections/diffusers/Diffuser/8.png';
+import diffuserHeader9 from './collections/diffusers/Diffuser/9.png';
+import diffuserHeader10 from './collections/diffusers/Diffuser/10.png';
+import diffuserHeader11 from './collections/diffusers/Diffuser/11.png';
+import diffuserHeader12 from './collections/diffusers/Diffuser/12.png';
+import diffuserHeader13 from './collections/diffusers/Diffuser/13.png';
+import diffuserHeader14 from './collections/diffusers/Diffuser/14.png';
+import diffuserHeader15 from './collections/diffusers/Diffuser/15.png';
+
+import whiteCandleBase from './images/candles/white/whiteCandleBase.png';
+import whiteCandleLivingRoom from './images/candles/white/whiteCandleLivingRoom.png';
+import whiteCandleBathroom from './images/candles/white/whiteCandleBathroom.png';
+import whiteCandleGarden from './images/candles/white/whiteCandleGarden.png';
+
+import whiteCandleBig1 from './images/candles/white/whiteCandleBig1.png';
+import whiteCandleBig2 from './images/candles/white/whiteCandleBig2.png';
+import whiteCandleVariant3 from './images/candles/white/whiteCandleVariant3.png';
+import whiteCandleVariant4 from './images/candles/white/whiteCandleVariant4.png';
+import whiteCandleVariant5 from './images/candles/white/whiteCandleVariant5.png';
+import w_ref1 from './images/candles/white/w_ref1.png';
+import w_ref2 from './images/candles/white/w_ref2.png';
+import w_ref3 from './images/candles/white/w_ref3.png';
+import w_ref4 from './images/candles/white/w_ref4.png';
+
+import c1 from './images/candles/assorted/c1.png';
+import c2 from './images/candles/assorted/c2.png';
+import c3 from './images/candles/assorted/c3.png';
+import c4 from './images/candles/assorted/c4.png';
+import c5 from './images/candles/assorted/c5.png';
+import c6 from './images/candles/assorted/c6.png';
+import c7 from './images/candles/assorted/c7.png';
+import c8 from './images/candles/assorted/c8.png';
+import c9 from './images/candles/assorted/c9.png';
+import c10 from './images/candles/assorted/c10.png';
+import c11 from './images/candles/assorted/c11.png';
+import c12 from './images/candles/assorted/c12.png';
+import c13 from './images/candles/assorted/c13.png';
+import c14 from './images/candles/assorted/c14.png';
+import c15 from './images/candles/assorted/c15.png';
+import c16 from './images/candles/assorted/c16.png';
+import c17 from './images/candles/assorted/c17.png';
+import c18 from './images/candles/assorted/c18.png';
+
+import blackCandleBig1 from './images/blackCandleBig1.png';
+import blackCandleBig2 from './images/blackCandleBig2.png';
+import blackCandleVariant3 from './images/blackCandleVariant3.png';
+
+import freesiaPearHover from './images/ingredients/candles/freesia_pear.png';
+import blushPeonyHover from './images/ingredients/candles/blush_peony.png';
+import royalRoseHover from './images/ingredients/candles/royal_rose.png';
 
 export const IMAGES = {
   diffsc,
@@ -77,8 +111,6 @@ export const IMAGES = {
   allprod2,
   allprod3,
   allprod4,
-  amber,
-  ambercandle,
   amberspray,
   artifact1,
   artifact2,
@@ -108,38 +140,48 @@ export const IMAGES = {
   royalenglish,
   royalpear,
   scentedcandle,
-  soap,
-  soap2,
   spray,
   sweethome,
   logo1,
   hero1,
-  new1,
-  new2,
   new3,
   new4,
   new5,
-  new6,
-  new7,
-  new8,
-  new9,
-  new10,
-  new11,
-  new12,
-  new13,
-  new14,
-  new15,
-  new16,
-  new17,
-  new18,
-  new19,
-  new20,
-  new21,
-  new22,
-  new23,
-  new24,
-  new25,
-  new26,
-  new27,
-  new28,
+  collectionFloral,
+  collectionWoody,
+  collectionOriental,
+  collectionFresh,
+  diffuserHeader1,
+  diffuserHeader2,
+  diffuserHeader3,
+  diffuserHeader4,
+  diffuserHeader5,
+  diffuserHeader6,
+  diffuserHeader7,
+  diffuserHeader8,
+  diffuserHeader9,
+  diffuserHeader10,
+  diffuserHeader11,
+  diffuserHeader12,
+  diffuserHeader13,
+  diffuserHeader14,
+  diffuserHeader15,
+  whiteCandleBase,
+  whiteCandleLivingRoom,
+  whiteCandleBathroom,
+  whiteCandleGarden,
+  whiteCandleBig1,
+  whiteCandleBig2,
+  whiteCandleVariant3,
+  whiteCandleVariant4,
+  whiteCandleVariant5,
+  w_ref1, w_ref2, w_ref3, w_ref4,
+  c1, c2, c3, c4, c5, c6, c7, c8, c9, c10,
+  c11, c12, c13, c14, c15, c16, c17, c18,
+  blackCandleBig1,
+  blackCandleBig2,
+  blackCandleVariant3,
+  freesiaPearHover,
+  blushPeonyHover,
+  royalRoseHover,
 };

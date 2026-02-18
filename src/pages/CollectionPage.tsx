@@ -51,16 +51,7 @@ export const CollectionPage: React.FC = () => {
                 // If navigation link has specific images, override the product images
                 if (link.image || link.hoverImage) {
                     return {
-                        ...originalProduct,
-                        images: {
-                            ...originalProduct.images,
-                            // Override default image if provided
-                            default: link.image || originalProduct.images.default,
-                            // Override hover image (gallery[0]) if provided
-                            gallery: link.hoverImage
-                                ? [link.hoverImage, ...originalProduct.images.gallery.filter(img => img !== link.hoverImage)]
-                                : originalProduct.images.gallery
-                        }
+                        ...originalProduct
                     };
                 }
 

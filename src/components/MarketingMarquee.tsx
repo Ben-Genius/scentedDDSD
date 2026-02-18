@@ -58,7 +58,7 @@ const marqueeImages1 = [
     IMAGES.candle,
     IMAGES.diffavent,
     IMAGES.spray,
-    IMAGES.soap,
+    IMAGES.scentedcandle,
     IMAGES.artifact1
 ];
 
@@ -67,7 +67,7 @@ const marqueeImages2 = [
     IMAGES.diffaventus,
     IMAGES.roseapple,
     IMAGES.amberspray,
-    IMAGES.soap2
+    IMAGES.spray
 ];
 
 function ScrambleButton() {

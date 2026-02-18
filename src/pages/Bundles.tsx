@@ -109,7 +109,7 @@ export const Bundles = () => {
             price: 320.00,
             originalPrice: 420.00,
             savings: 100.00,
-            image: IMAGES.soap,
+            image: IMAGES.scentedcandle,
             items: ['Vanilla Gel', 'Lavender Gel'],
             category: 'relaxation',
             gridArea: 'md:col-span-1 md:row-span-1'
