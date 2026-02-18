@@ -10,14 +10,12 @@ import candle4Hover from '../assets/collections/candles/4.4.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
 import candle7Hover from '../assets/collections/candles/2.2.png';
-import candle8Hover from '../assets/collections/candles/3.png';
+import candle8Hover from '../assets/collections/candles/3.3.png';
 
 import wood1Hover from '../assets/collections/candles/wood/w11.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';
 import wood3Hover from '../assets/collections/candles/wood/w33.png';
 import wood4Hover from '../assets/collections/candles/wood/w44.png';
-import w_ref4 from '../assets/images/candles/white/w_ref3.png';
-import w_ref5 from '../assets/images/candles/white/w_ref4.png';
 
 
 import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
@@ -31,7 +29,7 @@ import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4Hover from '../assets/collections/candles/gourmet/g4.png';
+import gourmet4Hover from '../assets/collections/candles/gourmet/g33.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
 import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
 import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
@@ -44,11 +42,6 @@ import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-import diffFloral from '../assets/collections/diffusers/floral.png';
-import diffWoody from '../assets/collections/diffusers/woody.png';
-import diffOriental from '../assets/collections/diffusers/oriental.png';
-import diffGourmand from '../assets/collections/diffusers/gourmand.png';
-import diffFresh from '../assets/collections/diffusers/fresh.png';
 
 import oilFloral from '../assets/collections/oils/floral.png';
 import oilWoody from '../assets/collections/oils/woody.png';
@@ -70,7 +63,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.difflover,
-            gallery: [IMAGES.diffavent2, IMAGES.new1, IMAGES.new3, IMAGES.new3],
+            gallery: [IMAGES.diffavent2, IMAGES.new3, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -90,7 +83,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.diffchannel,
-            gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new6],
+            gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new5],
             colorVariants: []
         },
         variants: [
@@ -113,7 +106,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.diffaventus,
-            gallery: [IMAGES.new7, IMAGES.new8, IMAGES.new9],
+            gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -134,7 +127,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: diffFloral,
+            default: IMAGES.collectionFloral,
             gallery: [],
             colorVariants: []
         },
@@ -152,7 +145,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: diffFloral,
+            default: IMAGES.collectionFloral,
             gallery: [],
             colorVariants: []
         },
@@ -170,7 +163,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: diffFloral,
+            default: IMAGES.collectionFloral,
             gallery: [],
             colorVariants: []
         },
@@ -208,7 +201,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: diffWoody,
+            default: IMAGES.collectionWoody,
             gallery: [],
             colorVariants: []
         },
@@ -226,7 +219,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: diffWoody,
+            default: IMAGES.collectionWoody,
             gallery: [],
             colorVariants: []
         },
@@ -244,7 +237,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: diffWoody,
+            default: IMAGES.collectionWoody,
             gallery: [],
             colorVariants: []
         },
@@ -264,7 +257,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: diffOriental,
+            default: IMAGES.collectionOriental,
             gallery: [],
             colorVariants: []
         },
@@ -284,7 +277,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: diffGourmand,
+            default: IMAGES.collectionOriental,
             gallery: [],
             colorVariants: []
         },
@@ -302,7 +295,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: diffGourmand,
+            default: IMAGES.collectionOriental,
             gallery: [],
             colorVariants: []
         },
@@ -320,7 +313,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: diffGourmand,
+            default: IMAGES.collectionOriental,
             gallery: [],
             colorVariants: []
         },
@@ -340,7 +333,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: diffFresh,
+            default: IMAGES.collectionFresh,
             gallery: [],
             colorVariants: []
         },
@@ -358,7 +351,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: diffFresh,
+            default: IMAGES.collectionFresh,
             gallery: [],
             colorVariants: []
         },
@@ -640,8 +633,8 @@ export const products: Product[] = [
         stock: 100,
         featured: false,
         images: {
-            default: IMAGES.amber,
-            gallery: [IMAGES.new10, IMAGES.new11, IMAGES.new12],
+            default: IMAGES.amberspray,
+            gallery: [IMAGES.new3, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -667,7 +660,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.scentedcandle,
-            gallery: [IMAGES.darkcandle, IMAGES.ambercandle, IMAGES.candle, IMAGES.new13, IMAGES.new14, IMAGES.new15],
+            gallery: [IMAGES.darkcandle, IMAGES.amberspray, IMAGES.candle, IMAGES.new3, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -695,7 +688,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.spray,
-            gallery: [IMAGES.amberspray, IMAGES.new16, IMAGES.new17],
+            gallery: [IMAGES.amberspray, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -719,7 +712,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.allprod1,
-            gallery: [IMAGES.new18, IMAGES.new19],
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [
@@ -739,7 +732,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.candle2,
-            gallery: [IMAGES.new28, IMAGES.new27, IMAGES.new26],
+            gallery: [IMAGES.new4, IMAGES.new3, IMAGES.new5],
             colorVariants: []
         },
         variants: [
@@ -829,7 +822,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.w_ref1,
             gallery: [candle1Hover],
             colorVariants: []
         },
@@ -847,7 +840,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.w_ref2,
             gallery: [candle7Hover],
             colorVariants: []
         },
@@ -865,7 +858,7 @@ export const products: Product[] = [
         stock: 50,
         featured: true,
         images: {
-            default: w_ref4,
+            default: IMAGES.w_ref3,
             gallery: [candle8Hover],
             colorVariants: []
         },
@@ -883,7 +876,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.w_ref4,
             gallery: [candle2Hover],
             colorVariants: []
         },
@@ -955,7 +948,7 @@ export const products: Product[] = [
         stock: 20,
         featured: true,
         images: {
-            default: w_ref5,
+            default: IMAGES.w_ref4,
             gallery: [candle6Hover],
             colorVariants: []
         },
@@ -1433,7 +1426,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new1,
+            default: IMAGES.new3,
             gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
@@ -1452,7 +1445,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.new4,
-            gallery: [IMAGES.new5, IMAGES.new6],
+            gallery: [IMAGES.new5, IMAGES.new5],
             colorVariants: []
         },
         variants: [{ id: "v-new-2", label: "Medium", sizeMl: "200g", sizeLabel: "Medium", multiplier: 1, priceGHS: 110 }],
@@ -1469,8 +1462,8 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.new7,
-            gallery: [IMAGES.new8, IMAGES.new9],
+            default: IMAGES.new4,
+            gallery: [IMAGES.new5, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-3", label: "10ml", sizeMl: "10ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -1488,7 +1481,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: '/images/products/air-fresheners/air-freshener-main.png',
-            gallery: [IMAGES.new11, IMAGES.new12],
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 180 }],
@@ -1505,8 +1498,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.new13,
-            gallery: [IMAGES.new14, IMAGES.new15],
+            default: IMAGES.new3,
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-5", label: "Large", sizeMl: "300g", sizeLabel: "Large", multiplier: 1, priceGHS: 130 }],
@@ -1523,8 +1516,8 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.new16,
-            gallery: [IMAGES.new17, IMAGES.new18],
+            default: IMAGES.new3,
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-6", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 160 }],
@@ -1541,8 +1534,8 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.new19,
-            gallery: [IMAGES.new25, IMAGES.new24],
+            default: IMAGES.new3,
+            gallery: [IMAGES.new4, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-7", label: "Medium", sizeMl: "200g", sizeLabel: "Medium", multiplier: 1, priceGHS: 115 }],
@@ -1559,8 +1552,8 @@ export const products: Product[] = [
         stock: 15,
         featured: false,
         images: {
-            default: IMAGES.new23,
-            gallery: [IMAGES.new22, IMAGES.new21],
+            default: IMAGES.new5,
+            gallery: [IMAGES.new4, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-8", label: "Set", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 280 }],
@@ -1577,8 +1570,8 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.new20,
-            gallery: [IMAGES.new19, IMAGES.new18],
+            default: IMAGES.new5,
+            gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
         variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],

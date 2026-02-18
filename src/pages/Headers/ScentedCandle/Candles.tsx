@@ -59,14 +59,7 @@ export const Candles = () => {
                             // If product found, use navigation data for images
                             if (product) {
                                 return {
-                                    ...product,
-                                    images: {
-                                        ...product.images,
-                                        default: link.image || product.images.default, // Use image from navigation (White/Black candle)
-                                        gallery: link.hoverImage
-                                            ? [link.hoverImage, ...product.images.gallery.filter(img => img !== link.hoverImage)]
-                                            : product.images.gallery
-                                    }
+                                    ...product
                                 };
                             }
                             return null;

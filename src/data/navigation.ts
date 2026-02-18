@@ -22,7 +22,7 @@ import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4Hover from '../assets/collections/candles/gourmet/g4.png';
+import gourmet4Hover from '../assets/collections/candles/gourmet/g33.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
 import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
 import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
