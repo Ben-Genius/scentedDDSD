@@ -105,6 +105,32 @@ import freesiaPearHover from './images/ingredients/candles/freesia_pear.png';
 import blushPeonyHover from './images/ingredients/candles/blush_peony.png';
 import royalRoseHover from './images/ingredients/candles/royal_rose.png';
 
+// Essential Oil Images
+import oil1 from './collections/oils/Essential Oils/oil1.png';
+import oil2 from './collections/oils/Essential Oils/oil2.png';
+import oil3 from './collections/oils/Essential Oils/oil3.png';
+import oil4 from './collections/oils/Essential Oils/oil4.png';
+import oil5 from './collections/oils/Essential Oils/oil5.png';
+import oil6 from './collections/oils/Essential Oils/oil6.png';
+import oil7 from './collections/oils/Essential Oils/oil7.png';
+import oil8 from './collections/oils/Essential Oils/oil8.png';
+import oil9 from './collections/oils/Essential Oils/oil9.png';
+import oil10 from './collections/oils/Essential Oils/oil10.png';
+import oil11 from './collections/oils/Essential Oils/oil11.png';
+import oil12 from './collections/oils/Essential Oils/oil12.png';
+import oil13 from './collections/oils/Essential Oils/oil13.png';
+import oil14 from './collections/oils/Essential Oils/oil14.png';
+import oil15 from './collections/oils/Essential Oils/oil15.png';
+import oil16 from './collections/oils/Essential Oils/oil16.png';
+import oil17 from './collections/oils/Essential Oils/oil17.png';
+import oil18 from './collections/oils/Essential Oils/oil18.png';
+import oil19 from './collections/oils/Essential Oils/oil19.png';
+import oil20 from './collections/oils/Essential Oils/oil20.png';
+import oil21 from './collections/oils/Essential Oils/oil21.png';
+import oil22 from './collections/oils/Essential Oils/oil22.png';
+import oil23 from './collections/oils/Essential Oils/oil23.png';
+import oil24 from './collections/oils/Essential Oils/oil24.png';
+
 export const IMAGES = {
   diffsc,
   allprod1,
@@ -184,4 +210,7 @@ export const IMAGES = {
   freesiaPearHover,
   blushPeonyHover,
   royalRoseHover,
+  oil1, oil2, oil3, oil4, oil5, oil6, oil7, oil8, oil9, oil10,
+  oil11, oil12, oil13, oil14, oil15, oil16, oil17, oil18, oil19, oil20,
+  oil21, oil22, oil23, oil24,
 };

@@ -1,8 +1,7 @@
 import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
-import whiteCandle from "../assets/images/whiteCandle.png";
-import blackCandle from "../assets/images/blackCandle.png";
+
 import candle1Hover from '../assets/collections/candles/1.1.png';
 import candle2Hover from '../assets/collections/candles/2.2.png';
 import candle3Hover from '../assets/collections/candles/3.3.png';
@@ -43,11 +42,7 @@ import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
 
-import oilFloral from '../assets/collections/oils/floral.png';
-import oilWoody from '../assets/collections/oils/woody.png';
-import oilOriental from '../assets/collections/oils/oriental.png';
-import oilGourmand from '../assets/collections/oils/gourmand.png';
-import oilFresh from '../assets/collections/oils/fresh.png';
+
 
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
@@ -181,7 +176,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c3,
             gallery: [],
             colorVariants: []
         },
@@ -371,7 +366,7 @@ export const products: Product[] = [
         stock: 100,
         featured: false,
         images: {
-            default: oilFloral,
+            default: IMAGES.oil1,
             gallery: [],
             colorVariants: []
         },
@@ -389,7 +384,7 @@ export const products: Product[] = [
         stock: 80,
         featured: false,
         images: {
-            default: oilFloral,
+            default: IMAGES.oil2,
             gallery: [],
             colorVariants: []
         },
@@ -407,7 +402,7 @@ export const products: Product[] = [
         stock: 120,
         featured: false,
         images: {
-            default: oilFloral,
+            default: IMAGES.oil15,
             gallery: [],
             colorVariants: []
         },
@@ -427,7 +422,7 @@ export const products: Product[] = [
         stock: 70,
         featured: false,
         images: {
-            default: oilWoody,
+            default: IMAGES.oil14,
             gallery: [],
             colorVariants: []
         },
@@ -445,7 +440,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: oilWoody,
+            default: IMAGES.oil13,
             gallery: [],
             colorVariants: []
         },
@@ -463,7 +458,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: oilWoody,
+            default: IMAGES.oil12,
             gallery: [],
             colorVariants: []
         },
@@ -483,7 +478,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: oilOriental,
+            default: IMAGES.oil11,
             gallery: [],
             colorVariants: []
         },
@@ -501,7 +496,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: oilOriental,
+            default: IMAGES.oil10,
             gallery: [],
             colorVariants: []
         },
@@ -521,7 +516,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: oilGourmand,
+            default: IMAGES.oil20,
             gallery: [],
             colorVariants: []
         },
@@ -539,7 +534,7 @@ export const products: Product[] = [
         stock: 100,
         featured: false,
         images: {
-            default: oilGourmand,
+            default: IMAGES.oil23,
             gallery: [],
             colorVariants: []
         },
@@ -557,7 +552,7 @@ export const products: Product[] = [
         stock: 75,
         featured: false,
         images: {
-            default: oilGourmand,
+            default: IMAGES.oil5,
             gallery: [],
             colorVariants: []
         },
@@ -577,7 +572,7 @@ export const products: Product[] = [
         stock: 80,
         featured: false,
         images: {
-            default: oilFresh,
+            default: IMAGES.oil4,
             gallery: [],
             colorVariants: []
         },
@@ -595,7 +590,7 @@ export const products: Product[] = [
         stock: 90,
         featured: false,
         images: {
-            default: oilFresh,
+            default: IMAGES.oil18,
             gallery: [],
             colorVariants: []
         },
@@ -613,7 +608,7 @@ export const products: Product[] = [
         stock: 90,
         featured: false,
         images: {
-            default: oilFresh,
+            default: IMAGES.oil16,
             gallery: [],
             colorVariants: []
         },
@@ -894,7 +889,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c6,
             gallery: [candle3Hover],
             colorVariants: []
         },
@@ -912,7 +907,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c7,
             gallery: [candle4Hover],
             colorVariants: []
         },
@@ -930,7 +925,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c8,
             gallery: [candle5Hover],
             colorVariants: []
         },
@@ -968,7 +963,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c3,
             gallery: [wood1Hover],
             colorVariants: []
         },
@@ -986,7 +981,7 @@ export const products: Product[] = [
         stock: 15,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c3,
             gallery: [wood2Hover],
             colorVariants: []
         },
@@ -1004,7 +999,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c6,
             gallery: [wood3Hover],
             colorVariants: []
         },
@@ -1022,7 +1017,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c6,
             gallery: [wood4Hover],
             colorVariants: []
         },
@@ -1042,7 +1037,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c7,
             gallery: [oriental1Hover],
             colorVariants: []
         },
@@ -1060,7 +1055,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c8,
             gallery: [oriental2Hover],
             colorVariants: []
         },
@@ -1078,7 +1073,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c8,
             gallery: [oriental3Hover],
             colorVariants: []
         },
@@ -1096,7 +1091,7 @@ export const products: Product[] = [
         stock: 20,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c3,
             gallery: [oriental4Hover],
             colorVariants: []
         },
@@ -1114,7 +1109,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c6,
             gallery: [oriental5Hover],
             colorVariants: []
         },
@@ -1132,7 +1127,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c7,
             gallery: [oriental6Hover],
             colorVariants: []
         },
@@ -1150,7 +1145,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: blackCandle,
+            default: IMAGES.c8,
             gallery: [oriental7Hover],
             colorVariants: []
         },
@@ -1170,7 +1165,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c3,
             gallery: [gourmet1Hover],
             colorVariants: []
         },
@@ -1188,7 +1183,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c6,
             gallery: [gourmet2Hover],
             colorVariants: []
         },
@@ -1206,7 +1201,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c7,
             gallery: [gourmet3Hover],
             colorVariants: []
         },
@@ -1224,7 +1219,7 @@ export const products: Product[] = [
         stock: 55,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c8,
             gallery: [gourmet4Hover],
             colorVariants: []
         },
@@ -1242,7 +1237,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c3,
             gallery: [gourmet5Hover],
             colorVariants: []
         },
@@ -1260,7 +1255,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c6,
             gallery: [gourmet6Hover],
             colorVariants: []
         },
@@ -1278,7 +1273,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c7,
             gallery: [gourmet7Hover],
             colorVariants: []
         },
@@ -1298,7 +1293,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c14,
             gallery: [fresh1Hover],
             colorVariants: []
         },
@@ -1316,7 +1311,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c15,
             gallery: [fresh2Hover],
             colorVariants: []
         },
@@ -1334,7 +1329,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c16,
             gallery: [fresh3Hover],
             colorVariants: []
         },
@@ -1352,7 +1347,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c17,
             gallery: [fresh4Hover],
             colorVariants: []
         },
@@ -1370,7 +1365,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c18,
             gallery: [fresh5Hover],
             colorVariants: []
         },
@@ -1388,7 +1383,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c8,
             gallery: [fresh6Hover],
             colorVariants: []
         },
@@ -1406,7 +1401,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: whiteCandle,
+            default: IMAGES.c3,
             gallery: [fresh7Hover],
             colorVariants: []
         },
