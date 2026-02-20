@@ -5,11 +5,15 @@ import { navigationData } from '@/data/navigation';
 import { products } from '@/data/products';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
-import { formatMoney } from '@/utils/formatMoney';
-import { IMAGES } from '../../../assets';
+import { IMAGES } from '@/assets';
 import { ChevronRight } from "lucide-react";
+import { ShopProductCard } from '@/components/shop/ShopProductCard';
+import { useLocalCart } from '@/hooks/useLocalCart';
+import toast from 'react-hot-toast';
 
 export const AllEssentialOil = () => {
+    const addItem = useLocalCart((state) => state.addItem);
+
     // Slider Logic - Using Essential Oil Images
     const headerImages = [
         IMAGES.oil1,
@@ -46,7 +50,7 @@ export const AllEssentialOil = () => {
         return <div className="p-10 text-center">Essential Oils collection not found.</div>;
     }
 
-    // Prepare products list
+    // Prepare products list (similar to Candles.tsx)
     const allProducts = navItem.sections.flatMap(section => {
         return section.links.map(link => {
             const slug = link.path.split('/').pop();
@@ -95,11 +99,11 @@ export const AllEssentialOil = () => {
                         transition={{ duration: 0.8 }}
                         className="flex items-center text-sm md:text-base opacity-90 mb-4 space-x-2"
                     >
-                        <Link to="/" className="hover:text-gold transition-colors">
+                        <Link to="/" className="hover:text-[#d4af37] transition-colors">
                             Home
                         </Link>
                         <ChevronRight className="w-4 h-4" />
-                        <span className="font-semibold text-gold">Essential Oils</span>
+                        <span className="font-semibold text-[#d4af37]">Essential Oils</span>
                     </motion.div>
 
                     <motion.h1
@@ -134,61 +138,18 @@ export const AllEssentialOil = () => {
                 {/* Product Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
                     {allProducts.length > 0 ? (
-                        allProducts.map((product, index) => {
-                            const lowestPrice = product.variants.length > 0
-                                ? Math.min(...product.variants.map(v => v.priceGHS))
-                                : product.basePrice;
-
-                            return (
-                                <motion.div
-                                    key={product.id}
-                                    className="group relative flex flex-col items-center"
-                                    initial={{ opacity: 0, y: 40 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    transition={{ duration: 0.6, delay: index * 0.05 }}
-                                >
-                                    <Link to={`/product/${product.slug}`} className="block relative w-full aspect-[4/5] overflow-hidden mb-6 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500">
-                                        <div className="absolute inset-0 bg-gray-100" />
-                                        <img
-                                            src={product.images.default}
-                                            alt={product.title}
-                                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110"
-                                        />
-                                        {/* Hover Image */}
-                                        {product.images.gallery && product.images.gallery[0] && (
-                                            <img
-                                                src={product.images.gallery[0]}
-                                                alt={`${product.title} detailed view`}
-                                                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
-                                            />
-                                        )}
-
-                                        {/* Tag */}
-                                        <div className="absolute top-4 left-4">
-                                            {product.stock < 10 && (
-                                                <span className="bg-red-50 text-red-600 text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">Low Stock</span>
-                                            )}
-                                        </div>
-                                    </Link>
-
-                                    <div className="text-center space-y-2 w-full px-2">
-                                        <Link to={`/product/${product.slug}`}>
-                                            <h3 className="font-playfair text-xl text-black hover:text-gold transition-colors duration-300">{product.title}</h3>
-                                        </Link>
-                                        <p className="text-xs font-inter text-black/50 uppercase tracking-widest">{product.category || 'Collection'}</p>
-                                        <p className="text-sm font-medium text-black pt-1">{formatMoney(lowestPrice)}</p>
-                                    </div>
-
-                                    <button
-                                        onClick={() => window.location.href = `/product/${product.slug}`}
-                                        className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-b border-black text-xs uppercase tracking-widest py-1 hover:border-gold hover:text-gold"
-                                    >
-                                        View Product
-                                    </button>
-                                </motion.div>
-                            );
-                        })
+                        allProducts.map((product) => (
+                            <ShopProductCard
+                                key={product.id}
+                                product={product}
+                                onQuickAdd={() => {
+                                    if (product.variants.length > 0) {
+                                        addItem(product, product.variants[0]);
+                                        toast.success(`Added ${product.title} to cart`);
+                                    }
+                                }}
+                            />
+                        ))
                     ) : (
                         <div className="col-span-full py-32 text-center text-black/40">
                             <p className="font-playfair text-2xl italic">No essential oils found at the moment.</p>

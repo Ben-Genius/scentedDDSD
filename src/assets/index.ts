@@ -156,6 +156,10 @@ import oilTobaccoNoirHover from './images/ingredients/oils/tobacco-noir.png';
 import oilWhiteTeaHover from './images/ingredients/oils/white-tea.png';
 import oilWildFigHover from './images/ingredients/oils/wild-fig.png';
 
+// Soap Collection
+import soap1 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_32 PM.png';
+import soap2 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_35 PM.png';
+
 export const IMAGES = {
   diffsc,
   allprod1,
@@ -249,4 +253,6 @@ export const IMAGES = {
   bag1,
   bag2,
   bag3,
+  soap1,
+  soap2,
 };

@@ -9,7 +9,7 @@ import { useLocalCart } from '@/hooks/useLocalCart';
 import { Candles } from './pages/Headers/ScentedCandle/Candles';
 import { Diffusers } from './pages/Headers/Diffusers/Diffusers';
 import { AllRefreshner } from './pages/Headers/Air Refreshner/AllRefreshner';
-import { BathBody } from './pages/Headers/BathBody/BathBody';
+import { AllBody } from './pages/Headers/Body/AllBody..tsx';
 import { AllEssentialOil } from './pages/Headers/Essential Oils/AllEssentialOil';
 
 
@@ -63,7 +63,7 @@ function App() {
         <Route path="/essential-oils" element={<AllEssentialOil />} />
         <Route path="/air-freshners" element={<AllRefreshner />} />
 
-        <Route path="/bath-body" element={<BathBody />} />
+        <Route path="/bath-body" element={<AllBody />} />
         <Route path="/product/:slug" element={<ProductPage />} />
         <Route path="/collections/:slug" element={<CollectionPage />} />
         <Route path="/collections" element={<Collections />} />

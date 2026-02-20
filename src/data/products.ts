@@ -1575,58 +1575,40 @@ export const products: Product[] = [
 
     // --- NEW COLLECTION: Bath & Body ---
     {
-        id: "p-body-wash-luxe",
-        title: "Luxury Body Wash",
-        slug: "luxury-body-wash",
+        id: "p-soap-artisan-1",
+        title: "Artisan Scented Soap (Type I)",
+        slug: "artisan-scented-soap-1",
         category: "Bath & Body",
-        shortDescription: "Gentle cleansing gel.",
-        longDescription: "A rich, foaming body wash that gently cleanses and scents the skin.",
-        basePrice: 95,
+        shortDescription: "Luxury hand-crafted bar soap.",
+        longDescription: "Our artisan bar soaps are hand-crafted using traditional methods and infused with our signature fragrances to leave your skin soft and beautifully scented.",
+        basePrice: 55,
         stock: 50,
-        featured: false,
+        featured: true,
         images: {
-            default: '/images/products/bath-body/body-main.png',
+            default: IMAGES.soap1,
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-bw-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
-        scents: ["Rose", "Oud"]
+        variants: [{ id: "v-soap-1-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
+        scents: ["Rose", "Lavender", "Sandalwood"]
     },
     {
-        id: "p-body-lotion-silk",
-        title: "Silk Body Lotion",
-        slug: "silk-body-lotion",
+        id: "p-soap-artisan-2",
+        title: "Artisan Scented Soap (Type II)",
+        slug: "artisan-scented-soap-2",
         category: "Bath & Body",
-        shortDescription: "Hydrating smooth lotion.",
-        longDescription: "Lightweight yet deeply hydrating body lotion for silky smooth skin.",
-        basePrice: 110,
-        stock: 40,
+        shortDescription: "Hand-poured luxury cleansing bar.",
+        longDescription: "Experience the ultimate in bathing luxury with our hand-poured soaps, designed to moisturize while providing a rich, aromatic lather.",
+        basePrice: 55,
+        stock: 45,
         featured: false,
         images: {
-            default: '/images/products/bath-body/body-main.png',
+            default: IMAGES.soap2,
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-bl-std", label: "Standard", sizeMl: "250ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
-        scents: ["Vanilla", "Cocoa Butter"]
-    },
-    {
-        id: "p-bath-soak",
-        title: "Relaxing Bath Soak",
-        slug: "relaxing-bath-soak",
-        category: "Bath & Body",
-        shortDescription: "Calming bath salts.",
-        longDescription: "Mineral-rich bath salts infused with essential oils for a relaxing soak.",
-        basePrice: 85,
-        stock: 60,
-        featured: false,
-        images: {
-            default: '/images/products/bath-body/body-main.png',
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-bs-std", label: "Standard", sizeMl: "500g", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
-        scents: ["Lavender", "Eucalyptus"]
+        variants: [{ id: "v-soap-2-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
+        scents: ["Pomegranate", "Amber", "Sage"]
     },
     // --- ACCESSORIES ---
     {
@@ -1656,7 +1638,7 @@ export const products: Product[] = [
         longDescription: "Intricately designed oriental lantern style burner that creates a soft glow while scenting your space.",
         basePrice: 150,
         stock: 25,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.newlantern,
             gallery: [IMAGES.newlantern],
@@ -1674,7 +1656,7 @@ export const products: Product[] = [
         longDescription: "A modern, minimalist burner with a premium stone finish, ideal for contemporary interiors.",
         basePrice: 135,
         stock: 40,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.burner1,
             gallery: [IMAGES.burner1],
@@ -1728,7 +1710,7 @@ export const products: Product[] = [
         longDescription: "An artistic ceramic piece from our curated artifact collection, designed to be a focal point in any room.",
         basePrice: 280,
         stock: 15,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.artifact1,
             gallery: [],
@@ -1782,7 +1764,7 @@ export const products: Product[] = [
         longDescription: "A uniquely textured artifact that challenges traditional forms, handcrafted by local artisans.",
         basePrice: 295,
         stock: 8,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.artifact4,
             gallery: [],
@@ -1836,7 +1818,7 @@ export const products: Product[] = [
         longDescription: "Inspired by classical architecture, this ceramic fragment serves as a timeless decorative item.",
         basePrice: 310,
         stock: 7,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.artifact7,
             gallery: [],
@@ -1908,7 +1890,7 @@ export const products: Product[] = [
         longDescription: "A sophisticated blend of cedar and sandalwood, ideal for coat closets and car interiors.",
         basePrice: 70,
         stock: 30,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.bag3,
             gallery: [],
@@ -1926,7 +1908,7 @@ export const products: Product[] = [
         longDescription: "Transform your daily commute with our premium car diffuser, designed to deliver a steady, pleasant fragrance.",
         basePrice: 95,
         stock: 60,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.diffcar2,
             gallery: [IMAGES.diffcar2],

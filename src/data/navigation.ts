@@ -552,7 +552,17 @@ export const navigationData: NavItem[] = [
         id: 'bath',
         name: 'Bath & Body',
         path: '/bath-body',
-        featuredImage: '/images/collections/bath-body/hero-main.png',
+        featuredImage: IMAGES.soap1,
+        sections: [
+            {
+                title: 'Body Collection',
+                path: '/collections/body-collection',
+                links: [
+                    { name: 'Artisan Soap I', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Artisan Soap II', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                ]
+            }
+        ]
     },
     {
         id: 'shop',
