@@ -267,7 +267,7 @@ export const About = () => {
 
                             <TimelineContent
                                 as="a"
-                                href="/shop"
+                                href="/accessories"
                                 animationNum={15}
                                 timelineRef={heroRef}
                                 customVariants={revealVariants}

@@ -36,6 +36,15 @@ import sweethome from './images/sweethome.png';
 import logo1 from './images/logo1.png';
 import hero1 from './images/newHero.png';
 import bundle from './images/bundle.png';
+import newlantern from './images/newlantern.png';
+
+// Accessories
+import burner1 from './collections/Accessories/Gemini_Generated_Image_mr3ge1mr3ge1mr3g.png';
+import burner2 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 01_01_28 PM.png';
+import tissue1 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_41_21 PM.png';
+import bag1 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_41_16 PM.png';
+import bag2 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_44_17 PM.png';
+import bag3 from './collections/Accessories/Gemini_Generated_Image_eqle52eqle52eqle.png';
 
 // New Images
 import new3 from './images/3121432491361579641 - 4d659eb054fe874b4e0ef35c8dfc1928.jpg';
@@ -131,6 +140,22 @@ import oil22 from './collections/oils/Essential Oils/oil22.png';
 import oil23 from './collections/oils/Essential Oils/oil23.png';
 import oil24 from './collections/oils/Essential Oils/oil24.png';
 
+// Essential Oil Ingredient Hovers
+import oilBlackOudHover from './images/ingredients/oils/black-oud.png';
+import oilBlushPeonyHover from './images/ingredients/oils/blush-peony.png';
+import oilChampagneHover from './images/ingredients/oils/champagne-cocktail.png';
+import oilFreesiaHover from './images/ingredients/oils/freesia-english-pear.png';
+import oilLoversRockHover from './images/ingredients/oils/lovers-rock.png';
+import oilMidnightLavenderHover from './images/ingredients/oils/midnight-lavender.png';
+import oilPeachBelliniHover from './images/ingredients/oils/peach-bellini.png';
+import oilPomegranateHover from './images/ingredients/oils/pomegranate.png';
+import oilSageHover from './images/ingredients/oils/sage-sea-salt.png';
+import oilSugarVanillaHover from './images/ingredients/oils/sugar-vanilla.png';
+import oilSweetBergamotHover from './images/ingredients/oils/sweet-bergamot.png';
+import oilTobaccoNoirHover from './images/ingredients/oils/tobacco-noir.png';
+import oilWhiteTeaHover from './images/ingredients/oils/white-tea.png';
+import oilWildFigHover from './images/ingredients/oils/wild-fig.png';
+
 export const IMAGES = {
   diffsc,
   allprod1,
@@ -213,4 +238,15 @@ export const IMAGES = {
   oil1, oil2, oil3, oil4, oil5, oil6, oil7, oil8, oil9, oil10,
   oil11, oil12, oil13, oil14, oil15, oil16, oil17, oil18, oil19, oil20,
   oil21, oil22, oil23, oil24,
+  oilBlackOudHover, oilBlushPeonyHover, oilChampagneHover, oilFreesiaHover,
+  oilLoversRockHover, oilMidnightLavenderHover, oilPeachBelliniHover, oilPomegranateHover,
+  oilSageHover, oilSugarVanillaHover, oilSweetBergamotHover, oilTobaccoNoirHover,
+  oilWhiteTeaHover, oilWildFigHover,
+  newlantern,
+  burner1,
+  burner2,
+  tissue1,
+  bag1,
+  bag2,
+  bag3,
 };

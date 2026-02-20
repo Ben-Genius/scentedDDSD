@@ -207,7 +207,7 @@ export const SimpleNewArrivals = () => {
                 className="text-center mt-8"
             >
                 <Link
-                    to="/shop?category=New"
+                    to="/accessories?category=New"
                     className="inline-block border-b border-black text-black hover:opacity-70 transition-opacity pb-1 text-xs uppercase tracking-[0.2em]"
                 >
                     View All New Arrivals

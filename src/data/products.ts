@@ -367,7 +367,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil1,
-            gallery: [],
+            gallery: [IMAGES.oilFreesiaHover],
             colorVariants: []
         },
         variants: [{ id: "v-fep-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -385,7 +385,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil2,
-            gallery: [],
+            gallery: [IMAGES.oilBlushPeonyHover],
             colorVariants: []
         },
         variants: [{ id: "v-bp-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
@@ -403,7 +403,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil15,
-            gallery: [],
+            gallery: [IMAGES.oilMidnightLavenderHover],
             colorVariants: []
         },
         variants: [{ id: "v-ml-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 80 }],
@@ -423,7 +423,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil14,
-            gallery: [],
+            gallery: [IMAGES.oilTobaccoNoirHover],
             colorVariants: []
         },
         variants: [{ id: "v-tn-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
@@ -441,7 +441,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil13,
-            gallery: [],
+            gallery: [IMAGES.oilBlackOudHover],
             colorVariants: []
         },
         variants: [{ id: "v-bo-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
@@ -459,7 +459,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil12,
-            gallery: [],
+            gallery: [IMAGES.oilWildFigHover],
             colorVariants: []
         },
         variants: [{ id: "v-wf-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
@@ -479,7 +479,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil11,
-            gallery: [],
+            gallery: [IMAGES.oilLoversRockHover],
             colorVariants: []
         },
         variants: [{ id: "v-lr-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
@@ -497,7 +497,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil10,
-            gallery: [],
+            gallery: [IMAGES.oilPomegranateHover],
             colorVariants: []
         },
         variants: [{ id: "v-pom-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
@@ -517,7 +517,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil20,
-            gallery: [],
+            gallery: [IMAGES.oilChampagneHover],
             colorVariants: []
         },
         variants: [{ id: "v-cc-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 105 }],
@@ -535,7 +535,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil23,
-            gallery: [],
+            gallery: [IMAGES.oilSugarVanillaHover],
             colorVariants: []
         },
         variants: [{ id: "v-sv-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -553,7 +553,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil5,
-            gallery: [],
+            gallery: [IMAGES.oilPeachBelliniHover],
             colorVariants: []
         },
         variants: [{ id: "v-pb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
@@ -573,7 +573,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil4,
-            gallery: [],
+            gallery: [IMAGES.oilSageHover],
             colorVariants: []
         },
         variants: [{ id: "v-sss-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
@@ -591,7 +591,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil18,
-            gallery: [],
+            gallery: [IMAGES.oilWhiteTeaHover],
             colorVariants: []
         },
         variants: [{ id: "v-wt-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -609,7 +609,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.oil16,
-            gallery: [],
+            gallery: [IMAGES.oilSweetBergamotHover],
             colorVariants: []
         },
         variants: [{ id: "v-sb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -1627,5 +1627,312 @@ export const products: Product[] = [
         },
         variants: [{ id: "v-bs-std", label: "Standard", sizeMl: "500g", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
         scents: ["Lavender", "Eucalyptus"]
+    },
+    // --- ACCESSORIES ---
+    {
+        id: "acc-burner-1",
+        title: "Sweet Home Ceramic Burner",
+        slug: "sweet-home-burner",
+        category: "Accessories",
+        shortDescription: "Elegant home-shaped ceramic oil burner.",
+        longDescription: "A beautiful ceramic burner designed to look like a cozy house, perfect for melting wax or warming oils.",
+        basePrice: 120,
+        stock: 30,
+        featured: true,
+        images: {
+            default: IMAGES.sweethome,
+            gallery: [IMAGES.sweethome],
+            colorVariants: []
+        },
+        variants: [{ id: "v-shb-std", label: "Standard", multiplier: 1, priceGHS: 120 }],
+        scents: []
+    },
+    {
+        id: "acc-burner-2",
+        title: "Oriental Lantern Burner",
+        slug: "oriental-lantern-burner",
+        category: "Accessories",
+        shortDescription: "Traditional lantern style ceramic burner.",
+        longDescription: "Intricately designed oriental lantern style burner that creates a soft glow while scenting your space.",
+        basePrice: 150,
+        stock: 25,
+        featured: true,
+        images: {
+            default: IMAGES.newlantern,
+            gallery: [IMAGES.newlantern],
+            colorVariants: []
+        },
+        variants: [{ id: "v-olb-std", label: "Standard", multiplier: 1, priceGHS: 150 }],
+        scents: []
+    },
+    {
+        id: "acc-burner-3",
+        title: "Minimalist Stone Burner",
+        slug: "minimalist-stone-burner",
+        category: "Accessories",
+        shortDescription: "Sleek minimalist stone-finish burner.",
+        longDescription: "A modern, minimalist burner with a premium stone finish, ideal for contemporary interiors.",
+        basePrice: 135,
+        stock: 40,
+        featured: true,
+        images: {
+            default: IMAGES.burner1,
+            gallery: [IMAGES.burner1],
+            colorVariants: []
+        },
+        variants: [{ id: "v-msb-std", label: "Standard", multiplier: 1, priceGHS: 135 }],
+        scents: []
+    },
+    {
+        id: "acc-burner-4",
+        title: "Classic White Ceramic Burner",
+        slug: "classic-white-burner",
+        category: "Accessories",
+        shortDescription: "Classic white ceramic essential oil burner.",
+        longDescription: "Simple yet elegant classic white ceramic burner for all your aromatherapy needs.",
+        basePrice: 110,
+        stock: 50,
+        featured: false,
+        images: {
+            default: IMAGES.burner2,
+            gallery: [IMAGES.burner2],
+            colorVariants: []
+        },
+        variants: [{ id: "v-cwb-std", label: "Standard", multiplier: 1, priceGHS: 110 }],
+        scents: []
+    },
+    {
+        id: "acc-tissue-1",
+        title: "Luxury Scented Tissues",
+        slug: "scented-tissues",
+        category: "Accessories",
+        shortDescription: "Premium soft tissues with subtle fragrance.",
+        longDescription: "Our premium tissues are infused with a delicate signature fragrance for a refreshing experience.",
+        basePrice: 45,
+        stock: 100,
+        featured: false,
+        images: {
+            default: IMAGES.tissue1,
+            gallery: [IMAGES.tissue1],
+            colorVariants: []
+        },
+        variants: [{ id: "v-st-std", label: "Pack of 3", multiplier: 1, priceGHS: 45 }],
+        scents: ["Signature Flush"]
+    },
+    {
+        id: "acc-decorative-1",
+        title: "Artistic Ceramic Piece (Type I)",
+        slug: "artistic-ceramic-piece-1",
+        category: "Accessories",
+        shortDescription: "Handcrafted decorative ceramic sculpture.",
+        longDescription: "An artistic ceramic piece from our curated artifact collection, designed to be a focal point in any room.",
+        basePrice: 280,
+        stock: 15,
+        featured: true,
+        images: {
+            default: IMAGES.artifact1,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-1", label: "Artist Proof", multiplier: 1, priceGHS: 280 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-2",
+        title: "Artistic Ceramic Piece (Type II)",
+        slug: "artistic-ceramic-piece-2",
+        category: "Accessories",
+        shortDescription: "Curated stoneware decor piece.",
+        longDescription: "A sophisticated stoneware piece that adds texture and elegance to your shelving or console.",
+        basePrice: 260,
+        stock: 12,
+        featured: false,
+        images: {
+            default: IMAGES.artifact2,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-2", label: "Standard", multiplier: 1, priceGHS: 260 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-3",
+        title: "Artistic Ceramic Piece (Type III)",
+        slug: "artistic-ceramic-piece-3",
+        category: "Accessories",
+        shortDescription: "Organic shaped ceramic vessel.",
+        longDescription: "An organic-inspired ceramic vessel with a matte finish, perfect for minimalist spaces.",
+        basePrice: 245,
+        stock: 10,
+        featured: false,
+        images: {
+            default: IMAGES.artifact3,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-3", label: "Standard", multiplier: 1, priceGHS: 245 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-4",
+        title: "Artistic Ceramic Piece (Type IV)",
+        slug: "artistic-ceramic-piece-4",
+        category: "Accessories",
+        shortDescription: "Textured ceramic artifact.",
+        longDescription: "A uniquely textured artifact that challenges traditional forms, handcrafted by local artisans.",
+        basePrice: 295,
+        stock: 8,
+        featured: true,
+        images: {
+            default: IMAGES.artifact4,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-4", label: "Limited Edition", multiplier: 1, priceGHS: 295 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-5",
+        title: "Artistic Ceramic Piece (Type V)",
+        slug: "artistic-ceramic-piece-5",
+        category: "Accessories",
+        shortDescription: "Modern sculptural element.",
+        longDescription: "A modern sculptural element that blends form and function, adding a premium feel to your home.",
+        basePrice: 275,
+        stock: 14,
+        featured: false,
+        images: {
+            default: IMAGES.artifact5,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-5", label: "Standard", multiplier: 1, priceGHS: 275 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-6",
+        title: "Artistic Ceramic Piece (Type VI)",
+        slug: "artistic-ceramic-piece-6",
+        category: "Accessories",
+        shortDescription: "Earthy tones ceramic decor.",
+        longDescription: "Featuring warm earthy tones, this ceramic piece brings a touch of nature indoors.",
+        basePrice: 255,
+        stock: 11,
+        featured: false,
+        images: {
+            default: IMAGES.artifact6,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-6", label: "Standard", multiplier: 1, priceGHS: 255 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-7",
+        title: "Artistic Ceramic Piece (Type VII)",
+        slug: "artistic-ceramic-piece-7",
+        category: "Accessories",
+        shortDescription: "Architectural ceramic fragment.",
+        longDescription: "Inspired by classical architecture, this ceramic fragment serves as a timeless decorative item.",
+        basePrice: 310,
+        stock: 7,
+        featured: true,
+        images: {
+            default: IMAGES.artifact7,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-7", label: "Collector Choice", multiplier: 1, priceGHS: 310 }],
+        scents: []
+    },
+    {
+        id: "acc-decorative-8",
+        title: "Artistic Ceramic Piece (Type VIII)",
+        slug: "artistic-ceramic-piece-8",
+        category: "Accessories",
+        shortDescription: "Abstract ceramic form.",
+        longDescription: "An abstract ceramic form that explores the play of light and shadow.",
+        basePrice: 285,
+        stock: 9,
+        featured: false,
+        images: {
+            default: IMAGES.artifact8,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-acp-8", label: "Standard", multiplier: 1, priceGHS: 285 }],
+        scents: []
+    },
+    {
+        id: "acc-bag-1",
+        title: "Designer Scent Bag (Floral)",
+        slug: "designer-scent-bag-1",
+        category: "Accessories",
+        shortDescription: "Luxury fabric bag with floral notes.",
+        longDescription: "Infuse your wardrobe with the scent of fresh gardens with our premium floral scent bag.",
+        basePrice: 65,
+        stock: 40,
+        featured: false,
+        images: {
+            default: IMAGES.bag1,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-dsb-1", label: "Standard", multiplier: 1, priceGHS: 65 }],
+        scents: ["Lavender", "Jasmine"]
+    },
+    {
+        id: "acc-bag-2",
+        title: "Designer Scent Bag (Fresh)",
+        slug: "designer-scent-bag-2",
+        category: "Accessories",
+        shortDescription: "Luxury fabric bag with clean notes.",
+        longDescription: "Perfect for linens, this bag delivers a 'clean laundry' freshness that lasts for weeks.",
+        basePrice: 65,
+        stock: 35,
+        featured: false,
+        images: {
+            default: IMAGES.bag2,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-dsb-2", label: "Standard", multiplier: 1, priceGHS: 65 }],
+        scents: ["Fresh Linen", "Cotton Blossom"]
+    },
+    {
+        id: "acc-bag-3",
+        title: "Designer Scent Bag (Woody)",
+        slug: "designer-scent-bag-3",
+        category: "Accessories",
+        shortDescription: "Luxury fabric bag with woody notes.",
+        longDescription: "A sophisticated blend of cedar and sandalwood, ideal for coat closets and car interiors.",
+        basePrice: 70,
+        stock: 30,
+        featured: true,
+        images: {
+            default: IMAGES.bag3,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-dsb-3", label: "Standard", multiplier: 1, priceGHS: 70 }],
+        scents: ["Sandalwood", "Amber"]
+    },
+    {
+        id: "acc-car-1",
+        title: "Premium Car Diffuser",
+        slug: "premium-car-diffuser",
+        category: "Accessories",
+        shortDescription: "Elegant clip-on car fragrance diffuser.",
+        longDescription: "Transform your daily commute with our premium car diffuser, designed to deliver a steady, pleasant fragrance.",
+        basePrice: 95,
+        stock: 60,
+        featured: true,
+        images: {
+            default: IMAGES.diffcar2,
+            gallery: [IMAGES.diffcar2],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pcd-std", label: "Standard", multiplier: 1, priceGHS: 95 }],
+        scents: ["Cool Ocean", "New Car", "Sandalwood"]
     }
 ];

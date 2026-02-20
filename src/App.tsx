@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Home, Shop, ProductPage, Collections, CollectionPage, Bundles, About, HowToOrder, Contact, BlogList, BlogPost, AdminInventory, Checkout } from '@/pages';
+import { Home, Accessories, ProductPage, Collections, CollectionPage, Bundles, About, HowToOrder, Contact, BlogList, BlogPost, AdminInventory, Checkout } from '@/pages';
 import { CartDrawer } from '@/components/CartDrawer';
 import { useLocalCart } from '@/hooks/useLocalCart';
 import { Candles } from './pages/Headers/ScentedCandle/Candles';
@@ -11,6 +11,7 @@ import { Diffusers } from './pages/Headers/Diffusers/Diffusers';
 import { AllRefreshner } from './pages/Headers/Air Refreshner/AllRefreshner';
 import { BathBody } from './pages/Headers/BathBody/BathBody';
 import { AllEssentialOil } from './pages/Headers/Essential Oils/AllEssentialOil';
+
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDrawerOpen, closeDrawer } = useLocalCart();
@@ -56,7 +57,7 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/accessories" element={<Accessories />} />
         <Route path="/home-candles" element={<Candles />} />
         <Route path="/diffusers" element={<Diffusers />} />
         <Route path="/essential-oils" element={<AllEssentialOil />} />

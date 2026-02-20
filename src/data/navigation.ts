@@ -418,7 +418,7 @@ export const navigationData: NavItem[] = [
         id: 'oils',
         name: 'Essential Oils',
         path: '/essential-oils',
-        featuredImage: IMAGES.oil3,
+        featuredImage: IMAGES.oil2,
         sections: [
             {
                 title: 'Floral Romance Collection',
@@ -429,19 +429,19 @@ export const navigationData: NavItem[] = [
                         name: 'Freesia and English Pear',
                         path: '/product/freesia-english-pear-oil',
                         image: IMAGES.oil1,
-                        hoverImage: IMAGES.oil1
+                        hoverImage: IMAGES.oilFreesiaHover
                     },
                     {
                         name: 'Blush Peony',
                         path: '/product/blush-peony-oil',
                         image: IMAGES.oil2,
-                        hoverImage: IMAGES.oil2
+                        hoverImage: IMAGES.oilBlushPeonyHover
                     },
                     {
                         name: 'Midnight Lavender',
                         path: '/product/midnight-lavender-oil',
                         image: IMAGES.oil15,
-                        hoverImage: IMAGES.oil15
+                        hoverImage: IMAGES.oilMidnightLavenderHover
                     },
                 ]
             },
@@ -454,19 +454,19 @@ export const navigationData: NavItem[] = [
                         name: 'Tobacco Noir',
                         path: '/product/tobacco-noir-oil',
                         image: IMAGES.oil14,
-                        hoverImage: IMAGES.oil14
+                        hoverImage: IMAGES.oilTobaccoNoirHover
                     },
                     {
                         name: 'Black Oud',
                         path: '/product/black-oud-oil',
                         image: IMAGES.oil13,
-                        hoverImage: IMAGES.oil13
+                        hoverImage: IMAGES.oilBlackOudHover
                     },
                     {
                         name: 'Wild Fig',
                         path: '/product/wild-fig-oil',
                         image: IMAGES.oil12,
-                        hoverImage: IMAGES.oil12
+                        hoverImage: IMAGES.oilWildFigHover
                     },
                 ]
             },
@@ -479,13 +479,13 @@ export const navigationData: NavItem[] = [
                         name: 'Lovers Rock',
                         path: '/product/lovers-rock-oil',
                         image: IMAGES.oil11,
-                        hoverImage: IMAGES.oil11
+                        hoverImage: IMAGES.oilLoversRockHover
                     },
                     {
                         name: 'Pomegranate',
                         path: '/product/pomegranate-oil',
                         image: IMAGES.oil10,
-                        hoverImage: IMAGES.oil10
+                        hoverImage: IMAGES.oilPomegranateHover
                     },
                 ]
             },
@@ -498,19 +498,19 @@ export const navigationData: NavItem[] = [
                         name: 'Champagne Cocktail',
                         path: '/product/champagne-cocktail-oil',
                         image: IMAGES.oil20,
-                        hoverImage: IMAGES.oil22
+                        hoverImage: IMAGES.oilChampagneHover
                     },
                     {
                         name: 'Sugar Vanilla',
                         path: '/product/sugar-vanilla-oil',
                         image: IMAGES.oil23,
-                        hoverImage: IMAGES.oil7
+                        hoverImage: IMAGES.oilSugarVanillaHover
                     },
                     {
                         name: 'Peach Bellini',
                         path: '/product/peach-bellini-oil',
                         image: IMAGES.oil5,
-                        hoverImage: IMAGES.oil21
+                        hoverImage: IMAGES.oilPeachBelliniHover
                     },
                 ]
             },
@@ -523,19 +523,19 @@ export const navigationData: NavItem[] = [
                         name: 'Sage & Sea Salt',
                         path: '/product/sage-sea-salt-oil',
                         image: IMAGES.oil4,
-                        hoverImage: IMAGES.oil17
+                        hoverImage: IMAGES.oilSageHover
                     },
                     {
                         name: 'White Tea',
                         path: '/product/white-tea-oil',
                         image: IMAGES.oil18,
-                        hoverImage: IMAGES.oil19
+                        hoverImage: IMAGES.oilWhiteTeaHover
                     },
                     {
                         name: 'Sweet Bergamot',
                         path: '/product/sweet-bergamot-oil',
                         image: IMAGES.oil16,
-                        hoverImage: IMAGES.oil16
+                        hoverImage: IMAGES.oilSweetBergamotHover
                     },
                 ]
             }
@@ -556,8 +556,45 @@ export const navigationData: NavItem[] = [
     },
     {
         id: 'shop',
-        name: 'Shop',
-        path: '/shop',
+        name: 'Accessories',
+        path: '/accessories',
+        sections: [
+            {
+                title: 'Burners',
+                path: '/accessories/burners',
+                links: [
+                    { name: 'Sweet Home', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
+                    { name: 'Oriental Lantern', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
+                    { name: 'Minimalist Stone', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
+                    { name: 'Classic White', path: '/product/classic-white-burner', image: IMAGES.burner2 },
+                ]
+            },
+            {
+                title: 'Decorative Pieces',
+                path: '/accessories/decorative',
+                links: [
+                    { name: 'Artistic Piece I', path: '/product/artistic-ceramic-piece-1', image: IMAGES.artifact1 },
+                    { name: 'Artistic Piece II', path: '/product/artistic-ceramic-piece-2', image: IMAGES.artifact2 },
+                    { name: 'Artistic Piece III', path: '/product/artistic-ceramic-piece-3', image: IMAGES.artifact3 },
+                    { name: 'Artistic Piece IV', path: '/product/artistic-ceramic-piece-4', image: IMAGES.artifact4 },
+                    { name: 'Artistic Piece V', path: '/product/artistic-ceramic-piece-5', image: IMAGES.artifact5 },
+                    { name: 'Artistic Piece VI', path: '/product/artistic-ceramic-piece-6', image: IMAGES.artifact6 },
+                    { name: 'Artistic Piece VII', path: '/product/artistic-ceramic-piece-7', image: IMAGES.artifact7 },
+                    { name: 'Artistic Piece VIII', path: '/product/artistic-ceramic-piece-8', image: IMAGES.artifact8 },
+                ]
+            },
+            {
+                title: 'Textiles & Others',
+                path: '/accessories/textiles',
+                links: [
+                    { name: 'Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
+                    { name: 'Scent Bag (Floral)', path: '/product/designer-scent-bag-1', image: IMAGES.bag1 },
+                    { name: 'Scent Bag (Fresh)', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
+                    { name: 'Scent Bag (Woody)', path: '/product/designer-scent-bag-3', image: IMAGES.bag3 },
+                    { name: 'Car Diffuser', path: '/product/premium-car-diffuser', image: IMAGES.diffcar2 },
+                ]
+            }
+        ]
     },
     {
         id: 'gifts',
