@@ -558,10 +558,11 @@ export const navigationData: NavItem[] = [
         id: 'shop',
         name: 'Accessories',
         path: '/accessories',
+        featuredImage: IMAGES.sweethome,
         sections: [
             {
                 title: 'Burners',
-                path: '/accessories/burners',
+                path: '/collections/burners',
                 links: [
                     { name: 'Sweet Home', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
                     { name: 'Oriental Lantern', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
@@ -571,7 +572,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Decorative Pieces',
-                path: '/accessories/decorative',
+                path: '/collections/decorative',
                 links: [
                     { name: 'Artistic Piece I', path: '/product/artistic-ceramic-piece-1', image: IMAGES.artifact1 },
                     { name: 'Artistic Piece II', path: '/product/artistic-ceramic-piece-2', image: IMAGES.artifact2 },
@@ -585,7 +586,7 @@ export const navigationData: NavItem[] = [
             },
             {
                 title: 'Textiles & Others',
-                path: '/accessories/textiles',
+                path: '/collections/textiles',
                 links: [
                     { name: 'Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
                     { name: 'Scent Bag (Floral)', path: '/product/designer-scent-bag-1', image: IMAGES.bag1 },
