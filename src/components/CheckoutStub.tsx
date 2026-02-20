@@ -109,7 +109,7 @@ export const CheckoutStub = () => {
                     <button onClick={() => navigate('/')} className="px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
                         Return Home
                     </button>
-                    <button onClick={() => navigate('/shop')} className="px-8 py-3 border border-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                    <button onClick={() => navigate('/accessories')} className="px-8 py-3 border border-gray-200 text-gray-900 font-medium rounded-lg hover:bg-gray-50 transition-colors">
                         Continue Shopping
                     </button>
                 </div>
@@ -122,7 +122,7 @@ export const CheckoutStub = () => {
             <div className="text-center py-24 px-4">
                 <h2 className="text-2xl font-playfair text-gray-900 mb-4">Your cart is empty</h2>
                 <p className="text-gray-500 mb-8 max-w-md mx-auto">Looks like you haven't added any scents to your collection yet.</p>
-                <button onClick={() => navigate('/shop')} className="px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                <button onClick={() => navigate('/accessories')} className="px-8 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
                     Start Shopping
                 </button>
             </div>

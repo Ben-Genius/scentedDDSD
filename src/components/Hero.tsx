@@ -42,7 +42,7 @@ const Hero = () => {
                 <h2 className="text-xl font-playfair text-white mb-4 uppercase tracking-[0.1em]">
                     Timeless scents for every season                </h2>
                 <Link
-                    to="/shop"
+                    to="/accessories"
                     className="inline-block px-8 py-3 bg-white text-black font-medium hover:bg-champagne hover:scale-105 transition-all duration-300 uppercase tracking-widest text-sm"
                 >
                     Shop Now

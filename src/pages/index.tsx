@@ -1,7 +1,7 @@
 import React from 'react';
 import { Blog } from './Blog';
 export { Home } from './Home';
-export { Shop } from './Shop';
+export { Accessories } from './Headers/Accessories/Accessories';
 export { ProductPage } from './ProductPage';
 export { Bundles } from './Bundles';
 export { CollectionPage } from './CollectionPage';

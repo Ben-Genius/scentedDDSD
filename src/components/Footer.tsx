@@ -24,9 +24,9 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-black font-playfair text-lg mb-8 uppercase tracking-widest font-normal border-b border-black/10 pb-2 inline-block">Shop</h4>
                     <ul className="space-y-4 text-xs uppercase tracking-[0.15em] text-black/70">
-                        <li><Link to="/shop?category=candle" className="hover:text-black transition-colors">Candles</Link></li>
-                        <li><Link to="/shop?category=diffuser" className="hover:text-black transition-colors">Diffusers</Link></li>
-                        <li><Link to="/shop?category=gels" className="hover:text-black transition-colors">Body Gels</Link></li>
+                        <li><Link to="/accessories?category=candle" className="hover:text-black transition-colors">Candles</Link></li>
+                        <li><Link to="/accessories?category=diffuser" className="hover:text-black transition-colors">Diffusers</Link></li>
+                        <li><Link to="/accessories?category=gels" className="hover:text-black transition-colors">Body Gels</Link></li>
                         <li><Link to="/bundles" className="hover:text-black transition-colors">Gift Bundles</Link></li>
                     </ul>
                 </div>

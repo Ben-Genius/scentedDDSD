@@ -36,6 +36,15 @@ import sweethome from './images/sweethome.png';
 import logo1 from './images/logo1.png';
 import hero1 from './images/newHero.png';
 import bundle from './images/bundle.png';
+import newlantern from './images/newlantern.png';
+
+// Accessories
+import burner1 from './collections/Accessories/Gemini_Generated_Image_mr3ge1mr3ge1mr3g.png';
+import burner2 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 01_01_28 PM.png';
+import tissue1 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_41_21 PM.png';
+import bag1 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_41_16 PM.png';
+import bag2 from './collections/Accessories/ChatGPT Image Feb 20, 2026, 12_44_17 PM.png';
+import bag3 from './collections/Accessories/Gemini_Generated_Image_eqle52eqle52eqle.png';
 
 // New Images
 import new3 from './images/3121432491361579641 - 4d659eb054fe874b4e0ef35c8dfc1928.jpg';
@@ -104,6 +113,52 @@ import blackCandleVariant3 from './images/blackCandleVariant3.png';
 import freesiaPearHover from './images/ingredients/candles/freesia_pear.png';
 import blushPeonyHover from './images/ingredients/candles/blush_peony.png';
 import royalRoseHover from './images/ingredients/candles/royal_rose.png';
+
+// Essential Oil Images
+import oil1 from './collections/oils/Essential Oils/oil1.png';
+import oil2 from './collections/oils/Essential Oils/oil2.png';
+import oil3 from './collections/oils/Essential Oils/oil3.png';
+import oil4 from './collections/oils/Essential Oils/oil4.png';
+import oil5 from './collections/oils/Essential Oils/oil5.png';
+import oil6 from './collections/oils/Essential Oils/oil6.png';
+import oil7 from './collections/oils/Essential Oils/oil7.png';
+import oil8 from './collections/oils/Essential Oils/oil8.png';
+import oil9 from './collections/oils/Essential Oils/oil9.png';
+import oil10 from './collections/oils/Essential Oils/oil10.png';
+import oil11 from './collections/oils/Essential Oils/oil11.png';
+import oil12 from './collections/oils/Essential Oils/oil12.png';
+import oil13 from './collections/oils/Essential Oils/oil13.png';
+import oil14 from './collections/oils/Essential Oils/oil14.png';
+import oil15 from './collections/oils/Essential Oils/oil15.png';
+import oil16 from './collections/oils/Essential Oils/oil16.png';
+import oil17 from './collections/oils/Essential Oils/oil17.png';
+import oil18 from './collections/oils/Essential Oils/oil18.png';
+import oil19 from './collections/oils/Essential Oils/oil19.png';
+import oil20 from './collections/oils/Essential Oils/oil20.png';
+import oil21 from './collections/oils/Essential Oils/oil21.png';
+import oil22 from './collections/oils/Essential Oils/oil22.png';
+import oil23 from './collections/oils/Essential Oils/oil23.png';
+import oil24 from './collections/oils/Essential Oils/oil24.png';
+
+// Essential Oil Ingredient Hovers
+import oilBlackOudHover from './images/ingredients/oils/black-oud.png';
+import oilBlushPeonyHover from './images/ingredients/oils/blush-peony.png';
+import oilChampagneHover from './images/ingredients/oils/champagne-cocktail.png';
+import oilFreesiaHover from './images/ingredients/oils/freesia-english-pear.png';
+import oilLoversRockHover from './images/ingredients/oils/lovers-rock.png';
+import oilMidnightLavenderHover from './images/ingredients/oils/midnight-lavender.png';
+import oilPeachBelliniHover from './images/ingredients/oils/peach-bellini.png';
+import oilPomegranateHover from './images/ingredients/oils/pomegranate.png';
+import oilSageHover from './images/ingredients/oils/sage-sea-salt.png';
+import oilSugarVanillaHover from './images/ingredients/oils/sugar-vanilla.png';
+import oilSweetBergamotHover from './images/ingredients/oils/sweet-bergamot.png';
+import oilTobaccoNoirHover from './images/ingredients/oils/tobacco-noir.png';
+import oilWhiteTeaHover from './images/ingredients/oils/white-tea.png';
+import oilWildFigHover from './images/ingredients/oils/wild-fig.png';
+
+// Soap Collection
+import soap1 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_32 PM.png';
+import soap2 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_35 PM.png';
 
 export const IMAGES = {
   diffsc,
@@ -184,4 +239,20 @@ export const IMAGES = {
   freesiaPearHover,
   blushPeonyHover,
   royalRoseHover,
+  oil1, oil2, oil3, oil4, oil5, oil6, oil7, oil8, oil9, oil10,
+  oil11, oil12, oil13, oil14, oil15, oil16, oil17, oil18, oil19, oil20,
+  oil21, oil22, oil23, oil24,
+  oilBlackOudHover, oilBlushPeonyHover, oilChampagneHover, oilFreesiaHover,
+  oilLoversRockHover, oilMidnightLavenderHover, oilPeachBelliniHover, oilPomegranateHover,
+  oilSageHover, oilSugarVanillaHover, oilSweetBergamotHover, oilTobaccoNoirHover,
+  oilWhiteTeaHover, oilWildFigHover,
+  newlantern,
+  burner1,
+  burner2,
+  tissue1,
+  bag1,
+  bag2,
+  bag3,
+  soap1,
+  soap2,
 };

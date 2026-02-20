@@ -11,26 +11,18 @@ import { ShopProductCard } from '@/components/shop/ShopProductCard';
 import { useLocalCart } from '@/hooks/useLocalCart';
 import toast from 'react-hot-toast';
 
-export const Diffusers = () => {
+export const Accessories = () => {
     const addItem = useLocalCart((state) => state.addItem);
 
     // Slider Logic
     const headerImages = [
-        IMAGES.diffuserHeader1,
-        IMAGES.diffuserHeader2,
-        IMAGES.diffuserHeader3,
-        IMAGES.diffuserHeader4,
-        IMAGES.diffuserHeader5,
-        IMAGES.diffuserHeader6,
-        IMAGES.diffuserHeader7,
-        IMAGES.diffuserHeader8,
-        IMAGES.diffuserHeader9,
-        IMAGES.diffuserHeader10,
-        IMAGES.diffuserHeader11,
-        IMAGES.diffuserHeader12,
-        IMAGES.diffuserHeader13,
-        IMAGES.diffuserHeader14,
-        IMAGES.diffuserHeader15,
+        IMAGES.sweethome,
+        IMAGES.newlantern,
+        IMAGES.burner1,
+        IMAGES.burner2,
+        IMAGES.artifact1,
+        IMAGES.bag1,
+        IMAGES.diffcar2,
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,14 +35,14 @@ export const Diffusers = () => {
         return () => clearInterval(interval);
     }, [headerImages.length]);
 
-    // 1. Find the Diffusers navigation item
-    const navItem = navigationData.find(item => item.id === 'diffusers');
+    // 1. Find the Accessories navigation item
+    const navItem = navigationData.find(item => item.id === 'shop');
 
     if (!navItem || !navItem.sections) {
-        return <div className="p-10 text-center">Diffusers collection not found.</div>;
+        return <div className="p-10 text-center">Accessories collection not found.</div>;
     }
 
-    // Prepare products list (similar to Candles.tsx)
+    // Prepare products list (Flattened for the category view)
     const allProducts = navItem.sections.flatMap(section => {
         return section.links.map(link => {
             const slug = link.path.split('/').pop();
@@ -62,15 +54,15 @@ export const Diffusers = () => {
                     images: {
                         ...product.images,
                         default: link.image || product.images.default,
-                        gallery: link.hoverImage
-                            ? [link.hoverImage, ...product.images.gallery.filter(img => img !== link.hoverImage)]
-                            : product.images.gallery
                     }
                 };
             }
             return null;
         });
     }).filter((p): p is typeof products[0] => p !== null);
+
+    // Remove duplicates if any slug appears in multiple sections
+    const uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
 
     return (
         <div className="w-full relative max-w-full min-h-screen bg-[#FDFBF7]">
@@ -85,7 +77,7 @@ export const Diffusers = () => {
                     >
                         <img
                             src={img}
-                            alt={`Diffuser Collection ${index + 1}`}
+                            alt={`Accessories Collection ${index + 1}`}
                             className="w-full h-full object-cover object-center"
                         />
                     </div>
@@ -103,7 +95,7 @@ export const Diffusers = () => {
                             Home
                         </Link>
                         <ChevronRight className="w-4 h-4" />
-                        <span className="font-semibold text-[#d4af37]">Diffusers</span>
+                        <span className="font-semibold text-[#d4af37]">Accessories</span>
                     </motion.div>
 
                     <motion.h1
@@ -112,7 +104,7 @@ export const Diffusers = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        The Diffuser Collection
+                        The Accessories Collection
                     </motion.h1>
 
                     <motion.div
@@ -126,10 +118,10 @@ export const Diffusers = () => {
                         className="text-white/90 text-lg md:text-xl font-inter tracking-wide max-w-2xl drop-shadow-md font-light leading-relaxed"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
+                        transition={{ duration: 0.8, delay: 1 }}
                     >
-                        Elevate your ambiance with our long-lasting, hand-crafted reed diffusers.
-                        A symphony of scent that lingers beautifully.
+                        Enhance your fragrance experience with our curated collection of luxury burners,
+                        decorative pieces, and lifestyle accessories.
                     </motion.p>
                 </div>
             </div>
@@ -137,8 +129,8 @@ export const Diffusers = () => {
             <div className="px-6 md:px-12 max-w-[100rem] mx-auto pb-32">
                 {/* Product Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-                    {allProducts.length > 0 ? (
-                        allProducts.map((product) => (
+                    {uniqueProducts.length > 0 ? (
+                        uniqueProducts.map((product) => (
                             <ShopProductCard
                                 key={product.id}
                                 product={product}
@@ -152,7 +144,7 @@ export const Diffusers = () => {
                         ))
                     ) : (
                         <div className="col-span-full py-32 text-center text-black/40">
-                            <p className="font-playfair text-2xl italic">No diffusers found at the moment.</p>
+                            <p className="font-playfair text-2xl italic">No accessories found at the moment.</p>
                         </div>
                     )}
                 </div>

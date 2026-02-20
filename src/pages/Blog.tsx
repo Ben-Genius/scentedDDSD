@@ -49,7 +49,7 @@ export const Blog = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in-up delay-300">
                     <Link
-                        to="/shop"
+                        to="/accessories"
                         className="px-8 py-4 bg-gold text-black font-medium text-sm tracking-widest uppercase 
                         hover:bg-white transition-all duration-300 transform hover:scale-105"
                     >

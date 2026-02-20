@@ -106,7 +106,7 @@ function ScrambleButton() {
     };
 
     return (
-        <Link to="/shop">
+        <Link to="/accessories">
             <button
                 onMouseEnter={scramble}
                 className="px-10 py-4 bg-black text-white rounded-none font-medium hover:bg-black/90 hover:text-white transition-colors duration-300 uppercase tracking-widest text-xs shadow-none border border-black"

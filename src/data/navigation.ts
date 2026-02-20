@@ -35,8 +35,7 @@ import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-import whiteCandle from '../assets/images/whiteCandle.png';
-import blackCandle from '../assets/images/blackCandle.png';
+
 
 export interface SubLink {
     name: string;
@@ -419,130 +418,130 @@ export const navigationData: NavItem[] = [
         id: 'oils',
         name: 'Essential Oils',
         path: '/essential-oils',
+        featuredImage: IMAGES.oil2,
         sections: [
             {
                 title: 'Floral Romance Collection',
-                image: '/images/collections/oils/floral.png',
+                image: IMAGES.oil1,
                 path: '/collections/floral-romance-oils',
                 links: [
                     {
                         name: 'Freesia and English Pear',
                         path: '/product/freesia-english-pear-oil',
-                        image: '/images/products/oils/freesia-english-pear.png',
-                        hoverImage: '/images/ingredients/oils/freesia-english-pear.png'
+                        image: IMAGES.oil1,
+                        hoverImage: IMAGES.oilFreesiaHover
                     },
                     {
                         name: 'Blush Peony',
                         path: '/product/blush-peony-oil',
-                        image: '/images/products/oils/blush-peony.png',
-                        hoverImage: '/images/ingredients/oils/blush-peony.png'
+                        image: IMAGES.oil2,
+                        hoverImage: IMAGES.oilBlushPeonyHover
                     },
                     {
                         name: 'Midnight Lavender',
                         path: '/product/midnight-lavender-oil',
-                        image: '/images/products/oils/midnight-lavender.png',
-                        hoverImage: '/images/ingredients/oils/midnight-lavender.png'
+                        image: IMAGES.oil15,
+                        hoverImage: IMAGES.oilMidnightLavenderHover
                     },
                 ]
             },
             {
                 title: 'Woody and Suede Collection',
-                image: '/images/collections/oils/woody.png',
+                image: IMAGES.oil14,
                 path: '/collections/woody-suede-oils',
                 links: [
                     {
                         name: 'Tobacco Noir',
                         path: '/product/tobacco-noir-oil',
-                        image: '/images/products/oils/tobacco-noir.png',
-                        hoverImage: '/images/ingredients/oils/tobacco-noir.png'
+                        image: IMAGES.oil14,
+                        hoverImage: IMAGES.oilTobaccoNoirHover
                     },
                     {
                         name: 'Black Oud',
                         path: '/product/black-oud-oil',
-                        image: '/images/products/oils/black-oud.png',
-                        hoverImage: '/images/ingredients/oils/black-oud.png'
+                        image: IMAGES.oil13,
+                        hoverImage: IMAGES.oilBlackOudHover
                     },
                     {
                         name: 'Wild Fig',
                         path: '/product/wild-fig-oil',
-                        image: '/images/products/oils/wild-fig.png',
-                        hoverImage: '/images/ingredients/oils/wild-fig.png'
+                        image: IMAGES.oil12,
+                        hoverImage: IMAGES.oilWildFigHover
                     },
                 ]
             },
             {
                 title: 'Oriental Luxe Collection',
-                image: '/images/collections/oils/oriental.png',
+                image: IMAGES.oil11,
                 path: '/collections/oriental-luxe-oils',
                 links: [
                     {
                         name: 'Lovers Rock',
                         path: '/product/lovers-rock-oil',
-                        image: '/images/products/oils/lovers-rock.png',
-                        hoverImage: '/images/ingredients/oils/lovers-rock.png'
+                        image: IMAGES.oil11,
+                        hoverImage: IMAGES.oilLoversRockHover
                     },
                     {
                         name: 'Pomegranate',
                         path: '/product/pomegranate-oil',
-                        image: '/images/products/oils/pomegranate.png',
-                        hoverImage: '/images/ingredients/oils/pomegranate.png'
+                        image: IMAGES.oil10,
+                        hoverImage: IMAGES.oilPomegranateHover
                     },
                 ]
             },
             {
                 title: 'Gourmand Indulgence Collection',
-                image: '/images/collections/oils/gourmand.png',
+                image: IMAGES.oil20,
                 path: '/collections/gourmand-indulgence-oils',
                 links: [
                     {
                         name: 'Champagne Cocktail',
                         path: '/product/champagne-cocktail-oil',
-                        image: '/images/products/oils/champagne-cocktail.png',
-                        hoverImage: '/images/ingredients/oils/champagne-cocktail-oil.png'
+                        image: IMAGES.oil20,
+                        hoverImage: IMAGES.oilChampagneHover
                     },
                     {
                         name: 'Sugar Vanilla',
                         path: '/product/sugar-vanilla-oil',
-                        image: '/images/products/oils/sugar-vanilla.png',
-                        hoverImage: '/images/ingredients/oils/sugar-vanilla.png'
+                        image: IMAGES.oil23,
+                        hoverImage: IMAGES.oilSugarVanillaHover
                     },
                     {
                         name: 'Peach Bellini',
                         path: '/product/peach-bellini-oil',
-                        image: '/images/products/oils/peach-bellini.png',
-                        hoverImage: '/images/ingredients/oils/peach-bellini.png'
+                        image: IMAGES.oil5,
+                        hoverImage: IMAGES.oilPeachBelliniHover
                     },
                 ]
             },
             {
                 title: 'Fresh Whisper Collection',
-                image: '/images/collections/oils/fresh.png',
+                image: IMAGES.oil4,
                 path: '/collections/fresh-whisper-oils',
                 links: [
-
                     {
                         name: 'Sage & Sea Salt',
                         path: '/product/sage-sea-salt-oil',
-                        image: '/images/products/oils/sage-sea-salt.png',
-                        hoverImage: '/images/ingredients/oils/sage-sea-salt-oil.png'
+                        image: IMAGES.oil4,
+                        hoverImage: IMAGES.oilSageHover
                     },
                     {
                         name: 'White Tea',
                         path: '/product/white-tea-oil',
-                        image: '/images/products/oils/white-tea.png',
-                        hoverImage: '/images/ingredients/oils/white-tea.png'
+                        image: IMAGES.oil18,
+                        hoverImage: IMAGES.oilWhiteTeaHover
                     },
                     {
                         name: 'Sweet Bergamot',
                         path: '/product/sweet-bergamot-oil',
-                        image: '/images/products/oils/sweet-bergamot.png',
-                        hoverImage: '/images/ingredients/oils/sweet-bergamot.png'
+                        image: IMAGES.oil16,
+                        hoverImage: IMAGES.oilSweetBergamotHover
                     },
-
                 ]
             }
         ]
     },
+
     {
         id: 'air',
         name: 'Air Fresheners',
@@ -553,12 +552,60 @@ export const navigationData: NavItem[] = [
         id: 'bath',
         name: 'Bath & Body',
         path: '/bath-body',
-        featuredImage: '/images/collections/bath-body/hero-main.png',
+        featuredImage: IMAGES.soap1,
+        sections: [
+            {
+                title: 'Body Collection',
+                path: '/collections/body-collection',
+                links: [
+                    { name: 'Artisan Soap I', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Artisan Soap II', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                ]
+            }
+        ]
     },
     {
         id: 'shop',
-        name: 'Shop',
-        path: '/shop',
+        name: 'Accessories',
+        path: '/accessories',
+        featuredImage: IMAGES.sweethome,
+        sections: [
+            {
+                title: 'Burners',
+                path: '/collections/burners',
+                links: [
+                    { name: 'Sweet Home', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
+                    { name: 'Oriental Lantern', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
+                    { name: 'Minimalist Stone', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
+                    { name: 'Classic White', path: '/product/classic-white-burner', image: IMAGES.burner2 },
+                ]
+            },
+            {
+                title: 'Decorative Pieces',
+                path: '/collections/decorative',
+                links: [
+                    { name: 'Artistic Piece I', path: '/product/artistic-ceramic-piece-1', image: IMAGES.artifact1 },
+                    { name: 'Artistic Piece II', path: '/product/artistic-ceramic-piece-2', image: IMAGES.artifact2 },
+                    { name: 'Artistic Piece III', path: '/product/artistic-ceramic-piece-3', image: IMAGES.artifact3 },
+                    { name: 'Artistic Piece IV', path: '/product/artistic-ceramic-piece-4', image: IMAGES.artifact4 },
+                    { name: 'Artistic Piece V', path: '/product/artistic-ceramic-piece-5', image: IMAGES.artifact5 },
+                    { name: 'Artistic Piece VI', path: '/product/artistic-ceramic-piece-6', image: IMAGES.artifact6 },
+                    { name: 'Artistic Piece VII', path: '/product/artistic-ceramic-piece-7', image: IMAGES.artifact7 },
+                    { name: 'Artistic Piece VIII', path: '/product/artistic-ceramic-piece-8', image: IMAGES.artifact8 },
+                ]
+            },
+            {
+                title: 'Textiles & Others',
+                path: '/collections/textiles',
+                links: [
+                    { name: 'Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
+                    { name: 'Scent Bag (Floral)', path: '/product/designer-scent-bag-1', image: IMAGES.bag1 },
+                    { name: 'Scent Bag (Fresh)', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
+                    { name: 'Scent Bag (Woody)', path: '/product/designer-scent-bag-3', image: IMAGES.bag3 },
+                    { name: 'Car Diffuser', path: '/product/premium-car-diffuser', image: IMAGES.diffcar2 },
+                ]
+            }
+        ]
     },
     {
         id: 'gifts',
