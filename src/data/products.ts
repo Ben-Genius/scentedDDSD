@@ -41,7 +41,7 @@ import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-
+import scentedCandle from '../assets/collections/candles/Candlesss/ChatGPT Image Feb 17, 2026, 08_35_17 PM.png'
 
 
 export const products: Product[] = [
@@ -165,24 +165,7 @@ export const products: Product[] = [
         variants: [{ id: "v-ml-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
         scents: ["Lavender", "Musk", "Tonka Bean"]
     },
-    {
-        id: "p-royal-rose-bloom-diffuser",
-        title: "Royal Rose Bloom Diffuser",
-        slug: "royal-rose-bloom-diffuser",
-        category: "Floral Romance",
-        shortDescription: "Majestic rose garden.",
-        longDescription: "A regal scent of blooming red roses and soft peony petals.",
-        basePrice: 130,
-        stock: 40,
-        featured: false,
-        images: {
-            default: IMAGES.c3,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-rrb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
-        scents: ["Red Rose", "Peony", "Musk"]
-    },
+
 
     // --- REED DIFFUSERS - Woody and Suede Collection ---
     {
@@ -654,7 +637,7 @@ export const products: Product[] = [
         stock: 80,
         featured: true,
         images: {
-            default: IMAGES.scentedcandle,
+            default: scentedCandle,
             gallery: [IMAGES.darkcandle, IMAGES.amberspray, IMAGES.candle, IMAGES.new3, IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
@@ -1476,7 +1459,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: '/images/products/air-fresheners/air-freshener-main.png',
-            gallery: [IMAGES.new3, IMAGES.new3],
+            gallery: [],
             colorVariants: []
         },
         variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 180 }],
