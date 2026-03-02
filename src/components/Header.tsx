@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
+import { useCurrency } from '../hooks/useCurrency';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
+import { Globe } from 'lucide-react';
 
 import { NavMenu } from './NavMenu';
 import { MobileMenu } from './MobileMenu';
 
 export const Header = () => {
     const { openDrawer, getItemCount } = useLocalCart();
+    const { currency, setCurrency } = useCurrency();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -84,7 +87,19 @@ export const Header = () => {
                     </div>
 
                     {/* Right: Actions */}
-                    <div className="col-span-3 flex items-center justify-end space-x-8">
+                    <div className="col-span-3 flex items-center justify-end space-x-4 md:space-x-8">
+                        {/* Currency Toggle */}
+                        <button
+                            onClick={() => setCurrency(currency === 'GHS' ? 'USD' : 'GHS')}
+                            className="flex items-center text-black hover:opacity-60 transition-opacity"
+                            title={`Switch to ${currency === 'GHS' ? 'USD' : 'GHS'}`}
+                        >
+                            <Globe className="w-4 h-4 mr-1 md:mr-2 opacity-70" strokeWidth={1.5} />
+                            <span className="text-[10px] md:text-xs uppercase tracking-widest font-inter font-medium">
+                                {currency}
+                            </span>
+                        </button>
+
                         <Link
                             to="/contact"
                             className="hidden lg:flex items-center text-black hover:opacity-60 transition-opacity group"
@@ -122,7 +137,7 @@ export const Header = () => {
                 <NavMenu isScrolled={isScrolled} isHeaderHovered={isHovered} />
 
                 {/* Mobile Nav Drawer */}
-                <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)}/>
+                <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
             </header>
         </>
     );

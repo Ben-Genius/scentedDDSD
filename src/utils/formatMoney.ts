@@ -1,7 +1,5 @@
+import { useCurrency } from '@/hooks/useCurrency';
+
 export const formatMoney = (amount: number): string => {
-  return new Intl.NumberFormat('en-GH', {
-    style: 'currency',
-    currency: 'GHS',
-    minimumFractionDigits: 2,
-  }).format(amount);
+  return useCurrency.getState().formatPrice(amount);
 };

@@ -340,12 +340,12 @@ export const products: Product[] = [
     // --- ESSENTIAL OILS - Floral Romance Collection ---
     {
         id: "p-freesia-english-pear-oil",
-        title: "Freesia & English Pear Oil",
+        title: "Freesia & English Pear ",
         slug: "freesia-english-pear-oil",
         category: "Essential Oils",
         shortDescription: "Delicate floral concentrate.",
         longDescription: "Pure essential oil blend of freesia and English pear.",
-        basePrice: 85,
+        basePrice: 100,
         stock: 100,
         featured: false,
         images: {
@@ -353,17 +353,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilFreesiaHover],
             colorVariants: []
         },
-        variants: [{ id: "v-fep-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-fep-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Freesia", "Pear"]
     },
     {
         id: "p-blush-peony-oil",
-        title: "Blush Peony Oil",
+        title: "Blush Peony ",
         slug: "blush-peony-oil",
         category: "Essential Oils",
         shortDescription: "Soft pink floral oil.",
         longDescription: "Concentrated oil of blooming blush peonies.",
-        basePrice: 90,
+        basePrice: 100,
         stock: 80,
         featured: false,
         images: {
@@ -371,17 +371,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilBlushPeonyHover],
             colorVariants: []
         },
-        variants: [{ id: "v-bp-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        variants: [{ id: "v-bp-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Peony", "Rose", "Honey"]
     },
     {
         id: "p-midnight-lavender-oil",
-        title: "Midnight Lavender Oil",
+        title: "Midnight Lavender ",
         slug: "midnight-lavender-oil",
         category: "Essential Oils",
         shortDescription: "Relaxing lavender oil.",
         longDescription: "Pure lavender oil for relaxation and sleep.",
-        basePrice: 80,
+        basePrice: 100,
         stock: 120,
         featured: false,
         images: {
@@ -389,19 +389,19 @@ export const products: Product[] = [
             gallery: [IMAGES.oilMidnightLavenderHover],
             colorVariants: []
         },
-        variants: [{ id: "v-ml-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 80 }],
+        variants: [{ id: "v-ml-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Lavender"]
     },
 
     // --- ESSENTIAL OILS - Woody and Suede Collection ---
     {
         id: "p-tobacco-noir-oil",
-        title: "Tobacco Noir Oil",
+        title: "Tobacco Noir  ",
         slug: "tobacco-noir-oil",
         category: "Essential Oils",
         shortDescription: "Rich tobacco oil.",
         longDescription: "Warm and spicy tobacco leaf essential oil blend.",
-        basePrice: 95,
+        basePrice: 100,
         stock: 70,
         featured: false,
         images: {
@@ -409,17 +409,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilTobaccoNoirHover],
             colorVariants: []
         },
-        variants: [{ id: "v-tn-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        variants: [{ id: "v-tn-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Tobacco", "Spice"]
     },
     {
         id: "p-black-oud-oil",
-        title: "Black Oud Oil",
+        title: "Black Oud ",
         slug: "black-oud-oil",
         category: "Essential Oils",
         shortDescription: "Potent oud oil.",
         longDescription: "Highly concentrated black oud oil for intense fragrance.",
-        basePrice: 110,
+        basePrice: 100,
         stock: 50,
         featured: false,
         images: {
@@ -427,17 +427,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilBlackOudHover],
             colorVariants: []
         },
-        variants: [{ id: "v-bo-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        variants: [{ id: "v-bo-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Oud", "Wood"]
     },
     {
         id: "p-wild-fig-oil",
-        title: "Wild Fig Oil",
+        title: "Wild Fig ",
         slug: "wild-fig-oil",
         category: "Essential Oils",
         shortDescription: "Green fig oil.",
         longDescription: "Fresh and green wild fig essential oil.",
-        basePrice: 90,
+        basePrice: 100,
         stock: 60,
         featured: false,
         images: {
@@ -445,14 +445,14 @@ export const products: Product[] = [
             gallery: [IMAGES.oilWildFigHover],
             colorVariants: []
         },
-        variants: [{ id: "v-wf-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        variants: [{ id: "v-wf-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Fig", "Green Leaf"]
     },
 
     // --- ESSENTIAL OILS - Oriental Luxe Collection ---
     {
         id: "p-lovers-rock-oil",
-        title: "Lovers Rock Oil",
+        title: "Lovers Rock ",
         slug: "lovers-rock-oil",
         category: "Essential Oils",
         shortDescription: "Romantic blend.",
@@ -465,17 +465,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilLoversRockHover],
             colorVariants: []
         },
-        variants: [{ id: "v-lr-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
+        variants: [{ id: "v-lr-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Rose", "Sandalwood", "Ylang Ylang"]
     },
     {
         id: "p-pomegranate-oil",
-        title: "Pomegranate Oil",
+        title: "Pomegranate ",
         slug: "pomegranate-oil",
         category: "Essential Oils",
         shortDescription: "Fruity oil blend.",
         longDescription: "Sweet and tart pomegranate oil concentrate.",
-        basePrice: 95,
+        basePrice: 100,
         stock: 60,
         featured: false,
         images: {
@@ -483,19 +483,19 @@ export const products: Product[] = [
             gallery: [IMAGES.oilPomegranateHover],
             colorVariants: []
         },
-        variants: [{ id: "v-pom-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 95 }],
+        variants: [{ id: "v-pom-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Pomegranate"]
     },
 
     // --- ESSENTIAL OILS - Gourmand Indulgence Collection ---
     {
         id: "p-champagne-cocktail-oil",
-        title: "Champagne Cocktail Oil",
+        title: "Champagne Cocktail ",
         slug: "champagne-cocktail-oil",
         category: "Essential Oils",
         shortDescription: "Sparkling citrus oil.",
         longDescription: "Effervescent champagne and citrus essential oil blend.",
-        basePrice: 105,
+        basePrice: 100,
         stock: 40,
         featured: false,
         images: {
@@ -503,17 +503,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilChampagneHover],
             colorVariants: []
         },
-        variants: [{ id: "v-cc-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 105 }],
+        variants: [{ id: "v-cc-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Champagne", "Grapefruit"]
     },
     {
         id: "p-sugar-vanilla-oil",
-        title: "Sugar Vanilla Oil",
+        title: "Sugar Vanilla ",
         slug: "sugar-vanilla-oil",
         category: "Essential Oils",
         shortDescription: "Sweet vanilla oil.",
         longDescription: "Pure vanilla essential oil with a sugary twist.",
-        basePrice: 85,
+        basePrice: 100,
         stock: 100,
         featured: false,
         images: {
@@ -521,17 +521,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilSugarVanillaHover],
             colorVariants: []
         },
-        variants: [{ id: "v-sv-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-sv-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Vanilla"]
     },
     {
         id: "p-peach-bellini-oil",
-        title: "Peach Bellini Oil",
+        title: "Peach Bellini ",
         slug: "peach-bellini-oil",
         category: "Essential Oils",
         shortDescription: "Juicy peach oil.",
         longDescription: "Fresh peach essential oil blend with prosecco notes.",
-        basePrice: 90,
+        basePrice: 100,
         stock: 75,
         featured: false,
         images: {
@@ -539,19 +539,19 @@ export const products: Product[] = [
             gallery: [IMAGES.oilPeachBelliniHover],
             colorVariants: []
         },
-        variants: [{ id: "v-pb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        variants: [{ id: "v-pb-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Peach"]
     },
 
     // --- ESSENTIAL OILS - Fresh Whisper Collection ---
     {
         id: "p-sage-sea-salt-oil",
-        title: "Sage & Sea Salt Oil",
+        title: "Sage & Sea Salt ",
         slug: "sage-sea-salt-oil",
         category: "Essential Oils",
         shortDescription: "Sea breeze oil.",
         longDescription: "Refreshing sage and sea salt essential oil blend.",
-        basePrice: 90,
+        basePrice: 100,
         stock: 80,
         featured: false,
         images: {
@@ -559,17 +559,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilSageHover],
             colorVariants: []
         },
-        variants: [{ id: "v-sss-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 90 }],
+        variants: [{ id: "v-sss-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Sage", "Sea Salt"]
     },
     {
         id: "p-white-tea-oil",
-        title: "White Tea Oil",
+        title: "White Tea ",
         slug: "white-tea-oil",
         category: "Essential Oils",
         shortDescription: "Delicate tea oil.",
         longDescription: "Soothing white tea essential oil with clean notes.",
-        basePrice: 85,
+        basePrice: 100,
         stock: 90,
         featured: false,
         images: {
@@ -577,17 +577,17 @@ export const products: Product[] = [
             gallery: [IMAGES.oilWhiteTeaHover],
             colorVariants: []
         },
-        variants: [{ id: "v-wt-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-wt-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["White Tea"]
     },
     {
         id: "p-sweet-bergamot-oil",
-        title: "Sweet Bergamot Oil",
+        title: "Sweet Bergamot ",
         slug: "sweet-bergamot-oil",
         category: "Essential Oils",
         shortDescription: "Citrus bergamot oil.",
         longDescription: "Uplifting sweet bergamot essential oil.",
-        basePrice: 85,
+        basePrice: 100,
         stock: 90,
         featured: false,
         images: {
@@ -595,7 +595,7 @@ export const products: Product[] = [
             gallery: [IMAGES.oilSweetBergamotHover],
             colorVariants: []
         },
-        variants: [{ id: "v-sb-o", label: "Standard", sizeMl: "15ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-sb-o", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Bergamot", "Citrus"]
     },
 
@@ -616,7 +616,7 @@ export const products: Product[] = [
             colorVariants: []
         },
         variants: [
-            { id: "v-eo-std", label: "Standard", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }
+            { id: "v-eo-std", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }
         ],
         scents: [
             "Sweet Flowers", "Cocktail Toast", "Strawberry Muse", "Lovers Rock",
@@ -1436,7 +1436,7 @@ export const products: Product[] = [
         category: "Essential Oils",
         shortDescription: "Pure relaxation concentrate.",
         longDescription: "High-grade lavender essential oil for deep sleep and relaxation.",
-        basePrice: 85,
+        basePrice: 100,
         stock: 60,
         featured: false,
         images: {
@@ -1444,7 +1444,7 @@ export const products: Product[] = [
             gallery: [IMAGES.new5, IMAGES.new3],
             colorVariants: []
         },
-        variants: [{ id: "v-new-3", label: "10ml", sizeMl: "10ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-new-3", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: ["Lavender", "Chamomile"]
     },
     {

@@ -13,17 +13,24 @@ import { AllBody } from './pages/Headers/Body/AllBody..tsx';
 import { AllEssentialOil } from './pages/Headers/Essential Oils/AllEssentialOil';
 
 
+import { useCurrency } from '@/hooks/useCurrency';
+
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { isDrawerOpen, closeDrawer } = useLocalCart();
+  const { currency, detectCurrency } = useCurrency();
   const location = useLocation();
 
-  // Scroll to top on route change
+  // Scroll to top on route change & detect currency
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    detectCurrency();
+  }, [detectCurrency]);
+
   return (
-    <div className="min-h-screen text-white flex flex-col font-inter selection:bg-gold selection:text-black">
+    <div key={currency} className="min-h-screen text-white flex flex-col font-inter selection:bg-gold selection:text-black">
       {location.pathname !== '/admin' &&
         <Header />}
       <main className="flex-grow relative z-10">
