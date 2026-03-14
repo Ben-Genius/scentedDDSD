@@ -1,12 +1,9 @@
 import { IMAGES } from '../assets';
-import candle1Hover from '../assets/collections/candles/1.1.png';
 import candle2Hover from '../assets/collections/candles/2.2.png';
 import candle3Hover from '../assets/collections/candles/3.3.png';
 import candle4Hover from '../assets/collections/candles/4.4.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
-import candle7Hover from '../assets/collections/candles/2.2.png';
-import candle8Hover from '../assets/collections/candles/3.png';
 
 import wood1Hover from '../assets/collections/candles/wood/w11.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';

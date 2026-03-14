@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import { useLocalCart } from '../hooks/useLocalCart';
@@ -63,14 +63,17 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
     const [quantity, setQuantity] = useState(1);
     const [activeImage, setActiveImage] = useState(product.images.default);
     const [isHovered, setIsHovered] = useState(false);
+    const [prevProductId, setPrevProductId] = useState(product.id);
 
     // Update state if product changes
-    useEffect(() => {
+    if (product.id !== prevProductId) {
+        setPrevProductId(product.id);
         setSelectedVariantId(actualVariants[0]?.id);
         setSelectedColorId(product.images.colorVariants[0]?.colorId);
         setSelectedScent(product.scents[0]);
         setActiveImage(product.images.default);
-    }, [product, actualVariants]);
+        setQuantity(1);
+    }
 
     // Derived state
     const selectedVariant = actualVariants.find(v => v.id === selectedVariantId) || actualVariants[0];

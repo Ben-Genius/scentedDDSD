@@ -2,7 +2,6 @@
 
 import { navigationData } from '@/data/navigation';
 import { products } from '@/data/products';
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { ShopProductCard } from '@/components/shop/ShopProductCard';
 import { useLocalCart } from '@/hooks/useLocalCart';
@@ -70,7 +69,7 @@ export const Candles = () => {
                         return <div className="col-span-full text-center py-20 text-gray-500">No products found.</div>;
                     }
 
-                    return allCandles.map((product, index) => (
+                    return allCandles.map((product) => (
                         <ShopProductCard
                             key={product.id}
                             product={product}
