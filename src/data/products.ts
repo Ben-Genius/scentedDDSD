@@ -1828,27 +1828,10 @@ export const products: Product[] = [
         variants: [{ id: "v-acp-8", label: "Standard", multiplier: 1, priceGHS: 285 }],
         scents: []
     },
-    {
-        id: "acc-bag-1",
-        title: "Designer Scent Bag (Floral)",
-        slug: "designer-scent-bag-1",
-        category: "Accessories",
-        shortDescription: "Luxury fabric bag with floral notes.",
-        longDescription: "Infuse your wardrobe with the scent of fresh gardens with our premium floral scent bag.",
-        basePrice: 65,
-        stock: 40,
-        featured: false,
-        images: {
-            default: IMAGES.bag1,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-dsb-1", label: "Standard", multiplier: 1, priceGHS: 65 }],
-        scents: ["Lavender", "Jasmine"]
-    },
+
     {
         id: "acc-bag-2",
-        title: "Designer Scent Bag (Fresh)",
+        title: " Scent Bag (Fresh)",
         slug: "designer-scent-bag-2",
         category: "Accessories",
         shortDescription: "Luxury fabric bag with clean notes.",
@@ -1864,24 +1847,7 @@ export const products: Product[] = [
         variants: [{ id: "v-dsb-2", label: "Standard", multiplier: 1, priceGHS: 65 }],
         scents: ["Fresh Linen", "Cotton Blossom"]
     },
-    {
-        id: "acc-bag-3",
-        title: "Designer Scent Bag (Woody)",
-        slug: "designer-scent-bag-3",
-        category: "Accessories",
-        shortDescription: "Luxury fabric bag with woody notes.",
-        longDescription: "A sophisticated blend of cedar and sandalwood, ideal for coat closets and car interiors.",
-        basePrice: 70,
-        stock: 30,
-        featured: false,
-        images: {
-            default: IMAGES.bag3,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-dsb-3", label: "Standard", multiplier: 1, priceGHS: 70 }],
-        scents: ["Sandalwood", "Amber"]
-    },
+
     {
         id: "acc-car-1",
         title: "Premium Car Diffuser",
