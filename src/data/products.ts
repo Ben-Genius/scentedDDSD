@@ -1684,150 +1684,150 @@ export const products: Product[] = [
         variants: [{ id: "v-st-std", label: "Pack of 3", multiplier: 1, priceGHS: 45 }],
         scents: ["Signature Flush"]
     },
-    {
-        id: "acc-decorative-1",
-        title: "Artistic Ceramic Piece (Type I)",
-        slug: "artistic-ceramic-piece-1",
-        category: "Accessories",
-        shortDescription: "Handcrafted decorative ceramic sculpture.",
-        longDescription: "An artistic ceramic piece from our curated artifact collection, designed to be a focal point in any room.",
-        basePrice: 280,
-        stock: 15,
-        featured: false,
-        images: {
-            default: IMAGES.artifact1,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-1", label: "Artist Proof", multiplier: 1, priceGHS: 280 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-2",
-        title: "Artistic Ceramic Piece (Type II)",
-        slug: "artistic-ceramic-piece-2",
-        category: "Accessories",
-        shortDescription: "Curated stoneware decor piece.",
-        longDescription: "A sophisticated stoneware piece that adds texture and elegance to your shelving or console.",
-        basePrice: 260,
-        stock: 12,
-        featured: false,
-        images: {
-            default: IMAGES.artifact2,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-2", label: "Standard", multiplier: 1, priceGHS: 260 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-3",
-        title: "Artistic Ceramic Piece (Type III)",
-        slug: "artistic-ceramic-piece-3",
-        category: "Accessories",
-        shortDescription: "Organic shaped ceramic vessel.",
-        longDescription: "An organic-inspired ceramic vessel with a matte finish, perfect for minimalist spaces.",
-        basePrice: 245,
-        stock: 10,
-        featured: false,
-        images: {
-            default: IMAGES.artifact3,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-3", label: "Standard", multiplier: 1, priceGHS: 245 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-4",
-        title: "Artistic Ceramic Piece (Type IV)",
-        slug: "artistic-ceramic-piece-4",
-        category: "Accessories",
-        shortDescription: "Textured ceramic artifact.",
-        longDescription: "A uniquely textured artifact that challenges traditional forms, handcrafted by local artisans.",
-        basePrice: 295,
-        stock: 8,
-        featured: false,
-        images: {
-            default: IMAGES.artifact4,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-4", label: "Limited Edition", multiplier: 1, priceGHS: 295 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-5",
-        title: "Artistic Ceramic Piece (Type V)",
-        slug: "artistic-ceramic-piece-5",
-        category: "Accessories",
-        shortDescription: "Modern sculptural element.",
-        longDescription: "A modern sculptural element that blends form and function, adding a premium feel to your home.",
-        basePrice: 275,
-        stock: 14,
-        featured: false,
-        images: {
-            default: IMAGES.artifact5,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-5", label: "Standard", multiplier: 1, priceGHS: 275 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-6",
-        title: "Artistic Ceramic Piece (Type VI)",
-        slug: "artistic-ceramic-piece-6",
-        category: "Accessories",
-        shortDescription: "Earthy tones ceramic decor.",
-        longDescription: "Featuring warm earthy tones, this ceramic piece brings a touch of nature indoors.",
-        basePrice: 255,
-        stock: 11,
-        featured: false,
-        images: {
-            default: IMAGES.artifact6,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-6", label: "Standard", multiplier: 1, priceGHS: 255 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-7",
-        title: "Artistic Ceramic Piece (Type VII)",
-        slug: "artistic-ceramic-piece-7",
-        category: "Accessories",
-        shortDescription: "Architectural ceramic fragment.",
-        longDescription: "Inspired by classical architecture, this ceramic fragment serves as a timeless decorative item.",
-        basePrice: 310,
-        stock: 7,
-        featured: false,
-        images: {
-            default: IMAGES.artifact7,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-7", label: "Collector Choice", multiplier: 1, priceGHS: 310 }],
-        scents: []
-    },
-    {
-        id: "acc-decorative-8",
-        title: "Artistic Ceramic Piece (Type VIII)",
-        slug: "artistic-ceramic-piece-8",
-        category: "Accessories",
-        shortDescription: "Abstract ceramic form.",
-        longDescription: "An abstract ceramic form that explores the play of light and shadow.",
-        basePrice: 285,
-        stock: 9,
-        featured: false,
-        images: {
-            default: IMAGES.artifact8,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-acp-8", label: "Standard", multiplier: 1, priceGHS: 285 }],
-        scents: []
-    },
+    // {
+    //     id: "acc-decorative-1",
+    //     title: "Artistic Ceramic Piece (Type I)",
+    //     slug: "artistic-ceramic-piece-1",
+    //     category: "Accessories",
+    //     shortDescription: "Handcrafted decorative ceramic sculpture.",
+    //     longDescription: "An artistic ceramic piece from our curated artifact collection, designed to be a focal point in any room.",
+    //     basePrice: 280,
+    //     stock: 15,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact1,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-1", label: "Artist Proof", multiplier: 1, priceGHS: 280 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-2",
+    //     title: "Artistic Ceramic Piece (Type II)",
+    //     slug: "artistic-ceramic-piece-2",
+    //     category: "Accessories",
+    //     shortDescription: "Curated stoneware decor piece.",
+    //     longDescription: "A sophisticated stoneware piece that adds texture and elegance to your shelving or console.",
+    //     basePrice: 260,
+    //     stock: 12,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact2,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-2", label: "Standard", multiplier: 1, priceGHS: 260 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-3",
+    //     title: "Artistic Ceramic Piece (Type III)",
+    //     slug: "artistic-ceramic-piece-3",
+    //     category: "Accessories",
+    //     shortDescription: "Organic shaped ceramic vessel.",
+    //     longDescription: "An organic-inspired ceramic vessel with a matte finish, perfect for minimalist spaces.",
+    //     basePrice: 245,
+    //     stock: 10,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact3,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-3", label: "Standard", multiplier: 1, priceGHS: 245 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-4",
+    //     title: "Artistic Ceramic Piece (Type IV)",
+    //     slug: "artistic-ceramic-piece-4",
+    //     category: "Accessories",
+    //     shortDescription: "Textured ceramic artifact.",
+    //     longDescription: "A uniquely textured artifact that challenges traditional forms, handcrafted by local artisans.",
+    //     basePrice: 295,
+    //     stock: 8,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact4,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-4", label: "Limited Edition", multiplier: 1, priceGHS: 295 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-5",
+    //     title: "Artistic Ceramic Piece (Type V)",
+    //     slug: "artistic-ceramic-piece-5",
+    //     category: "Accessories",
+    //     shortDescription: "Modern sculptural element.",
+    //     longDescription: "A modern sculptural element that blends form and function, adding a premium feel to your home.",
+    //     basePrice: 275,
+    //     stock: 14,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact5,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-5", label: "Standard", multiplier: 1, priceGHS: 275 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-6",
+    //     title: "Artistic Ceramic Piece (Type VI)",
+    //     slug: "artistic-ceramic-piece-6",
+    //     category: "Accessories",
+    //     shortDescription: "Earthy tones ceramic decor.",
+    //     longDescription: "Featuring warm earthy tones, this ceramic piece brings a touch of nature indoors.",
+    //     basePrice: 255,
+    //     stock: 11,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact6,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-6", label: "Standard", multiplier: 1, priceGHS: 255 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-7",
+    //     title: "Artistic Ceramic Piece (Type VII)",
+    //     slug: "artistic-ceramic-piece-7",
+    //     category: "Accessories",
+    //     shortDescription: "Architectural ceramic fragment.",
+    //     longDescription: "Inspired by classical architecture, this ceramic fragment serves as a timeless decorative item.",
+    //     basePrice: 310,
+    //     stock: 7,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact7,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-7", label: "Collector Choice", multiplier: 1, priceGHS: 310 }],
+    //     scents: []
+    // },
+    // {
+    //     id: "acc-decorative-8",
+    //     title: "Artistic Ceramic Piece (Type VIII)",
+    //     slug: "artistic-ceramic-piece-8",
+    //     category: "Accessories",
+    //     shortDescription: "Abstract ceramic form.",
+    //     longDescription: "An abstract ceramic form that explores the play of light and shadow.",
+    //     basePrice: 285,
+    //     stock: 9,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.artifact8,
+    //         gallery: [],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-acp-8", label: "Standard", multiplier: 1, priceGHS: 285 }],
+    //     scents: []
+    // },
 
     {
         id: "acc-bag-2",

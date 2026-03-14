@@ -45,7 +45,7 @@ export const Contact = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-6xl font-playfair mb-6"
                     >
-                        Feel free to <span className="text-gold italic">get in touch</span>
+                        Share your <span className="text-gold italic">feedback with us</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export const Contact = () => {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg font-light"
                     >
-                        We'd love to hear from you. Whether you have a question about our scents, orders, or just want to say hello.
+                        Tell us what you think! We actively use your insights to craft better scents, improve our service, and elevate your entire experience.
                     </motion.p>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 translate-y-[1px]">
@@ -76,7 +76,7 @@ export const Contact = () => {
                         className="lg:w-5/12"
                     >
                         <div className="bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] p-8 md:p-10 border border-gray-100">
-                            <h3 className="text-2xl font-playfair mb-8">Leave your message</h3>
+                            <h3 className="text-2xl font-playfair mb-8">Tell us your thoughts</h3>
 
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -121,10 +121,9 @@ export const Contact = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <h2 className="text-4xl font-playfair mb-6 text-gray-900">Don't hesitate to <span className="italic text-gold">contact us</span></h2>
+                            <h2 className="text-4xl font-playfair mb-6 text-gray-900">Reach out to <span className="italic text-gold">our team</span></h2>
                             <p className="text-gray-500 mb-12 text-lg leading-relaxed max-w-xl">
-                                Need help choosing a scent? Have a question about your order?
-                                Our team is here to help you find your perfect fragrance match.
+                                Need help choosing a scent or have questions about your order? Connect with our dedicated team today—we are ready to guide you to your perfect fragrance match!
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
