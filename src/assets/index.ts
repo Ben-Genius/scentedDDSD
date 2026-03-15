@@ -111,8 +111,11 @@ import blackCandleBig2 from './images/blackCandleBig2.png';
 import blackCandleVariant3 from './images/blackCandleVariant3.png';
 
 import freesiaPearHover from './images/ingredients/candles/freesia_pear.png';
-import blushPeonyHover from './images/ingredients/candles/blush_peony.png';
+import blushPeonyHover from './images/ingredients/candles/blush_peony.jpeg';
 import royalRoseHover from './images/ingredients/candles/royal_rose.png';
+import ylangHover from './images/ingredients/candles/ylang_hover.png';
+import loversRockHover from './images/ingredients/candles/lovers_rock_hover.png';
+import sugarVanillaHover from './images/ingredients/candles/sugar_vanilla_hover.png';
 
 // Essential Oil Images
 import oil1 from './collections/oils/Essential Oils/oil1.png';
@@ -239,6 +242,9 @@ export const IMAGES = {
   freesiaPearHover,
   blushPeonyHover,
   royalRoseHover,
+  ylangHover,
+  loversRockHover,
+  sugarVanillaHover,
   oil1, oil2, oil3, oil4, oil5, oil6, oil7, oil8, oil9, oil10,
   oil11, oil12, oil13, oil14, oil15, oil16, oil17, oil18, oil19, oil20,
   oil21, oil22, oil23, oil24,

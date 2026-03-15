@@ -45,7 +45,7 @@ export const Contact = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-6xl font-playfair mb-6"
                     >
-                        Share your <span className="text-gold italic">feedback with us</span>
+                        Tell us exactly <span className="text-gold italic">what you think.</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export const Contact = () => {
                         transition={{ delay: 0.1 }}
                         className="text-gray-400 max-w-2xl mx-auto text-lg font-light"
                     >
-                        Tell us what you think! We actively use your insights to craft better scents, improve our service, and elevate your entire experience.
+                        Loved something? Want something better? Have a bold scent idea? Say it — we read every word and use your feedback to make every product better.
                     </motion.p>
                 </div>
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 translate-y-[1px]">
@@ -76,7 +76,7 @@ export const Contact = () => {
                         className="lg:w-5/12"
                     >
                         <div className="bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.05)] p-8 md:p-10 border border-gray-100">
-                            <h3 className="text-2xl font-playfair mb-8">Tell us your thoughts</h3>
+                            <h3 className="text-2xl font-playfair mb-8">Drop us a message</h3>
 
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -91,24 +91,24 @@ export const Contact = () => {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-400">Subject</label>
-                                    <input type="text" placeholder="Subject" className="w-full bg-gray-50 border border-gray-100 p-4 rounded-lg focus:outline-none focus:border-gold/50 focus:bg-gold/5 transition-all text-sm" />
+                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-400">What's this about?</label>
+                                    <input type="text" placeholder="e.g. Feedback, Order Help, Scent Idea..." className="w-full bg-gray-50 border border-gray-100 p-4 rounded-lg focus:outline-none focus:border-gold/50 focus:bg-gold/5 transition-all text-sm" />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-400">Message</label>
-                                    <textarea rows={5} placeholder="Write your message here..." className="w-full bg-gray-50 border border-gray-100 p-4 rounded-lg focus:outline-none focus:border-gold/50 focus:bg-gold/5 transition-all resize-none text-sm"></textarea>
+                                    <label className="text-xs font-bold uppercase tracking-wider text-gray-400">Your Message</label>
+                                    <textarea rows={5} placeholder="Go ahead — say everything on your mind..." className="w-full bg-gray-50 border border-gray-100 p-4 rounded-lg focus:outline-none focus:border-gold/50 focus:bg-gold/5 transition-all resize-none text-sm"></textarea>
                                 </div>
 
                                 <div className="flex items-start gap-3 pt-2">
                                     <input type="checkbox" id="privacy" className="mt-1 accent-gold" />
                                     <label htmlFor="privacy" className="text-xs text-gray-500 leading-relaxed cursor-pointer select-none">
-                                        I agree to the privacy policy and allow Scented by DDSD to contact me regarding my inquiry.
+                                        I allow Scented by DDSD to use my feedback to improve their products and reach out if needed.
                                     </label>
                                 </div>
 
                                 <button className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-gold hover:text-black transition-all shadow-lg hover:shadow-gold/20 flex items-center justify-center gap-2">
-                                    Send Message <Send size={16} />
+                                    Send My Thoughts <Send size={16} />
                                 </button>
                             </form>
                         </div>
@@ -121,9 +121,9 @@ export const Contact = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <h2 className="text-4xl font-playfair mb-6 text-gray-900">Reach out to <span className="italic text-gold">our team</span></h2>
+                            <h2 className="text-4xl font-playfair mb-6 text-gray-900">Talk to us <span className="italic text-gold">directly.</span></h2>
                             <p className="text-gray-500 mb-12 text-lg leading-relaxed max-w-xl">
-                                Need help choosing a scent or have questions about your order? Connect with our dedicated team today—we are ready to guide you to your perfect fragrance match!
+                                Choosing a new scent? Need help with your order? Just want to share an idea? Reach out — our team responds personally and we genuinely love hearing from you.
                             </p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

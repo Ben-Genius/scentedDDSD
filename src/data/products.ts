@@ -2,15 +2,10 @@ import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
 
-import candle1Hover from '../assets/collections/candles/1.1.png';
 import candle2Hover from '../assets/collections/candles/2.2.png';
 import candle3Hover from '../assets/collections/candles/3.3.png';
-import candle4Hover from '../assets/collections/candles/4.4.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
-import candle7Hover from '../assets/collections/candles/2.2.png';
-import candle8Hover from '../assets/collections/candles/3.3.png';
-
 import wood1Hover from '../assets/collections/candles/wood/w11.png';
 import wood2Hover from '../assets/collections/candles/wood/w22.png';
 import wood3Hover from '../assets/collections/candles/wood/w33.png';
@@ -22,13 +17,11 @@ import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
 import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
 import oriental4Hover from '../assets/collections/candles/oriental/o44.png';
 import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
-import oriental6Hover from '../assets/collections/candles/oriental/o66.png';
 import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
 import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4Hover from '../assets/collections/candles/gourmet/g33.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
 import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
 import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
@@ -801,7 +794,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.w_ref1,
-            gallery: [candle1Hover],
+            gallery: [IMAGES.freesiaPearHover],
             colorVariants: []
         },
         variants: [{ id: "v-freesia", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -819,7 +812,7 @@ export const products: Product[] = [
         featured: false,
         images: {
             default: IMAGES.w_ref2,
-            gallery: [candle7Hover],
+            gallery: [IMAGES.blushPeonyHover],
             colorVariants: []
         },
         variants: [{ id: "v-blush", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -837,7 +830,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.w_ref3,
-            gallery: [candle8Hover],
+            gallery: [IMAGES.royalRoseHover],
             colorVariants: []
         },
         variants: [{ id: "v-royal", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
@@ -872,7 +865,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c1,
             gallery: [candle3Hover],
             colorVariants: []
         },
@@ -890,8 +883,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.c7,
-            gallery: [candle4Hover],
+            default: IMAGES.c2,
+            gallery: [IMAGES.ylangHover],
             colorVariants: []
         },
         variants: [{ id: "v-golden", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
@@ -908,7 +901,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.c8,
+            default: IMAGES.c4,
             gallery: [candle5Hover],
             colorVariants: []
         },
@@ -926,7 +919,7 @@ export const products: Product[] = [
         stock: 20,
         featured: true,
         images: {
-            default: IMAGES.w_ref4,
+            default: IMAGES.c5,
             gallery: [candle6Hover],
             colorVariants: []
         },
@@ -964,7 +957,7 @@ export const products: Product[] = [
         stock: 15,
         featured: false,
         images: {
-            default: IMAGES.c3,
+            default: IMAGES.c6,
             gallery: [wood2Hover],
             colorVariants: []
         },
@@ -982,7 +975,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c7,
             gallery: [wood3Hover],
             colorVariants: []
         },
@@ -1000,7 +993,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c8,
             gallery: [wood4Hover],
             colorVariants: []
         },
@@ -1020,7 +1013,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.c7,
+            default: IMAGES.c9,
             gallery: [oriental1Hover],
             colorVariants: []
         },
@@ -1038,7 +1031,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.c8,
+            default: IMAGES.c10,
             gallery: [oriental2Hover],
             colorVariants: []
         },
@@ -1056,7 +1049,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.c8,
+            default: IMAGES.c11,
             gallery: [oriental3Hover],
             colorVariants: []
         },
@@ -1074,7 +1067,7 @@ export const products: Product[] = [
         stock: 20,
         featured: false,
         images: {
-            default: IMAGES.c3,
+            default: IMAGES.c12,
             gallery: [oriental4Hover],
             colorVariants: []
         },
@@ -1092,7 +1085,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c13,
             gallery: [oriental5Hover],
             colorVariants: []
         },
@@ -1110,8 +1103,8 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.c7,
-            gallery: [oriental6Hover],
+            default: IMAGES.c14,
+            gallery: [IMAGES.loversRockHover],
             colorVariants: []
         },
         variants: [{ id: "v-lovers", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
@@ -1128,7 +1121,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.c8,
+            default: IMAGES.c15,
             gallery: [oriental7Hover],
             colorVariants: []
         },
@@ -1148,7 +1141,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.c3,
+            default: IMAGES.c16,
             gallery: [gourmet1Hover],
             colorVariants: []
         },
@@ -1166,7 +1159,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c17,
             gallery: [gourmet2Hover],
             colorVariants: []
         },
@@ -1184,7 +1177,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.c7,
+            default: IMAGES.c18,
             gallery: [gourmet3Hover],
             colorVariants: []
         },
@@ -1202,8 +1195,8 @@ export const products: Product[] = [
         stock: 55,
         featured: false,
         images: {
-            default: IMAGES.c8,
-            gallery: [gourmet4Hover],
+            default: IMAGES.c1,
+            gallery: [IMAGES.sugarVanillaHover],
             colorVariants: []
         },
         variants: [{ id: "v-sugar", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
@@ -1220,7 +1213,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.c3,
+            default: IMAGES.c2,
             gallery: [gourmet5Hover],
             colorVariants: []
         },
@@ -1238,7 +1231,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.c6,
+            default: IMAGES.c4,
             gallery: [gourmet6Hover],
             colorVariants: []
         },
@@ -1256,7 +1249,7 @@ export const products: Product[] = [
         stock: 25,
         featured: false,
         images: {
-            default: IMAGES.c7,
+            default: IMAGES.c5,
             gallery: [gourmet7Hover],
             colorVariants: []
         },
@@ -1276,7 +1269,7 @@ export const products: Product[] = [
         stock: 45,
         featured: false,
         images: {
-            default: IMAGES.c14,
+            default: IMAGES.c3,
             gallery: [fresh1Hover],
             colorVariants: []
         },
@@ -1294,7 +1287,7 @@ export const products: Product[] = [
         stock: 60,
         featured: false,
         images: {
-            default: IMAGES.c15,
+            default: IMAGES.c6,
             gallery: [fresh2Hover],
             colorVariants: []
         },
@@ -1312,7 +1305,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.c16,
+            default: IMAGES.c7,
             gallery: [fresh3Hover],
             colorVariants: []
         },
@@ -1330,7 +1323,7 @@ export const products: Product[] = [
         stock: 35,
         featured: false,
         images: {
-            default: IMAGES.c17,
+            default: IMAGES.c8,
             gallery: [fresh4Hover],
             colorVariants: []
         },
@@ -1348,7 +1341,7 @@ export const products: Product[] = [
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.c18,
+            default: IMAGES.c9,
             gallery: [fresh5Hover],
             colorVariants: []
         },
@@ -1366,7 +1359,7 @@ export const products: Product[] = [
         stock: 40,
         featured: false,
         images: {
-            default: IMAGES.c8,
+            default: IMAGES.c10,
             gallery: [fresh6Hover],
             colorVariants: []
         },
@@ -1384,7 +1377,7 @@ export const products: Product[] = [
         stock: 30,
         featured: false,
         images: {
-            default: IMAGES.c3,
+            default: IMAGES.c11,
             gallery: [fresh7Hover],
             colorVariants: []
         },

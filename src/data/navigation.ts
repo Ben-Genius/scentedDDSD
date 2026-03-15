@@ -1,7 +1,7 @@
 import { IMAGES } from '../assets';
 import candle2Hover from '../assets/collections/candles/2.2.png';
 import candle3Hover from '../assets/collections/candles/3.3.png';
-import candle4Hover from '../assets/collections/candles/4.4.png';
+import candle4Hover from '../assets/images/ingredients/candles/ylang_hover.png';
 import candle5Hover from '../assets/collections/candles/5.5.png';
 import candle6Hover from '../assets/collections/candles/6.6.png';
 
@@ -14,12 +14,12 @@ import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
 import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
 import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
 import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
-import oriental6Hover from '../assets/collections/candles/oriental/o66.png';
+import oriental6Hover from '../assets/images/ingredients/candles/lovers_rock_hover.png';
 import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4Hover from '../assets/collections/candles/gourmet/g33.png';
+import gourmet4Hover from '../assets/images/ingredients/candles/sugar_vanilla_hover.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
 import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
 import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';

@@ -154,35 +154,39 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                     </div>
 
                     {/* Thumbnail Gallery */}
-                    {(product.images.gallery?.length > 0 || product.images.colorVariants?.length > 0) && (
-                        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
-                            <button
-                                onClick={() => setActiveImage(product.images.default)}
-                                className={cn(
-                                    "w-24 h-24 snap-start flex-shrink-0 bg-[#111] rounded-lg overflow-hidden border-2 transition-all duration-300",
-                                    activeImage === product.images.default
-                                        ? "border-gold shadow-[0_0_15px_rgba(183,133,43,0.3)]"
-                                        : "border-transparent opacity-60 hover:opacity-100 transform hover:-translate-y-1"
-                                )}
-                            >
-                                <img src={product.images.default} alt="Default" className="w-full h-full object-cover" />
-                            </button>
-                            {product.images.gallery?.map((img, idx) => (
+                    {(() => {
+                        const candleCategories = ['Candle', 'Floral Romance', 'Woody and Suede', 'Oriental Luxe', 'Gourmand Indulgence', 'Fresh Whisper'];
+                        const isCandle = candleCategories.includes(product.category) || product.id.startsWith('p-new-');
+                        return !isCandle && (product.images.gallery?.length > 0 || product.images.colorVariants?.length > 0);
+                    })() && (
+                            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
                                 <button
-                                    key={idx}
-                                    onClick={() => setActiveImage(img)}
+                                    onClick={() => setActiveImage(product.images.default)}
                                     className={cn(
                                         "w-24 h-24 snap-start flex-shrink-0 bg-[#111] rounded-lg overflow-hidden border-2 transition-all duration-300",
-                                        activeImage === img
+                                        activeImage === product.images.default
                                             ? "border-gold shadow-[0_0_15px_rgba(183,133,43,0.3)]"
                                             : "border-transparent opacity-60 hover:opacity-100 transform hover:-translate-y-1"
                                     )}
                                 >
-                                    <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
+                                    <img src={product.images.default} alt="Default" className="w-full h-full object-cover" />
                                 </button>
-                            ))}
-                        </div>
-                    )}
+                                {product.images.gallery?.map((img, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => setActiveImage(img)}
+                                        className={cn(
+                                            "w-24 h-24 snap-start flex-shrink-0 bg-[#111] rounded-lg overflow-hidden border-2 transition-all duration-300",
+                                            activeImage === img
+                                                ? "border-gold shadow-[0_0_15px_rgba(183,133,43,0.3)]"
+                                                : "border-transparent opacity-60 hover:opacity-100 transform hover:-translate-y-1"
+                                        )}
+                                    >
+                                        <img src={img} alt={`Gallery ${idx}`} className="w-full h-full object-cover" />
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                 </div>
 
                 {/* Right: Info & Controls */}

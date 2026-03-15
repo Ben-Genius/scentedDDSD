@@ -52,6 +52,13 @@ export const CollectionPage: React.FC = () => {
         if (link.image || link.hoverImage) {
           return {
             ...originalProduct,
+            images: {
+              ...originalProduct.images,
+              default: link.image || originalProduct.images.default,
+              gallery: link.hoverImage
+                ? [link.hoverImage, ...originalProduct.images.gallery.filter(img => img !== link.hoverImage)]
+                : originalProduct.images.gallery
+            }
           };
         }
 

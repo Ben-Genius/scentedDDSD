@@ -35,7 +35,11 @@ export const ShopProductCard = ({
                     className
                 )}
             >
-                <Link to={`/product/${product.slug}`} className="w-32 h-40 flex-shrink-0 relative overflow-hidden rounded-sm bg-[#f5f5f5] block">
+                <Link 
+                    to={`/product/${product.slug}`} 
+                    state={{ passedImages: product.images }}
+                    className="w-32 h-40 flex-shrink-0 relative overflow-hidden rounded-sm bg-[#f5f5f5] block"
+                >
                     <img
                         src={product.images.default}
                         alt={product.title}
@@ -46,7 +50,11 @@ export const ShopProductCard = ({
                 <div className="flex-1 flex flex-col justify-center">
                     <div className="flex justify-between items-start">
                         <div>
-                            <Link to={`/product/${product.slug}`} className="block">
+                            <Link 
+                                to={`/product/${product.slug}`} 
+                                state={{ passedImages: product.images }}
+                                className="block"
+                            >
                                 <h3 className="text-lg font-playfair text-black mb-2 hover:text-black/70 transition-colors">{product.title}</h3>
                             </Link>
                             <p className="text-black/60 text-xs line-clamp-2 max-w-md mb-3">{product.shortDescription}</p>
@@ -82,7 +90,12 @@ export const ShopProductCard = ({
                 className
             )}
         >
-            <Link to={`/product/${product.slug}`} aria-label={product.title} className="block relative">
+            <Link 
+                to={`/product/${product.slug}`} 
+                state={{ passedImages: product.images }}
+                aria-label={product.title} 
+                className="block relative"
+            >
                 {/* Image container */}
                 <div className="aspect-[3/4] overflow-hidden bg-[#f5f5f5] relative mb-4 rounded-sm">
                     {/* Main Image */}
