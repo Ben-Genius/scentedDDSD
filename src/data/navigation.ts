@@ -571,35 +571,18 @@ export const navigationData: NavItem[] = [
                 title: 'Burners',
                 path: '/collections/burners',
                 links: [
-                    { name: 'Sweet Home', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
-                    { name: 'Oriental Lantern', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
-                    { name: 'Minimalist Stone', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
-                    { name: 'Classic White', path: '/product/classic-white-burner', image: IMAGES.burner2 },
-                ]
-            },
-            {
-                title: 'Decorative Pieces',
-                path: '/collections/decorative',
-                links: [
-                    { name: 'Artistic Piece I', path: '/product/artistic-ceramic-piece-1', image: IMAGES.artifact1 },
-                    { name: 'Artistic Piece II', path: '/product/artistic-ceramic-piece-2', image: IMAGES.artifact2 },
-                    { name: 'Artistic Piece III', path: '/product/artistic-ceramic-piece-3', image: IMAGES.artifact3 },
-                    { name: 'Artistic Piece IV', path: '/product/artistic-ceramic-piece-4', image: IMAGES.artifact4 },
-                    { name: 'Artistic Piece V', path: '/product/artistic-ceramic-piece-5', image: IMAGES.artifact5 },
-                    { name: 'Artistic Piece VI', path: '/product/artistic-ceramic-piece-6', image: IMAGES.artifact6 },
-                    { name: 'Artistic Piece VII', path: '/product/artistic-ceramic-piece-7', image: IMAGES.artifact7 },
-                    { name: 'Artistic Piece VIII', path: '/product/artistic-ceramic-piece-8', image: IMAGES.artifact8 },
+                    { name: 'Sweet Home Ceramic Burner', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
+                    { name: 'Oriental Lantern Burner', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
+                    { name: 'Minimalist Stone Burner', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
+                    { name: 'Classic White Ceramic Burner', path: '/product/classic-white-burner', image: IMAGES.burner2 },
                 ]
             },
             {
                 title: 'Textiles & Others',
                 path: '/collections/textiles',
                 links: [
-                    { name: 'Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
-                    { name: 'Scent Bag (Floral)', path: '/product/designer-scent-bag-1', image: IMAGES.bag1 },
-                    { name: 'Scent Bag (Fresh)', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
-                    { name: 'Scent Bag (Woody)', path: '/product/designer-scent-bag-3', image: IMAGES.bag3 },
-                    { name: 'Car Diffuser', path: '/product/premium-car-diffuser', image: IMAGES.diffcar2 },
+                    { name: 'Luxury Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
+                    { name: 'Travel Bag', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
                 ]
             }
         ]
