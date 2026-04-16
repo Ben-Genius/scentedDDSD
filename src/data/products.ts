@@ -46,7 +46,7 @@ export const products: Product[] = [
         category: "Reed Diffuser",
         shortDescription: "Signature fragrances to scent your space.",
         longDescription: "Elegant reed diffusers delivering continuous fragrance. Includes reeds.",
-        basePrice: 100,
+        basePrice: 200,
         stock: 50,
         featured: true,
         images: {
@@ -55,7 +55,7 @@ export const products: Product[] = [
             colorVariants: []
         },
         variants: [
-            { id: "v-diff-classic", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 100 }
+            { id: "v-diff-classic", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
         ],
         scents: ["Peach", "Encounter", "Hilton", "Miss Coco Chanel"]
     },
@@ -66,7 +66,7 @@ export const products: Product[] = [
         category: "Reed Diffuser",
         shortDescription: "Complex botanical and luxury blends.",
         longDescription: "Premium collection of sophisticated fragrances for a refined atmosphere.",
-        basePrice: 150,
+        basePrice: 200,
         stock: 50,
         featured: false,
         images: {
@@ -75,7 +75,7 @@ export const products: Product[] = [
             colorVariants: []
         },
         variants: [
-            { id: "v-diff-premium", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 150 }
+            { id: "v-diff-premium", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
         ],
         scents: [
             "Wood Sage and Sea Salt", "Roof Garden", "Strawberry Muse", "Amber Ebony",
@@ -111,7 +111,7 @@ export const products: Product[] = [
         category: "Floral Romance",
         shortDescription: "Delicate freesia and ripe pear.",
         longDescription: "The sensuous freshness of just-ripe pears is wrapped in a bouquet of white freesias.",
-        basePrice: 120,
+        basePrice: 200,
         stock: 50,
         featured: false,
         images: {
@@ -119,7 +119,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-fep-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
+        variants: [{ id: "v-fep-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Freesia", "Pear", "Patchouli"]
     },
     {
@@ -129,7 +129,7 @@ export const products: Product[] = [
         category: "Floral Romance",
         shortDescription: "Sweet apricot-like floral.",
         longDescription: "A loving bouquet of sweet osmanthus flowers with fruity undertones.",
-        basePrice: 125,
+        basePrice: 200,
         stock: 45,
         featured: false,
         images: {
@@ -137,7 +137,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-ado-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
+        variants: [{ id: "v-ado-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Osmanthus", "Benzoin", "Orange"]
     },
     {
@@ -147,7 +147,7 @@ export const products: Product[] = [
         category: "Floral Romance",
         shortDescription: "Calming night-blooming lavender.",
         longDescription: "A soothing blend of lavender, musk, and tonka bean for a restful atmosphere.",
-        basePrice: 115,
+        basePrice: 200,
         stock: 60,
         featured: false,
         images: {
@@ -155,7 +155,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-ml-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
+        variants: [{ id: "v-ml-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Lavender", "Musk", "Tonka Bean"]
     },
 
@@ -168,7 +168,7 @@ export const products: Product[] = [
         category: "Woody & Exotic",
         shortDescription: "Smoky and sweet tobacco.",
         longDescription: "Rich tobacco leaf spices with vanilla and cacao for a sophisticated aroma.",
-        basePrice: 140,
+        basePrice: 200,
         stock: 35,
         featured: false,
         images: {
@@ -176,7 +176,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-tn-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 140 }],
+        variants: [{ id: "v-tn-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Tobacco", "Vanilla", "Wood"]
     },
     {
@@ -186,7 +186,7 @@ export const products: Product[] = [
         category: "Woody & Exotic",
         shortDescription: "Intense black oud.",
         longDescription: "A deep, resinous scent of black oud wood, leather, and black pepper.",
-        basePrice: 150,
+        basePrice: 200,
         stock: 30,
         featured: false,
         images: {
@@ -194,7 +194,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-bo-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 150 }],
+        variants: [{ id: "v-bo-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Oud", "Leather", "Pepper"]
     },
     {
@@ -204,7 +204,7 @@ export const products: Product[] = [
         category: "Woody & Exotic",
         shortDescription: "Warm figs and cedar.",
         longDescription: "Plump, sun-warmed figs blended with cassis and cedarwood.",
-        basePrice: 135,
+        basePrice: 200,
         stock: 40,
         featured: false,
         images: {
@@ -212,7 +212,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-wf-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 135 }],
+        variants: [{ id: "v-wf-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Fig", "Cedarwood", "Cassis"]
     },
 
@@ -224,7 +224,7 @@ export const products: Product[] = [
         category: "Oriental Luxe",
         shortDescription: "Dark enigmatic fruit.",
         longDescription: "Ruby-rich juices of pomegranate, raspberry and plum spiked with pink pepper.",
-        basePrice: 145,
+        basePrice: 200,
         stock: 30,
         featured: false,
         images: {
@@ -232,7 +232,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-pom-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 145 }],
+        variants: [{ id: "v-pom-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Pomegranate", "Pink Pepper", "Lily"]
     },
 
@@ -244,7 +244,7 @@ export const products: Product[] = [
         category: "Gourmet Indulgence",
         shortDescription: "Celebratory fizzy scent.",
         longDescription: "Crisp champagne notes with a twist of citrus zest.",
-        basePrice: 160,
+        basePrice: 200,
         stock: 25,
         featured: false,
         images: {
@@ -252,7 +252,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-cc-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 160 }],
+        variants: [{ id: "v-cc-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Champagne", "Citrus", "Grape"]
     },
     {
@@ -262,7 +262,7 @@ export const products: Product[] = [
         category: "Gourmet Indulgence",
         shortDescription: "Sweet vanilla warmth.",
         longDescription: "Sparkling sugar crystals over warm Madagascar vanilla beans.",
-        basePrice: 115,
+        basePrice: 200,
         stock: 50,
         featured: false,
         images: {
@@ -270,7 +270,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-sv-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 115 }],
+        variants: [{ id: "v-sv-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Vanilla", "Sugar", "Musk"]
     },
     {
@@ -280,7 +280,7 @@ export const products: Product[] = [
         category: "Gourmet Indulgence",
         shortDescription: "Fruity sparkling cocktail.",
         longDescription: "Juicy peaches mixed with sparkling prosecco.",
-        basePrice: 125,
+        basePrice: 200,
         stock: 45,
         featured: false,
         images: {
@@ -288,7 +288,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-pb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
+        variants: [{ id: "v-pb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Peach", "Prosecco", "Orange"]
     },
 
@@ -300,7 +300,7 @@ export const products: Product[] = [
         category: "Fresh Whisper",
         shortDescription: "Coastal breeze.",
         longDescription: "The mineral scent of the rugged cliffs not far from the ocean.",
-        basePrice: 130,
+        basePrice: 200,
         stock: 50,
         featured: false,
         images: {
@@ -308,7 +308,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-sss-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
+        variants: [{ id: "v-sss-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Sage", "Sea Salt", "Ambrette"]
     },
     {
@@ -318,7 +318,7 @@ export const products: Product[] = [
         category: "Fresh Whisper",
         shortDescription: "Zesty and uplifting.",
         longDescription: "Bright lemongrass with a touch of ginger and lime.",
-        basePrice: 110,
+        basePrice: 200,
         stock: 60,
         featured: false,
         images: {
@@ -326,7 +326,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-lg-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 110 }],
+        variants: [{ id: "v-lg-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Lemongrass", "Ginger", "Lime"]
     },
 
@@ -647,29 +647,7 @@ export const products: Product[] = [
     },
 
     // --- Air Fresheners ---
-    {
-        id: "p-air-fresheners",
-        title: "Air Fresheners",
-        slug: "air-fresheners",
-        category: "Air Fresheners",
-        shortDescription: "Designer inspired room sprays.",
-        longDescription: "Luxurious sprays to refresh any room instantly with designer-inspired scents.",
-        basePrice: 200,
-        stock: 60,
-        featured: true,
-        images: {
-            default: IMAGES.spray,
-            gallery: [IMAGES.amberspray, IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-af-std", label: "Standard", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }
-        ],
-        scents: [
-            "Gucci Bloom", "Burberry", "English Pear & Freesia", "Sweet Flowers", "Amber Ebony"
-        ]
-    },
-
+ 
     // --- Gift Sets ---
     {
         id: "p-box-gift-set",
@@ -1393,7 +1371,7 @@ export const products: Product[] = [
         category: "Reed Diffuser",
         shortDescription: "Intoxicating floral elegance.",
         longDescription: "A deep, romantic Jasmine blend that transforms your evening atmosphere. Limited edition.",
-        basePrice: 120,
+        basePrice: 200,
         stock: 40,
         featured: false,
         images: {
@@ -1401,7 +1379,7 @@ export const products: Product[] = [
             gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
-        variants: [{ id: "v-new-1", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
+        variants: [{ id: "v-new-1", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Jasmine", "Dark Amber"]
     },
     {
@@ -1442,7 +1420,7 @@ export const products: Product[] = [
     },
     {
         id: "p-new-4",
-        title: "Golden Hour Spray",
+        title: "Air Freshener Spray",
         slug: "golden-hour-spray",
         category: "Air Fresheners",
         shortDescription: "Citrus sunset blend.",
@@ -1483,7 +1461,7 @@ export const products: Product[] = [
         category: "Reed Diffuser",
         shortDescription: "Crisp winter forest.",
         longDescription: "Fill your home with the scent of fresh pine needles and cool mountain air.",
-        basePrice: 160,
+        basePrice: 200,
         stock: 35,
         featured: false,
         images: {
@@ -1491,7 +1469,7 @@ export const products: Product[] = [
             gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
-        variants: [{ id: "v-new-6", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 160 }],
+        variants: [{ id: "v-new-6", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Pine", "Eucalyptus", "Cedarwood"]
     },
     {
@@ -1537,7 +1515,7 @@ export const products: Product[] = [
         category: "Reed Diffuser",
         shortDescription: "Clean and herbal.",
         longDescription: "Perfect for kitchens, this scent neutralizes odors with zest and herbs.",
-        basePrice: 125,
+        basePrice: 200,
         stock: 40,
         featured: false,
         images: {
@@ -1545,14 +1523,14 @@ export const products: Product[] = [
             gallery: [IMAGES.new3, IMAGES.new3],
             colorVariants: []
         },
-        variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
+        variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Lemon", "Basil", "Thyme"]
     },
 
     // --- NEW COLLECTION: Bath & Body ---
     {
         id: "p-soap-artisan-1",
-        title: "Artisan Scented Soap (Type I)",
+        title: "Body Wash Gel",
         slug: "artisan-scented-soap-1",
         category: "Bath & Body",
         shortDescription: "Luxury hand-crafted bar soap.",
@@ -1570,7 +1548,7 @@ export const products: Product[] = [
     },
     {
         id: "p-soap-artisan-2",
-        title: "Artisan Scented Soap (Type II)",
+        title: "Hand Wash Gel",
         slug: "artisan-scented-soap-2",
         category: "Bath & Body",
         shortDescription: "Hand-poured luxury cleansing bar.",
@@ -1824,7 +1802,7 @@ export const products: Product[] = [
 
     {
         id: "acc-bag-2",
-        title: " Scent Bag (Fresh)",
+        title: " Travel Bag ",
         slug: "designer-scent-bag-2",
         category: "Accessories",
         shortDescription: "Luxury fabric bag with clean notes.",
@@ -1841,22 +1819,22 @@ export const products: Product[] = [
         scents: ["Fresh Linen", "Cotton Blossom"]
     },
 
-    {
-        id: "acc-car-1",
-        title: "Premium Car Diffuser",
-        slug: "premium-car-diffuser",
-        category: "Accessories",
-        shortDescription: "Elegant clip-on car fragrance diffuser.",
-        longDescription: "Transform your daily commute with our premium car diffuser, designed to deliver a steady, pleasant fragrance.",
-        basePrice: 95,
-        stock: 60,
-        featured: false,
-        images: {
-            default: IMAGES.diffcar2,
-            gallery: [IMAGES.diffcar2],
-            colorVariants: []
-        },
-        variants: [{ id: "v-pcd-std", label: "Standard", multiplier: 1, priceGHS: 95 }],
-        scents: ["Cool Ocean", "New Car", "Sandalwood"]
-    }
+    // {
+    //     id: "acc-car-1",
+    //     title: "Premium Car Diffuser",
+    //     slug: "premium-car-diffuser",
+    //     category: "Accessories",
+    //     shortDescription: "Elegant clip-on car fragrance diffuser.",
+    //     longDescription: "Transform your daily commute with our premium car diffuser, designed to deliver a steady, pleasant fragrance.",
+    //     basePrice: 95,
+    //     stock: 60,
+    //     featured: false,
+    //     images: {
+    //         default: IMAGES.diffcar2,
+    //         gallery: [IMAGES.diffcar2],
+    //         colorVariants: []
+    //     },
+    //     variants: [{ id: "v-pcd-std", label: "Standard", multiplier: 1, priceGHS: 95 }],
+    //     scents: ["Cool Ocean", "New Car", "Sandalwood"]
+    // }
 ];

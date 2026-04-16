@@ -61,7 +61,7 @@ import diffuserHeader2 from './collections/diffusers/Diffuser/2.png';
 import diffuserHeader3 from './collections/diffusers/Diffuser/3.png';
 import diffuserHeader4 from './collections/diffusers/Diffuser/4.png';
 import diffuserHeader5 from './collections/diffusers/Diffuser/5.png';
-import diffuserHeader6 from './collections/diffusers/Diffuser/6.png';
+import diffuserHeader6 from './images/newDiffuser.png';
 import diffuserHeader7 from './collections/diffusers/Diffuser/7.png';
 import diffuserHeader8 from './collections/diffusers/Diffuser/8.png';
 import diffuserHeader9 from './collections/diffusers/Diffuser/9.png';
