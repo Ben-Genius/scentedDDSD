@@ -572,7 +572,6 @@ export const navigationData: NavItem[] = [
                 path: '/collections/burners',
                 links: [
                     { name: 'Sweet Home Ceramic Burner', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
-                    { name: 'Oriental Lantern Burner', path: '/product/oriental-lantern-burner', image: IMAGES.newlantern },
                     { name: 'Minimalist Stone Burner', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
                     { name: 'Classic White Ceramic Burner', path: '/product/classic-white-burner', image: IMAGES.burner2 },
                 ]
