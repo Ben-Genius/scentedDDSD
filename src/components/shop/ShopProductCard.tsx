@@ -22,7 +22,7 @@ export const ShopProductCard = ({
     // Determine display price
     const lowestPrice = product.variants.length > 0
         ? Math.min(...product.variants.map(v => v.priceGHS))
-        : product.basePrice;
+        : (product.basePrice ?? 0);
 
     if (viewMode === 'list') {
         return (

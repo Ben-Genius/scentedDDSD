@@ -618,7 +618,7 @@ export const AdminInventory = () => {
                                         <div className="flex-1 min-w-0">
                                             <h3 className="font-medium text-gray-900 text-sm truncate">{p.title}</h3>
                                             <span className="inline-block px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs uppercase mt-1">{p.category}</span>
-                                            <p className="font-bold text-gray-900 mt-1">{formatMoney(p.basePrice)}</p>
+                                            <p className="font-bold text-gray-900 mt-1">{formatMoney(p.basePrice ?? 0)}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between pt-3 border-t border-gray-100">
@@ -666,7 +666,7 @@ export const AdminInventory = () => {
                                                     </div>
                                                 </td>
                                                 <td className="p-3 sm:p-4"><span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-[10px] sm:text-xs uppercase">{p.category}</span></td>
-                                                <td className="p-3 sm:p-4 font-medium text-xs sm:text-sm">{formatMoney(p.basePrice)}</td>
+                                                <td className="p-3 sm:p-4 font-medium text-xs sm:text-sm">{formatMoney(p.basePrice ?? 0)}</td>
                                                 <td className="p-3 sm:p-4">
                                                     <input type="number" value={p.stock} onChange={(e) => updateStock(p.id, parseInt(e.target.value) || 0)} className="w-12 sm:w-16 bg-gray-50 border border-gray-200 rounded px-2 py-1 text-center text-xs" />
                                                 </td>

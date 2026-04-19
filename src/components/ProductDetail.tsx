@@ -91,7 +91,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
 
     // Price Calculation
     const calculatePrice = () => {
-        let price = selectedVariant?.priceGHS || product.basePrice;
+        let price = selectedVariant?.priceGHS || product.basePrice || 0;
         if (selectedColor && selectedColor.priceDelta) {
             price += selectedColor.priceDelta;
         }

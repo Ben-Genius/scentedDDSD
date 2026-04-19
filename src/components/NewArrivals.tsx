@@ -63,7 +63,7 @@ export const NewArrivals = () => {
 
         // Price filter
         filtered = filtered.filter(p => {
-            const price = p.basePrice;
+            const price = p.basePrice ?? 0;
             return price >= priceRange[0] && price <= priceRange[1];
         });
 
@@ -73,10 +73,10 @@ export const NewArrivals = () => {
                 // Already in newest order from API usually
                 break;
             case 'price-asc':
-                filtered.sort((a, b) => a.basePrice - b.basePrice);
+                filtered.sort((a, b) => (a.basePrice ?? 0) - (b.basePrice ?? 0));
                 break;
             case 'price-desc':
-                filtered.sort((a, b) => b.basePrice - a.basePrice);
+                filtered.sort((a, b) => (b.basePrice ?? 0) - (a.basePrice ?? 0));
                 break;
             case 'popular':
                 filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
@@ -702,7 +702,7 @@ const ProductCard = ({ product, index, onQuickAdd }: { product: Product; index: 
                     <div>
                         <span className="text-xs text-gray-500 mr-2">From</span>
                         <span className="text-gold font-bold text-lg">
-                            {formatMoney(product.basePrice)}
+                            {formatMoney(product.basePrice ?? 0)}
                         </span>
                     </div>
                     <button

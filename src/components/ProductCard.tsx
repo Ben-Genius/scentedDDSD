@@ -12,7 +12,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     // Determine display price (lowest variant)
     const lowestPrice = product.variants.length > 0
         ? Math.min(...product.variants.map(v => v.priceGHS))
-        : product.basePrice;
+        : (product.basePrice ?? 0);
 
     // Generate theme color based on category (optional)
     const getCategoryColor = (category: string) => {
