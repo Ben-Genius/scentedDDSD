@@ -29,9 +29,9 @@ const overrideVariants = (product: Product) => {
 
     if (isCandle) {
         return [
-            { id: `${product.id}-small`, label: 'Small', sizeLabel: '485g', multiplier: 1, priceGHS: 150 },
-            { id: `${product.id}-medium`, label: 'Medium', sizeLabel: '695g', multiplier: 1, priceGHS: 200 },
-            { id: `${product.id}-grand`, label: 'Grand', sizeLabel: '1525g', multiplier: 1, priceGHS: 600 },
+            { id: `${product.id}-small`, label: 'Small', sizeLabel: '485g', multiplier: 1, priceGHS: 200 },
+            { id: `${product.id}-medium`, label: 'Medium', sizeLabel: '695g', multiplier: 1, priceGHS: 250 },
+            { id: `${product.id}-grand`, label: 'Grand', sizeLabel: '1525g', multiplier: 1, priceGHS: 550 },
         ];
     }
 

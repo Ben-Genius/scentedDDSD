@@ -647,7 +647,7 @@ export const products: Product[] = [
     },
 
     // --- Air Fresheners ---
- 
+
     // --- Gift Sets ---
     {
         id: "p-box-gift-set",
@@ -1639,7 +1639,7 @@ export const products: Product[] = [
     },
     {
         id: "acc-tissue-1",
-        title: "Luxury Scented Tissues",
+        title: "Car Tissue Paper",
         slug: "scented-tissues",
         category: "Accessories",
         shortDescription: "Premium soft tissues with subtle fragrance.",
@@ -1802,7 +1802,7 @@ export const products: Product[] = [
 
     {
         id: "acc-bag-2",
-        title: " Travel Bag ",
+        title: " Travel Essentials Bag ",
         slug: "designer-scent-bag-2",
         category: "Accessories",
         shortDescription: "Luxury fabric bag with clean notes.",

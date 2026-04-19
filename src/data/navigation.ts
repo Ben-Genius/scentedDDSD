@@ -581,8 +581,8 @@ export const navigationData: NavItem[] = [
                 title: 'Textiles & Others',
                 path: '/collections/textiles',
                 links: [
-                    { name: 'Luxury Scented Tissues', path: '/product/scented-tissues', image: IMAGES.tissue1 },
-                    { name: 'Travel Bag', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
+                    { name: 'Car Tissue Paper', path: '/product/scented-tissues', image: IMAGES.tissue1 },
+                    { name: 'Travel Essentials Bag', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
                 ]
             }
         ]
