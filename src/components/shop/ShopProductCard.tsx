@@ -35,8 +35,8 @@ export const ShopProductCard = ({
                     className
                 )}
             >
-                <Link 
-                    to={`/product/${product.slug}`} 
+                <Link
+                    to={`/product/${product.slug}`}
                     state={{ passedImages: product.images }}
                     className="w-32 h-40 flex-shrink-0 relative overflow-hidden rounded-sm bg-[#f5f5f5] block"
                 >
@@ -50,8 +50,8 @@ export const ShopProductCard = ({
                 <div className="flex-1 flex flex-col justify-center">
                     <div className="flex justify-between items-start">
                         <div>
-                            <Link 
-                                to={`/product/${product.slug}`} 
+                            <Link
+                                to={`/product/${product.slug}`}
                                 state={{ passedImages: product.images }}
                                 className="block"
                             >
@@ -90,10 +90,10 @@ export const ShopProductCard = ({
                 className
             )}
         >
-            <Link 
-                to={`/product/${product.slug}`} 
+            <Link
+                to={`/product/${product.slug}`}
                 state={{ passedImages: product.images }}
-                aria-label={product.title} 
+                aria-label={product.title}
                 className="block relative"
             >
                 {/* Image container */}
@@ -158,7 +158,7 @@ export const ShopProductCard = ({
                             {product.title}
                         </h3>
                         <span className="text-sm font-medium text-black ml-4">
-                            {formatMoney(lowestPrice)}
+                            {/* {formatMoney(lowestPrice)} */}
                         </span>
                     </div>
 

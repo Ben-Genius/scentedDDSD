@@ -1583,24 +1583,7 @@ export const products: Product[] = [
         variants: [{ id: "v-shb-std", label: "Standard", multiplier: 1, priceGHS: 120 }],
         scents: []
     },
-    {
-        id: "acc-burner-2",
-        title: "Oriental Lantern Burner",
-        slug: "oriental-lantern-burner",
-        category: "Accessories",
-        shortDescription: "Traditional lantern style ceramic burner.",
-        longDescription: "Intricately designed oriental lantern style burner that creates a soft glow while scenting your space.",
-        basePrice: 150,
-        stock: 25,
-        featured: false,
-        images: {
-            default: IMAGES.newlantern,
-            gallery: [IMAGES.newlantern],
-            colorVariants: []
-        },
-        variants: [{ id: "v-olb-std", label: "Standard", multiplier: 1, priceGHS: 150 }],
-        scents: []
-    },
+
     {
         id: "acc-burner-3",
         title: "Minimalist Stone Burner",

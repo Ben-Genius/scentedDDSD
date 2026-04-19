@@ -35,7 +35,7 @@ export interface Product {
   weight?: string;
   stock: number;
   featured: boolean;
-  basePrice: number; // Base price before variants (if needed) or just use variant price
+  basePrice?: number; // Base price before variants (if needed) or just use variant price
   specs?: Record<string, string>;
   description?: string;
 }
