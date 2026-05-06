@@ -89,7 +89,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
                     {/* Price */}
                     <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
-                        {formatMoney(lowestPrice)}
+                        {/* {formatMoney(lowestPrice)} */}
                     </p>
                 </div>
             </Link>

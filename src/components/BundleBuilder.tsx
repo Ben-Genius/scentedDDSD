@@ -545,12 +545,8 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                                     {product.title}
                                                 </h4>
 
-                                                <p className="text-[10px] text-stone-400 font-medium uppercase tracking-widest mb-1 truncate max-w-full mx-auto">{product.scents.join(', ')}</p>
 
-                                                {/* Price - Matches ProductCard */}
-                                                <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
-                                                    {formatMoney(product.variants[0].priceGHS)}
-                                                </p>
+                                              
                                             </div>
                                         </div>
                                     </motion.div>

@@ -586,9 +586,9 @@ export const navigationData: NavItem[] = [
             }
         ]
     },
-    // {
-    //     id: 'gifts',
-    //     name: 'Gift Sets',
-    //     path: '/bundles',
-    // }
+    {
+        id: 'gifts',
+        name: 'Gift Bundles',
+        path: '/bundles',
+    }
 ];

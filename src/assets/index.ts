@@ -51,10 +51,10 @@ import new3 from './images/3121432491361579641 - 4d659eb054fe874b4e0ef35c8dfc192
 import new4 from './images/3121432947185062500 - e8b4142ab779e3b60224a0b15474d458.jpg';
 import new5 from './images/3121433145061933636 - 477f25add842179fe383b69d392a3a30.jpg';
 
-import collectionFloral from './images/collection-floral.png';
-import collectionWoody from './images/collection-woody.png';
-import collectionOriental from './images/collection-oriental.png';
-import collectionFresh from './images/collection-fresh.png';
+import collectionFloral from './collections/diffusers/Diffuser/15.png';
+import collectionWoody from './collections/diffusers/Diffuser/4.png';
+import collectionOriental from './collections/diffusers/Diffuser/1.png';
+import collectionFresh from './collections/diffusers/Diffuser/2.png';
 
 import diffuserHeader1 from './collections/diffusers/Diffuser/1.png';
 import diffuserHeader2 from './collections/diffusers/Diffuser/2.png';
