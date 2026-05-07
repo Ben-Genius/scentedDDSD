@@ -534,45 +534,19 @@ export const products: Product[] = [
     },
 
     // --- Essential Oils ---
-    
 
-    // --- Scented Candles ---
-    {
-        id: "p-scented-candles",
-        title: "Scented Candles",
-        slug: "scented-candles",
-        category: "Candle",
-        shortDescription: "Hand-poured luxury candles.",
-        longDescription: "Create a warm glow and inviting scent with our premium hand-poured candles.",
-        basePrice: 100,
-        stock: 80,
-        featured: false,
-        images: {
-            default: scentedCandle,
-            gallery: [IMAGES.darkcandle, IMAGES.amberspray, IMAGES.candle, IMAGES.new3, IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-candle-med", label: "Medium", sizeMl: "", sizeLabel: "Medium", multiplier: 1, priceGHS: 100 },
-            { id: "v-candle-lrg", label: "Large", sizeMl: "", sizeLabel: "Large", multiplier: 1.5, priceGHS: 150 }
-        ],
-        scents: [
-            "Amber", "Lemon & Lime", "Orange", "Butterscotch", "Vanilla", "Scandalwood",
-            "Citronella", "Champagne Cocktail", "Oud", "Marshmallow Cheesecake",
-            "Cinnamon Latte", "Coffee Vanilla", "Hot Chocolate", "Cinnamon Peony",
-            "Bubble Gum", "Into You", "Hawaii Sunset", "Peach", "Pumpkin Spice"
-        ]
-    },
+
+
 
     // --- Air Fresheners ---
 
     // --- Gift Sets ---
-    
-   
+
+
 
     // --- Remaining items from original list (that don't conflict) ---
     // Keeping only unique categories/items not covered above to maintain variety but cleaned up
-  
+
 
     // --- NEW COLLECTION: Floral Romance ---
     {
@@ -849,24 +823,8 @@ export const products: Product[] = [
         variants: [{ id: "v-cedar", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
         scents: ["Cedarwood", "Juniper", "Moss"]
     },
-    {
-        id: "p-myrrh-tonka",
-        title: "Myrrh & Tonka",
-        slug: "myrrh-tonka",
-        category: "Oriental Luxe",
-        shortDescription: "Namibian myrrh and tonka.",
-        longDescription: "Rich, hand-harvested sap of the Namibian myrrh tree, mingling with warm almond and lush vanilla notes of tonka bean.",
-        basePrice: 165,
-        stock: 20,
-        featured: false,
-        images: {
-            default: IMAGES.c12,
-            gallery: [oriental4Hover],
-            colorVariants: []
-        },
-        variants: [{ id: "v-myrrh", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 165 }],
-        scents: ["Lavender", "Omumbiri Myrrh", "Tonka Bean"]
-    },
+
+
     {
         id: "p-pomegranate-noir",
         title: "Pomegranate Noir",
@@ -923,24 +881,7 @@ export const products: Product[] = [
     },
 
     // --- NEW COLLECTION: Gourmand Indulgence ---
-    {
-        id: "p-creme-de-latte",
-        title: "Crème de Latte",
-        slug: "creme-de-latte",
-        category: "Gourmand Indulgence",
-        shortDescription: "Creamy coffee delight.",
-        longDescription: "Rich espresso blended with steamed milk and vanilla syrup.",
-        basePrice: 125,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.c16,
-            gallery: [gourmet1Hover],
-            colorVariants: []
-        },
-        variants: [{ id: "v-creme", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
-        scents: ["Coffee", "Milk", "Vanilla"]
-    },
+
     {
         id: "p-marshmallow-cheesecake",
         title: "Marshmallow Cheesecake",
@@ -1258,7 +1199,7 @@ export const products: Product[] = [
         scents: []
     },
 
-  
+
 
     {
         id: "acc-tissue-1",

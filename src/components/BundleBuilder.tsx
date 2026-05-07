@@ -35,7 +35,7 @@ interface BundleItem extends Product {
 }
 
 const RewardTrack = ({ count }: { count: number }) => {
-    const tiers = [{ threshold: 3, discount: '10%' }, { threshold: 5, discount: '15%' }];
+    const tiers = [{ threshold: 3, discount: '0%' }, { threshold: 5, discount: '0%' }];
     return (
         <div className="relative pt-6 pb-2">
             <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden flex">
@@ -172,7 +172,7 @@ const CuratorTrayContent = ({
                     <span>{formatMoney(subtotal)}</span>
                 </div>
 
-                <AnimatePresence>
+                {/* <AnimatePresence>
                     {discount > 0 && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
@@ -187,7 +187,7 @@ const CuratorTrayContent = ({
                             <span>-{formatMoney(subtotal * discount)}</span>
                         </motion.div>
                     )}
-                </AnimatePresence>
+                </AnimatePresence> */}
 
                 <div className="flex justify-between items-baseline pt-4">
                     <span className="text-lg font-serif">Bundle Total</span>
@@ -247,8 +247,10 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const [isHarmonyLoading, setIsHarmonyLoading] = useState(false);
     const [chatInput, setChatInput] = useState("");
 
-    const discount = bundleItems.length >= 5 ? 0.15 : bundleItems.length >= 3 ? 0.10 : 0;
-    const subtotal = bundleItems.reduce((sum, p) => sum + p.variants[0].priceGHS, 0);
+    const discount = 0; // bundleItems.length >= 5 ? 0.15 : bundleItems.length >= 3 ? 0.10 : 0;
+    const getItemPrice = (product: Product) =>
+        product.variants[0]?.sizeMl === '200g' ? 200 : product.variants[0].priceGHS;
+    const subtotal = bundleItems.reduce((sum, p) => sum + getItemPrice(p), 0);
     const total = subtotal * (1 - discount);
 
     const toggleProductSelection = (product: Product) => {
@@ -546,7 +548,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                                 </h4>
 
 
-                                              
+
                                             </div>
                                         </div>
                                     </motion.div>
