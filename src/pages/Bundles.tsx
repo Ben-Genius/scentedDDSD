@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BundleBuilder } from '../components/BundleBuilder';
 import { useInventory } from '../hooks/useInventory';
-import { formatMoney } from '../utils/formatMoney';
-import { ShoppingBag } from 'lucide-react';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { IMAGES } from '../assets';
-import { motion } from 'motion/react';
 import { BundlesHero } from '../components/BundlesHero';
 
 interface PrebuiltBundle {
