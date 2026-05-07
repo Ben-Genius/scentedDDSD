@@ -15,11 +15,9 @@ import wood4Hover from '../assets/collections/candles/wood/w44.png';
 import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
 import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
 import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
-import oriental4Hover from '../assets/collections/candles/oriental/o44.png';
 import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
 import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
-import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
@@ -34,7 +32,6 @@ import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-import scentedCandle from '../assets/collections/candles/Candlesss/ChatGPT Image Feb 17, 2026, 08_35_17 PM.png'
 
 
 export const products: Product[] = [

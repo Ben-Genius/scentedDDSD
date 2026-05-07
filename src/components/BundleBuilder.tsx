@@ -68,7 +68,6 @@ interface CuratorTrayContentProps {
     isHarmonyLoading: boolean;
     harmonyReport: string | null;
     subtotal: number;
-    discount: number;
     total: number;
     handleCheckout: () => void;
 }
@@ -80,7 +79,6 @@ const CuratorTrayContent = ({
     isHarmonyLoading,
     harmonyReport,
     subtotal,
-    discount,
     total,
     handleCheckout
 }: CuratorTrayContentProps) => (
@@ -247,11 +245,10 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const [isHarmonyLoading, setIsHarmonyLoading] = useState(false);
     const [chatInput, setChatInput] = useState("");
 
-    const discount = 0; // bundleItems.length >= 5 ? 0.15 : bundleItems.length >= 3 ? 0.10 : 0;
     const getItemPrice = (product: Product) =>
         product.variants[0]?.sizeMl === '200g' ? 200 : product.variants[0].priceGHS;
     const subtotal = bundleItems.reduce((sum, p) => sum + getItemPrice(p), 0);
-    const total = subtotal * (1 - discount);
+    const total = subtotal;
 
     const toggleProductSelection = (product: Product) => {
         const isSelected = bundleItems.some(item => item.id === product.id);
@@ -388,7 +385,6 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                             isHarmonyLoading={isHarmonyLoading}
                             harmonyReport={harmonyReport}
                             subtotal={subtotal}
-                            discount={discount}
                             total={total}
                             handleCheckout={handleCheckout}
                         />
@@ -444,7 +440,6 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                         isHarmonyLoading={isHarmonyLoading}
                                         harmonyReport={harmonyReport}
                                         subtotal={subtotal}
-                                        discount={discount}
                                         total={total}
                                         handleCheckout={handleCheckout}
                                     />
