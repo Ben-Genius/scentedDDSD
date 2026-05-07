@@ -35,7 +35,7 @@ interface BundleItem extends Product {
 }
 
 const RewardTrack = ({ count }: { count: number }) => {
-    const tiers = [{ threshold: 3, discount: '10%' }, { threshold: 5, discount: '15%' }];
+    const tiers = [{ threshold: 3, discount: '0%' }, { threshold: 5, discount: '0%' }];
     return (
         <div className="relative pt-6 pb-2">
             <div className="h-1.5 w-full bg-stone-100 rounded-full overflow-hidden flex">
@@ -68,7 +68,6 @@ interface CuratorTrayContentProps {
     isHarmonyLoading: boolean;
     harmonyReport: string | null;
     subtotal: number;
-    discount: number;
     total: number;
     handleCheckout: () => void;
 }
@@ -80,7 +79,6 @@ const CuratorTrayContent = ({
     isHarmonyLoading,
     harmonyReport,
     subtotal,
-    discount,
     total,
     handleCheckout
 }: CuratorTrayContentProps) => (
@@ -172,7 +170,7 @@ const CuratorTrayContent = ({
                     <span>{formatMoney(subtotal)}</span>
                 </div>
 
-                <AnimatePresence>
+                {/* <AnimatePresence>
                     {discount > 0 && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
@@ -187,7 +185,7 @@ const CuratorTrayContent = ({
                             <span>-{formatMoney(subtotal * discount)}</span>
                         </motion.div>
                     )}
-                </AnimatePresence>
+                </AnimatePresence> */}
 
                 <div className="flex justify-between items-baseline pt-4">
                     <span className="text-lg font-serif">Bundle Total</span>
@@ -247,9 +245,10 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
     const [isHarmonyLoading, setIsHarmonyLoading] = useState(false);
     const [chatInput, setChatInput] = useState("");
 
-    const discount = bundleItems.length >= 5 ? 0.15 : bundleItems.length >= 3 ? 0.10 : 0;
-    const subtotal = bundleItems.reduce((sum, p) => sum + p.variants[0].priceGHS, 0);
-    const total = subtotal * (1 - discount);
+    const getItemPrice = (product: Product) =>
+        product.variants[0]?.sizeMl === '200g' ? 200 : product.variants[0].priceGHS;
+    const subtotal = bundleItems.reduce((sum, p) => sum + getItemPrice(p), 0);
+    const total = subtotal;
 
     const toggleProductSelection = (product: Product) => {
         const isSelected = bundleItems.some(item => item.id === product.id);
@@ -386,7 +385,6 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                             isHarmonyLoading={isHarmonyLoading}
                             harmonyReport={harmonyReport}
                             subtotal={subtotal}
-                            discount={discount}
                             total={total}
                             handleCheckout={handleCheckout}
                         />
@@ -442,7 +440,6 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                         isHarmonyLoading={isHarmonyLoading}
                                         harmonyReport={harmonyReport}
                                         subtotal={subtotal}
-                                        discount={discount}
                                         total={total}
                                         handleCheckout={handleCheckout}
                                     />
@@ -545,12 +542,8 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                                     {product.title}
                                                 </h4>
 
-                                                <p className="text-[10px] text-stone-400 font-medium uppercase tracking-widest mb-1 truncate max-w-full mx-auto">{product.scents.join(', ')}</p>
 
-                                                {/* Price - Matches ProductCard */}
-                                                <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
-                                                    {formatMoney(product.variants[0].priceGHS)}
-                                                </p>
+
                                             </div>
                                         </div>
                                     </motion.div>

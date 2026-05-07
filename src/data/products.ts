@@ -15,11 +15,9 @@ import wood4Hover from '../assets/collections/candles/wood/w44.png';
 import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
 import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
 import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
-import oriental4Hover from '../assets/collections/candles/oriental/o44.png';
 import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
 import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
 
-import gourmet1Hover from '../assets/collections/candles/gourmet/g11.png';
 import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
 import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
 import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
@@ -34,76 +32,124 @@ import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
 import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
 import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
-import scentedCandle from '../assets/collections/candles/Candlesss/ChatGPT Image Feb 17, 2026, 08_35_17 PM.png'
 
 
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
+
+    // --- REED DIFFUSERS - Replacement ---
     {
-        id: "p-diffuser-classic",
-        title: "Reed Diffusers (Classic)",
-        slug: "reed-diffuser-classic",
-        category: "Reed Diffuser",
-        shortDescription: "Signature fragrances to scent your space.",
-        longDescription: "Elegant reed diffusers delivering continuous fragrance. Includes reeds.",
-        basePrice: 200,
-        stock: 50,
-        featured: true,
-        images: {
-            default: IMAGES.difflover,
-            gallery: [IMAGES.diffavent2, IMAGES.new3, IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-diff-classic", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
-        ],
-        scents: ["Peach", "Encounter", "Hilton", "Miss Coco Chanel"]
-    },
-    {
-        id: "p-diffuser-premium",
-        title: "Reed Diffusers (Premium)",
-        slug: "reed-diffuser-premium",
-        category: "Reed Diffuser",
-        shortDescription: "Complex botanical and luxury blends.",
-        longDescription: "Premium collection of sophisticated fragrances for a refined atmosphere.",
+        id: "p-sage-sea-salt-diffuser",
+        title: "Sage & Sea Salt Diffuser",
+        slug: "sage-sea-salt-diffuser",
+        category: "Fresh Whisper",
+        shortDescription: "Coastal breeze.",
+        longDescription: "The mineral scent of the rugged cliffs not far from the ocean.",
         basePrice: 200,
         stock: 50,
         featured: false,
         images: {
-            default: IMAGES.diffchannel,
-            gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new5],
+            default: IMAGES.collectionFresh,
+            gallery: [],
             colorVariants: []
         },
-        variants: [
-            { id: "v-diff-premium", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
-        ],
-        scents: [
-            "Wood Sage and Sea Salt", "Roof Garden", "Strawberry Muse", "Amber Ebony",
-            "Honeysuckle Jasmin", "Amour D'Osmanthus", "Fried Tea", "Royal English Rose"
-        ]
+        variants: [{ id: "v-sss-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Sage", "Sea Salt", "Ambrette"]
     },
     {
-        id: "p-diffuser-luxury",
-        title: "Reed Diffusers (Luxury)",
-        slug: "reed-diffuser-luxury",
-        category: "Reed Diffuser",
-        shortDescription: "Exclusive opulent fragrance.",
-        longDescription: "Our most exclusive scent for a truly luxurious experience.",
+        id: "p-lemongrass-diffuser",
+        title: "Lemongrass Diffuser",
+        slug: "lemongrass-diffuser",
+        category: "Fresh Whisper",
+        shortDescription: "Zesty and uplifting.",
+        longDescription: "Bright lemongrass with a touch of ginger and lime.",
         basePrice: 200,
-        stock: 20,
-        featured: true,
+        stock: 60,
+        featured: false,
         images: {
-            default: IMAGES.diffaventus,
-            gallery: [IMAGES.new4, IMAGES.new5, IMAGES.new3],
+            default: IMAGES.collectionFresh,
+            gallery: [],
             colorVariants: []
         },
-        variants: [
-            { id: "v-diff-luxury", label: "Standard", sizeMl: "100ml", sizeLabel: "Classic", multiplier: 1, priceGHS: 200 }
-        ],
-        scents: ["Champagne Cocktail"]
+        variants: [{ id: "v-lg-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Lemongrass", "Ginger", "Lime"]
     },
 
-    // --- REED DIFFUSERS - Floral Romance Collection ---
+    {
+        id: "p-pomegranate-diffuser",
+        title: "Pomegranate Diffuser",
+        slug: "pomegranate-diffuser",
+        category: "Oriental Luxe",
+        shortDescription: "Dark enigmatic fruit.",
+        longDescription: "Ruby-rich juices of pomegranate, raspberry and plum spiked with pink pepper.",
+        basePrice: 200,
+        stock: 30,
+        featured: false,
+        images: {
+            default: IMAGES.collectionOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pom-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Pomegranate", "Pink Pepper", "Lily"]
+    },
+
+    // --- REED DIFFUSERS - Gourmand Indulgence Collection ---
+    {
+        id: "p-champagne-cocktail-diffuser",
+        title: "Champagne Cocktail Diffuser",
+        slug: "champagne-cocktail-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Celebratory fizzy scent.",
+        longDescription: "Crisp champagne notes with a twist of citrus zest.",
+        basePrice: 200,
+        stock: 25,
+        featured: false,
+        images: {
+            default: IMAGES.collectionOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-cc-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Champagne", "Citrus", "Grape"]
+    },
+    {
+        id: "p-sugar-vanilla-diffuser",
+        title: "Sugar Vanilla Diffuser",
+        slug: "sugar-vanilla-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Sweet vanilla warmth.",
+        longDescription: "Sparkling sugar crystals over warm Madagascar vanilla beans.",
+        basePrice: 200,
+        stock: 50,
+        featured: false,
+        images: {
+            default: IMAGES.collectionOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-sv-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Vanilla", "Sugar", "Musk"]
+    },
+    {
+        id: "p-peach-bellini-diffuser",
+        title: "Peach Bellini Diffuser",
+        slug: "peach-bellini-diffuser",
+        category: "Gourmet Indulgence",
+        shortDescription: "Fruity sparkling cocktail.",
+        longDescription: "Juicy peaches mixed with sparkling prosecco.",
+        basePrice: 200,
+        stock: 45,
+        featured: false,
+        images: {
+            default: IMAGES.collectionOriental,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-pb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Peach", "Prosecco", "Orange"]
+    },
+
     {
         id: "p-freesia-english-pear-diffuser",
         title: "Freesia & English Pear Diffuser",
@@ -217,118 +263,10 @@ export const products: Product[] = [
     },
 
     // --- REED DIFFUSERS - Oriental Luxe Collection ---
-    {
-        id: "p-pomegranate-diffuser",
-        title: "Pomegranate Diffuser",
-        slug: "pomegranate-diffuser",
-        category: "Oriental Luxe",
-        shortDescription: "Dark enigmatic fruit.",
-        longDescription: "Ruby-rich juices of pomegranate, raspberry and plum spiked with pink pepper.",
-        basePrice: 200,
-        stock: 30,
-        featured: false,
-        images: {
-            default: IMAGES.collectionOriental,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-pom-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Pomegranate", "Pink Pepper", "Lily"]
-    },
 
-    // --- REED DIFFUSERS - Gourmand Indulgence Collection ---
-    {
-        id: "p-champagne-cocktail-diffuser",
-        title: "Champagne Cocktail Diffuser",
-        slug: "champagne-cocktail-diffuser",
-        category: "Gourmet Indulgence",
-        shortDescription: "Celebratory fizzy scent.",
-        longDescription: "Crisp champagne notes with a twist of citrus zest.",
-        basePrice: 200,
-        stock: 25,
-        featured: false,
-        images: {
-            default: IMAGES.collectionOriental,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-cc-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Champagne", "Citrus", "Grape"]
-    },
-    {
-        id: "p-sugar-vanilla-diffuser",
-        title: "Sugar Vanilla Diffuser",
-        slug: "sugar-vanilla-diffuser",
-        category: "Gourmet Indulgence",
-        shortDescription: "Sweet vanilla warmth.",
-        longDescription: "Sparkling sugar crystals over warm Madagascar vanilla beans.",
-        basePrice: 200,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.collectionOriental,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-sv-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Vanilla", "Sugar", "Musk"]
-    },
-    {
-        id: "p-peach-bellini-diffuser",
-        title: "Peach Bellini Diffuser",
-        slug: "peach-bellini-diffuser",
-        category: "Gourmet Indulgence",
-        shortDescription: "Fruity sparkling cocktail.",
-        longDescription: "Juicy peaches mixed with sparkling prosecco.",
-        basePrice: 200,
-        stock: 45,
-        featured: false,
-        images: {
-            default: IMAGES.collectionOriental,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-pb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Peach", "Prosecco", "Orange"]
-    },
 
     // --- REED DIFFUSERS - Fresh Whisper Collection ---
-    {
-        id: "p-sage-sea-salt-diffuser",
-        title: "Sage & Sea Salt Diffuser",
-        slug: "sage-sea-salt-diffuser",
-        category: "Fresh Whisper",
-        shortDescription: "Coastal breeze.",
-        longDescription: "The mineral scent of the rugged cliffs not far from the ocean.",
-        basePrice: 200,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.collectionFresh,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-sss-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Sage", "Sea Salt", "Ambrette"]
-    },
-    {
-        id: "p-lemongrass-diffuser",
-        title: "Lemongrass Diffuser",
-        slug: "lemongrass-diffuser",
-        category: "Fresh Whisper",
-        shortDescription: "Zesty and uplifting.",
-        longDescription: "Bright lemongrass with a touch of ginger and lime.",
-        basePrice: 200,
-        stock: 60,
-        featured: false,
-        images: {
-            default: IMAGES.collectionFresh,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [{ id: "v-lg-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Lemongrass", "Ginger", "Lime"]
-    },
+
 
     // --- ESSENTIAL OILS - Floral Romance Collection ---
     {
@@ -546,7 +484,7 @@ export const products: Product[] = [
         longDescription: "Refreshing sage and sea salt essential oil blend.",
         basePrice: 100,
         stock: 80,
-        featured: false,
+        featured: true,
         images: {
             default: IMAGES.oil4,
             gallery: [IMAGES.oilSageHover],
@@ -593,172 +531,20 @@ export const products: Product[] = [
     },
 
     // --- Essential Oils ---
-    {
-        id: "p-essential-oils",
-        title: "Essential Oils (Concentrate)",
-        slug: "essential-oils-concentrate",
-        category: "Essential Oils",
-        shortDescription: "Pure concentrated fragrance oils.",
-        longDescription: "High-concentration essential oils perfect for diffusers and burners.",
-        basePrice: 100,
-        stock: 100,
-        featured: false,
-        images: {
-            default: IMAGES.amberspray,
-            gallery: [IMAGES.new3, IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-eo-std", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }
-        ],
-        scents: [
-            "Sweet Flowers", "Cocktail Toast", "Strawberry Muse", "Lovers Rock",
-            "Citronella", "Oud", "Vanilla", "Melon Magnet", "Tropical Spice",
-            "Orange", "Peach"
-        ]
-    },
 
-    // --- Scented Candles ---
-    {
-        id: "p-scented-candles",
-        title: "Scented Candles",
-        slug: "scented-candles",
-        category: "Candle",
-        shortDescription: "Hand-poured luxury candles.",
-        longDescription: "Create a warm glow and inviting scent with our premium hand-poured candles.",
-        basePrice: 100,
-        stock: 80,
-        featured: true,
-        images: {
-            default: scentedCandle,
-            gallery: [IMAGES.darkcandle, IMAGES.amberspray, IMAGES.candle, IMAGES.new3, IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-candle-med", label: "Medium", sizeMl: "", sizeLabel: "Medium", multiplier: 1, priceGHS: 100 },
-            { id: "v-candle-lrg", label: "Large", sizeMl: "", sizeLabel: "Large", multiplier: 1.5, priceGHS: 150 }
-        ],
-        scents: [
-            "Amber", "Lemon & Lime", "Orange", "Butterscotch", "Vanilla", "Scandalwood",
-            "Citronella", "Champagne Cocktail", "Oud", "Marshmallow Cheesecake",
-            "Cinnamon Latte", "Coffee Vanilla", "Hot Chocolate", "Cinnamon Peony",
-            "Bubble Gum", "Into You", "Hawaii Sunset", "Peach", "Pumpkin Spice"
-        ]
-    },
+
+
 
     // --- Air Fresheners ---
 
     // --- Gift Sets ---
-    {
-        id: "p-box-gift-set",
-        title: "Box Gift Set",
-        slug: "box-gift-set",
-        category: "Bundle",
-        shortDescription: "Premium curated gift box.",
-        longDescription: "The perfect gift for any occasion, featuring our finest scents.",
-        basePrice: 500,
-        stock: 20,
-        featured: true,
-        images: {
-            default: IMAGES.allprod1,
-            gallery: [IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-gift-box", label: "Box Set", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 500 }
-        ],
-        scents: ["Creed Aventus", "Rose & Oud", "Sweet Flowers"]
-    },
-    {
-        id: "p-gift-box-candles",
-        title: "Gift Box Candles",
-        slug: "gift-box-candles",
-        category: "Bundle",
-        shortDescription: "Curated candle collection.",
-        longDescription: "A selection of our finest candles in a beautiful gift box.",
-        basePrice: 200,
-        stock: 25,
-        featured: true,
-        images: {
-            default: IMAGES.candle2,
-            gallery: [IMAGES.new4, IMAGES.new3, IMAGES.new5],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v-gift-candle", label: "Candle Set", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }
-        ],
-        scents: [
-            "Wood Sage & Sea Salt", "Tuberose & Angel Grass", "Blackberry & Bay",
-            "Peony & Blush Suede", "Amber & Moss", "Volupsa French Cade Lavendar"
-        ]
-    },
+
+
 
     // --- Remaining items from original list (that don't conflict) ---
     // Keeping only unique categories/items not covered above to maintain variety but cleaned up
-    {
-        id: "p15",
-        title: "Scented Sachets",
-        slug: "scented-sachets",
-        category: "Potpourri",
-        shortDescription: "For drawers and closets.",
-        longDescription: "Keep your linens and clothes smelling fresh with these long-lasting scented sachets.",
-        basePrice: 25,
-        stock: 200,
-        featured: false,
-        images: {
-            default: IMAGES.artifact7,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v15-3pk", label: "3-Pack", sizeMl: "", sizeLabel: "Classic", multiplier: 1, priceGHS: 25 }
-        ],
-        scents: ["Lavender", "Rose", "Cedar"]
-    },
-    {
-        id: "p12",
-        title: "Electric Diffuser",
-        slug: "electric-diffuser",
-        category: "Oil Burner",
-        shortDescription: "Ultrasonic mist diffuser.",
-        longDescription: "Humidify and scent your air with ultrasonic technology.",
-        basePrice: 250,
-        stock: 20,
-        featured: false,
-        images: {
-            default: IMAGES.artifact5,
-            gallery: [],
-            colorVariants: []
-        },
-        variants: [
-            { id: "v12-std", label: "Standard", sizeMl: "300ml Tank", sizeLabel: "Classic", multiplier: 1, priceGHS: 250 }
-        ],
-        scents: []
-    },
-    {
-        id: "p4",
-        title: "Ceramic Oil Burner",
-        slug: "ceramic-oil-burner",
-        category: "Oil Burner",
-        shortDescription: "Minimalist ceramic burner for essential oils.",
-        longDescription: "Add a touch of elegance to any room with this handmade ceramic oil burner.",
-        materials: "Ceramic",
-        basePrice: 90,
-        stock: 30,
-        featured: false,
-        images: {
-            default: IMAGES.artifact1,
-            gallery: [IMAGES.artifact2],
-            colorVariants: [
-                { colorId: "c-black", label: "Black", image: IMAGES.artifact1 },
-                { colorId: "c-white", label: "White", image: IMAGES.artifact1 }
-            ]
-        },
-        variants: [
-            { id: "v4-std", label: "Standard", sizeMl: "", sizeLabel: "Classic", multiplier: 1, priceGHS: 90 }
-        ],
-        scents: []
-    },
+
+
     // --- NEW COLLECTION: Floral Romance ---
     {
         id: "p-freesia-english-pear",
@@ -841,7 +627,7 @@ export const products: Product[] = [
         longDescription: "The intoxicating, sweet scent of freshly picked jasmine flowers.",
         basePrice: 115,
         stock: 60,
-        featured: false,
+        featured: true,
         images: {
             default: IMAGES.c1,
             gallery: [candle3Hover],
@@ -895,7 +681,7 @@ export const products: Product[] = [
         longDescription: "Sophisticated and rare, capturing the elusive scent of the black orchid.",
         basePrice: 150,
         stock: 20,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.c5,
             gallery: [candle6Hover],
@@ -1034,24 +820,8 @@ export const products: Product[] = [
         variants: [{ id: "v-cedar", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 130 }],
         scents: ["Cedarwood", "Juniper", "Moss"]
     },
-    {
-        id: "p-myrrh-tonka",
-        title: "Myrrh & Tonka",
-        slug: "myrrh-tonka",
-        category: "Oriental Luxe",
-        shortDescription: "Namibian myrrh and tonka.",
-        longDescription: "Rich, hand-harvested sap of the Namibian myrrh tree, mingling with warm almond and lush vanilla notes of tonka bean.",
-        basePrice: 165,
-        stock: 20,
-        featured: false,
-        images: {
-            default: IMAGES.c12,
-            gallery: [oriental4Hover],
-            colorVariants: []
-        },
-        variants: [{ id: "v-myrrh", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 165 }],
-        scents: ["Lavender", "Omumbiri Myrrh", "Tonka Bean"]
-    },
+
+
     {
         id: "p-pomegranate-noir",
         title: "Pomegranate Noir",
@@ -1108,24 +878,7 @@ export const products: Product[] = [
     },
 
     // --- NEW COLLECTION: Gourmand Indulgence ---
-    {
-        id: "p-creme-de-latte",
-        title: "Crème de Latte",
-        slug: "creme-de-latte",
-        category: "Gourmand Indulgence",
-        shortDescription: "Creamy coffee delight.",
-        longDescription: "Rich espresso blended with steamed milk and vanilla syrup.",
-        basePrice: 125,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.c16,
-            gallery: [gourmet1Hover],
-            colorVariants: []
-        },
-        variants: [{ id: "v-creme", label: "Standard", sizeMl: "200g", sizeLabel: "Standard", multiplier: 1, priceGHS: 125 }],
-        scents: ["Coffee", "Milk", "Vanilla"]
-    },
+
     {
         id: "p-marshmallow-cheesecake",
         title: "Marshmallow Cheesecake",
@@ -1364,60 +1117,8 @@ export const products: Product[] = [
     },
 
     // --- NEW COLLECTION TO INCREASE DISPLAY VOLUME ---
-    {
-        id: "p-new-1",
-        title: "Midnight Jasmine Diffuser",
-        slug: "midnight-jasmine-diffuser",
-        category: "Reed Diffuser",
-        shortDescription: "Intoxicating floral elegance.",
-        longDescription: "A deep, romantic Jasmine blend that transforms your evening atmosphere. Limited edition.",
-        basePrice: 200,
-        stock: 40,
-        featured: false,
-        images: {
-            default: IMAGES.new3,
-            gallery: [IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-1", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Jasmine", "Dark Amber"]
-    },
-    {
-        id: "p-new-2",
-        title: "Ocean Mist Candle",
-        slug: "ocean-mist-candle",
-        category: "Candle",
-        shortDescription: "Fresh saline breeze.",
-        longDescription: "Bring the calming essence of the sea into your home with this clean, crisp scent.",
-        basePrice: 110,
-        stock: 45,
-        featured: false,
-        images: {
-            default: IMAGES.new4,
-            gallery: [IMAGES.new5, IMAGES.new5],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-2", label: "Medium", sizeMl: "200g", sizeLabel: "Medium", multiplier: 1, priceGHS: 110 }],
-        scents: ["Sea Salt", "Driftwood"]
-    },
-    {
-        id: "p-new-3",
-        title: "Lavender Dreams Oil",
-        slug: "lavender-dreams-oil",
-        category: "Essential Oils",
-        shortDescription: "Pure relaxation concentrate.",
-        longDescription: "High-grade lavender essential oil for deep sleep and relaxation.",
-        basePrice: 100,
-        stock: 60,
-        featured: false,
-        images: {
-            default: IMAGES.new4,
-            gallery: [IMAGES.new5, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-3", label: "Standard", sizeMl: "30ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 100 }],
-        scents: ["Lavender", "Chamomile"]
-    },
+
+
     {
         id: "p-new-4",
         title: "Air Freshener Spray",
@@ -1427,7 +1128,7 @@ export const products: Product[] = [
         longDescription: "A vibrant burst of citrus and spices to energize your room.",
         basePrice: 180,
         stock: 30,
-        featured: false,
+        featured: true,
         images: {
             default: '/images/products/air-fresheners/air-freshener-main.png',
             gallery: [],
@@ -1436,96 +1137,7 @@ export const products: Product[] = [
         variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 180 }],
         scents: ["Orange", "Ginger", "Turmeric"]
     },
-    {
-        id: "p-new-5",
-        title: "Velvet Rose Candle",
-        slug: "velvet-rose-candle",
-        category: "Candle",
-        shortDescription: "Rich and blooming.",
-        longDescription: "A luxurious rose scent with velvety undertones of oud and praline.",
-        basePrice: 130,
-        stock: 25,
-        featured: false,
-        images: {
-            default: IMAGES.new3,
-            gallery: [IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-5", label: "Large", sizeMl: "300g", sizeLabel: "Large", multiplier: 1, priceGHS: 130 }],
-        scents: ["Rose", "Oud", "Praline"]
-    },
-    {
-        id: "p-new-6",
-        title: "Nordic Pine Diffuser",
-        slug: "nordic-pine-diffuser",
-        category: "Reed Diffuser",
-        shortDescription: "Crisp winter forest.",
-        longDescription: "Fill your home with the scent of fresh pine needles and cool mountain air.",
-        basePrice: 200,
-        stock: 35,
-        featured: false,
-        images: {
-            default: IMAGES.new3,
-            gallery: [IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-6", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Pine", "Eucalyptus", "Cedarwood"]
-    },
-    {
-        id: "p-new-7",
-        title: "Vanilla Bean Luxe",
-        slug: "vanilla-bean-luxe-candle",
-        category: "Candle",
-        shortDescription: "Warm comforting sweetness.",
-        longDescription: "Authentic Madagascar vanilla bean scent for a cozy, inviting home.",
-        basePrice: 115,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.new3,
-            gallery: [IMAGES.new4, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-7", label: "Medium", sizeMl: "200g", sizeLabel: "Medium", multiplier: 1, priceGHS: 115 }],
-        scents: ["Vanilla", "Cream"]
-    },
-    {
-        id: "p-new-8",
-        title: "Spiced Amber Joy",
-        slug: "spiced-amber-joy",
-        category: "Bundle",
-        shortDescription: "Warmth in a box.",
-        longDescription: "A curated set featuring our best amber-based scents.",
-        basePrice: 280,
-        stock: 15,
-        featured: false,
-        images: {
-            default: IMAGES.new5,
-            gallery: [IMAGES.new4, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-8", label: "Set", sizeMl: "", sizeLabel: "Standard", multiplier: 1, priceGHS: 280 }],
-        scents: ["Amber", "Cinnamon", "Cardamom"]
-    },
-    {
-        id: "p-new-9",
-        title: "Citrus Basil Kitchen",
-        slug: "citrus-basil-kitchen",
-        category: "Reed Diffuser",
-        shortDescription: "Clean and herbal.",
-        longDescription: "Perfect for kitchens, this scent neutralizes odors with zest and herbs.",
-        basePrice: 200,
-        stock: 40,
-        featured: false,
-        images: {
-            default: IMAGES.new5,
-            gallery: [IMAGES.new3, IMAGES.new3],
-            colorVariants: []
-        },
-        variants: [{ id: "v-new-9", label: "Standard", sizeMl: "150ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
-        scents: ["Lemon", "Basil", "Thyme"]
-    },
+
 
     // --- NEW COLLECTION: Bath & Body ---
     {
@@ -1555,7 +1167,7 @@ export const products: Product[] = [
         longDescription: "Experience the ultimate in bathing luxury with our hand-poured soaps, designed to moisturize while providing a rich, aromatic lather.",
         basePrice: 55,
         stock: 45,
-        featured: false,
+        featured: true,
         images: {
             default: IMAGES.soap2,
             gallery: [],
@@ -1567,7 +1179,7 @@ export const products: Product[] = [
     // --- ACCESSORIES ---
     {
         id: "acc-burner-1",
-        title: "Sweet Home Ceramic Burner",
+        title: "Ceramic Burner",
         slug: "sweet-home-burner",
         category: "Accessories",
         shortDescription: "Elegant home-shaped ceramic oil burner.",
@@ -1584,42 +1196,8 @@ export const products: Product[] = [
         scents: []
     },
 
-    {
-        id: "acc-burner-3",
-        title: "Minimalist Stone Burner",
-        slug: "minimalist-stone-burner",
-        category: "Accessories",
-        shortDescription: "Sleek minimalist stone-finish burner.",
-        longDescription: "A modern, minimalist burner with a premium stone finish, ideal for contemporary interiors.",
-        basePrice: 135,
-        stock: 40,
-        featured: false,
-        images: {
-            default: IMAGES.burner1,
-            gallery: [IMAGES.burner1],
-            colorVariants: []
-        },
-        variants: [{ id: "v-msb-std", label: "Standard", multiplier: 1, priceGHS: 135 }],
-        scents: []
-    },
-    {
-        id: "acc-burner-4",
-        title: "Classic White Ceramic Burner",
-        slug: "classic-white-burner",
-        category: "Accessories",
-        shortDescription: "Classic white ceramic essential oil burner.",
-        longDescription: "Simple yet elegant classic white ceramic burner for all your aromatherapy needs.",
-        basePrice: 110,
-        stock: 50,
-        featured: false,
-        images: {
-            default: IMAGES.burner2,
-            gallery: [IMAGES.burner2],
-            colorVariants: []
-        },
-        variants: [{ id: "v-cwb-std", label: "Standard", multiplier: 1, priceGHS: 110 }],
-        scents: []
-    },
+
+
     {
         id: "acc-tissue-1",
         title: "Car Tissue Paper",
@@ -1792,7 +1370,7 @@ export const products: Product[] = [
         longDescription: "Perfect for linens, this bag delivers a 'clean laundry' freshness that lasts for weeks.",
         basePrice: 65,
         stock: 35,
-        featured: false,
+        featured: true,
         images: {
             default: IMAGES.bag2,
             gallery: [],

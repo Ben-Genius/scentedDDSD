@@ -10,20 +10,20 @@ export const FeatureSection = () => {
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["20%", "0%"]);
 
     return (
         <section ref={containerRef} className="relative w-full overflow-hidden">
             {/* Top Parallax Image Section */}
-            <div className="h-[400px] md:h-[500px] w-full relative overflow-hidden">
+            <div className="h-[400px] md:h-[600px] w-full relative overflow-hidden">
                 <motion.div
                     style={{ y }}
-                    className="absolute inset-0 w-full h-[120%]"
+                    className="absolute inset-0 w-full h-[100%]"
                 >
                     <img
                         src={IMAGES.allprod3}
                         alt="Featured Collection"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover "
                     />
                 </motion.div>
                 <div className="absolute inset-0 bg-black/10" />

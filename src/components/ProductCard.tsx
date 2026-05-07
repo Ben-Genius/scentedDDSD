@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatMoney } from '../utils/formatMoney';
 import { Product } from '../types';
 import { motion } from "motion/react";
 
@@ -10,9 +9,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
     // Determine display price (lowest variant)
-    const lowestPrice = product.variants.length > 0
-        ? Math.min(...product.variants.map(v => v.priceGHS))
-        : (product.basePrice ?? 0);
+  
 
     // Generate theme color based on category (optional)
     const getCategoryColor = (category: string) => {
@@ -89,7 +86,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
                     {/* Price */}
                     <p className="text-black/60 text-xs font-inter tracking-widest font-medium">
-                        {formatMoney(lowestPrice)}
+                        {/* {formatMoney(lowestPrice)} */}
                     </p>
                 </div>
             </Link>
