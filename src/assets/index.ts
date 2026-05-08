@@ -34,7 +34,7 @@ import scentedcandle from './images/scentedcandle.png';
 import spray from './images/spray.png';
 import sweethome from './images/sweethome.png';
 import logo1 from './images/logo1.png';
-import hero1 from './images/newhero.png';
+import hero1 from './images/newHero.png';
 import bundle from './images/bundle.png';
 import newlantern from './images/newlantern.png';
 
