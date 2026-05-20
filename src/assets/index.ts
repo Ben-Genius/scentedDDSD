@@ -56,6 +56,13 @@ import collectionWoody from './collections/diffusers/Diffuser/4.png';
 import collectionOriental from './collections/diffusers/Diffuser/1.png';
 import collectionFresh from './collections/diffusers/Diffuser/2.png';
 
+// Candle Collection Images from Candlesss
+import candleCollectionFloral from './collections/candles/Candlesss/ChatGPT Image Feb 17, 2026, 08_25_38 PM.png';
+import candleCollectionWoody from './collections/candles/Candlesss/Gemini_Generated_Image_5v1ebz5v1ebz5v1e.png';
+import candleCollectionOriental from './collections/candles/Candlesss/Gemini_Generated_Image_vuqg6gvuqg6gvuqg.png';
+import candleCollectionGourmand from './collections/candles/Candlesss/Gemini_Generated_Image_2jvbh42jvbh42jvb.png';
+import candleCollectionFresh from './collections/candles/Candlesss/Gemini_Generated_Image_t1dziqt1dziqt1dz.png';
+
 import diffuserHeader1 from './collections/diffusers/Diffuser/1.png';
 import diffuserHeader2 from './collections/diffusers/Diffuser/2.png';
 import diffuserHeader3 from './collections/diffusers/Diffuser/3.png';
@@ -209,6 +216,11 @@ export const IMAGES = {
   collectionWoody,
   collectionOriental,
   collectionFresh,
+  candleCollectionFloral,
+  candleCollectionWoody,
+  candleCollectionOriental,
+  candleCollectionGourmand,
+  candleCollectionFresh,
   diffuserHeader1,
   diffuserHeader2,
   diffuserHeader3,
