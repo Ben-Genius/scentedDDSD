@@ -66,10 +66,15 @@ export const useCurrency = create<CurrencyState>()(
 
             setCurrency: (currency: Currency) => {
                 const config = CURRENCIES[currency] || CURRENCIES.GHS;
+                try {
+                    sessionStorage.setItem('scented_user_currency', currency);
+                } catch {
+                    // Ignore storage errors
+                }
                 set({
                     currency,
                     exchangeRate: config.rate,
-                    isAutoDetected: true,
+                    isAutoDetected: false,
                     hasUserSelected: true,
                 });
             },
@@ -95,17 +100,21 @@ export const useCurrency = create<CurrencyState>()(
             },
 
             detectCurrency: async () => {
-                const state = get();
-                // If user has explicitly chosen a currency, do not override
-                if (state.hasUserSelected) return;
-                // If already detected under current version, do not re-detect
-                if (state.isAutoDetected && state.version === 2) return;
+                // If user deliberately chose a currency during this active browser session, respect it
+                try {
+                    const manualSession = sessionStorage.getItem('scented_user_currency');
+                    if (manualSession && (manualSession === 'GHS' || manualSession === 'USD' || manualSession === 'GBP')) {
+                        return;
+                    }
+                } catch {
+                    // Ignore storage errors
+                }
 
                 let detectedCountryCode: string | null = null;
 
-                // 1. Try ipwho.is (CORS enabled, highly reliable)
+                // 1. Try ipwho.is with cache buster (fast, CORS-enabled, handles IPv4 & IPv6)
                 try {
-                    const response = await fetch('https://ipwho.is/');
+                    const response = await fetch(`https://ipwho.is/?t=${Date.now()}`);
                     if (response.ok) {
                         const data = await response.json();
                         if (data.success && data.country_code) {
@@ -116,7 +125,22 @@ export const useCurrency = create<CurrencyState>()(
                     // Fall back to next method
                 }
 
-                // 2. Try ipapi.co as secondary provider
+                // 2. Try api.country.is as fast secondary provider
+                if (!detectedCountryCode) {
+                    try {
+                        const response = await fetch(`https://api.country.is/?t=${Date.now()}`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data.country) {
+                                detectedCountryCode = String(data.country).toUpperCase();
+                            }
+                        }
+                    } catch {
+                        // Fall back
+                    }
+                }
+
+                // 3. Try ipapi.co as tertiary provider
                 if (!detectedCountryCode) {
                     try {
                         const response = await fetch('https://ipapi.co/json/');
@@ -127,11 +151,11 @@ export const useCurrency = create<CurrencyState>()(
                             }
                         }
                     } catch {
-                        // Fall back to next method
+                        // Fall back
                     }
                 }
 
-                // 3. Heuristic fallback based on browser timezone and language
+                // 4. Heuristic fallback based on browser timezone
                 if (!detectedCountryCode) {
                     try {
                         const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
@@ -158,12 +182,14 @@ export const useCurrency = create<CurrencyState>()(
                     resolvedCurrency = 'USD';
                 }
 
+                console.log(`[Scented] Geolocation: Country ${detectedCountryCode || 'Unknown'} -> Currency set to ${resolvedCurrency}`);
+
                 const config = CURRENCIES[resolvedCurrency];
                 set({
                     currency: resolvedCurrency,
                     exchangeRate: config.rate,
                     isAutoDetected: true,
-                    version: 2,
+                    hasUserSelected: false,
                 });
             },
         }),
