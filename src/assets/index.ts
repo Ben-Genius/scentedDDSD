@@ -166,9 +166,11 @@ import oilTobaccoNoirHover from './images/ingredients/oils/tobacco-noir.png';
 import oilWhiteTeaHover from './images/ingredients/oils/white-tea.png';
 import oilWildFigHover from './images/ingredients/oils/wild-fig.png';
 
-// Soap Collection
+// Soap & Body Collection
 import soap1 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_32 PM.png';
 import soap2 from './collections/Soap/ChatGPT Image Feb 20, 2026, 05_09_35 PM.png';
+import sheaButter from './images/sheaButter.jpeg';
+import sheaButterr from './images/sheaButterr.jpeg';
 
 export const IMAGES = {
   diffsc,
@@ -273,4 +275,6 @@ export const IMAGES = {
   bag3,
   soap1,
   soap2,
+  sheaButter,
+  sheaButterr,
 };

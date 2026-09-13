@@ -868,6 +868,7 @@ export const AdminInventory = () => {
                                     <select className="w-full border border-gray-300 rounded-lg px-3 sm:px-4 py-2 bg-white text-sm">
                                         <option>GHS (Ghana Cedi)</option>
                                         <option>USD (US Dollar)</option>
+                                        <option>GBP (British Pound)</option>
                                     </select>
                                 </div>
                                 <button className="bg-black text-white px-4 sm:px-6 py-2 rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider hover:bg-yellow-600 transition-colors w-full sm:w-auto">Save Changes</button>

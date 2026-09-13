@@ -16,15 +16,11 @@ import {
 } from 'lucide-react';
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
+import { formatMoney } from '../utils/formatMoney';
 
 function generateUniqueId() {
     return Date.now() + Math.random();
 }
-
-const formatMoney = (amount: number) => new Intl.NumberFormat('en-GH', {
-    style: 'currency',
-    currency: 'GHS'
-}).format(amount);
 
 interface BundleBuilderProps {
     availableProducts: Product[];

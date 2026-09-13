@@ -16,10 +16,12 @@ export const AllBody = () => {
     // Filter for Bath & Body products
     const bathBodyProducts = products.filter(product => product.category === 'Bath & Body');
 
-    // Slider Logic - Using Soap Images
+    // Slider Logic - Using Soap & Shea Butter Images
     const headerImages = [
         IMAGES.soap1,
         IMAGES.soap2,
+        IMAGES.sheaButter,
+        IMAGES.sheaButterr,
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);

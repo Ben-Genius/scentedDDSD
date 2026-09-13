@@ -1,9 +1,10 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { products } from '@/data/products';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { IMAGES } from '@/assets';
 import { ShopProductCard } from '@/components/shop/ShopProductCard';
 import { useLocalCart } from '@/hooks/useLocalCart';
 import toast from 'react-hot-toast';
@@ -14,25 +15,45 @@ export const BathBody = () => {
 
     // Filter for Bath & Body products
     const bathBodyProducts = products.filter(product => product.category === 'Bath & Body');
-    const heroImage = '/images/collections/bath-body/hero-main.png';
+
+    // Slider Images including Shea Butter
+    const headerImages = [
+        IMAGES.soap1,
+        IMAGES.soap2,
+        IMAGES.sheaButter,
+        IMAGES.sheaButterr,
+    ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % headerImages.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [headerImages.length]);
 
     return (
         <div className="w-full relative max-w-full min-h-screen bg-[#FDFBF7]">
             {/* Hero Section */}
-            <div className="relative w-full h-[60vh] md:h-[75vh] mb-20 overflow-hidden">
-                <motion.div
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 1.8, ease: "easeOut" }}
-                    className="absolute inset-0"
-                >
-                    <img
-                        src={heroImage}
-                        alt="Bath & Body Collection"
-                        className="w-full h-full object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-black/30" />
-                </motion.div>
+            <div className="relative w-full h-[60vh] md:h-[75vh] mb-20 overflow-hidden font-outfit">
+                {headerImages.map((img, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute inset-0"
+                    >
+                        <img
+                            src={img}
+                            alt={`Bath & Body Collection ${index + 1}`}
+                            className="w-full h-full object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-black/20" />
+                    </motion.div>
+                ))}
 
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10 text-white">
                     <motion.div

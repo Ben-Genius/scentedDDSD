@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavItem, navigationData } from '@/data/navigation';
-import { ChevronRight, ChevronLeft, Plus, Minus, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Plus, Minus, X, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
+import { useCurrency, CURRENCIES } from '@/hooks/useCurrency';
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -12,6 +13,7 @@ interface MobileMenuProps {
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     const navigate = useNavigate();
+    const { currency, setCurrency } = useCurrency();
     const [activeItem, setActiveItem] = useState<NavItem | null>(null);
     const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
     const [isVisible, setIsVisible] = useState(false);
@@ -147,7 +149,34 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                             ))}
                         </div>
 
-                     
+                        {/* Currency Switcher */}
+                        <div className="mt-8 pt-6 border-t border-black/10">
+                            <div className="flex items-center gap-1.5 text-[10px] font-semibold tracking-widest text-black/50 uppercase mb-3 font-inter">
+                                <Globe className="w-3.5 h-3.5 opacity-70" />
+                                <span>Currency</span>
+                            </div>
+                            <div className="grid grid-cols-3 gap-2">
+                                {(Object.keys(CURRENCIES) as Array<keyof typeof CURRENCIES>).map((code) => {
+                                    const c = CURRENCIES[code];
+                                    const isSelected = currency === c.code;
+                                    return (
+                                        <button
+                                            key={c.code}
+                                            onClick={() => setCurrency(c.code)}
+                                            className={cn(
+                                                "flex items-center justify-center gap-1.5 py-2 px-1 text-xs rounded border transition-all font-inter",
+                                                isSelected
+                                                    ? "border-black bg-black text-white font-semibold shadow-sm"
+                                                    : "border-black/10 text-black/70 hover:border-black/30 hover:bg-black/5"
+                                            )}
+                                        >
+                                            <span className="text-sm leading-none">{c.flag}</span>
+                                            <span>{c.code}</span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
                     </div>
 
                     {/* Sub Menu Layer */}

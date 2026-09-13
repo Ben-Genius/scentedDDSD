@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useLocalCart } from '../hooks/useLocalCart';
-import { useCurrency } from '../hooks/useCurrency';
+import { useCurrency, CURRENCIES } from '../hooks/useCurrency';
 import { cn } from '@/lib/utils';
 import { IMAGES } from '@/assets';
-import { Globe } from 'lucide-react';
+import { Globe, ChevronDown, Check } from 'lucide-react';
 
 import { NavMenu } from './NavMenu';
 import { MobileMenu } from './MobileMenu';
@@ -15,7 +15,26 @@ export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
+    const currencyRef = useRef<HTMLDivElement>(null);
     const count = getItemCount();
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (currencyRef.current && !currencyRef.current.contains(e.target as Node)) {
+                setIsCurrencyOpen(false);
+            }
+        };
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsCurrencyOpen(false);
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     useEffect(() => {
         let ticking = false;
@@ -88,17 +107,53 @@ export const Header = () => {
 
                     {/* Right: Actions */}
                     <div className="col-span-3 flex items-center justify-end space-x-4 md:space-x-8">
-                        {/* Currency Toggle */}
-                        <button
-                            onClick={() => setCurrency(currency === 'GHS' ? 'USD' : 'GHS')}
-                            className="flex items-center text-black hover:opacity-60 transition-opacity"
-                            title={`Switch to ${currency === 'GHS' ? 'USD' : 'GHS'}`}
-                        >
-                            <Globe className="w-4 h-4 mr-1 md:mr-2 opacity-70" strokeWidth={1.5} />
-                            <span className="text-[10px] md:text-xs uppercase tracking-widest font-inter font-medium">
-                                {currency}
-                            </span>
-                        </button>
+                        {/* Currency Selector */}
+                        <div className="relative" ref={currencyRef}>
+                            <button
+                                onClick={() => setIsCurrencyOpen(!isCurrencyOpen)}
+                                className="flex items-center text-black hover:opacity-60 transition-opacity gap-1 py-1"
+                                title="Change currency"
+                                aria-expanded={isCurrencyOpen}
+                                aria-haspopup="listbox"
+                            >
+                                <Globe className="w-4 h-4 opacity-70" strokeWidth={1.5} />
+                                <span className="text-[10px] md:text-xs uppercase tracking-widest font-inter font-medium">
+                                    {currency}
+                                </span>
+                                <ChevronDown className={cn("w-3 h-3 opacity-60 transition-transform duration-200", isCurrencyOpen && "rotate-180")} />
+                            </button>
+
+                            {isCurrencyOpen && (
+                                <div className="absolute right-0 mt-2 w-48 bg-[#FFFBF5] border border-black/10 rounded-lg shadow-xl py-1.5 z-50 animate-in fade-in slide-in-from-top-1 duration-150 font-inter">
+                                    <div className="px-3 py-1 text-[10px] uppercase tracking-wider text-black/40 font-semibold border-b border-black/5">
+                                        Select Currency
+                                    </div>
+                                    {(Object.keys(CURRENCIES) as Array<keyof typeof CURRENCIES>).map((code) => {
+                                        const c = CURRENCIES[code];
+                                        return (
+                                            <button
+                                                key={c.code}
+                                                onClick={() => {
+                                                    setCurrency(c.code);
+                                                    setIsCurrencyOpen(false);
+                                                }}
+                                                className={cn(
+                                                    "w-full text-left px-3 py-2 text-xs flex items-center justify-between hover:bg-black/5 transition-colors",
+                                                    currency === c.code ? "text-black font-semibold bg-black/[0.04]" : "text-black/70"
+                                                )}
+                                            >
+                                                <span className="flex items-center gap-2">
+                                                    <span className="text-sm leading-none">{c.flag}</span>
+                                                    <span className="font-medium">{c.code}</span>
+                                                    <span className="text-black/40">({c.symbol})</span>
+                                                </span>
+                                                {currency === c.code && <Check className="w-3.5 h-3.5 text-black" />}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
 
                         <Link
                             to="/contact"
