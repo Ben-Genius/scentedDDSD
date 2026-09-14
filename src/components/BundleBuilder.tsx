@@ -4,7 +4,6 @@ import {
     Plus,
     ShoppingBag,
     Gift,
-    Sparkles,
     Check,
     Trash2,
     Send,
@@ -12,11 +11,14 @@ import {
     Activity,
     PenTool,
     Info,
-    X
+    X,
+    MoonIcon,
+    MessageCircleMore
 } from 'lucide-react';
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { formatMoney } from '../utils/formatMoney';
+import { MessageChannel } from 'worker_threads';
 
 function generateUniqueId() {
     return Date.now() + Math.random();
@@ -117,7 +119,7 @@ const CuratorTrayContent = ({
                                 </motion.div>
                             ) : (
                                 <div className="w-full h-full rounded-xl border-2 border-dashed border-stone-100 bg-stone-50/50 flex items-center justify-center text-stone-200">
-                                    <Sparkles size={14} />
+                                    <MoonIcon size={14} />
                                 </div>
                             )}
                         </AnimatePresence>
@@ -478,7 +480,7 @@ export const BundleBuilder = ({ availableProducts }: BundleBuilderProps) => {
                                         animate={{ opacity: 1, y: 0 }}
                                         className="mt-6 p-4 bg-white/5 rounded-2xl border border-white/10 flex gap-3"
                                     >
-                                        <Sparkles className="text-amber-400 shrink-0" size={18} />
+                                        <MessageCircleMore className="text-amber-400 shrink-0" size={18} />
                                         <p className="text-sm italic leading-relaxed text-stone-300">{aiMessage}</p>
                                     </motion.div>
                                 )}

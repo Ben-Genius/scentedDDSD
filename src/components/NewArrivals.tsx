@@ -3,7 +3,7 @@ import { getProducts } from '../lib/api';
 import { Product, ProductVariant } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import {
-    Sparkles,
+
     Star,
     Clock,
     TrendingUp,
@@ -19,7 +19,8 @@ import {
     Zap,
     Facebook,
     MessageCircle,
-    Music
+    Music,
+    Newspaper
 } from 'lucide-react';
 
 export const NewArrivals = () => {
@@ -138,7 +139,7 @@ export const NewArrivals = () => {
                     <div className="max-w-4xl mx-auto text-center">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-4 py-2 rounded-full mb-6">
-                            <Sparkles className="w-4 h-4 text-gold" />
+                            <Newspaper className="w-4 h-4 text-gold" />
                             <span className="text-gold text-xs font-bold uppercase tracking-wider">
                                 Fresh Arrivals
                             </span>
