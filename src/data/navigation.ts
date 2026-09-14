@@ -567,26 +567,6 @@ export const navigationData: NavItem[] = [
         id: 'shop',
         name: 'Accessories',
         path: '/accessories',
-        featuredImage: IMAGES.sweethome,
-        sections: [
-            {
-                title: 'Burners',
-                path: '/collections/burners',
-                links: [
-                    { name: 'Sweet Home Ceramic Burner', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
-                    // { name: 'Minimalist Stone Burner', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
-                    // { name: 'Classic White Ceramic Burner', path: '/product/classic-white-burner', image: IMAGES.burner2 },
-                ]
-            },
-            {
-                title: 'Others',
-                path: '/collections/textiles',
-                links: [
-                    { name: 'Car Tissue Paper', path: '/product/scented-tissues', image: IMAGES.tissue1 },
-                    { name: 'Travel Essentials Bag', path: '/product/designer-scent-bag-2', image: IMAGES.bag2 },
-                ]
-            }
-        ]
     },
     {
         id: 'gifts',

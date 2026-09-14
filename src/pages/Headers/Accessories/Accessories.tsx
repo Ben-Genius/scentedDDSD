@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { navigationData } from '@/data/navigation';
 import { products } from '@/data/products';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
@@ -35,34 +34,8 @@ export const Accessories = () => {
         return () => clearInterval(interval);
     }, [headerImages.length]);
 
-    // 1. Find the Accessories navigation item
-    const navItem = navigationData.find(item => item.id === 'shop');
-
-    if (!navItem || !navItem.sections) {
-        return <div className="p-10 text-center">Accessories collection not found.</div>;
-    }
-
-    // Prepare products list (Flattened for the category view)
-    const allProducts = navItem.sections.flatMap(section => {
-        return section.links.map(link => {
-            const slug = link.path.split('/').pop();
-            const product = products.find(p => p.slug === slug);
-            if (product) {
-                return {
-                    ...product,
-                    // Use Nav Data images if available, otherwise product defaults
-                    images: {
-                        ...product.images,
-                        default: link.image || product.images.default,
-                    }
-                };
-            }
-            return null;
-        });
-    }).filter((p): p is typeof products[0] => p !== null);
-
-    // Remove duplicates if any slug appears in multiple sections
-    const uniqueProducts = Array.from(new Map(allProducts.map(item => [item.id, item])).values());
+    // Filter for Accessories products
+    const uniqueProducts = products.filter(product => product.category === 'Accessories');
 
     return (
         <div className="w-full relative max-w-full min-h-screen bg-[#FDFBF7]">

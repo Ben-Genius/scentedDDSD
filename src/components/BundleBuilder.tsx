@@ -18,7 +18,6 @@ import {
 import { Product } from '../types';
 import { useLocalCart } from '../hooks/useLocalCart';
 import { formatMoney } from '../utils/formatMoney';
-import { MessageChannel } from 'worker_threads';
 
 function generateUniqueId() {
     return Date.now() + Math.random();
