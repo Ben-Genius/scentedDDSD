@@ -1188,7 +1188,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.sheaButter,
-            gallery: [IMAGES.sheaButterr],
+            gallery: [],
             colorVariants: []
         },
         variants: [{ id: "v-shea-1-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
@@ -1206,7 +1206,7 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.sheaButterr,
-            gallery: [IMAGES.sheaButter],
+            gallery: [],
             colorVariants: []
         },
         variants: [{ id: "v-shea-2-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],

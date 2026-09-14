@@ -134,21 +134,7 @@ export const ShopProductCard = ({
                         )}
                     </div>
 
-                    {/* Quick Add - Slide up from bottom */}
-                    {/* {onQuickAdd && (
-                        <div className="absolute inset-x-0 bottom-4 translate-y-[120%] group-hover:translate-y-0 transition-transform duration-300 z-20 flex justify-center px-4">
-                            <button
-                                className="w-fit bg-white/95 backdrop-blur-sm px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-black hover:bg-black hover:text-white transition-colors border border-black/5 shadow-lg rounded-sm"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    onQuickAdd();
-                                }}
-                            >
-                                Quick Add
-                            </button>
-                        </div>
-                    )} */}
+
                 </div>
 
                 {/* Card content */}

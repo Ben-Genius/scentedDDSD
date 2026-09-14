@@ -574,12 +574,12 @@ export const navigationData: NavItem[] = [
                 path: '/collections/burners',
                 links: [
                     { name: 'Sweet Home Ceramic Burner', path: '/product/sweet-home-burner', image: IMAGES.sweethome },
-                    { name: 'Minimalist Stone Burner', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
-                    { name: 'Classic White Ceramic Burner', path: '/product/classic-white-burner', image: IMAGES.burner2 },
+                    // { name: 'Minimalist Stone Burner', path: '/product/minimalist-stone-burner', image: IMAGES.burner1 },
+                    // { name: 'Classic White Ceramic Burner', path: '/product/classic-white-burner', image: IMAGES.burner2 },
                 ]
             },
             {
-                title: 'Textiles & Others',
+                title: 'Others',
                 path: '/collections/textiles',
                 links: [
                     { name: 'Car Tissue Paper', path: '/product/scented-tissues', image: IMAGES.tissue1 },
