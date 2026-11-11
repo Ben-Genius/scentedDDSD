@@ -48,6 +48,11 @@ export const useInventory = create<InventoryState>()(
     {
       name: 'scented-inventory',
       storage: createJSONStorage(() => localStorage),
+      // Bump this number whenever prices or products change in src/data/products.ts.
+      // Visitors' browsers keep a saved copy of the product list; a new version
+      // replaces that copy so everyone sees the current prices.
+      version: 2,
+      migrate: () => ({ products: initialProducts }) as unknown as InventoryState,
       // Optional: Logic to merge initial data if we add new default products in code update? 
       // For now, simpler to rely on storage OR initial if empty.
       // But populate logic is implicit in 'products: initialProducts' for first run.

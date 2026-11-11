@@ -1126,7 +1126,7 @@ export const products: Product[] = [
         category: "Air Fresheners",
         shortDescription: "Citrus sunset blend.",
         longDescription: "A vibrant burst of citrus and spices to energize your room.",
-        basePrice: 180,
+        basePrice: 200,
         stock: 30,
         featured: true,
         images: {
@@ -1134,7 +1134,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 180 }],
+        variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Orange", "Ginger", "Turmeric"]
     },
 
@@ -1147,7 +1147,7 @@ export const products: Product[] = [
         category: "Bath & Body",
         shortDescription: "Luxury hand-crafted bar soap.",
         longDescription: "Our artisan bar soaps are hand-crafted using traditional methods and infused with our signature fragrances to leave your skin soft and beautifully scented.",
-        basePrice: 55,
+        basePrice: 120,
         stock: 50,
         featured: true,
         images: {
@@ -1155,7 +1155,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-soap-1-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
+        variants: [{ id: "v-soap-1-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
         scents: ["Rose", "Lavender", "Sandalwood"]
     },
     {
@@ -1165,7 +1165,7 @@ export const products: Product[] = [
         category: "Bath & Body",
         shortDescription: "Hand-poured luxury cleansing bar.",
         longDescription: "Experience the ultimate in bathing luxury with our hand-poured soaps, designed to moisturize while providing a rich, aromatic lather.",
-        basePrice: 55,
+        basePrice: 60,
         stock: 45,
         featured: true,
         images: {
@@ -1173,7 +1173,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-soap-2-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
+        variants: [{ id: "v-soap-2-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 60 }],
         scents: ["Pomegranate", "Amber", "Sage"]
     },
     {
@@ -1183,7 +1183,7 @@ export const products: Product[] = [
         category: "Bath & Body",
         shortDescription: "Ultra-nourishing pure whipped shea butter.",
         longDescription: "Handcrafted pure African shea butter whipped to a velvety consistency. Deeply moisturizes, nourishes, and restores skin suppleness with a rich, soothing touch.",
-        basePrice: 85,
+        basePrice: 70,
         stock: 50,
         featured: true,
         images: {
@@ -1191,7 +1191,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-shea-1-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-shea-1-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 70 }],
         scents: ["Natural", "Vanilla", "Lavender"]
     },
     {
@@ -1201,7 +1201,7 @@ export const products: Product[] = [
         category: "Bath & Body",
         shortDescription: "Luxurious scented shea body lotion.",
         longDescription: "An intensely hydrating artisan formula crafted with cold-pressed shea butter and fine fragrance oils to leave your skin luminous, soft, and delicately perfumed.",
-        basePrice: 85,
+        basePrice: 55,
         stock: 50,
         featured: true,
         images: {
@@ -1209,7 +1209,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-shea-2-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 85 }],
+        variants: [{ id: "v-shea-2-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
         scents: ["Amber & Honey", "Sweet Citrus", "Rose Oud"]
     },
     // --- ACCESSORIES ---
@@ -1220,7 +1220,7 @@ export const products: Product[] = [
         category: "Accessories",
         shortDescription: "Elegant home-shaped ceramic oil burner.",
         longDescription: "A beautiful ceramic burner designed to look like a cozy house, perfect for melting wax or warming oils.",
-        basePrice: 120,
+        basePrice: 100,
         stock: 30,
         featured: true,
         images: {
@@ -1228,7 +1228,7 @@ export const products: Product[] = [
             gallery: [IMAGES.sweethome],
             colorVariants: []
         },
-        variants: [{ id: "v-shb-std", label: "Standard", multiplier: 1, priceGHS: 120 }],
+        variants: [{ id: "v-shb-std", label: "Standard", multiplier: 1, priceGHS: 100 }],
         scents: []
     },
 
@@ -1241,7 +1241,7 @@ export const products: Product[] = [
         category: "Accessories",
         shortDescription: "Premium soft tissues with subtle fragrance.",
         longDescription: "Our premium tissues are infused with a delicate signature fragrance for a refreshing experience.",
-        basePrice: 45,
+        basePrice: 20,
         stock: 100,
         featured: false,
         images: {
@@ -1249,7 +1249,7 @@ export const products: Product[] = [
             gallery: [IMAGES.tissue1],
             colorVariants: []
         },
-        variants: [{ id: "v-st-std", label: "Pack of 3", multiplier: 1, priceGHS: 45 }],
+        variants: [{ id: "v-st-std", label: "Pack of 3", multiplier: 1, priceGHS: 20 }],
         scents: ["Signature Flush"]
     },
 
@@ -1260,7 +1260,7 @@ export const products: Product[] = [
         category: "Accessories",
         shortDescription: "Luxury fabric bag with clean notes.",
         longDescription: "Perfect for linens, this bag delivers a 'clean laundry' freshness that lasts for weeks.",
-        basePrice: 65,
+        basePrice: 50,
         stock: 35,
         featured: true,
         images: {
@@ -1268,7 +1268,7 @@ export const products: Product[] = [
             gallery: [],
             colorVariants: []
         },
-        variants: [{ id: "v-dsb-2", label: "Standard", multiplier: 1, priceGHS: 65 }],
+        variants: [{ id: "v-dsb-2", label: "Standard", multiplier: 1, priceGHS: 50 }],
         scents: ["Fresh Linen", "Cotton Blossom"]
     },
 
