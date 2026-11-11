@@ -11,13 +11,15 @@ interface ShopProductCardProps {
     viewMode?: 'grid' | 'list';
     onQuickAdd?: () => void;
     className?: string;
+    showPrice?: boolean;
 }
 
 export const ShopProductCard = ({
     product,
     viewMode = 'grid',
     onQuickAdd,
-    className
+    className,
+    showPrice = false
 }: ShopProductCardProps) => {
     // Determine display price
     const lowestPrice = product.variants.length > 0
@@ -143,9 +145,11 @@ export const ShopProductCard = ({
                         <h3 className="font-playfair text-md text-black leading-snug group-hover:text-black/70 transition-colors">
                             {product.title}
                         </h3>
-                        <span className="text-sm font-medium text-black ml-4">
-                            {/* {formatMoney(lowestPrice)} */}
-                        </span>
+                        {showPrice && (
+                            <span className="text-sm font-medium text-black ml-4 whitespace-nowrap">
+                                {formatMoney(lowestPrice)}
+                            </span>
+                        )}
                     </div>
 
                     {/* Quick Add / Add to Cart replacing stars */}

@@ -32,6 +32,12 @@ export const CollectionPage: React.FC = () => {
     return foundSection;
   }, [collectionSlug]);
 
+  // Show prices only for collections under the Scented Candles menu
+  const isCandleCollection = useMemo(() => {
+    const candlesNav = navigationData.find((item) => item.id === 'candles');
+    return !!collectionData && !!candlesNav?.sections?.includes(collectionData);
+  }, [collectionData]);
+
   // 2. Filter Products based on the links in this collection
   // 2. Filter and Customize Products based on the links in this collection
   const collectionProducts = useMemo(() => {
@@ -123,6 +129,7 @@ export const CollectionPage: React.FC = () => {
                     toast.success(`Added ${product.title} to cart`);
                   }
                 }}
+                showPrice={isCandleCollection}
               />
             ))}
           </div>
