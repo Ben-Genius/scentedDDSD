@@ -560,6 +560,8 @@ export const navigationData: NavItem[] = [
                 title: 'Body Collection',
                 path: '/collections/body-collection',
                 links: [
+                    { name: 'Body Wash Gel', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Hand Wash Gel', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
                     { name: 'Shea Butter Cream', path: '/product/shea-butter-cream', image: IMAGES.sheaButter },
                     { name: 'Shea Butter Lotion', path: '/product/shea-body-lotion', image: IMAGES.sheaButterr },
                 ]
