@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Product } from '@/types';
 import { formatMoney } from '@/utils/formatMoney';
+import { overrideVariants } from '@/lib/variants';
 
 import { motion } from 'motion/react';
 
@@ -22,9 +23,12 @@ export const ShopProductCard = ({
     showPrice = false
 }: ShopProductCardProps) => {
     // Determine display price
-    const lowestPrice = product.variants.length > 0
-        ? Math.min(...product.variants.map(v => v.priceGHS))
+    // Use the same sizes/prices as the product page so the card matches it
+    const displayVariants = overrideVariants(product);
+    const lowestPrice = displayVariants.length > 0
+        ? Math.min(...displayVariants.map(v => v.priceGHS))
         : (product.basePrice ?? 0);
+    const hasMultipleSizes = displayVariants.length > 1;
 
     if (viewMode === 'list') {
         return (
@@ -147,7 +151,7 @@ export const ShopProductCard = ({
                         </h3>
                         {showPrice && (
                             <span className="text-sm font-medium text-black ml-4 whitespace-nowrap">
-                                {formatMoney(lowestPrice)}
+                                {hasMultipleSizes ? `From ${formatMoney(lowestPrice)}` : formatMoney(lowestPrice)}
                             </span>
                         )}
                     </div>
