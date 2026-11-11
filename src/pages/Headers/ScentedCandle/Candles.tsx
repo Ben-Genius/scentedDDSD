@@ -80,7 +80,6 @@ export const Candles = () => {
                                 }
                             }}
                             className="w-full"
-                            showPrice
                         />
                     ));
                 })()}
