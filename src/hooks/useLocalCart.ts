@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { CartItem, Product, ProductVariant } from '../types';
 import { products as currentProducts } from '../data/products';
+import { overrideVariants } from '../lib/variants';
 
 interface CartState {
   items: CartItem[];
@@ -160,14 +161,15 @@ export const useLocalCart = create<CartState>()(
         const saved = persisted as Partial<CartState> | undefined;
         const items = (saved?.items ?? []).map((item) => {
           const product = currentProducts.find((p) => p.id === item.productId);
-          const variant = product?.variants.find((v) => v.id === item.variantId);
+          const variant = product ? overrideVariants(product).find((v) => v.id === item.variantId) : undefined;
           if (!product || !variant) return item;
+          const label = variant.label;
           let price = variant.priceGHS;
           const colorVar = item.colorId
             ? product.images.colorVariants.find((c) => c.colorId === item.colorId)
             : undefined;
           if (colorVar?.priceDelta) price += colorVar.priceDelta;
-          return { ...item, price };
+          return { ...item, price, variantLabel: label };
         });
         return { ...current, ...saved, items };
       },
