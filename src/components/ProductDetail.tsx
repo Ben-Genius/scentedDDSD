@@ -21,7 +21,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
     const [selectedColorId, setSelectedColorId] = useState<string | undefined>(product.images.colorVariants[0]?.colorId);
     const [selectedScent, setSelectedScent] = useState<string | undefined>(product.scents[0]);
     const [quantity, setQuantity] = useState(1);
-    const [activeImage, setActiveImage] = useState(product.images.default);
+    const [activeImage, setActiveImage] = useState(actualVariants[0]?.image || product.images.default);
     const [isHovered, setIsHovered] = useState(false);
     const [prevProductId, setPrevProductId] = useState(product.id);
 
@@ -31,13 +31,22 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
         setSelectedVariantId(actualVariants[0]?.id);
         setSelectedColorId(product.images.colorVariants[0]?.colorId);
         setSelectedScent(product.scents[0]);
-        setActiveImage(product.images.default);
+        setActiveImage(actualVariants[0]?.image || product.images.default);
         setQuantity(1);
     }
 
     // Derived state
     const selectedVariant = actualVariants.find(v => v.id === selectedVariantId) || actualVariants[0];
     const selectedColor = product.images.colorVariants.find(c => c.colorId === selectedColorId);
+
+    const handleSizeChange = (variantId: string) => {
+        setSelectedVariantId(variantId);
+        // Show this size's own photo, if it has one
+        const variant = actualVariants.find(v => v.id === variantId);
+        if (variant?.image) {
+            setActiveImage(variant.image);
+        }
+    };
 
     const handleColorChange = (colorId: string) => {
         setSelectedColorId(colorId);
@@ -197,7 +206,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                                 <SizeSelector
                                     options={actualVariants}
                                     selectedId={selectedVariantId}
-                                    onChange={setSelectedVariantId}
+                                    onChange={handleSizeChange}
                                 />
                             </div>
                         )}

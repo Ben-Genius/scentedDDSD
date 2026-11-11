@@ -60,6 +60,37 @@ const fabricAirFreshener = (slug: string, title: string): Product => ({
     scents: []
 });
 
+// --- Body & Hand Wash Gels (two sizes, each size has its own photo) ---
+// Change prices here and they apply to all three scents.
+const WASH_GEL_LARGE_PRICE = 120;
+const WASH_GEL_SMALL_PRICE = 60;
+
+const washGel = (slug: string, scent: string, notes: string[], description: string): Product => {
+    const large = `/images/products/bath-body/${slug}-large.jpg`;
+    const small = `/images/products/bath-body/${slug}-small.jpg`;
+    return {
+        id: `p-wash-gel-${slug}`,
+        title: scent,
+        slug: `${slug}-wash-gel`,
+        category: "Bath & Body",
+        shortDescription: "Body & Hand Wash Gel",
+        longDescription: description,
+        basePrice: WASH_GEL_LARGE_PRICE,
+        stock: 30,
+        featured: true,
+        images: {
+            default: large,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [
+            { id: `v-wash-gel-${slug}-large`, label: "Large", multiplier: 1, priceGHS: WASH_GEL_LARGE_PRICE, image: large },
+            { id: `v-wash-gel-${slug}-small`, label: "Small", multiplier: 1, priceGHS: WASH_GEL_SMALL_PRICE, image: small },
+        ],
+        scents: notes
+    };
+};
+
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
 
@@ -1267,6 +1298,12 @@ export const products: Product[] = [
         variants: [{ id: "v-shea-2-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
         scents: ["Amber & Honey", "Sweet Citrus", "Rose Oud"]
     },
+    washGel("oud-patchouli", "Oud & Patchouli", ["Oud", "Patchouli"],
+        "A rich, warm wash gel with deep oud and earthy patchouli. Gentle enough for hands and body."),
+    washGel("tonka-bean-amber", "Tonka Bean and Amber", ["Tonka Bean", "Amber"],
+        "A soft, cosy wash gel with sweet tonka bean and glowing amber. Gentle enough for hands and body."),
+    washGel("lime-mint", "Lime and Mint", ["Lime", "Mint"],
+        "A fresh, zesty wash gel with bright lime and cool mint. Gentle enough for hands and body."),
     // --- ACCESSORIES ---
     {
         id: "acc-burner-1",
