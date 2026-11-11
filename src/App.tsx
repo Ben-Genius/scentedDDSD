@@ -9,6 +9,7 @@ import { useLocalCart } from '@/hooks/useLocalCart';
 import { Candles } from './pages/Headers/ScentedCandle/Candles';
 import { Diffusers } from './pages/Headers/Diffusers/Diffusers';
 import { AllRefreshner } from './pages/Headers/Air Refreshner/AllRefreshner';
+import { FabricAirFresheners } from './pages/Headers/FabricAirFreshener/FabricAirFresheners';
 import { AllBody } from './pages/Headers/Body/AllBody..tsx';
 import { AllEssentialOil } from './pages/Headers/Essential Oils/AllEssentialOil';
 
@@ -69,6 +70,7 @@ function App() {
         <Route path="/diffusers" element={<Diffusers />} />
         <Route path="/essential-oils" element={<AllEssentialOil />} />
         <Route path="/air-freshners" element={<AllRefreshner />} />
+        <Route path="/fabric-air-fresheners" element={<FabricAirFresheners />} />
 
         <Route path="/bath-body" element={<AllBody />} />
         <Route path="/product/:slug" element={<ProductPage />} />

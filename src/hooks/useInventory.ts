@@ -48,6 +48,16 @@ export const useInventory = create<InventoryState>()(
     {
       name: 'scented-inventory',
       storage: createJSONStorage(() => localStorage),
+      // Visitors' browsers keep a saved copy of this store. Always take products
+      // (and their prices) from src/data/products.ts, so a price change in the code
+      // reaches everyone on their next visit. Products added only in the admin
+      // page (ids not in the code) are kept.
+      merge: (persisted, current) => {
+        const saved = (persisted as Partial<InventoryState> | undefined)?.products ?? [];
+        const codeIds = new Set(initialProducts.map((p) => p.id));
+        const adminOnly = saved.filter((p) => !codeIds.has(p.id));
+        return { ...current, products: [...initialProducts, ...adminOnly] };
+      },
       // Optional: Logic to merge initial data if we add new default products in code update? 
       // For now, simpler to rely on storage OR initial if empty.
       // But populate logic is implicit in 'products: initialProducts' for first run.

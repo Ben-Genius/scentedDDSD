@@ -546,6 +546,11 @@ export const navigationData: NavItem[] = [
         featuredImage: '/images/collections/air-fresheners/hero-main.png',
     },
     {
+        id: 'fabric',
+        name: 'Fabric Air Freshener',
+        path: '/fabric-air-fresheners',
+    },
+    {
         id: 'bath',
         name: 'Bath & Body',
         path: '/bath-body',
@@ -555,10 +560,10 @@ export const navigationData: NavItem[] = [
                 title: 'Body Collection',
                 path: '/collections/body-collection',
                 links: [
-                    { name: 'Artisan Soap I', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
-                    { name: 'Artisan Soap II', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
-                    { name: 'Shea Butter Cream', path: '/product/whipped-shea-butter', image: IMAGES.sheaButter },
-                    { name: 'Shea Butter Lotion', path: '/product/nourishing-body-shea-butter', image: IMAGES.sheaButterr },
+                    { name: 'Body Wash Gel', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Hand Wash Gel', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                    { name: 'Shea Butter Cream', path: '/product/shea-butter-cream', image: IMAGES.sheaButter },
+                    { name: 'Shea Butter Lotion', path: '/product/shea-body-lotion', image: IMAGES.sheaButterr },
                 ]
             }
         ]

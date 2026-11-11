@@ -21,7 +21,7 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isScrolled, isHeaderHovered })
             )}
             onMouseLeave={() => setActiveDropdown(null)}
         >
-            <div className="flex space-x-12 lg:space-x-16">
+            <div className="flex space-x-8 xl:space-x-10 2xl:space-x-16">
                 {navigationData.filter(item => item.id !== 'home').map((item) => (
                     <div
                         key={item.id}

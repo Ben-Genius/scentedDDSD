@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { CartItem, Product, ProductVariant } from '../types';
+import { products as currentProducts } from '../data/products';
 
 interface CartState {
   items: CartItem[];
@@ -152,6 +153,23 @@ export const useLocalCart = create<CartState>()(
     {
       name: 'scented-cart-storage',
       storage: createJSONStorage(() => localStorage),
+      // A saved cart keeps the price from when the item was added. Refresh it from
+      // the current product data, so customers are never charged an old price.
+      merge: (persisted, current) => {
+        const saved = persisted as Partial<CartState> | undefined;
+        const items = (saved?.items ?? []).map((item) => {
+          const product = currentProducts.find((p) => p.id === item.productId);
+          const variant = product?.variants.find((v) => v.id === item.variantId);
+          if (!product || !variant) return item;
+          let price = variant.priceGHS;
+          const colorVar = item.colorId
+            ? product.images.colorVariants.find((c) => c.colorId === item.colorId)
+            : undefined;
+          if (colorVar?.priceDelta) price += colorVar.priceDelta;
+          return { ...item, price };
+        });
+        return { ...current, ...saved, items };
+      },
     }
   )
 );
