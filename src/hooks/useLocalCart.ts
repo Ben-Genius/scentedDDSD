@@ -46,9 +46,10 @@ export const useLocalCart = create<CartState>()(
             }
         }
 
-        const image = colorId 
-          ? product.images.colorVariants.find(c => c.colorId === colorId)?.image || product.images.default 
-          : product.images.default;
+        const sizeImage = variant.image || product.images.default;
+        const image = colorId
+          ? product.images.colorVariants.find(c => c.colorId === colorId)?.image || sizeImage
+          : sizeImage;
 
         if (existingItem) {
           set({

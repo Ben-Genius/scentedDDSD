@@ -5,6 +5,7 @@ export interface ProductVariant {
   sizeLabel?: string; // e.g. "Petite"
   multiplier: number; // e.g. 1.0, 1.5 - multiplier of base price or explicit? User says "base price + size multiplier + color/finish delta". Actually "Product model ... variants ... multiplier, priceGHS". I'll store explicit priceGHS for simplicity or use logic.
   priceGHS: number;
+  image?: string; // Optional photo for this size; shown when the size is selected
 }
 
 export interface ColorVariant {
