@@ -546,6 +546,11 @@ export const navigationData: NavItem[] = [
         featuredImage: '/images/collections/air-fresheners/hero-main.png',
     },
     {
+        id: 'fabric',
+        name: 'Fabric Air Freshener',
+        path: '/fabric-air-fresheners',
+    },
+    {
         id: 'bath',
         name: 'Bath & Body',
         path: '/bath-body',

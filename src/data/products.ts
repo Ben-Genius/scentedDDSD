@@ -34,6 +34,32 @@ import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 
 
 
+// --- Fabric Air Fresheners ---
+// Change the price or size here and it applies to every fabric air freshener.
+const FABRIC_AIR_FRESHENER_PRICE = 200;
+const FABRIC_AIR_FRESHENER_SIZE = "300ml";
+// Placeholder photo until the real product images are added.
+const FABRIC_AIR_FRESHENER_IMAGE = '/images/products/air-fresheners/air-freshener-main.png';
+
+const fabricAirFreshener = (slug: string, title: string): Product => ({
+    id: `p-fabric-${slug}`,
+    title,
+    slug: `fabric-${slug}`,
+    category: "Fabric Air Fresheners",
+    shortDescription: "Fabric and linen refreshing spray.",
+    longDescription: `${title} fabric air freshener. Mist lightly over curtains, sofas, bedding and clothes for a long-lasting fresh scent.`,
+    basePrice: FABRIC_AIR_FRESHENER_PRICE,
+    stock: 30,
+    featured: false,
+    images: {
+        default: FABRIC_AIR_FRESHENER_IMAGE,
+        gallery: [],
+        colorVariants: []
+    },
+    variants: [{ id: `v-fabric-${slug}`, label: "Standard", sizeMl: FABRIC_AIR_FRESHENER_SIZE, sizeLabel: "Standard", multiplier: 1, priceGHS: FABRIC_AIR_FRESHENER_PRICE }],
+    scents: []
+});
+
 export const products: Product[] = [
     // --- Reed Diffusers (Split by Price Tier) ---
 
@@ -1155,6 +1181,17 @@ export const products: Product[] = [
         variants: [{ id: "v-new-4", label: "Standard", sizeMl: "300ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Orange", "Ginger", "Turmeric"]
     },
+
+
+    // --- Fabric Air Fresheners (images to be added) ---
+    fabricAirFreshener("burberry", "Burberry"),
+    fabricAirFreshener("arabic-loomi", "Arabic Loomi"),
+    fabricAirFreshener("royal-pear-freesia", "Royal Pear and Freesia"),
+    fabricAirFreshener("sweet-flowers", "Sweet Flowers"),
+    fabricAirFreshener("sandal-33", "Sandal 33"),
+    fabricAirFreshener("gucci-bloom", "Gucci Bloom"),
+    fabricAirFreshener("amber-ebony", "Amber Ebony"),
+    fabricAirFreshener("woodsage-seasalt", "Woodsage and SeaSalt"),
 
 
     // --- NEW COLLECTION: Bath & Body ---
