@@ -70,7 +70,7 @@ const washGel = (slug: string, scent: string, notes: string[], description: stri
     const small = `/images/products/bath-body/${slug}-small.jpg`;
     return {
         id: `p-wash-gel-${slug}`,
-        title: `${scent} Body & Hand Wash Gel`,
+        title: scent,
         slug: `${slug}-wash-gel`,
         category: "Bath & Body",
         shortDescription: "Body & Hand Wash Gel",
