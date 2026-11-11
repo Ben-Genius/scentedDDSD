@@ -204,6 +204,24 @@ export const products: Product[] = [
         variants: [{ id: "v-ml-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
         scents: ["Lavender", "Musk", "Tonka Bean"]
     },
+    {
+        id: "p-royal-rose-bloom-diffuser",
+        title: "Royal Rose Bloom Diffuser",
+        slug: "royal-rose-bloom-diffuser",
+        category: "Floral Romance",
+        shortDescription: "Velvet roses and soft peony.",
+        longDescription: "Experience the romance of a blooming royal garden with notes of velvet red roses and soft peony.",
+        basePrice: 200,
+        stock: 60,
+        featured: false,
+        images: {
+            default: IMAGES.collectionFloral,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-rrb-d", label: "Standard", sizeMl: "100ml", sizeLabel: "Standard", multiplier: 1, priceGHS: 200 }],
+        scents: ["Red Rose", "Peony"]
+    },
 
 
     // --- REED DIFFUSERS - Woody and Suede Collection ---
