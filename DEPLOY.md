@@ -1,5 +1,14 @@
 # Deployment Guide
 
+## Cloudflare (current)
+
+Connect the GitHub repo in Cloudflare → Workers & Pages → Create → Import a repository.
+
+- Build command: `bun run build`
+- Deploy command (Workers): `npx wrangler deploy` (uses `wrangler.jsonc`, which serves `dist/` with SPA fallback)
+- Output directory (Pages only): `dist`
+- Build variable: `VITE_WHATSAPP_PHONE_NUMBER` (set under **Build** variables; Vite reads it at build time, not at runtime)
+
 ## Vercel (Recommended)
 
 1. Connect your GitHub repository to Vercel.

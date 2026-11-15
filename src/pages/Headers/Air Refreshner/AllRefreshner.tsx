@@ -14,7 +14,7 @@ export const AllRefreshner = () => {
 
     // Filter for Air Freshener products
     const airFresheners = products.filter(product => product.category === 'Air Fresheners');
-    const heroImage = '/images/collections/air-fresheners/hero-main.png';
+    const heroImage = '/images/collections/air-fresheners/hero-main.webp';
 
     return (
         <div className="w-full relative max-w-full min-h-screen bg-[#FDFBF7]">

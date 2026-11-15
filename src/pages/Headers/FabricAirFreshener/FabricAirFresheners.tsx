@@ -15,7 +15,7 @@ export const FabricAirFresheners = () => {
     // Filter for Fabric Air Freshener products
     const airFresheners = products.filter(product => product.category === 'Fabric Air Fresheners');
     // Placeholder banner until a fabric air freshener photo is added
-    const heroImage = '/images/collections/air-fresheners/hero-main.png';
+    const heroImage = '/images/collections/air-fresheners/hero-main.webp';
 
     return (
         <div className="w-full relative max-w-full min-h-screen bg-[#FDFBF7]">

@@ -1,36 +1,36 @@
 import { IMAGES } from '../assets';
-import candle2Hover from '../assets/collections/candles/2.2.png';
-import candle3Hover from '../assets/collections/candles/3.3.png';
-import candle4Hover from '../assets/images/ingredients/candles/ylang_hover.png';
-import candle5Hover from '../assets/collections/candles/5.5.png';
-import candle6Hover from '../assets/collections/candles/6.6.png';
+import candle2Hover from '../assets/collections/candles/2.2.webp';
+import candle3Hover from '../assets/collections/candles/3.3.webp';
+import candle4Hover from '../assets/images/ingredients/candles/ylang_hover.webp';
+import candle5Hover from '../assets/collections/candles/5.5.webp';
+import candle6Hover from '../assets/collections/candles/6.6.webp';
 
-import wood1Hover from '../assets/collections/candles/wood/w11.png';
-import wood2Hover from '../assets/collections/candles/wood/w22.png';
-import wood3Hover from '../assets/collections/candles/wood/w33.png';
-import wood4Hover from '../assets/collections/candles/wood/w44.png';
+import wood1Hover from '../assets/collections/candles/wood/w11.webp';
+import wood2Hover from '../assets/collections/candles/wood/w22.webp';
+import wood3Hover from '../assets/collections/candles/wood/w33.webp';
+import wood4Hover from '../assets/collections/candles/wood/w44.webp';
 
-import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
-import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
-import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
-import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
-import oriental6Hover from '../assets/images/ingredients/candles/lovers_rock_hover.png';
-import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
+import oriental1Hover from '../assets/collections/candles/oriental/o11.webp';
+import oriental2Hover from '../assets/collections/candles/oriental/o22.webp';
+import oriental3Hover from '../assets/collections/candles/oriental/o33.webp';
+import oriental5Hover from '../assets/collections/candles/oriental/o55.webp';
+import oriental6Hover from '../assets/images/ingredients/candles/lovers_rock_hover.webp';
+import oriental7Hover from '../assets/collections/candles/oriental/o77.webp';
 
-import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
-import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet4Hover from '../assets/images/ingredients/candles/sugar_vanilla_hover.png';
-import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
-import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
-import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
+import gourmet2Hover from '../assets/collections/candles/gourmet/g22.webp';
+import gourmet3Hover from '../assets/collections/candles/gourmet/g33.webp';
+import gourmet4Hover from '../assets/images/ingredients/candles/sugar_vanilla_hover.webp';
+import gourmet5Hover from '../assets/collections/candles/gourmet/g55.webp';
+import gourmet6Hover from '../assets/collections/candles/gourmet/g66.webp';
+import gourmet7Hover from '../assets/collections/candles/gourmet/g77.webp';
 
-import fresh1Hover from '../assets/collections/candles/fresh/f11.png';
-import fresh2Hover from '../assets/collections/candles/fresh/f22.png';
-import fresh3Hover from '../assets/collections/candles/fresh/f33.png';
-import fresh4Hover from '../assets/collections/candles/fresh/f44.png';
-import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
-import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
-import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
+import fresh1Hover from '../assets/collections/candles/fresh/f11.webp';
+import fresh2Hover from '../assets/collections/candles/fresh/f22.webp';
+import fresh3Hover from '../assets/collections/candles/fresh/f33.webp';
+import fresh4Hover from '../assets/collections/candles/fresh/f44.webp';
+import fresh5Hover from '../assets/collections/candles/fresh/f55.webp';
+import fresh6Hover from '../assets/collections/candles/fresh/f66.webp';
+import fresh7Hover from '../assets/collections/candles/fresh/f77.webp';
 
 
 
@@ -294,118 +294,118 @@ export const navigationData: NavItem[] = [
         id: 'diffusers',
         name: 'Diffusers',
         path: '/diffusers',
-        featuredImage: '/images/collections/diffusers/floral-romance.png',
+        featuredImage: '/images/collections/diffusers/floral-romance.webp',
         sections: [
             {
                 title: 'Floral Romance Collection',
-                image: '/images/collections/diffusers/floral-romance.png',
+                image: '/images/collections/diffusers/floral-romance.webp',
                 path: '/collections/floral-romance-diffusers',
                 links: [
                     {
                         name: 'Freesia and English Pear',
                         path: '/product/freesia-english-pear-diffuser',
                         image: IMAGES.diffuserHeader1,
-                        hoverImage: '/images/ingredients/diffusers/freesia-english-pear.png'
+                        hoverImage: '/images/ingredients/diffusers/freesia-english-pear.webp'
                     },
                     {
                         name: "Amour D'Osmanthus",
                         path: '/product/amour-d-osmanthus-diffuser',
                         image: IMAGES.diffuserHeader2,
-                        hoverImage: '/images/ingredients/diffusers/amour-d-osmanthus.png'
+                        hoverImage: '/images/ingredients/diffusers/amour-d-osmanthus.webp'
                     },
                     {
                         name: 'Midnight Lavender',
                         path: '/product/midnight-lavender-diffuser',
                         image: IMAGES.diffuserHeader3,
-                        hoverImage: '/images/ingredients/diffusers/midnight-lavender.png'
+                        hoverImage: '/images/ingredients/diffusers/midnight-lavender.webp'
                     },
                     {
                         name: 'Royal Rose Bloom',
                         path: '/product/royal-rose-bloom-diffuser',
                         image: IMAGES.diffuserHeader4,
-                        hoverImage: '/images/ingredients/diffusers/royal-rose-bloom.png'
+                        hoverImage: '/images/ingredients/diffusers/royal-rose-bloom.webp'
                     },
                 ]
             },
             {
                 title: 'Woody and Suede Collection',
-                image: '/images/collections/diffusers/woody.png',
+                image: '/images/collections/diffusers/woody.webp',
                 path: '/collections/woody-suede-diffusers',
                 links: [
                     {
                         name: 'Tobacco Noir',
                         path: '/product/tobacco-noir-diffuser',
                         image: IMAGES.diffuserHeader5,
-                        hoverImage: '/images/ingredients/diffusers/tobacco-noir.png'
+                        hoverImage: '/images/ingredients/diffusers/tobacco-noir.webp'
                     },
                     {
                         name: 'Black Oud',
                         path: '/product/black-oud-diffuser',
                         image: IMAGES.diffuserHeader6,
-                        hoverImage: '/images/ingredients/diffusers/black-oud.png'
+                        hoverImage: '/images/ingredients/diffusers/black-oud.webp'
                     },
                     {
                         name: 'Wild Fig',
                         path: '/product/wild-fig-diffuser',
                         image: IMAGES.diffuserHeader7,
-                        hoverImage: '/images/ingredients/diffusers/wild-fig.png'
+                        hoverImage: '/images/ingredients/diffusers/wild-fig.webp'
                     },
                 ]
             },
             {
                 title: 'Oriental Luxe Collection',
-                image: '/images/collections/diffusers/oriental.png',
+                image: '/images/collections/diffusers/oriental.webp',
                 path: '/collections/oriental-luxe-diffusers',
                 links: [
                     {
                         name: 'Pomegranate',
                         path: '/product/pomegranate-diffuser',
                         image: IMAGES.diffuserHeader8,
-                        hoverImage: '/images/ingredients/diffusers/pomegranate.png'
+                        hoverImage: '/images/ingredients/diffusers/pomegranate.webp'
                     },
                 ]
             },
             {
                 title: 'Gourmand Indulgence Collection',
-                image: '/images/collections/diffusers/gourmand.png',
+                image: '/images/collections/diffusers/gourmand.webp',
                 path: '/collections/gourmand-indulgence-diffusers',
                 links: [
                     {
                         name: 'Champagne Cocktail',
                         path: '/product/champagne-cocktail-diffuser',
                         image: IMAGES.diffuserHeader9,
-                        hoverImage: '/images/ingredients/diffusers/champagne-cocktail.png'
+                        hoverImage: '/images/ingredients/diffusers/champagne-cocktail.webp'
                     },
                     {
                         name: 'Sugar Vanilla',
                         path: '/product/sugar-vanilla-diffuser',
                         image: IMAGES.diffuserHeader10,
-                        hoverImage: '/images/ingredients/diffusers/sugar-vanilla.png'
+                        hoverImage: '/images/ingredients/diffusers/sugar-vanilla.webp'
                     },
                     {
                         name: 'Peach Bellini',
                         path: '/product/peach-bellini-diffuser',
                         image: IMAGES.diffuserHeader11,
-                        hoverImage: '/images/ingredients/diffusers/peach-bellini.png'
+                        hoverImage: '/images/ingredients/diffusers/peach-bellini.webp'
                     },
                 ]
             },
             {
                 title: 'Fresh Whisper Collection',
-                image: '/images/collections/diffusers/fresh.png',
+                image: '/images/collections/diffusers/fresh.webp',
                 path: '/collections/fresh-whisper-diffusers',
                 links: [
                     {
                         name: 'Sage & Sea Salt',
                         path: '/product/sage-sea-salt-diffuser',
                         image: IMAGES.diffuserHeader12,
-                        hoverImage: '/images/ingredients/diffusers/sage-sea-salt.png'
+                        hoverImage: '/images/ingredients/diffusers/sage-sea-salt.webp'
                     },
                     {
                         name: 'Lemongrass',
                         path: '/product/lemongrass-diffuser',
                         image: IMAGES.diffuserHeader13,
-                        hoverImage: '/images/ingredients/diffusers/lemongrass.png'
+                        hoverImage: '/images/ingredients/diffusers/lemongrass.webp'
                     },
                 ]
             }
@@ -543,7 +543,7 @@ export const navigationData: NavItem[] = [
         id: 'air',
         name: 'Air Fresheners',
         path: '/air-freshners',
-        featuredImage: '/images/collections/air-fresheners/hero-main.png',
+        featuredImage: '/images/collections/air-fresheners/hero-main.webp',
     },
     {
         id: 'fabric',

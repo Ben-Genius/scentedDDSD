@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scented-ddsd",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    // BrowserRouter needs every unknown path (e.g. /shop, /product/123) to serve index.html
+    "not_found_handling": "single-page-application"
+  }
+}

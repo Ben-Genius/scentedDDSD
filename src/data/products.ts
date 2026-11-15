@@ -2,35 +2,35 @@ import { IMAGES } from '@/assets';
 import { Product } from '@/types';
 
 
-import candle2Hover from '../assets/collections/candles/2.2.png';
-import candle3Hover from '../assets/collections/candles/3.3.png';
-import candle5Hover from '../assets/collections/candles/5.5.png';
-import candle6Hover from '../assets/collections/candles/6.6.png';
-import wood1Hover from '../assets/collections/candles/wood/w11.png';
-import wood2Hover from '../assets/collections/candles/wood/w22.png';
-import wood3Hover from '../assets/collections/candles/wood/w33.png';
-import wood4Hover from '../assets/collections/candles/wood/w44.png';
+import candle2Hover from '../assets/collections/candles/2.2.webp';
+import candle3Hover from '../assets/collections/candles/3.3.webp';
+import candle5Hover from '../assets/collections/candles/5.5.webp';
+import candle6Hover from '../assets/collections/candles/6.6.webp';
+import wood1Hover from '../assets/collections/candles/wood/w11.webp';
+import wood2Hover from '../assets/collections/candles/wood/w22.webp';
+import wood3Hover from '../assets/collections/candles/wood/w33.webp';
+import wood4Hover from '../assets/collections/candles/wood/w44.webp';
 
 
-import oriental1Hover from '../assets/collections/candles/oriental/o11.png';
-import oriental2Hover from '../assets/collections/candles/oriental/o22.png';
-import oriental3Hover from '../assets/collections/candles/oriental/o33.png';
-import oriental5Hover from '../assets/collections/candles/oriental/o55.png';
-import oriental7Hover from '../assets/collections/candles/oriental/o77.png';
+import oriental1Hover from '../assets/collections/candles/oriental/o11.webp';
+import oriental2Hover from '../assets/collections/candles/oriental/o22.webp';
+import oriental3Hover from '../assets/collections/candles/oriental/o33.webp';
+import oriental5Hover from '../assets/collections/candles/oriental/o55.webp';
+import oriental7Hover from '../assets/collections/candles/oriental/o77.webp';
 
-import gourmet2Hover from '../assets/collections/candles/gourmet/g22.png';
-import gourmet3Hover from '../assets/collections/candles/gourmet/g33.png';
-import gourmet5Hover from '../assets/collections/candles/gourmet/g55.png';
-import gourmet6Hover from '../assets/collections/candles/gourmet/g66.png';
-import gourmet7Hover from '../assets/collections/candles/gourmet/g77.png';
+import gourmet2Hover from '../assets/collections/candles/gourmet/g22.webp';
+import gourmet3Hover from '../assets/collections/candles/gourmet/g33.webp';
+import gourmet5Hover from '../assets/collections/candles/gourmet/g55.webp';
+import gourmet6Hover from '../assets/collections/candles/gourmet/g66.webp';
+import gourmet7Hover from '../assets/collections/candles/gourmet/g77.webp';
 
-import fresh1Hover from '../assets/collections/candles/fresh/f11.png';
-import fresh2Hover from '../assets/collections/candles/fresh/f22.png';
-import fresh3Hover from '../assets/collections/candles/fresh/f33.png';
-import fresh4Hover from '../assets/collections/candles/fresh/f44.png';
-import fresh5Hover from '../assets/collections/candles/fresh/f55.png';
-import fresh6Hover from '../assets/collections/candles/fresh/f66.png';
-import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
+import fresh1Hover from '../assets/collections/candles/fresh/f11.webp';
+import fresh2Hover from '../assets/collections/candles/fresh/f22.webp';
+import fresh3Hover from '../assets/collections/candles/fresh/f33.webp';
+import fresh4Hover from '../assets/collections/candles/fresh/f44.webp';
+import fresh5Hover from '../assets/collections/candles/fresh/f55.webp';
+import fresh6Hover from '../assets/collections/candles/fresh/f66.webp';
+import fresh7Hover from '../assets/collections/candles/fresh/f77.webp';
 
 
 
@@ -39,7 +39,7 @@ import fresh7Hover from '../assets/collections/candles/fresh/f77.png';
 const FABRIC_AIR_FRESHENER_PRICE = 200;
 const FABRIC_AIR_FRESHENER_SIZE = "300ml";
 // Placeholder photo until the real product images are added.
-const FABRIC_AIR_FRESHENER_IMAGE = '/images/products/air-fresheners/air-freshener-main.png';
+const FABRIC_AIR_FRESHENER_IMAGE = '/images/products/air-fresheners/air-freshener-main.webp';
 
 const fabricAirFreshener = (slug: string, title: string): Product => ({
     id: `p-fabric-${slug}`,
@@ -66,8 +66,8 @@ const WASH_GEL_LARGE_PRICE = 120;
 const WASH_GEL_SMALL_PRICE = 60;
 
 const washGel = (slug: string, scent: string, notes: string[], description: string): Product => {
-    const large = `/images/products/bath-body/${slug}-large.jpg`;
-    const small = `/images/products/bath-body/${slug}-small.jpg`;
+    const large = `/images/products/bath-body/${slug}-large.webp`;
+    const small = `/images/products/bath-body/${slug}-small.webp`;
     return {
         id: `p-wash-gel-${slug}`,
         title: scent,
@@ -1205,7 +1205,7 @@ export const products: Product[] = [
         stock: 30,
         featured: true,
         images: {
-            default: '/images/products/air-fresheners/air-freshener-main.png',
+            default: '/images/products/air-fresheners/air-freshener-main.webp',
             gallery: [],
             colorVariants: []
         },
