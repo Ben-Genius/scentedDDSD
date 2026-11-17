@@ -226,8 +226,20 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                         )}
 
 
-                        {/* Custom Scent Selection Stub (If applicable in future) */}
-                        {/* {product.scents.length > 0 && ... } */}
+                        {/* Fragrance Selector (only for products that offer a fragrance choice) */}
+                        {product.fragranceChoice && product.scents.length > 0 && (
+                            <div>
+                                <label className="flex items-center gap-2 text-xs font-semibold uppercase text-gray-400 tracking-[0.15em] mb-4">
+                                    <span className="w-4 h-[1px] bg-gold/50"></span> Select Fragrance
+                                </label>
+                                <SizeSelector
+                                    options={product.scents.map((scent) => ({ id: scent, label: scent }))}
+                                    selectedId={selectedScent ?? product.scents[0]}
+                                    onChange={setSelectedScent}
+                                    ariaLabel="Fragrance"
+                                />
+                            </div>
+                        )}
 
                         {/* Quantity & Add */}
                         <div className="flex flex-col sm:flex-row items-end gap-4 pt-6 border-t border-white/10">
