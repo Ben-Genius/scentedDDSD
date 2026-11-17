@@ -1278,7 +1278,8 @@ export const products: Product[] = [
             colorVariants: []
         },
         variants: [{ id: "v-shea-1-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 70 }],
-        scents: ["Natural", "Vanilla", "Lavender"]
+        scents: ["Natural", "Vanilla", "Lavender", "Bergamot", "Warm Vanilla", "Tropical Coconut Blend"],
+        fragranceChoice: true
     },
     {
         id: "p-shea-butter-2",

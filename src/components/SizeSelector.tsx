@@ -6,13 +6,14 @@ interface SizeSelectorProps {
     options: { id: string; label: string; sizeLabel?: string; priceGHS?: number }[];
     selectedId: string;
     onChange: (id: string) => void;
+    ariaLabel?: string;
 }
 
-export const SizeSelector = ({ options, selectedId, onChange }: SizeSelectorProps) => {
+export const SizeSelector = ({ options, selectedId, onChange, ariaLabel = 'Product Size' }: SizeSelectorProps) => {
     return (
         <div
             role="radiogroup"
-            aria-label="Product Size"
+            aria-label={ariaLabel}
             className="flex flex-wrap gap-3"
         >
             {options.map((option) => {
