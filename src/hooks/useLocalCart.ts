@@ -47,7 +47,7 @@ export const useLocalCart = create<CartState>()(
             }
         }
 
-        const sizeImage = (scent && product.scentImages?.[scent]) || variant.image || product.images.default;
+        const sizeImage = variant.image || product.images.default;
         const image = colorId
           ? product.images.colorVariants.find(c => c.colorId === colorId)?.image || sizeImage
           : sizeImage;

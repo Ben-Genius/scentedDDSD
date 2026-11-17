@@ -32,7 +32,6 @@ export interface Product {
   variants: ProductVariant[];
   scents: string[];
   fragranceChoice?: boolean; // true = customers pick one of `scents` on the product page
-  scentImages?: Record<string, string>; // Optional photo per fragrance; shown when that fragrance is picked
   materials?: string; // For burners
   burnTime?: string; // For candles
   weight?: string;

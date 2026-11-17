@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Product } from '../types';
 import { formatMoney } from '../utils/formatMoney';
 import { useLocalCart } from '../hooks/useLocalCart';
@@ -19,7 +20,11 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
     // State
     const [selectedVariantId, setSelectedVariantId] = useState<string>(actualVariants[0]?.id);
     const [selectedColorId, setSelectedColorId] = useState<string | undefined>(product.images.colorVariants[0]?.colorId);
-    const [selectedScent, setSelectedScent] = useState<string | undefined>(product.scents[0]);
+    // A menu link can pick the fragrance up front, e.g. /product/shea-butter-cream?scent=Bergamot
+    const [searchParams] = useSearchParams();
+    const linkedScent = searchParams.get('scent');
+    const initialScent = (linkedScent && product.scents.includes(linkedScent)) ? linkedScent : product.scents[0];
+    const [selectedScent, setSelectedScent] = useState<string | undefined>(initialScent);
     const [quantity, setQuantity] = useState(1);
     const [activeImage, setActiveImage] = useState(actualVariants[0]?.image || product.images.default);
     const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +35,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
         setPrevProductId(product.id);
         setSelectedVariantId(actualVariants[0]?.id);
         setSelectedColorId(product.images.colorVariants[0]?.colorId);
-        setSelectedScent(product.scents[0]);
+        setSelectedScent(initialScent);
         setActiveImage(actualVariants[0]?.image || product.images.default);
         setQuantity(1);
     }
@@ -45,15 +50,6 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
         const variant = actualVariants.find(v => v.id === variantId);
         if (variant?.image) {
             setActiveImage(variant.image);
-        }
-    };
-
-    const handleScentChange = (scent: string) => {
-        setSelectedScent(scent);
-        // Show this fragrance's own photo, if it has one
-        const image = product.scentImages?.[scent];
-        if (image) {
-            setActiveImage(image);
         }
     };
 
@@ -244,7 +240,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                                 <SizeSelector
                                     options={product.scents.map((scent) => ({ id: scent, label: scent }))}
                                     selectedId={selectedScent ?? product.scents[0]}
-                                    onChange={handleScentChange}
+                                    onChange={setSelectedScent}
                                     ariaLabel="Fragrance"
                                 />
                             </div>

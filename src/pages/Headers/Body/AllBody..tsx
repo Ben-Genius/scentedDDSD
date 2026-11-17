@@ -17,7 +17,7 @@ export const AllBody = () => {
     // Bath & Body products, in the same group order as the menu (wash gels, then
     // shea body care). Anything not in the menu yet still shows, at the end.
     const menuOrder = (navigationData.find(item => item.id === 'bath')?.sections ?? [])
-        .flatMap(section => section.links.map(link => link.path.split('/').pop()));
+        .flatMap(section => section.links.map(link => link.path.split('?')[0].split('/').pop()));
     const rank = (slug: string) => {
         const i = menuOrder.indexOf(slug);
         return i === -1 ? menuOrder.length : i;

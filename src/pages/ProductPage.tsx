@@ -50,7 +50,7 @@ export const ProductPage = () => {
 
     return (
         <div className="pt-16 bg-black min-h-screen">
-            <ProductDetail key={productWithImages.id} product={productWithImages} />
+            <ProductDetail key={productWithImages.id + location.search} product={productWithImages} />
         </div>
     );
 };

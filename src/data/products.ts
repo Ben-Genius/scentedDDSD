@@ -60,33 +60,37 @@ const fabricAirFreshener = (slug: string, title: string): Product => ({
     scents: []
 });
 
-// --- Body & Hand Wash Gels (two sizes, each size has its own photo) ---
+// --- Scented Body Wash Gels and Hand Wash Gels ---
+// Each scent comes as a Body Wash Gel (large bottle) and a Hand Wash Gel (small bottle).
 // Change prices here and they apply to all three scents.
-const WASH_GEL_LARGE_PRICE = 120;
-const WASH_GEL_SMALL_PRICE = 60;
+const BODY_WASH_GEL_PRICE = 120;
+const HAND_WASH_GEL_PRICE = 60;
 
 // hoverImage: the ingredient photo the product card fades to on hover (like candles and diffusers)
-const washGel = (slug: string, scent: string, notes: string[], description: string, hoverImage?: string): Product => {
-    const large = `/images/products/bath-body/${slug}-large.webp`;
-    const small = `/images/products/bath-body/${slug}-small.webp`;
+const washGel = (kind: 'body' | 'hand', slug: string, scent: string, notes: string[], description: string, hoverImage?: string): Product => {
+    const isBody = kind === 'body';
+    const type = isBody ? 'Body Wash Gel' : 'Hand Wash Gel';
+    const image = isBody
+        ? `/images/products/bath-body/${slug}-large.webp`
+        : `/images/products/bath-body/${slug}-studio.webp`;
+    const price = isBody ? BODY_WASH_GEL_PRICE : HAND_WASH_GEL_PRICE;
     return {
-        id: `p-wash-gel-${slug}`,
-        title: scent,
-        slug: `${slug}-wash-gel`,
+        id: `p-${kind}-wash-gel-${slug}`,
+        title: `${scent} ${type}`,
+        slug: `${slug}-${kind}-wash-gel`,
         category: "Bath & Body",
-        shortDescription: "Body & Hand Wash Gel",
+        shortDescription: type,
         longDescription: description,
-        basePrice: WASH_GEL_LARGE_PRICE,
+        basePrice: price,
         stock: 30,
-        featured: true,
+        featured: isBody,
         images: {
-            default: large,
+            default: image,
             gallery: hoverImage ? [hoverImage] : [],
             colorVariants: []
         },
         variants: [
-            { id: `v-wash-gel-${slug}-large`, label: "Large", multiplier: 1, priceGHS: WASH_GEL_LARGE_PRICE, image: large },
-            { id: `v-wash-gel-${slug}-small`, label: "Small", multiplier: 1, priceGHS: WASH_GEL_SMALL_PRICE, image: small },
+            { id: `v-${kind}-wash-gel-${slug}`, label: "Standard", multiplier: 1, priceGHS: price, image },
         ],
         scents: notes
     };
@@ -1229,7 +1233,7 @@ export const products: Product[] = [
     // --- NEW COLLECTION: Bath & Body ---
     {
         id: "p-soap-artisan-1",
-        title: "Body Wash Gel (Non-Fragnance)",
+        title: "Body Wash Gel (Fragrance-Free)",
         slug: "artisan-scented-soap-1",
         category: "Bath & Body",
         shortDescription: "Luxury hand-crafted bar soap.",
@@ -1247,7 +1251,7 @@ export const products: Product[] = [
     },
     {
         id: "p-soap-artisan-2",
-        title: "Hand Wash Gel (Non-Fragnace)",
+        title: "Hand Wash Gel (Fragrance-Free)",
         slug: "artisan-scented-soap-2",
         category: "Bath & Body",
         shortDescription: "Hand-poured luxury cleansing bar.",
@@ -1257,22 +1261,11 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.soap2,
-            // Fragrance photos; the first is also the card's hover photo
-            gallery: [
-                '/images/products/bath-body/oud-patchouli-studio.webp',
-                '/images/products/bath-body/tonka-bean-amber-studio.webp',
-                '/images/products/bath-body/lime-mint-studio.webp',
-            ],
+            gallery: [],
             colorVariants: []
         },
         variants: [{ id: "v-soap-2-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 60 }],
-        scents: ["Oud & Patchouli", "Tonka Bean and Amber", "Lime and Mint"],
-        fragranceChoice: true,
-        scentImages: {
-            "Oud & Patchouli": '/images/products/bath-body/oud-patchouli-studio.webp',
-            "Tonka Bean and Amber": '/images/products/bath-body/tonka-bean-amber-studio.webp',
-            "Lime and Mint": '/images/products/bath-body/lime-mint-studio.webp',
-        }
+        scents: []
     },
     {
         id: "p-shea-cream",
@@ -1294,6 +1287,26 @@ export const products: Product[] = [
         fragranceChoice: true
     },
     {
+        // Its own product, separate from Shea Butter Cream.
+        // TODO: price, photo and description are placeholders copied from Shea Butter Cream; replace with the real ones.
+        id: "p-shea-butter-fragrance-free",
+        title: "Shea Butter (Fragrance-Free)",
+        slug: "shea-butter-fragrance-free",
+        category: "Bath & Body",
+        shortDescription: "Pure shea butter with no added fragrance.",
+        longDescription: "Pure African shea butter with no added fragrance. Deeply moisturizes and nourishes, and is gentle on sensitive skin.",
+        basePrice: 70,
+        stock: 50,
+        featured: false,
+        images: {
+            default: IMAGES.sheaButter,
+            gallery: [],
+            colorVariants: []
+        },
+        variants: [{ id: "v-shea-ff-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 70 }],
+        scents: []
+    },
+    {
         id: "p-shea-butter-2",
         title: "Shea Body Lotion",
         slug: "shea-body-lotion",
@@ -1311,14 +1324,23 @@ export const products: Product[] = [
         variants: [{ id: "v-shea-2-std", label: "Standard Jar", sizeLabel: "Standard", multiplier: 1, priceGHS: 55 }],
         scents: ["Amber & Honey", "Sweet Citrus", "Rose Oud"]
     },
-    washGel("oud-patchouli", "Oud & Patchouli", ["Oud", "Patchouli"],
-        "A rich, warm wash gel with deep oud and earthy patchouli. Gentle enough for hands and body.",
+    washGel("body", "oud-patchouli", "Oud & Patchouli", ["Oud", "Patchouli"],
+        "A rich, warm body wash gel with deep oud and earthy patchouli.",
         '/images/ingredients/diffusers/black-oud.webp'),
-    washGel("tonka-bean-amber", "Tonka Bean and Amber", ["Tonka Bean", "Amber"],
-        "A soft, cosy wash gel with sweet tonka bean and glowing amber. Gentle enough for hands and body.",
+    washGel("body", "tonka-bean-amber", "Tonka Bean and Amber", ["Tonka Bean", "Amber"],
+        "A soft, cosy body wash gel with sweet tonka bean and glowing amber.",
         '/images/ingredients/bath-body/tonka-bean-amber.webp'), // Pexels #20181021
-    washGel("lime-mint", "Lime and Mint", ["Lime", "Mint"],
-        "A fresh, zesty wash gel with bright lime and cool mint. Gentle enough for hands and body.",
+    washGel("body", "lime-mint", "Lime and Mint", ["Lime", "Mint"],
+        "A fresh, zesty body wash gel with bright lime and cool mint.",
+        '/images/ingredients/bath-body/lime-mint.webp'), // Pexels #4051210
+    washGel("hand", "oud-patchouli", "Oud & Patchouli", ["Oud", "Patchouli"],
+        "A rich, warm hand wash gel with deep oud and earthy patchouli.",
+        '/images/ingredients/diffusers/black-oud.webp'),
+    washGel("hand", "tonka-bean-amber", "Tonka Bean and Amber", ["Tonka Bean", "Amber"],
+        "A soft, cosy hand wash gel with sweet tonka bean and glowing amber.",
+        '/images/ingredients/bath-body/tonka-bean-amber.webp'), // Pexels #20181021
+    washGel("hand", "lime-mint", "Lime and Mint", ["Lime", "Mint"],
+        "A fresh, zesty hand wash gel with bright lime and cool mint.",
         '/images/ingredients/bath-body/lime-mint.webp'), // Pexels #4051210
     // --- ACCESSORIES ---
     {

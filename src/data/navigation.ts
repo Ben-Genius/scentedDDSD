@@ -541,13 +541,13 @@ export const navigationData: NavItem[] = [
 
     {
         id: 'air',
-        name: 'Fabric Fresheners',
+        name: 'Fabric Air Fresheners',
         path: '/air-freshners',
         featuredImage: '/images/collections/air-fresheners/hero-main.webp',
         sections: [
 
             {
-                title: 'Fabric Fresheners',
+                title: 'Fabric Air Fresheners',
                 path: '/fabric-air-fresheners',
                 links: [
                     { name: 'Burberry', path: '/product/fabric-burberry' },
@@ -566,25 +566,40 @@ export const navigationData: NavItem[] = [
         id: 'bath',
         name: 'Bath & Body',
         path: '/bath-body',
-        featuredImage: IMAGES.soap1,
+        // Same column layout as Scented Candles: one image, title and list per group
         sections: [
             {
-                title: 'Body & Hand Wash Gels',
-                path: '/collections/wash-gels',
+                title: 'Hand Wash Gel',
+                image: IMAGES.soap2,
+                path: '/collections/hand-wash-gels',
                 links: [
-                    { name: 'Body Wash Gel (Non-Fragnance) ', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
-                    { name: 'Hand Wash Gel (Non-Fragnance)', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
-                    { name: 'Oud & Patchouli', path: '/product/oud-patchouli-wash-gel', image: '/images/products/bath-body/oud-patchouli-large.webp' },
-                    { name: 'Tonka Bean and Amber', path: '/product/tonka-bean-amber-wash-gel', image: '/images/products/bath-body/tonka-bean-amber-large.webp' },
-                    { name: 'Lime and Mint', path: '/product/lime-mint-wash-gel', image: '/images/products/bath-body/lime-mint-large.webp' },
+                    { name: 'Hand Wash Gel (Fragrance-Free)', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                    { name: 'Oud & Patchouli', path: '/product/oud-patchouli-hand-wash-gel', image: '/images/products/bath-body/oud-patchouli-studio.webp' },
+                    { name: 'Tonka Bean and Amber', path: '/product/tonka-bean-amber-hand-wash-gel', image: '/images/products/bath-body/tonka-bean-amber-studio.webp' },
+                    { name: 'Lime and Mint', path: '/product/lime-mint-hand-wash-gel', image: '/images/products/bath-body/lime-mint-studio.webp' },
                 ]
             },
             {
-                title: 'Shea Body Care',
-                path: '/collections/shea-body-care',
+                title: 'Body Wash Gel',
+                image: IMAGES.soap1,
+                path: '/collections/body-wash-gels',
                 links: [
-                    { name: 'Shea Butter Cream', path: '/product/shea-butter-cream', image: IMAGES.sheaButter },
-                    { name: 'Shea Body Lotion', path: '/product/shea-body-lotion', image: IMAGES.sheaButterr },
+                    { name: 'Body Wash Gel (Fragrance-Free)', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Oud & Patchouli', path: '/product/oud-patchouli-body-wash-gel', image: '/images/products/bath-body/oud-patchouli-large.webp' },
+                    { name: 'Tonka Bean and Amber', path: '/product/tonka-bean-amber-body-wash-gel', image: '/images/products/bath-body/tonka-bean-amber-large.webp' },
+                    { name: 'Lime and Mint', path: '/product/lime-mint-body-wash-gel', image: '/images/products/bath-body/lime-mint-large.webp' },
+                ]
+            },
+            {
+                // Fragrance-Free is its own product; the fragrance links open Shea Butter Cream with that fragrance picked
+                title: 'Shea Butter Fragrances',
+                image: IMAGES.sheaButter,
+                path: '/product/shea-butter-cream',
+                links: [
+                    { name: 'Shea Butter (Fragrance-Free)', path: '/product/shea-butter-fragrance-free' },
+                    { name: 'Bergamot', path: '/product/shea-butter-cream?scent=Bergamot' },
+                    { name: 'Warm Vanilla', path: '/product/shea-butter-cream?scent=Warm%20Vanilla' },
+                    { name: 'Tropical Coconut Blend', path: '/product/shea-butter-cream?scent=Tropical%20Coconut%20Blend' },
                 ]
             }
         ]

@@ -40,7 +40,7 @@ export const CollectionPage: React.FC = () => {
     return collectionData.links
       .map((link) => {
         // Extract slug from path like '/product/royal-rose-bloom' -> 'royal-rose-bloom'
-        const parts = link.path.split('/');
+        const parts = link.path.split('?')[0].split('/');
         const slug = parts[parts.length - 1];
 
         // Find matching product
