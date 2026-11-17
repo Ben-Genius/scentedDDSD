@@ -65,7 +65,8 @@ const fabricAirFreshener = (slug: string, title: string): Product => ({
 const WASH_GEL_LARGE_PRICE = 120;
 const WASH_GEL_SMALL_PRICE = 60;
 
-const washGel = (slug: string, scent: string, notes: string[], description: string): Product => {
+// hoverImage: the ingredient photo the product card fades to on hover (like candles and diffusers)
+const washGel = (slug: string, scent: string, notes: string[], description: string, hoverImage?: string): Product => {
     const large = `/images/products/bath-body/${slug}-large.webp`;
     const small = `/images/products/bath-body/${slug}-small.webp`;
     return {
@@ -80,7 +81,7 @@ const washGel = (slug: string, scent: string, notes: string[], description: stri
         featured: true,
         images: {
             default: large,
-            gallery: [],
+            gallery: hoverImage ? [hoverImage] : [],
             colorVariants: []
         },
         variants: [
@@ -1235,7 +1236,7 @@ export const products: Product[] = [
         longDescription: "Our artisan bar soaps are hand-crafted using traditional methods and infused with our signature fragrances to leave your skin soft and beautifully scented.",
         basePrice: 120,
         stock: 50,
-        featured: true,
+        featured: false,
         images: {
             default: IMAGES.soap1,
             gallery: [],
@@ -1300,11 +1301,14 @@ export const products: Product[] = [
         scents: ["Amber & Honey", "Sweet Citrus", "Rose Oud"]
     },
     washGel("oud-patchouli", "Oud & Patchouli", ["Oud", "Patchouli"],
-        "A rich, warm wash gel with deep oud and earthy patchouli. Gentle enough for hands and body."),
+        "A rich, warm wash gel with deep oud and earthy patchouli. Gentle enough for hands and body.",
+        '/images/ingredients/diffusers/black-oud.webp'),
     washGel("tonka-bean-amber", "Tonka Bean and Amber", ["Tonka Bean", "Amber"],
-        "A soft, cosy wash gel with sweet tonka bean and glowing amber. Gentle enough for hands and body."),
+        "A soft, cosy wash gel with sweet tonka bean and glowing amber. Gentle enough for hands and body.",
+        '/images/ingredients/bath-body/tonka-bean-amber.webp'), // Pexels #20181021
     washGel("lime-mint", "Lime and Mint", ["Lime", "Mint"],
-        "A fresh, zesty wash gel with bright lime and cool mint. Gentle enough for hands and body."),
+        "A fresh, zesty wash gel with bright lime and cool mint. Gentle enough for hands and body.",
+        '/images/ingredients/bath-body/lime-mint.webp'), // Pexels #4051210
     // --- ACCESSORIES ---
     {
         id: "acc-burner-1",

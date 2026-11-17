@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BundleBuilder } from '../components/BundleBuilder';
 import { useInventory } from '../hooks/useInventory';
 import { IMAGES } from '../assets';
@@ -20,6 +22,16 @@ import { BundlesHero } from '../components/BundlesHero';
 
 export const Bundles = () => {
     const { products } = useInventory();
+    const { hash } = useLocation();
+
+    // Menu links like /bundles#custom-builder jump straight to that section
+    useEffect(() => {
+        if (!hash) return;
+        const timer = setTimeout(() => {
+            document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [hash]);
     // const { addItem } = useLocalCart();
     // const [activeCategory, setActiveCategory] = useState<'all' | 'relaxation' | 'romantic' | 'energizing' | 'luxury'>('all');
 // 
@@ -146,7 +158,7 @@ export const Bundles = () => {
            
 
             {/* 4. Interactive Bundle Builder Section - Responsive */}
-            <div id="custom-builder" className="py-16 sm:py-20 md:py-24 bg-white border-t border-black/5">
+            <div id="custom-builder" className="scroll-mt-24 py-16 sm:py-20 md:py-24 bg-white border-t border-black/5">
                 <div className="max-w-[115rem] mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Header - Responsive */}
                     <div className="mb-10 sm:mb-12 md:mb-16 text-center">

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { products } from '@/data/products';
+import { navigationData } from '@/data/navigation';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { IMAGES } from '@/assets';
@@ -13,8 +14,17 @@ import toast from 'react-hot-toast';
 export const AllBody = () => {
     const addItem = useLocalCart((state) => state.addItem);
 
-    // Filter for Bath & Body products
-    const bathBodyProducts = products.filter(product => product.category === 'Bath & Body');
+    // Bath & Body products, in the same group order as the menu (wash gels, then
+    // shea body care). Anything not in the menu yet still shows, at the end.
+    const menuOrder = (navigationData.find(item => item.id === 'bath')?.sections ?? [])
+        .flatMap(section => section.links.map(link => link.path.split('/').pop()));
+    const rank = (slug: string) => {
+        const i = menuOrder.indexOf(slug);
+        return i === -1 ? menuOrder.length : i;
+    };
+    const bathBodyProducts = products
+        .filter(product => product.category === 'Bath & Body')
+        .sort((a, b) => rank(a.slug) - rank(b.slug));
 
     // Slider Logic - Using Soap & Shea Butter Images
     const headerImages = [

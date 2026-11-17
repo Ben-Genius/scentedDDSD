@@ -544,11 +544,29 @@ export const navigationData: NavItem[] = [
         name: 'Air Fresheners',
         path: '/air-freshners',
         featuredImage: '/images/collections/air-fresheners/hero-main.webp',
-    },
-    {
-        id: 'fabric',
-        name: 'Fabric Air Freshener',
-        path: '/fabric-air-fresheners',
+        sections: [
+            {
+                title: 'Room Sprays',
+                path: '/air-freshners',
+                links: [
+                    { name: 'Air Freshener Spray', path: '/product/golden-hour-spray' },
+                ]
+            },
+            {
+                title: 'Fabric Fresheners',
+                path: '/fabric-air-fresheners',
+                links: [
+                    { name: 'Burberry', path: '/product/fabric-burberry' },
+                    { name: 'Arabic Loomi', path: '/product/fabric-arabic-loomi' },
+                    { name: 'Royal Pear and Freesia', path: '/product/fabric-royal-pear-freesia' },
+                    { name: 'Sweet Flowers', path: '/product/fabric-sweet-flowers' },
+                    { name: 'Sandal 33', path: '/product/fabric-sandal-33' },
+                    { name: 'Gucci Bloom', path: '/product/fabric-gucci-bloom' },
+                    { name: 'Amber Ebony', path: '/product/fabric-amber-ebony' },
+                    { name: 'Woodsage and SeaSalt', path: '/product/fabric-woodsage-seasalt' },
+                ]
+            }
+        ]
     },
     {
         id: 'bath',
@@ -557,25 +575,48 @@ export const navigationData: NavItem[] = [
         featuredImage: IMAGES.soap1,
         sections: [
             {
-                title: 'Body Collection',
-                path: '/collections/body-collection',
+                title: 'Body & Hand Wash Gels',
+                path: '/collections/wash-gels',
                 links: [
                     { name: 'Body Wash Gel', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
                     { name: 'Hand Wash Gel', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                    { name: 'Oud & Patchouli', path: '/product/oud-patchouli-wash-gel', image: '/images/products/bath-body/oud-patchouli-large.webp' },
+                    { name: 'Tonka Bean and Amber', path: '/product/tonka-bean-amber-wash-gel', image: '/images/products/bath-body/tonka-bean-amber-large.webp' },
+                    { name: 'Lime and Mint', path: '/product/lime-mint-wash-gel', image: '/images/products/bath-body/lime-mint-large.webp' },
+                ]
+            },
+            {
+                title: 'Shea Body Care',
+                path: '/collections/shea-body-care',
+                links: [
                     { name: 'Shea Butter Cream', path: '/product/shea-butter-cream', image: IMAGES.sheaButter },
-                    { name: 'Shea Butter Lotion', path: '/product/shea-body-lotion', image: IMAGES.sheaButterr },
+                    { name: 'Shea Body Lotion', path: '/product/shea-body-lotion', image: IMAGES.sheaButterr },
                 ]
             }
         ]
     },
     {
-        id: 'shop',
-        name: 'Accessories',
-        path: '/accessories',
-    },
-    {
         id: 'gifts',
-        name: 'Gift Bundles',
+        name: 'Gifts & Accessories',
         path: '/bundles',
+        featuredImage: IMAGES.bundle,
+        sections: [
+            {
+                title: 'Gift Bundles',
+                path: '/bundles',
+                links: [
+                    { name: 'Build Your Own Bundle', path: '/bundles#custom-builder' },
+                ]
+            },
+            {
+                title: 'Accessories',
+                path: '/accessories',
+                links: [
+                    { name: 'Ceramic Burner', path: '/product/sweet-home-burner' },
+                    { name: 'Car Tissue Paper', path: '/product/scented-tissues' },
+                    { name: 'Travel Essentials Bag', path: '/product/designer-scent-bag-2' },
+                ]
+            }
+        ]
     }
 ];
