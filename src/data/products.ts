@@ -1229,7 +1229,7 @@ export const products: Product[] = [
     // --- NEW COLLECTION: Bath & Body ---
     {
         id: "p-soap-artisan-1",
-        title: "Body Wash Gel",
+        title: "Body Wash Gel (Non-Fragnance)",
         slug: "artisan-scented-soap-1",
         category: "Bath & Body",
         shortDescription: "Luxury hand-crafted bar soap.",
@@ -1243,11 +1243,11 @@ export const products: Product[] = [
             colorVariants: []
         },
         variants: [{ id: "v-soap-1-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 120 }],
-        scents: ["Rose", "Lavender", "Sandalwood"]
+        scents: []
     },
     {
         id: "p-soap-artisan-2",
-        title: "Hand Wash Gel",
+        title: "Hand Wash Gel (Non-Fragnace)",
         slug: "artisan-scented-soap-2",
         category: "Bath & Body",
         shortDescription: "Hand-poured luxury cleansing bar.",
@@ -1257,11 +1257,22 @@ export const products: Product[] = [
         featured: true,
         images: {
             default: IMAGES.soap2,
-            gallery: [],
+            // Fragrance photos; the first is also the card's hover photo
+            gallery: [
+                '/images/products/bath-body/oud-patchouli-studio.webp',
+                '/images/products/bath-body/tonka-bean-amber-studio.webp',
+                '/images/products/bath-body/lime-mint-studio.webp',
+            ],
             colorVariants: []
         },
         variants: [{ id: "v-soap-2-std", label: "Single Bar", sizeLabel: "Standard", multiplier: 1, priceGHS: 60 }],
-        scents: ["Pomegranate", "Amber", "Sage"]
+        scents: ["Oud & Patchouli", "Tonka Bean and Amber", "Lime and Mint"],
+        fragranceChoice: true,
+        scentImages: {
+            "Oud & Patchouli": '/images/products/bath-body/oud-patchouli-studio.webp',
+            "Tonka Bean and Amber": '/images/products/bath-body/tonka-bean-amber-studio.webp',
+            "Lime and Mint": '/images/products/bath-body/lime-mint-studio.webp',
+        }
     },
     {
         id: "p-shea-cream",

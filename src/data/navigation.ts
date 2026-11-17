@@ -292,7 +292,7 @@ export const navigationData: NavItem[] = [
     },
     {
         id: 'diffusers',
-        name: 'Diffusers',
+        name: 'Reed Diffusers',
         path: '/diffusers',
         featuredImage: '/images/collections/diffusers/floral-romance.webp',
         sections: [
@@ -541,17 +541,11 @@ export const navigationData: NavItem[] = [
 
     {
         id: 'air',
-        name: 'Air Fresheners',
+        name: 'Fabric Fresheners',
         path: '/air-freshners',
         featuredImage: '/images/collections/air-fresheners/hero-main.webp',
         sections: [
-            {
-                title: 'Room Sprays',
-                path: '/air-freshners',
-                links: [
-                    { name: 'Air Freshener Spray', path: '/product/golden-hour-spray' },
-                ]
-            },
+
             {
                 title: 'Fabric Fresheners',
                 path: '/fabric-air-fresheners',
@@ -578,8 +572,8 @@ export const navigationData: NavItem[] = [
                 title: 'Body & Hand Wash Gels',
                 path: '/collections/wash-gels',
                 links: [
-                    { name: 'Body Wash Gel', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
-                    { name: 'Hand Wash Gel', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
+                    { name: 'Body Wash Gel (Non-Fragnance) ', path: '/product/artisan-scented-soap-1', image: IMAGES.soap1 },
+                    { name: 'Hand Wash Gel (Non-Fragnance)', path: '/product/artisan-scented-soap-2', image: IMAGES.soap2 },
                     { name: 'Oud & Patchouli', path: '/product/oud-patchouli-wash-gel', image: '/images/products/bath-body/oud-patchouli-large.webp' },
                     { name: 'Tonka Bean and Amber', path: '/product/tonka-bean-amber-wash-gel', image: '/images/products/bath-body/tonka-bean-amber-large.webp' },
                     { name: 'Lime and Mint', path: '/product/lime-mint-wash-gel', image: '/images/products/bath-body/lime-mint-large.webp' },

@@ -48,6 +48,15 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
         }
     };
 
+    const handleScentChange = (scent: string) => {
+        setSelectedScent(scent);
+        // Show this fragrance's own photo, if it has one
+        const image = product.scentImages?.[scent];
+        if (image) {
+            setActiveImage(image);
+        }
+    };
+
     const handleColorChange = (colorId: string) => {
         setSelectedColorId(colorId);
         const color = product.images.colorVariants.find(c => c.colorId === colorId);
@@ -235,7 +244,7 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
                                 <SizeSelector
                                     options={product.scents.map((scent) => ({ id: scent, label: scent }))}
                                     selectedId={selectedScent ?? product.scents[0]}
-                                    onChange={setSelectedScent}
+                                    onChange={handleScentChange}
                                     ariaLabel="Fragrance"
                                 />
                             </div>
